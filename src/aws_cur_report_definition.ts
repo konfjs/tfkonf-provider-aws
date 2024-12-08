@@ -16,7 +16,7 @@ export interface AwsCurReportDefinitionArgs {
 }
 
 export class aws_cur_report_definition extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCurReportDefinitionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCurReportDefinitionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_cur_report_definition", resourceName);
   }

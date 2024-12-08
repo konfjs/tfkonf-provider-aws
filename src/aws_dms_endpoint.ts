@@ -159,7 +159,7 @@ export interface AwsDmsEndpointArgs {
 }
 
 export class aws_dms_endpoint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDmsEndpointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDmsEndpointArgs) {
     const meta = {elasticsearch_settings:{isBlock:true},kafka_settings:{isBlock:true},kinesis_settings:{isBlock:true},mongodb_settings:{isBlock:true},postgres_settings:{isBlock:true},redis_settings:{isBlock:true},redshift_settings:{isBlock:true},s3_settings:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_dms_endpoint", resourceName);
   }

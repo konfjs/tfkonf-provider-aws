@@ -21,7 +21,7 @@ export interface AwsSagemakerNotebookInstanceArgs {
 }
 
 export class aws_sagemaker_notebook_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSagemakerNotebookInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSagemakerNotebookInstanceArgs) {
     const meta = {instance_metadata_service_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_sagemaker_notebook_instance", resourceName);
   }

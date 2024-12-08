@@ -47,7 +47,7 @@ export interface AwsFinspaceKxEnvironmentArgs {
 }
 
 export class aws_finspace_kx_environment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsFinspaceKxEnvironmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsFinspaceKxEnvironmentArgs) {
     const meta = {custom_dns_configuration:{isBlock:true},timeouts:{isBlock:true},transit_gateway_configuration:{isBlock:true,attachment_network_acl_configuration:{isBlock:true,icmp_type_code:{isBlock:true},port_range:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "aws_finspace_kx_environment", resourceName);
   }

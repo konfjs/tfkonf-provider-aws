@@ -26,7 +26,7 @@ export interface AwsMemorydbClusterArgs {
 }
 
 export class aws_memorydb_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMemorydbClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMemorydbClusterArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_memorydb_cluster", resourceName);
   }

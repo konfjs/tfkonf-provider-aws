@@ -15,7 +15,7 @@ export interface AwsSnsTopicSubscriptionArgs {
 }
 
 export class aws_sns_topic_subscription extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSnsTopicSubscriptionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSnsTopicSubscriptionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_sns_topic_subscription", resourceName);
   }

@@ -50,7 +50,7 @@ export interface AwsAlbArgs {
 }
 
 export class aws_alb extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAlbArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAlbArgs) {
     const meta = {access_logs:{isBlock:true},connection_logs:{isBlock:true},subnet_mapping:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_alb", resourceName);
   }

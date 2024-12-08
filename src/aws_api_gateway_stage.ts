@@ -29,7 +29,7 @@ export interface AwsApiGatewayStageArgs {
 }
 
 export class aws_api_gateway_stage extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApiGatewayStageArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApiGatewayStageArgs) {
     const meta = {access_log_settings:{isBlock:true},canary_settings:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_api_gateway_stage", resourceName);
   }

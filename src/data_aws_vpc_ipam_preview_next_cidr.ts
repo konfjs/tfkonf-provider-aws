@@ -12,7 +12,7 @@ export interface DataAwsVpcIpamPreviewNextCidrArgs {
 }
 
 export class data_aws_vpc_ipam_preview_next_cidr extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsVpcIpamPreviewNextCidrArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsVpcIpamPreviewNextCidrArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_vpc_ipam_preview_next_cidr", resourceName);
   }

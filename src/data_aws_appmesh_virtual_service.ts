@@ -6,7 +6,7 @@ export interface DataAwsAppmeshVirtualServiceArgs {
 }
 
 export class data_aws_appmesh_virtual_service extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsAppmeshVirtualServiceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsAppmeshVirtualServiceArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_appmesh_virtual_service", resourceName);
   }

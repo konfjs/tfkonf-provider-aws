@@ -6,7 +6,7 @@ export interface AwsDynamodbKinesisStreamingDestinationArgs {
 }
 
 export class aws_dynamodb_kinesis_streaming_destination extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDynamodbKinesisStreamingDestinationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDynamodbKinesisStreamingDestinationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_dynamodb_kinesis_streaming_destination", resourceName);
   }

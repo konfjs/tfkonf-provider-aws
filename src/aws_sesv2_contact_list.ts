@@ -15,7 +15,7 @@ export interface AwsSesv2ContactListArgs {
 }
 
 export class aws_sesv2_contact_list extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSesv2ContactListArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSesv2ContactListArgs) {
     const meta = {topic:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_sesv2_contact_list", resourceName);
   }

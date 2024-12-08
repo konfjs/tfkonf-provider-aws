@@ -4,7 +4,7 @@ export interface DataAwsPrometheusDefaultScraperConfigurationArgs {
 }
 
 export class data_aws_prometheus_default_scraper_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsPrometheusDefaultScraperConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsPrometheusDefaultScraperConfigurationArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_prometheus_default_scraper_configuration", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataAwsDmsReplicationInstanceArgs {
 }
 
 export class data_aws_dms_replication_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsDmsReplicationInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsDmsReplicationInstanceArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_dms_replication_instance", resourceName);
   }

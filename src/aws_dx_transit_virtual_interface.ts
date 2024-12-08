@@ -20,7 +20,7 @@ export interface AwsDxTransitVirtualInterfaceArgs {
 }
 
 export class aws_dx_transit_virtual_interface extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDxTransitVirtualInterfaceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDxTransitVirtualInterfaceArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_dx_transit_virtual_interface", resourceName);
   }

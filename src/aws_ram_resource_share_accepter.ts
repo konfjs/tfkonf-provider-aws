@@ -11,7 +11,7 @@ export interface AwsRamResourceShareAccepterArgs {
 }
 
 export class aws_ram_resource_share_accepter extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRamResourceShareAccepterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRamResourceShareAccepterArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ram_resource_share_accepter", resourceName);
   }

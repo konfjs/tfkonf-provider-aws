@@ -39,7 +39,7 @@ export interface AwsCodepipelineCustomActionTypeArgs {
 }
 
 export class aws_codepipeline_custom_action_type extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCodepipelineCustomActionTypeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCodepipelineCustomActionTypeArgs) {
     const meta = {configuration_property:{isBlock:true},input_artifact_details:{isBlock:true},output_artifact_details:{isBlock:true},settings:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_codepipeline_custom_action_type", resourceName);
   }

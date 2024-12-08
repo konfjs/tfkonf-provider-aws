@@ -7,7 +7,7 @@ export interface AwsRedshiftSnapshotCopyArgs {
 }
 
 export class aws_redshift_snapshot_copy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRedshiftSnapshotCopyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRedshiftSnapshotCopyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_redshift_snapshot_copy", resourceName);
   }

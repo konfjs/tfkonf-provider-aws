@@ -10,7 +10,7 @@ export interface AwsRdsClusterEndpointArgs {
 }
 
 export class aws_rds_cluster_endpoint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRdsClusterEndpointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRdsClusterEndpointArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_rds_cluster_endpoint", resourceName);
   }

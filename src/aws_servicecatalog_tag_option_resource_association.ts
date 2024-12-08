@@ -13,7 +13,7 @@ export interface AwsServicecatalogTagOptionResourceAssociationArgs {
 }
 
 export class aws_servicecatalog_tag_option_resource_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsServicecatalogTagOptionResourceAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsServicecatalogTagOptionResourceAssociationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_servicecatalog_tag_option_resource_association", resourceName);
   }

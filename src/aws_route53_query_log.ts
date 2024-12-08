@@ -6,7 +6,7 @@ export interface AwsRoute53QueryLogArgs {
 }
 
 export class aws_route53_query_log extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRoute53QueryLogArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRoute53QueryLogArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_route53_query_log", resourceName);
   }

@@ -16,7 +16,7 @@ export interface AwsNetworkfirewallLoggingConfigurationArgs {
 }
 
 export class aws_networkfirewall_logging_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNetworkfirewallLoggingConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNetworkfirewallLoggingConfigurationArgs) {
     const meta = {logging_configuration:{isBlock:true,log_destination_config:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_networkfirewall_logging_configuration", resourceName);
   }

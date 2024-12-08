@@ -7,7 +7,7 @@ export interface AwsCloudfrontKeyGroupArgs {
 }
 
 export class aws_cloudfront_key_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudfrontKeyGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudfrontKeyGroupArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_cloudfront_key_group", resourceName);
   }

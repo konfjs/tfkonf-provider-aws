@@ -48,7 +48,7 @@ export interface DataAwsCloudwatchLogDataProtectionPolicyDocumentArgs {
 }
 
 export class data_aws_cloudwatch_log_data_protection_policy_document extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCloudwatchLogDataProtectionPolicyDocumentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCloudwatchLogDataProtectionPolicyDocumentArgs) {
     const meta = {statement:{isBlock:true,operation:{isBlock:true,audit:{isBlock:true,findings_destination:{isBlock:true,cloudwatch_logs:{isBlock:true},firehose:{isBlock:true},s3:{isBlock:true}}},deidentify:{isBlock:true,mask_config:{isBlock:true}}}}};
     super(terraformConfig, "data", args, meta, "aws_cloudwatch_log_data_protection_policy_document", resourceName);
   }

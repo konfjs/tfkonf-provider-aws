@@ -8,7 +8,7 @@ export interface AwsTransferProfileArgs {
 }
 
 export class aws_transfer_profile extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsTransferProfileArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsTransferProfileArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_transfer_profile", resourceName);
   }

@@ -19,7 +19,7 @@ export interface AwsInspector2OrganizationConfigurationArgs {
 }
 
 export class aws_inspector2_organization_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsInspector2OrganizationConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsInspector2OrganizationConfigurationArgs) {
     const meta = {auto_enable:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_inspector2_organization_configuration", resourceName);
   }

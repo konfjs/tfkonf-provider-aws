@@ -35,7 +35,7 @@ export interface AwsLightsailContainerServiceArgs {
 }
 
 export class aws_lightsail_container_service extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLightsailContainerServiceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLightsailContainerServiceArgs) {
     const meta = {private_registry_access:{isBlock:true,ecr_image_puller_role:{isBlock:true}},public_domain_names:{isBlock:true,certificate:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_lightsail_container_service", resourceName);
   }

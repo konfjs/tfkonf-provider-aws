@@ -13,7 +13,7 @@ export interface AwsOpensearchPackageArgs {
 }
 
 export class aws_opensearch_package extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsOpensearchPackageArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsOpensearchPackageArgs) {
     const meta = {package_source:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_opensearch_package", resourceName);
   }

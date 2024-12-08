@@ -26,7 +26,7 @@ export interface DataAwsGlueScriptArgs {
 }
 
 export class data_aws_glue_script extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsGlueScriptArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsGlueScriptArgs) {
     const meta = {dag_edge:{isBlock:true},dag_node:{isBlock:true,args:{isBlock:true}}};
     super(terraformConfig, "data", args, meta, "aws_glue_script", resourceName);
   }

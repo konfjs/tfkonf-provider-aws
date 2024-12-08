@@ -152,7 +152,7 @@ export interface AwsKinesisAnalyticsApplicationArgs {
 }
 
 export class aws_kinesis_analytics_application extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsKinesisAnalyticsApplicationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsKinesisAnalyticsApplicationArgs) {
     const meta = {cloudwatch_logging_options:{isBlock:true},inputs:{isBlock:true,kinesis_firehose:{isBlock:true},kinesis_stream:{isBlock:true},parallelism:{isBlock:true},processing_configuration:{isBlock:true,lambda:{isBlock:true}},schema:{isBlock:true,record_columns:{isBlock:true},record_format:{isBlock:true,mapping_parameters:{isBlock:true,csv:{isBlock:true},json:{isBlock:true}}}},starting_position_configuration:{isBlock:true}},outputs:{isBlock:true,kinesis_firehose:{isBlock:true},kinesis_stream:{isBlock:true},lambda:{isBlock:true},schema:{isBlock:true}},reference_data_sources:{isBlock:true,s3:{isBlock:true},schema:{isBlock:true,record_columns:{isBlock:true},record_format:{isBlock:true,mapping_parameters:{isBlock:true,csv:{isBlock:true},json:{isBlock:true}}}}}};
     super(terraformConfig, "resource", args, meta, "aws_kinesis_analytics_application", resourceName);
   }

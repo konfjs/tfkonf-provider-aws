@@ -5,7 +5,7 @@ export interface DataAwsCognitoUserGroupsArgs {
 }
 
 export class data_aws_cognito_user_groups extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCognitoUserGroupsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCognitoUserGroupsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_cognito_user_groups", resourceName);
   }

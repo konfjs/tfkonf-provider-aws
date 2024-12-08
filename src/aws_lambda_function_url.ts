@@ -23,7 +23,7 @@ export interface AwsLambdaFunctionUrlArgs {
 }
 
 export class aws_lambda_function_url extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLambdaFunctionUrlArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLambdaFunctionUrlArgs) {
     const meta = {cors:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_lambda_function_url", resourceName);
   }

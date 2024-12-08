@@ -15,7 +15,7 @@ export interface DataAwsInternetGatewayArgs {
 }
 
 export class data_aws_internet_gateway extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsInternetGatewayArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsInternetGatewayArgs) {
     const meta = {filter:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_internet_gateway", resourceName);
   }

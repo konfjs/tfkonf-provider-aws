@@ -8,7 +8,7 @@ export interface AwsDynamodbTableItemArgs {
 }
 
 export class aws_dynamodb_table_item extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDynamodbTableItemArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDynamodbTableItemArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_dynamodb_table_item", resourceName);
   }

@@ -10,7 +10,7 @@ export interface DataAwsLicensemanagerGrantsArgs {
 }
 
 export class data_aws_licensemanager_grants extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsLicensemanagerGrantsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsLicensemanagerGrantsArgs) {
     const meta = {filter:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_licensemanager_grants", resourceName);
   }

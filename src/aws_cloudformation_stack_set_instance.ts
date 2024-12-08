@@ -34,7 +34,7 @@ export interface AwsCloudformationStackSetInstanceArgs {
 }
 
 export class aws_cloudformation_stack_set_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudformationStackSetInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudformationStackSetInstanceArgs) {
     const meta = {deployment_targets:{isBlock:true},operation_preferences:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_cloudformation_stack_set_instance", resourceName);
   }

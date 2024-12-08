@@ -44,7 +44,7 @@ export interface AwsImagebuilderImageRecipeArgs {
 }
 
 export class aws_imagebuilder_image_recipe extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsImagebuilderImageRecipeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsImagebuilderImageRecipeArgs) {
     const meta = {block_device_mapping:{isBlock:true,ebs:{isBlock:true}},component:{isBlock:true,parameter:{isBlock:true}},systems_manager_agent:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_imagebuilder_image_recipe", resourceName);
   }

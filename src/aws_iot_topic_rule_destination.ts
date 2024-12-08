@@ -20,7 +20,7 @@ export interface AwsIotTopicRuleDestinationArgs {
 }
 
 export class aws_iot_topic_rule_destination extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIotTopicRuleDestinationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIotTopicRuleDestinationArgs) {
     const meta = {timeouts:{isBlock:true},vpc_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_iot_topic_rule_destination", resourceName);
   }

@@ -83,7 +83,7 @@ export interface AwsCustomerprofilesDomainArgs {
 }
 
 export class aws_customerprofiles_domain extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCustomerprofilesDomainArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCustomerprofilesDomainArgs) {
     const meta = {matching:{isBlock:true,auto_merging:{isBlock:true,conflict_resolution:{isBlock:true},consolidation:{isBlock:true}},exporting_config:{isBlock:true,s3_exporting:{isBlock:true}},job_schedule:{isBlock:true}},rule_based_matching:{isBlock:true,attribute_types_selector:{isBlock:true},conflict_resolution:{isBlock:true},exporting_config:{isBlock:true,s3_exporting:{isBlock:true}},matching_rules:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_customerprofiles_domain", resourceName);
   }

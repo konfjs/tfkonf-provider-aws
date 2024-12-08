@@ -24,7 +24,7 @@ export interface AwsBackupRestoreTestingSelectionArgs {
 }
 
 export class aws_backup_restore_testing_selection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBackupRestoreTestingSelectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBackupRestoreTestingSelectionArgs) {
     const meta = {protected_resource_conditions:{isBlock:true,string_equals:{isBlock:true},string_not_equals:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_backup_restore_testing_selection", resourceName);
   }

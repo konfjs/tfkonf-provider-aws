@@ -7,7 +7,7 @@ export interface AwsSchemasDiscovererArgs {
 }
 
 export class aws_schemas_discoverer extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSchemasDiscovererArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSchemasDiscovererArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_schemas_discoverer", resourceName);
   }

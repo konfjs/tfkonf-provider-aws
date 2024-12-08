@@ -21,7 +21,7 @@ export interface AwsEcrpublicRepositoryArgs {
 }
 
 export class aws_ecrpublic_repository extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEcrpublicRepositoryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEcrpublicRepositoryArgs) {
     const meta = {catalog_data:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ecrpublic_repository", resourceName);
   }

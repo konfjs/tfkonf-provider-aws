@@ -7,7 +7,7 @@ export interface AwsAuditmanagerAccountRegistrationArgs {
 }
 
 export class aws_auditmanager_account_registration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAuditmanagerAccountRegistrationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAuditmanagerAccountRegistrationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_auditmanager_account_registration", resourceName);
   }

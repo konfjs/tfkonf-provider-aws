@@ -110,7 +110,7 @@ export interface AwsMacie2ClassificationJobArgs {
 }
 
 export class aws_macie2_classification_job extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMacie2ClassificationJobArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMacie2ClassificationJobArgs) {
     const meta = {s3_job_definition:{isBlock:true,bucket_criteria:{isBlock:true,excludes:{isBlock:true,and:{isBlock:true,simple_criterion:{isBlock:true},tag_criterion:{isBlock:true,tag_values:{isBlock:true}}}},includes:{isBlock:true,and:{isBlock:true,simple_criterion:{isBlock:true},tag_criterion:{isBlock:true,tag_values:{isBlock:true}}}}},bucket_definitions:{isBlock:true},scoping:{isBlock:true,excludes:{isBlock:true,and:{isBlock:true,simple_scope_term:{isBlock:true},tag_scope_term:{isBlock:true,tag_values:{isBlock:true}}}},includes:{isBlock:true,and:{isBlock:true,simple_scope_term:{isBlock:true},tag_scope_term:{isBlock:true,tag_values:{isBlock:true}}}}}},schedule_frequency:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_macie2_classification_job", resourceName);
   }

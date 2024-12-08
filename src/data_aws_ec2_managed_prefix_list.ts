@@ -15,7 +15,7 @@ export interface DataAwsEc2ManagedPrefixListArgs {
 }
 
 export class data_aws_ec2_managed_prefix_list extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEc2ManagedPrefixListArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEc2ManagedPrefixListArgs) {
     const meta = {filter:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_ec2_managed_prefix_list", resourceName);
   }

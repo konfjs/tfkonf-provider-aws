@@ -16,7 +16,7 @@ export interface AwsIotProvisioningTemplateArgs {
 }
 
 export class aws_iot_provisioning_template extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIotProvisioningTemplateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIotProvisioningTemplateArgs) {
     const meta = {pre_provisioning_hook:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_iot_provisioning_template", resourceName);
   }

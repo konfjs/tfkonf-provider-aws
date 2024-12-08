@@ -34,7 +34,7 @@ export interface AwsCloudsearchDomainArgs {
 }
 
 export class aws_cloudsearch_domain extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudsearchDomainArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudsearchDomainArgs) {
     const meta = {endpoint_options:{isBlock:true},index_field:{isBlock:true},scaling_parameters:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_cloudsearch_domain", resourceName);
   }

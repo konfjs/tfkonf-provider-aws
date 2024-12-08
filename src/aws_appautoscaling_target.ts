@@ -17,7 +17,7 @@ export interface AwsAppautoscalingTargetArgs {
 }
 
 export class aws_appautoscaling_target extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppautoscalingTargetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppautoscalingTargetArgs) {
     const meta = {suspended_state:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_appautoscaling_target", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataAwsStoragegatewayLocalDiskArgs {
 }
 
 export class data_aws_storagegateway_local_disk extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsStoragegatewayLocalDiskArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsStoragegatewayLocalDiskArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_storagegateway_local_disk", resourceName);
   }

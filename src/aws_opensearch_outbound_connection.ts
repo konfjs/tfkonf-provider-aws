@@ -35,7 +35,7 @@ export interface AwsOpensearchOutboundConnectionArgs {
 }
 
 export class aws_opensearch_outbound_connection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsOpensearchOutboundConnectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsOpensearchOutboundConnectionArgs) {
     const meta = {connection_properties:{isBlock:true,cross_cluster_search:{isBlock:true}},local_domain_info:{isBlock:true},remote_domain_info:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_opensearch_outbound_connection", resourceName);
   }

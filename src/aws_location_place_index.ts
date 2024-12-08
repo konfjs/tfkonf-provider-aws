@@ -13,7 +13,7 @@ export interface AwsLocationPlaceIndexArgs {
 }
 
 export class aws_location_place_index extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLocationPlaceIndexArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLocationPlaceIndexArgs) {
     const meta = {data_source_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_location_place_index", resourceName);
   }

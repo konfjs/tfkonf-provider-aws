@@ -9,7 +9,7 @@ export interface AwsChimesdkvoiceGlobalSettingsArgs {
 }
 
 export class aws_chimesdkvoice_global_settings extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsChimesdkvoiceGlobalSettingsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsChimesdkvoiceGlobalSettingsArgs) {
     const meta = {voice_connector:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_chimesdkvoice_global_settings", resourceName);
   }

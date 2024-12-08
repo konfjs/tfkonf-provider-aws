@@ -41,7 +41,7 @@ export interface AwsSagemakerWorkteamArgs {
 }
 
 export class aws_sagemaker_workteam extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSagemakerWorkteamArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSagemakerWorkteamArgs) {
     const meta = {member_definition:{isBlock:true,cognito_member_definition:{isBlock:true},oidc_member_definition:{isBlock:true}},notification_configuration:{isBlock:true},worker_access_configuration:{isBlock:true,s3_presign:{isBlock:true,iam_policy_constraints:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "aws_sagemaker_workteam", resourceName);
   }

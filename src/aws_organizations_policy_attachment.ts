@@ -7,7 +7,7 @@ export interface AwsOrganizationsPolicyAttachmentArgs {
 }
 
 export class aws_organizations_policy_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsOrganizationsPolicyAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsOrganizationsPolicyAttachmentArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_organizations_policy_attachment", resourceName);
   }

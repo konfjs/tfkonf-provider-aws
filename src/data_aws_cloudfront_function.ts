@@ -6,7 +6,7 @@ export interface DataAwsCloudfrontFunctionArgs {
 }
 
 export class data_aws_cloudfront_function extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCloudfrontFunctionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCloudfrontFunctionArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_cloudfront_function", resourceName);
   }

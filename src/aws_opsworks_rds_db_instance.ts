@@ -8,7 +8,7 @@ export interface AwsOpsworksRdsDbInstanceArgs {
 }
 
 export class aws_opsworks_rds_db_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsOpsworksRdsDbInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsOpsworksRdsDbInstanceArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_opsworks_rds_db_instance", resourceName);
   }

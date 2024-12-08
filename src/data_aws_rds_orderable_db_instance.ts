@@ -8,7 +8,7 @@ export interface DataAwsRdsOrderableDbInstanceArgs {
 }
 
 export class data_aws_rds_orderable_db_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsRdsOrderableDbInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsRdsOrderableDbInstanceArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_rds_orderable_db_instance", resourceName);
   }

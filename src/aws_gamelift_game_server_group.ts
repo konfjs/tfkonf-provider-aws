@@ -36,7 +36,7 @@ export interface AwsGameliftGameServerGroupArgs {
 }
 
 export class aws_gamelift_game_server_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGameliftGameServerGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGameliftGameServerGroupArgs) {
     const meta = {auto_scaling_policy:{isBlock:true,target_tracking_configuration:{isBlock:true}},instance_definition:{isBlock:true},launch_template:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_gamelift_game_server_group", resourceName);
   }

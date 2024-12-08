@@ -7,7 +7,7 @@ export interface AwsEc2TransitGatewayMulticastGroupMemberArgs {
 }
 
 export class aws_ec2_transit_gateway_multicast_group_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEc2TransitGatewayMulticastGroupMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEc2TransitGatewayMulticastGroupMemberArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ec2_transit_gateway_multicast_group_member", resourceName);
   }

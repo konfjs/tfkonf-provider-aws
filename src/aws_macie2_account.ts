@@ -4,7 +4,7 @@ export interface AwsMacie2AccountArgs {
 }
 
 export class aws_macie2_account extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMacie2AccountArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMacie2AccountArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_macie2_account", resourceName);
   }

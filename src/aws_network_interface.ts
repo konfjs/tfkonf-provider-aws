@@ -16,7 +16,7 @@ export interface AwsNetworkInterfaceArgs {
 }
 
 export class aws_network_interface extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNetworkInterfaceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNetworkInterfaceArgs) {
     const meta = {attachment:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_network_interface", resourceName);
   }

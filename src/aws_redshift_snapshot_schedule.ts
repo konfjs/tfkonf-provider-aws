@@ -8,7 +8,7 @@ export interface AwsRedshiftSnapshotScheduleArgs {
 }
 
 export class aws_redshift_snapshot_schedule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRedshiftSnapshotScheduleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRedshiftSnapshotScheduleArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_redshift_snapshot_schedule", resourceName);
   }

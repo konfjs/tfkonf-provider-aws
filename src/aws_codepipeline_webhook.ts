@@ -21,7 +21,7 @@ export interface AwsCodepipelineWebhookArgs {
 }
 
 export class aws_codepipeline_webhook extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCodepipelineWebhookArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCodepipelineWebhookArgs) {
     const meta = {authentication_configuration:{isBlock:true},filter:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_codepipeline_webhook", resourceName);
   }

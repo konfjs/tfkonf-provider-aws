@@ -8,7 +8,7 @@ export interface AwsSesIdentityNotificationTopicArgs {
 }
 
 export class aws_ses_identity_notification_topic extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSesIdentityNotificationTopicArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSesIdentityNotificationTopicArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ses_identity_notification_topic", resourceName);
   }

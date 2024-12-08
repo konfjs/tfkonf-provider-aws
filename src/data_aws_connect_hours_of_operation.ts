@@ -5,7 +5,7 @@ export interface DataAwsConnectHoursOfOperationArgs {
 }
 
 export class data_aws_connect_hours_of_operation extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsConnectHoursOfOperationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsConnectHoursOfOperationArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_connect_hours_of_operation", resourceName);
   }

@@ -16,7 +16,7 @@ export interface AwsGlueUserDefinedFunctionArgs {
 }
 
 export class aws_glue_user_defined_function extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGlueUserDefinedFunctionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGlueUserDefinedFunctionArgs) {
     const meta = {resource_uris:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_glue_user_defined_function", resourceName);
   }

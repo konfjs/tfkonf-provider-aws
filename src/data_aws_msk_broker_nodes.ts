@@ -5,7 +5,7 @@ export interface DataAwsMskBrokerNodesArgs {
 }
 
 export class data_aws_msk_broker_nodes extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsMskBrokerNodesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsMskBrokerNodesArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_msk_broker_nodes", resourceName);
   }

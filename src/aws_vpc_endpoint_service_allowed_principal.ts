@@ -6,7 +6,7 @@ export interface AwsVpcEndpointServiceAllowedPrincipalArgs {
 }
 
 export class aws_vpc_endpoint_service_allowed_principal extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpcEndpointServiceAllowedPrincipalArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpcEndpointServiceAllowedPrincipalArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_vpc_endpoint_service_allowed_principal", resourceName);
   }

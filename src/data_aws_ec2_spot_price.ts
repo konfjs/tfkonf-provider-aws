@@ -17,7 +17,7 @@ export interface DataAwsEc2SpotPriceArgs {
 }
 
 export class data_aws_ec2_spot_price extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEc2SpotPriceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEc2SpotPriceArgs) {
     const meta = {filter:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_ec2_spot_price", resourceName);
   }

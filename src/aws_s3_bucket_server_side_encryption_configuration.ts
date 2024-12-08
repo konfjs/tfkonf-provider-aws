@@ -17,7 +17,7 @@ export interface AwsS3BucketServerSideEncryptionConfigurationArgs {
 }
 
 export class aws_s3_bucket_server_side_encryption_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3BucketServerSideEncryptionConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3BucketServerSideEncryptionConfigurationArgs) {
     const meta = {rule:{isBlock:true,apply_server_side_encryption_by_default:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_s3_bucket_server_side_encryption_configuration", resourceName);
   }

@@ -11,7 +11,7 @@ export interface DataAwsPricingProductArgs {
 }
 
 export class data_aws_pricing_product extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsPricingProductArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsPricingProductArgs) {
     const meta = {filters:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_pricing_product", resourceName);
   }

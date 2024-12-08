@@ -5,7 +5,7 @@ export interface AwsRoute53DelegationSetArgs {
 }
 
 export class aws_route53_delegation_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRoute53DelegationSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRoute53DelegationSetArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_route53_delegation_set", resourceName);
   }

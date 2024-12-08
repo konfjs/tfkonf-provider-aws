@@ -17,7 +17,7 @@ export interface AwsConnectPhoneNumberArgs {
 }
 
 export class aws_connect_phone_number extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsConnectPhoneNumberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsConnectPhoneNumberArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_connect_phone_number", resourceName);
   }

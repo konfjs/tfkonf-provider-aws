@@ -13,7 +13,7 @@ export interface AwsGlacierVaultArgs {
 }
 
 export class aws_glacier_vault extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGlacierVaultArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGlacierVaultArgs) {
     const meta = {notification:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_glacier_vault", resourceName);
   }

@@ -5,7 +5,7 @@ export interface AwsSimpledbDomainArgs {
 }
 
 export class aws_simpledb_domain extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSimpledbDomainArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSimpledbDomainArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_simpledb_domain", resourceName);
   }

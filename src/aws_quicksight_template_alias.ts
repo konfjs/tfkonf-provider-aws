@@ -7,7 +7,7 @@ export interface AwsQuicksightTemplateAliasArgs {
 }
 
 export class aws_quicksight_template_alias extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsQuicksightTemplateAliasArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsQuicksightTemplateAliasArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_quicksight_template_alias", resourceName);
   }

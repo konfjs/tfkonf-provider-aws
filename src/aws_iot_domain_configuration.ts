@@ -21,7 +21,7 @@ export interface AwsIotDomainConfigurationArgs {
 }
 
 export class aws_iot_domain_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIotDomainConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIotDomainConfigurationArgs) {
     const meta = {authorizer_config:{isBlock:true},tls_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_iot_domain_configuration", resourceName);
   }

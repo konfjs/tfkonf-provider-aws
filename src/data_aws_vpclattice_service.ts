@@ -4,7 +4,7 @@ export interface DataAwsVpclatticeServiceArgs {
 }
 
 export class data_aws_vpclattice_service extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsVpclatticeServiceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsVpclatticeServiceArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_vpclattice_service", resourceName);
   }

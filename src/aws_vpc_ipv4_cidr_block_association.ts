@@ -13,7 +13,7 @@ export interface AwsVpcIpv4CidrBlockAssociationArgs {
 }
 
 export class aws_vpc_ipv4_cidr_block_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpcIpv4CidrBlockAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpcIpv4CidrBlockAssociationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_vpc_ipv4_cidr_block_association", resourceName);
   }

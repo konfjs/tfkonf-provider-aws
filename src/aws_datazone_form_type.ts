@@ -18,7 +18,7 @@ export interface AwsDatazoneFormTypeArgs {
 }
 
 export class aws_datazone_form_type extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDatazoneFormTypeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDatazoneFormTypeArgs) {
     const meta = {model:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_datazone_form_type", resourceName);
   }

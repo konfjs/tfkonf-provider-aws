@@ -45,7 +45,7 @@ export interface AwsFsxWindowsFileSystemArgs {
 }
 
 export class aws_fsx_windows_file_system extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsFsxWindowsFileSystemArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsFsxWindowsFileSystemArgs) {
     const meta = {audit_log_configuration:{isBlock:true},disk_iops_configuration:{isBlock:true},self_managed_active_directory:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_fsx_windows_file_system", resourceName);
   }

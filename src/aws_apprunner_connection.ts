@@ -7,7 +7,7 @@ export interface AwsApprunnerConnectionArgs {
 }
 
 export class aws_apprunner_connection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApprunnerConnectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApprunnerConnectionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_apprunner_connection", resourceName);
   }

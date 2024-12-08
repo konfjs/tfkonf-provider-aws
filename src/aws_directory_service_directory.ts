@@ -31,7 +31,7 @@ export interface AwsDirectoryServiceDirectoryArgs {
 }
 
 export class aws_directory_service_directory extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDirectoryServiceDirectoryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDirectoryServiceDirectoryArgs) {
     const meta = {connect_settings:{isBlock:true},timeouts:{isBlock:true},vpc_settings:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_directory_service_directory", resourceName);
   }

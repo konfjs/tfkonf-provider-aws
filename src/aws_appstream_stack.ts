@@ -35,7 +35,7 @@ export interface AwsAppstreamStackArgs {
 }
 
 export class aws_appstream_stack extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppstreamStackArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppstreamStackArgs) {
     const meta = {access_endpoints:{isBlock:true},application_settings:{isBlock:true},storage_connectors:{isBlock:true},streaming_experience_settings:{isBlock:true},user_settings:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_appstream_stack", resourceName);
   }

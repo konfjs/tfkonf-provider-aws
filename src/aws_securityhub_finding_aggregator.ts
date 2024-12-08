@@ -6,7 +6,7 @@ export interface AwsSecurityhubFindingAggregatorArgs {
 }
 
 export class aws_securityhub_finding_aggregator extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSecurityhubFindingAggregatorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSecurityhubFindingAggregatorArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_securityhub_finding_aggregator", resourceName);
   }

@@ -15,7 +15,7 @@ export interface AwsRdsReservedInstanceArgs {
 }
 
 export class aws_rds_reserved_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRdsReservedInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRdsReservedInstanceArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_rds_reserved_instance", resourceName);
   }

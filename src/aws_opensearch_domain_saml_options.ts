@@ -27,7 +27,7 @@ export interface AwsOpensearchDomainSamlOptionsArgs {
 }
 
 export class aws_opensearch_domain_saml_options extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsOpensearchDomainSamlOptionsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsOpensearchDomainSamlOptionsArgs) {
     const meta = {saml_options:{isBlock:true,idp:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_opensearch_domain_saml_options", resourceName);
   }

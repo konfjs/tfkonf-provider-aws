@@ -6,7 +6,7 @@ export interface AwsSsoadminApplicationAssignmentConfigurationArgs {
 }
 
 export class aws_ssoadmin_application_assignment_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSsoadminApplicationAssignmentConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSsoadminApplicationAssignmentConfigurationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ssoadmin_application_assignment_configuration", resourceName);
   }

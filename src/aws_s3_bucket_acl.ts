@@ -29,7 +29,7 @@ export interface AwsS3BucketAclArgs {
 }
 
 export class aws_s3_bucket_acl extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3BucketAclArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3BucketAclArgs) {
     const meta = {access_control_policy:{isBlock:true,grant:{isBlock:true,grantee:{isBlock:true}},owner:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_s3_bucket_acl", resourceName);
   }

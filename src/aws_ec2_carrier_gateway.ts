@@ -6,7 +6,7 @@ export interface AwsEc2CarrierGatewayArgs {
 }
 
 export class aws_ec2_carrier_gateway extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEc2CarrierGatewayArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEc2CarrierGatewayArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ec2_carrier_gateway", resourceName);
   }

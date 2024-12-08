@@ -13,7 +13,7 @@ export interface AwsFsxBackupArgs {
 }
 
 export class aws_fsx_backup extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsFsxBackupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsFsxBackupArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_fsx_backup", resourceName);
   }

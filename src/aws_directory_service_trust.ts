@@ -9,7 +9,7 @@ export interface AwsDirectoryServiceTrustArgs {
 }
 
 export class aws_directory_service_trust extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDirectoryServiceTrustArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDirectoryServiceTrustArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_directory_service_trust", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataAwsWafregionalWebAclArgs {
 }
 
 export class data_aws_wafregional_web_acl extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsWafregionalWebAclArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsWafregionalWebAclArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_wafregional_web_acl", resourceName);
   }

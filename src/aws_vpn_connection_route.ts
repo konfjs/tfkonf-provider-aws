@@ -6,7 +6,7 @@ export interface AwsVpnConnectionRouteArgs {
 }
 
 export class aws_vpn_connection_route extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpnConnectionRouteArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpnConnectionRouteArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_vpn_connection_route", resourceName);
   }

@@ -9,7 +9,7 @@ export interface DataAwsAlbListenerArgs {
 }
 
 export class data_aws_alb_listener extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsAlbListenerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsAlbListenerArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_alb_listener", resourceName);
   }

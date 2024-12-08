@@ -60,7 +60,7 @@ export interface AwsElastictranscoderPresetArgs {
 }
 
 export class aws_elastictranscoder_preset extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsElastictranscoderPresetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsElastictranscoderPresetArgs) {
     const meta = {audio:{isBlock:true},audio_codec_options:{isBlock:true},thumbnails:{isBlock:true},video:{isBlock:true},video_watermarks:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_elastictranscoder_preset", resourceName);
   }

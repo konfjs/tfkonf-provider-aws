@@ -6,7 +6,7 @@ export interface AwsIamGroupPolicyArgs {
 }
 
 export class aws_iam_group_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIamGroupPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIamGroupPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_iam_group_policy", resourceName);
   }

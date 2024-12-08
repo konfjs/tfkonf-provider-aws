@@ -16,7 +16,7 @@ export interface AwsDatasyncLocationEfsArgs {
 }
 
 export class aws_datasync_location_efs extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDatasyncLocationEfsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDatasyncLocationEfsArgs) {
     const meta = {ec2_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_datasync_location_efs", resourceName);
   }

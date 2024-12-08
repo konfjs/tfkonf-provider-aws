@@ -85,7 +85,7 @@ export interface AwsCloudwatchEventConnectionArgs {
 }
 
 export class aws_cloudwatch_event_connection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudwatchEventConnectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudwatchEventConnectionArgs) {
     const meta = {auth_parameters:{isBlock:true,api_key:{isBlock:true},basic:{isBlock:true},invocation_http_parameters:{isBlock:true,body:{isBlock:true},header:{isBlock:true},query_string:{isBlock:true}},oauth:{isBlock:true,client_parameters:{isBlock:true},oauth_http_parameters:{isBlock:true,body:{isBlock:true},header:{isBlock:true},query_string:{isBlock:true}}}}};
     super(terraformConfig, "resource", args, meta, "aws_cloudwatch_event_connection", resourceName);
   }

@@ -10,7 +10,7 @@ export interface AwsEc2ImageBlockPublicAccessArgs {
 }
 
 export class aws_ec2_image_block_public_access extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEc2ImageBlockPublicAccessArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEc2ImageBlockPublicAccessArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ec2_image_block_public_access", resourceName);
   }

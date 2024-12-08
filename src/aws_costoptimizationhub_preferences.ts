@@ -4,7 +4,7 @@ export interface AwsCostoptimizationhubPreferencesArgs {
 }
 
 export class aws_costoptimizationhub_preferences extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCostoptimizationhubPreferencesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCostoptimizationhubPreferencesArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_costoptimizationhub_preferences", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataAwsWafRateBasedRuleArgs {
 }
 
 export class data_aws_waf_rate_based_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsWafRateBasedRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsWafRateBasedRuleArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_waf_rate_based_rule", resourceName);
   }

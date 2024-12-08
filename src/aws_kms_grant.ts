@@ -17,7 +17,7 @@ export interface AwsKmsGrantArgs {
 }
 
 export class aws_kms_grant extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsKmsGrantArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsKmsGrantArgs) {
     const meta = {constraints:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_kms_grant", resourceName);
   }

@@ -41,7 +41,7 @@ export interface AwsOpsworksApplicationArgs {
 }
 
 export class aws_opsworks_application extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsOpsworksApplicationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsOpsworksApplicationArgs) {
     const meta = {app_source:{isBlock:true},environment:{isBlock:true},ssl_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_opsworks_application", resourceName);
   }

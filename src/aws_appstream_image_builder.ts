@@ -22,7 +22,7 @@ export interface AwsAppstreamImageBuilderArgs {
 }
 
 export class aws_appstream_image_builder extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppstreamImageBuilderArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppstreamImageBuilderArgs) {
     const meta = {access_endpoint:{isBlock:true},domain_join_info:{isBlock:true},vpc_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_appstream_image_builder", resourceName);
   }

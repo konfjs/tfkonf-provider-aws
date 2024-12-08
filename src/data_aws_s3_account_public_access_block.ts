@@ -5,7 +5,7 @@ export interface DataAwsS3AccountPublicAccessBlockArgs {
 }
 
 export class data_aws_s3_account_public_access_block extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsS3AccountPublicAccessBlockArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsS3AccountPublicAccessBlockArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_s3_account_public_access_block", resourceName);
   }

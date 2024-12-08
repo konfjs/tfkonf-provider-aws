@@ -5,7 +5,7 @@ export interface DataAwsConnectSecurityProfileArgs {
 }
 
 export class data_aws_connect_security_profile extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsConnectSecurityProfileArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsConnectSecurityProfileArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_connect_security_profile", resourceName);
   }

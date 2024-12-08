@@ -8,7 +8,7 @@ export interface AwsMskConfigurationArgs {
 }
 
 export class aws_msk_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMskConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMskConfigurationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_msk_configuration", resourceName);
   }

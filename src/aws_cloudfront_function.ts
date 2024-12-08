@@ -10,7 +10,7 @@ export interface AwsCloudfrontFunctionArgs {
 }
 
 export class aws_cloudfront_function extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudfrontFunctionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudfrontFunctionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_cloudfront_function", resourceName);
   }

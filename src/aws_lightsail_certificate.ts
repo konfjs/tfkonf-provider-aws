@@ -6,7 +6,7 @@ export interface AwsLightsailCertificateArgs {
 }
 
 export class aws_lightsail_certificate extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLightsailCertificateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLightsailCertificateArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_lightsail_certificate", resourceName);
   }

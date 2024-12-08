@@ -14,7 +14,7 @@ export interface AwsWafregionalRuleArgs {
 }
 
 export class aws_wafregional_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsWafregionalRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsWafregionalRuleArgs) {
     const meta = {predicate:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_wafregional_rule", resourceName);
   }

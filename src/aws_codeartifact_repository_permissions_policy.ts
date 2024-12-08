@@ -7,7 +7,7 @@ export interface AwsCodeartifactRepositoryPermissionsPolicyArgs {
 }
 
 export class aws_codeartifact_repository_permissions_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCodeartifactRepositoryPermissionsPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCodeartifactRepositoryPermissionsPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_codeartifact_repository_permissions_policy", resourceName);
   }

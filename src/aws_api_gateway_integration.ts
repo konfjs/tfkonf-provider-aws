@@ -23,7 +23,7 @@ export interface AwsApiGatewayIntegrationArgs {
 }
 
 export class aws_api_gateway_integration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApiGatewayIntegrationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApiGatewayIntegrationArgs) {
     const meta = {tls_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_api_gateway_integration", resourceName);
   }

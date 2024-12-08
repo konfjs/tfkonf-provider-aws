@@ -7,7 +7,7 @@ export interface AwsPlacementGroupArgs {
 }
 
 export class aws_placement_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsPlacementGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsPlacementGroupArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_placement_group", resourceName);
   }

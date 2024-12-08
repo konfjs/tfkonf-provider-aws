@@ -13,7 +13,7 @@ export interface AwsApiGatewayMethodSettingsArgs {
 }
 
 export class aws_api_gateway_method_settings extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApiGatewayMethodSettingsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApiGatewayMethodSettingsArgs) {
     const meta = {settings:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_api_gateway_method_settings", resourceName);
   }

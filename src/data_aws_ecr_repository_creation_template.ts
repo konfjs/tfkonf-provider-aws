@@ -5,7 +5,7 @@ export interface DataAwsEcrRepositoryCreationTemplateArgs {
 }
 
 export class data_aws_ecr_repository_creation_template extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEcrRepositoryCreationTemplateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEcrRepositoryCreationTemplateArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_ecr_repository_creation_template", resourceName);
   }

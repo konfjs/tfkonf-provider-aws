@@ -12,7 +12,7 @@ export interface AwsRoute53recoveryreadinessCellArgs {
 }
 
 export class aws_route53recoveryreadiness_cell extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRoute53recoveryreadinessCellArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRoute53recoveryreadinessCellArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_route53recoveryreadiness_cell", resourceName);
   }

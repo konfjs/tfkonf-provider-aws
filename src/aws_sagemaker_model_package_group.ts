@@ -7,7 +7,7 @@ export interface AwsSagemakerModelPackageGroupArgs {
 }
 
 export class aws_sagemaker_model_package_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSagemakerModelPackageGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSagemakerModelPackageGroupArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_sagemaker_model_package_group", resourceName);
   }

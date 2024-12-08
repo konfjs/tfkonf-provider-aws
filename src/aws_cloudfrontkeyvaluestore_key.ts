@@ -7,7 +7,7 @@ export interface AwsCloudfrontkeyvaluestoreKeyArgs {
 }
 
 export class aws_cloudfrontkeyvaluestore_key extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudfrontkeyvaluestoreKeyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudfrontkeyvaluestoreKeyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_cloudfrontkeyvaluestore_key", resourceName);
   }

@@ -6,7 +6,7 @@ export interface AwsVpcDhcpOptionsAssociationArgs {
 }
 
 export class aws_vpc_dhcp_options_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpcDhcpOptionsAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpcDhcpOptionsAssociationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_vpc_dhcp_options_association", resourceName);
   }

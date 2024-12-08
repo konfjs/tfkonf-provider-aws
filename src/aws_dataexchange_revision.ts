@@ -7,7 +7,7 @@ export interface AwsDataexchangeRevisionArgs {
 }
 
 export class aws_dataexchange_revision extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDataexchangeRevisionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDataexchangeRevisionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_dataexchange_revision", resourceName);
   }

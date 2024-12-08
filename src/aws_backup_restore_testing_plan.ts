@@ -14,7 +14,7 @@ export interface AwsBackupRestoreTestingPlanArgs {
 }
 
 export class aws_backup_restore_testing_plan extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBackupRestoreTestingPlanArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBackupRestoreTestingPlanArgs) {
     const meta = {recovery_point_selection:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_backup_restore_testing_plan", resourceName);
   }

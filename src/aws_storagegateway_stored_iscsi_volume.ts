@@ -13,7 +13,7 @@ export interface AwsStoragegatewayStoredIscsiVolumeArgs {
 }
 
 export class aws_storagegateway_stored_iscsi_volume extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsStoragegatewayStoredIscsiVolumeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsStoragegatewayStoredIscsiVolumeArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_storagegateway_stored_iscsi_volume", resourceName);
   }

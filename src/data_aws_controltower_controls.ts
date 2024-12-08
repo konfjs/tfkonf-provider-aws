@@ -5,7 +5,7 @@ export interface DataAwsControltowerControlsArgs {
 }
 
 export class data_aws_controltower_controls extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsControltowerControlsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsControltowerControlsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_controltower_controls", resourceName);
   }

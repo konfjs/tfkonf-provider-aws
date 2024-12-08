@@ -5,7 +5,7 @@ export interface DataAwsRedshiftserverlessWorkgroupArgs {
 }
 
 export class data_aws_redshiftserverless_workgroup extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsRedshiftserverlessWorkgroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsRedshiftserverlessWorkgroupArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_redshiftserverless_workgroup", resourceName);
   }

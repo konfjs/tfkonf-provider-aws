@@ -98,7 +98,7 @@ export interface AwsCodepipelineArgs {
 }
 
 export class aws_codepipeline extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCodepipelineArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCodepipelineArgs) {
     const meta = {artifact_store:{isBlock:true,encryption_key:{isBlock:true}},stage:{isBlock:true,action:{isBlock:true}},trigger:{isBlock:true,git_configuration:{isBlock:true,pull_request:{isBlock:true,branches:{isBlock:true},file_paths:{isBlock:true}},push:{isBlock:true,branches:{isBlock:true},file_paths:{isBlock:true},tags:{isBlock:true}}}},variable:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_codepipeline", resourceName);
   }

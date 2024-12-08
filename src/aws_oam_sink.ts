@@ -13,7 +13,7 @@ export interface AwsOamSinkArgs {
 }
 
 export class aws_oam_sink extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsOamSinkArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsOamSinkArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_oam_sink", resourceName);
   }

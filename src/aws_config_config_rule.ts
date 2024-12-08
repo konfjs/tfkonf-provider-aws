@@ -41,7 +41,7 @@ export interface AwsConfigConfigRuleArgs {
 }
 
 export class aws_config_config_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsConfigConfigRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsConfigConfigRuleArgs) {
     const meta = {evaluation_mode:{isBlock:true},scope:{isBlock:true},source:{isBlock:true,custom_policy_details:{isBlock:true},source_detail:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_config_config_rule", resourceName);
   }

@@ -7,7 +7,7 @@ export interface AwsIamUserLoginProfileArgs {
 }
 
 export class aws_iam_user_login_profile extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIamUserLoginProfileArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIamUserLoginProfileArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_iam_user_login_profile", resourceName);
   }

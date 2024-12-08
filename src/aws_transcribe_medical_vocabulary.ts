@@ -15,7 +15,7 @@ export interface AwsTranscribeMedicalVocabularyArgs {
 }
 
 export class aws_transcribe_medical_vocabulary extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsTranscribeMedicalVocabularyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsTranscribeMedicalVocabularyArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_transcribe_medical_vocabulary", resourceName);
   }

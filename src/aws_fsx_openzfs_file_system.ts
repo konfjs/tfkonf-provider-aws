@@ -55,7 +55,7 @@ export interface AwsFsxOpenzfsFileSystemArgs {
 }
 
 export class aws_fsx_openzfs_file_system extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsFsxOpenzfsFileSystemArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsFsxOpenzfsFileSystemArgs) {
     const meta = {disk_iops_configuration:{isBlock:true},root_volume_configuration:{isBlock:true,nfs_exports:{isBlock:true,client_configurations:{isBlock:true}},user_and_group_quotas:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_fsx_openzfs_file_system", resourceName);
   }

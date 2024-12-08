@@ -19,7 +19,7 @@ export interface AwsRedshiftEventSubscriptionArgs {
 }
 
 export class aws_redshift_event_subscription extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRedshiftEventSubscriptionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRedshiftEventSubscriptionArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_redshift_event_subscription", resourceName);
   }

@@ -13,7 +13,7 @@ export interface AwsMemorydbUserArgs {
 }
 
 export class aws_memorydb_user extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMemorydbUserArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMemorydbUserArgs) {
     const meta = {authentication_mode:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_memorydb_user", resourceName);
   }

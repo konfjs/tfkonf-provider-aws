@@ -10,7 +10,7 @@ export interface AwsPinpointEmailChannelArgs {
 }
 
 export class aws_pinpoint_email_channel extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsPinpointEmailChannelArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsPinpointEmailChannelArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_pinpoint_email_channel", resourceName);
   }

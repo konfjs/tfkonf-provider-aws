@@ -21,7 +21,7 @@ export interface AwsDatazoneAssetTypeArgs {
 }
 
 export class aws_datazone_asset_type extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDatazoneAssetTypeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDatazoneAssetTypeArgs) {
     const meta = {forms_input:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_datazone_asset_type", resourceName);
   }

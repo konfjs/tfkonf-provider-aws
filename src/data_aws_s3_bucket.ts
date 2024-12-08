@@ -5,7 +5,7 @@ export interface DataAwsS3BucketArgs {
 }
 
 export class data_aws_s3_bucket extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsS3BucketArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsS3BucketArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_s3_bucket", resourceName);
   }

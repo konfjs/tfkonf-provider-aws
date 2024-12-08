@@ -6,7 +6,7 @@ export interface AwsSpotDatafeedSubscriptionArgs {
 }
 
 export class aws_spot_datafeed_subscription extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSpotDatafeedSubscriptionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSpotDatafeedSubscriptionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_spot_datafeed_subscription", resourceName);
   }

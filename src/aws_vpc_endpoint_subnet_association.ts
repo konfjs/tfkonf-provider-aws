@@ -12,7 +12,7 @@ export interface AwsVpcEndpointSubnetAssociationArgs {
 }
 
 export class aws_vpc_endpoint_subnet_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpcEndpointSubnetAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpcEndpointSubnetAssociationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_vpc_endpoint_subnet_association", resourceName);
   }

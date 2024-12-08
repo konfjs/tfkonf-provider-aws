@@ -16,7 +16,7 @@ export interface AwsDevicefarmDevicePoolArgs {
 }
 
 export class aws_devicefarm_device_pool extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDevicefarmDevicePoolArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDevicefarmDevicePoolArgs) {
     const meta = {rule:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_devicefarm_device_pool", resourceName);
   }

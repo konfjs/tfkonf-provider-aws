@@ -15,7 +15,7 @@ export interface AwsConnectVocabularyArgs {
 }
 
 export class aws_connect_vocabulary extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsConnectVocabularyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsConnectVocabularyArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_connect_vocabulary", resourceName);
   }

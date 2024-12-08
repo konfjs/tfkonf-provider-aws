@@ -125,7 +125,7 @@ export interface AwsSagemakerEndpointConfigurationArgs {
 }
 
 export class aws_sagemaker_endpoint_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSagemakerEndpointConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSagemakerEndpointConfigurationArgs) {
     const meta = {async_inference_config:{isBlock:true,client_config:{isBlock:true},output_config:{isBlock:true,notification_config:{isBlock:true}}},data_capture_config:{isBlock:true,capture_content_type_header:{isBlock:true},capture_options:{isBlock:true}},production_variants:{isBlock:true,core_dump_config:{isBlock:true},managed_instance_scaling:{isBlock:true},routing_config:{isBlock:true},serverless_config:{isBlock:true}},shadow_production_variants:{isBlock:true,core_dump_config:{isBlock:true},managed_instance_scaling:{isBlock:true},routing_config:{isBlock:true},serverless_config:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_sagemaker_endpoint_configuration", resourceName);
   }

@@ -15,7 +15,7 @@ export interface DataAwsEc2InstanceTypesArgs {
 }
 
 export class data_aws_ec2_instance_types extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEc2InstanceTypesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEc2InstanceTypesArgs) {
     const meta = {filter:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_ec2_instance_types", resourceName);
   }

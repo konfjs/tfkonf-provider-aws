@@ -31,7 +31,7 @@ export interface AwsFsxOntapStorageVirtualMachineArgs {
 }
 
 export class aws_fsx_ontap_storage_virtual_machine extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsFsxOntapStorageVirtualMachineArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsFsxOntapStorageVirtualMachineArgs) {
     const meta = {active_directory_configuration:{isBlock:true,self_managed_active_directory_configuration:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_fsx_ontap_storage_virtual_machine", resourceName);
   }

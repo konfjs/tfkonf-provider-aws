@@ -22,7 +22,7 @@ export interface AwsKendraThesaurusArgs {
 }
 
 export class aws_kendra_thesaurus extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsKendraThesaurusArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsKendraThesaurusArgs) {
     const meta = {source_s3_path:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_kendra_thesaurus", resourceName);
   }

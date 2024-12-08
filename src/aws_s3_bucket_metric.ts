@@ -13,7 +13,7 @@ export interface AwsS3BucketMetricArgs {
 }
 
 export class aws_s3_bucket_metric extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3BucketMetricArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3BucketMetricArgs) {
     const meta = {filter:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_s3_bucket_metric", resourceName);
   }

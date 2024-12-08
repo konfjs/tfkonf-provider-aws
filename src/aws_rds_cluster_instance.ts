@@ -20,7 +20,7 @@ export interface AwsRdsClusterInstanceArgs {
 }
 
 export class aws_rds_cluster_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRdsClusterInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRdsClusterInstanceArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_rds_cluster_instance", resourceName);
   }

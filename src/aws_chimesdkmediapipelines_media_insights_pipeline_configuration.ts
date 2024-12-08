@@ -117,7 +117,7 @@ export interface AwsChimesdkmediapipelinesMediaInsightsPipelineConfigurationArgs
 }
 
 export class aws_chimesdkmediapipelines_media_insights_pipeline_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsChimesdkmediapipelinesMediaInsightsPipelineConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsChimesdkmediapipelinesMediaInsightsPipelineConfigurationArgs) {
     const meta = {elements:{isBlock:true,amazon_transcribe_call_analytics_processor_configuration:{isBlock:true,post_call_analytics_settings:{isBlock:true}},amazon_transcribe_processor_configuration:{isBlock:true},kinesis_data_stream_sink_configuration:{isBlock:true},lambda_function_sink_configuration:{isBlock:true},s3_recording_sink_configuration:{isBlock:true},sns_topic_sink_configuration:{isBlock:true},sqs_queue_sink_configuration:{isBlock:true},voice_analytics_processor_configuration:{isBlock:true}},real_time_alert_configuration:{isBlock:true,rules:{isBlock:true,issue_detection_configuration:{isBlock:true},keyword_match_configuration:{isBlock:true},sentiment_configuration:{isBlock:true}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_chimesdkmediapipelines_media_insights_pipeline_configuration", resourceName);
   }

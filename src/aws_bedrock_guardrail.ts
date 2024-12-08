@@ -79,7 +79,7 @@ export interface AwsBedrockGuardrailArgs {
 }
 
 export class aws_bedrock_guardrail extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBedrockGuardrailArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBedrockGuardrailArgs) {
     const meta = {content_policy_config:{isBlock:true,filters_config:{isBlock:true}},contextual_grounding_policy_config:{isBlock:true,filters_config:{isBlock:true}},sensitive_information_policy_config:{isBlock:true,pii_entities_config:{isBlock:true},regexes_config:{isBlock:true}},timeouts:{isBlock:true},topic_policy_config:{isBlock:true,topics_config:{isBlock:true}},word_policy_config:{isBlock:true,managed_word_lists_config:{isBlock:true},words_config:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_bedrock_guardrail", resourceName);
   }

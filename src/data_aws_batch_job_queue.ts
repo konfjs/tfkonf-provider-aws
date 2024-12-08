@@ -5,7 +5,7 @@ export interface DataAwsBatchJobQueueArgs {
 }
 
 export class data_aws_batch_job_queue extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsBatchJobQueueArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsBatchJobQueueArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_batch_job_queue", resourceName);
   }

@@ -6,7 +6,7 @@ export interface DataAwsNetworkfirewallFirewallPolicyArgs {
 }
 
 export class data_aws_networkfirewall_firewall_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsNetworkfirewallFirewallPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsNetworkfirewallFirewallPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_networkfirewall_firewall_policy", resourceName);
   }

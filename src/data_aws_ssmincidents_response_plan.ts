@@ -5,7 +5,7 @@ export interface DataAwsSsmincidentsResponsePlanArgs {
 }
 
 export class data_aws_ssmincidents_response_plan extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSsmincidentsResponsePlanArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSsmincidentsResponsePlanArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_ssmincidents_response_plan", resourceName);
   }

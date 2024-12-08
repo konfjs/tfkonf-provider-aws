@@ -21,7 +21,7 @@ export interface AwsNetworkmanagerVpcAttachmentArgs {
 }
 
 export class aws_networkmanager_vpc_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNetworkmanagerVpcAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNetworkmanagerVpcAttachmentArgs) {
     const meta = {options:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_networkmanager_vpc_attachment", resourceName);
   }

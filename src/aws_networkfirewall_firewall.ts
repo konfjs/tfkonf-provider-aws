@@ -30,7 +30,7 @@ export interface AwsNetworkfirewallFirewallArgs {
 }
 
 export class aws_networkfirewall_firewall extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNetworkfirewallFirewallArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNetworkfirewallFirewallArgs) {
     const meta = {encryption_configuration:{isBlock:true},subnet_mapping:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_networkfirewall_firewall", resourceName);
   }

@@ -14,7 +14,7 @@ export interface AwsNeptuneParameterGroupArgs {
 }
 
 export class aws_neptune_parameter_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNeptuneParameterGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNeptuneParameterGroupArgs) {
     const meta = {parameter:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_neptune_parameter_group", resourceName);
   }

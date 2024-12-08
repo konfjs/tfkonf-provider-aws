@@ -5,7 +5,7 @@ export interface DataAwsConnectQuickConnectArgs {
 }
 
 export class data_aws_connect_quick_connect extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsConnectQuickConnectArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsConnectQuickConnectArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_connect_quick_connect", resourceName);
   }

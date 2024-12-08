@@ -24,7 +24,7 @@ export interface AwsKinesisStreamArgs {
 }
 
 export class aws_kinesis_stream extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsKinesisStreamArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsKinesisStreamArgs) {
     const meta = {stream_mode_details:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_kinesis_stream", resourceName);
   }

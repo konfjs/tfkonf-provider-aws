@@ -5,7 +5,7 @@ export interface DataAwsCloudfrontOriginAccessControlArgs {
 }
 
 export class data_aws_cloudfront_origin_access_control extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCloudfrontOriginAccessControlArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCloudfrontOriginAccessControlArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_cloudfront_origin_access_control", resourceName);
   }

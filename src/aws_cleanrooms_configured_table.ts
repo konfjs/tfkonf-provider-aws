@@ -22,7 +22,7 @@ export interface AwsCleanroomsConfiguredTableArgs {
 }
 
 export class aws_cleanrooms_configured_table extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCleanroomsConfiguredTableArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCleanroomsConfiguredTableArgs) {
     const meta = {table_reference:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_cleanrooms_configured_table", resourceName);
   }

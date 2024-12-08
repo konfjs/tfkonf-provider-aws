@@ -20,7 +20,7 @@ export interface AwsAmplifyDomainAssociationArgs {
 }
 
 export class aws_amplify_domain_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAmplifyDomainAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAmplifyDomainAssociationArgs) {
     const meta = {certificate_settings:{isBlock:true},sub_domain:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_amplify_domain_association", resourceName);
   }

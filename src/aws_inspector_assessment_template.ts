@@ -15,7 +15,7 @@ export interface AwsInspectorAssessmentTemplateArgs {
 }
 
 export class aws_inspector_assessment_template extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsInspectorAssessmentTemplateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsInspectorAssessmentTemplateArgs) {
     const meta = {event_subscription:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_inspector_assessment_template", resourceName);
   }

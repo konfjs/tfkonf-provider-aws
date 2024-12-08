@@ -24,7 +24,7 @@ export interface AwsApiGatewayDomainNameArgs {
 }
 
 export class aws_api_gateway_domain_name extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApiGatewayDomainNameArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApiGatewayDomainNameArgs) {
     const meta = {endpoint_configuration:{isBlock:true},mutual_tls_authentication:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_api_gateway_domain_name", resourceName);
   }

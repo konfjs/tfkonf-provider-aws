@@ -7,7 +7,7 @@ export interface AwsAuditmanagerAssessmentReportArgs {
 }
 
 export class aws_auditmanager_assessment_report extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAuditmanagerAssessmentReportArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAuditmanagerAssessmentReportArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_auditmanager_assessment_report", resourceName);
   }

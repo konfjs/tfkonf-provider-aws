@@ -7,7 +7,7 @@ export interface AwsCloud9EnvironmentMembershipArgs {
 }
 
 export class aws_cloud9_environment_membership extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloud9EnvironmentMembershipArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloud9EnvironmentMembershipArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_cloud9_environment_membership", resourceName);
   }

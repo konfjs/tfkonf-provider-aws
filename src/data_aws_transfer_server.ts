@@ -5,7 +5,7 @@ export interface DataAwsTransferServerArgs {
 }
 
 export class data_aws_transfer_server extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsTransferServerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsTransferServerArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_transfer_server", resourceName);
   }

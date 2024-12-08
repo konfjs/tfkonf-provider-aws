@@ -28,7 +28,7 @@ export interface AwsVerifiedaccessInstanceLoggingConfigurationArgs {
 }
 
 export class aws_verifiedaccess_instance_logging_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVerifiedaccessInstanceLoggingConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVerifiedaccessInstanceLoggingConfigurationArgs) {
     const meta = {access_logs:{isBlock:true,cloudwatch_logs:{isBlock:true},kinesis_data_firehose:{isBlock:true},s3:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_verifiedaccess_instance_logging_configuration", resourceName);
   }

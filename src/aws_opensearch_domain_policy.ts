@@ -12,7 +12,7 @@ export interface AwsOpensearchDomainPolicyArgs {
 }
 
 export class aws_opensearch_domain_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsOpensearchDomainPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsOpensearchDomainPolicyArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_opensearch_domain_policy", resourceName);
   }

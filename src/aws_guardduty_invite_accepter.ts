@@ -11,7 +11,7 @@ export interface AwsGuarddutyInviteAccepterArgs {
 }
 
 export class aws_guardduty_invite_accepter extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGuarddutyInviteAccepterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGuarddutyInviteAccepterArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_guardduty_invite_accepter", resourceName);
   }

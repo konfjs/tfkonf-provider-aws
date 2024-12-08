@@ -60,7 +60,7 @@ export interface AwsRoute53RecordArgs {
 }
 
 export class aws_route53_record extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRoute53RecordArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRoute53RecordArgs) {
     const meta = {alias:{isBlock:true},cidr_routing_policy:{isBlock:true},failover_routing_policy:{isBlock:true},geolocation_routing_policy:{isBlock:true},geoproximity_routing_policy:{isBlock:true,coordinates:{isBlock:true}},latency_routing_policy:{isBlock:true},weighted_routing_policy:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_route53_record", resourceName);
   }

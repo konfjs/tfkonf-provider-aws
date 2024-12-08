@@ -11,7 +11,7 @@ export interface AwsComputeoptimizerEnrollmentStatusArgs {
 }
 
 export class aws_computeoptimizer_enrollment_status extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsComputeoptimizerEnrollmentStatusArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsComputeoptimizerEnrollmentStatusArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_computeoptimizer_enrollment_status", resourceName);
   }

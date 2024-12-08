@@ -47,7 +47,7 @@ export interface AwsCodegurureviewerRepositoryAssociationArgs {
 }
 
 export class aws_codegurureviewer_repository_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCodegurureviewerRepositoryAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCodegurureviewerRepositoryAssociationArgs) {
     const meta = {kms_key_details:{isBlock:true},repository:{isBlock:true,bitbucket:{isBlock:true},codecommit:{isBlock:true},github_enterprise_server:{isBlock:true},s3_bucket:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_codegurureviewer_repository_association", resourceName);
   }

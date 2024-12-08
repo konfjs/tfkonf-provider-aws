@@ -13,7 +13,7 @@ export interface AwsInspector2EnablerArgs {
 }
 
 export class aws_inspector2_enabler extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsInspector2EnablerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsInspector2EnablerArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_inspector2_enabler", resourceName);
   }

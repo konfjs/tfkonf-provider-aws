@@ -143,7 +143,7 @@ export interface AwsCognitoUserPoolArgs {
 }
 
 export class aws_cognito_user_pool extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCognitoUserPoolArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCognitoUserPoolArgs) {
     const meta = {account_recovery_setting:{isBlock:true,recovery_mechanism:{isBlock:true}},admin_create_user_config:{isBlock:true,invite_message_template:{isBlock:true}},device_configuration:{isBlock:true},email_configuration:{isBlock:true},lambda_config:{isBlock:true,custom_email_sender:{isBlock:true},custom_sms_sender:{isBlock:true},pre_token_generation_config:{isBlock:true}},password_policy:{isBlock:true},schema:{isBlock:true,number_attribute_constraints:{isBlock:true},string_attribute_constraints:{isBlock:true}},sms_configuration:{isBlock:true},software_token_mfa_configuration:{isBlock:true},user_attribute_update_settings:{isBlock:true},user_pool_add_ons:{isBlock:true},username_configuration:{isBlock:true},verification_message_template:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_cognito_user_pool", resourceName);
   }

@@ -36,7 +36,7 @@ export interface AwsCloudfrontOriginRequestPolicyArgs {
 }
 
 export class aws_cloudfront_origin_request_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudfrontOriginRequestPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudfrontOriginRequestPolicyArgs) {
     const meta = {cookies_config:{isBlock:true,cookies:{isBlock:true}},headers_config:{isBlock:true,headers:{isBlock:true}},query_strings_config:{isBlock:true,query_strings:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_cloudfront_origin_request_policy", resourceName);
   }

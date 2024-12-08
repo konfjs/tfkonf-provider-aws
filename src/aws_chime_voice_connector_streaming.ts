@@ -14,7 +14,7 @@ export interface AwsChimeVoiceConnectorStreamingArgs {
 }
 
 export class aws_chime_voice_connector_streaming extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsChimeVoiceConnectorStreamingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsChimeVoiceConnectorStreamingArgs) {
     const meta = {media_insights_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_chime_voice_connector_streaming", resourceName);
   }

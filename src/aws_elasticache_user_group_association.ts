@@ -12,7 +12,7 @@ export interface AwsElasticacheUserGroupAssociationArgs {
 }
 
 export class aws_elasticache_user_group_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsElasticacheUserGroupAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsElasticacheUserGroupAssociationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_elasticache_user_group_association", resourceName);
   }

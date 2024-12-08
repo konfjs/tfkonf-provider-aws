@@ -77,7 +77,7 @@ export interface AwsAppsyncGraphqlApiArgs {
 }
 
 export class aws_appsync_graphql_api extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppsyncGraphqlApiArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppsyncGraphqlApiArgs) {
     const meta = {additional_authentication_provider:{isBlock:true,lambda_authorizer_config:{isBlock:true},openid_connect_config:{isBlock:true},user_pool_config:{isBlock:true}},enhanced_metrics_config:{isBlock:true},lambda_authorizer_config:{isBlock:true},log_config:{isBlock:true},openid_connect_config:{isBlock:true},user_pool_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_appsync_graphql_api", resourceName);
   }

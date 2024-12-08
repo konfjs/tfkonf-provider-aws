@@ -11,7 +11,7 @@ export interface DataAwsPollyVoicesArgs {
 }
 
 export class data_aws_polly_voices extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsPollyVoicesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsPollyVoicesArgs) {
     const meta = {voices:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_polly_voices", resourceName);
   }

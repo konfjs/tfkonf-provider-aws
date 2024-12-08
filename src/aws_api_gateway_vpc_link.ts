@@ -8,7 +8,7 @@ export interface AwsApiGatewayVpcLinkArgs {
 }
 
 export class aws_api_gateway_vpc_link extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApiGatewayVpcLinkArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApiGatewayVpcLinkArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_api_gateway_vpc_link", resourceName);
   }

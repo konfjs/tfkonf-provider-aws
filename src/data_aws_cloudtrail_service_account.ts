@@ -5,7 +5,7 @@ export interface DataAwsCloudtrailServiceAccountArgs {
 }
 
 export class data_aws_cloudtrail_service_account extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCloudtrailServiceAccountArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCloudtrailServiceAccountArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_cloudtrail_service_account", resourceName);
   }

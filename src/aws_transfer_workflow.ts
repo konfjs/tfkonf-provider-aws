@@ -162,7 +162,7 @@ export interface AwsTransferWorkflowArgs {
 }
 
 export class aws_transfer_workflow extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsTransferWorkflowArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsTransferWorkflowArgs) {
     const meta = {on_exception_steps:{isBlock:true,copy_step_details:{isBlock:true,destination_file_location:{isBlock:true,efs_file_location:{isBlock:true},s3_file_location:{isBlock:true}}},custom_step_details:{isBlock:true},decrypt_step_details:{isBlock:true,destination_file_location:{isBlock:true,efs_file_location:{isBlock:true},s3_file_location:{isBlock:true}}},delete_step_details:{isBlock:true},tag_step_details:{isBlock:true,tags:{isBlock:true}}},steps:{isBlock:true,copy_step_details:{isBlock:true,destination_file_location:{isBlock:true,efs_file_location:{isBlock:true},s3_file_location:{isBlock:true}}},custom_step_details:{isBlock:true},decrypt_step_details:{isBlock:true,destination_file_location:{isBlock:true,efs_file_location:{isBlock:true},s3_file_location:{isBlock:true}}},delete_step_details:{isBlock:true},tag_step_details:{isBlock:true,tags:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "aws_transfer_workflow", resourceName);
   }

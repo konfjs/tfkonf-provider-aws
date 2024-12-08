@@ -90,7 +90,7 @@ export interface DataAwsNetworkmanagerCoreNetworkPolicyDocumentArgs {
 }
 
 export class data_aws_networkmanager_core_network_policy_document extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsNetworkmanagerCoreNetworkPolicyDocumentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsNetworkmanagerCoreNetworkPolicyDocumentArgs) {
     const meta = {attachment_policies:{isBlock:true,action:{isBlock:true},conditions:{isBlock:true}},core_network_configuration:{isBlock:true,edge_locations:{isBlock:true}},network_function_groups:{isBlock:true},segment_actions:{isBlock:true,via:{isBlock:true,with_edge_override:{isBlock:true}},when_sent_to:{isBlock:true}},segments:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_networkmanager_core_network_policy_document", resourceName);
   }

@@ -17,7 +17,7 @@ export interface AwsServicecatalogConstraintArgs {
 }
 
 export class aws_servicecatalog_constraint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsServicecatalogConstraintArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsServicecatalogConstraintArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_servicecatalog_constraint", resourceName);
   }

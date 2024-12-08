@@ -14,7 +14,7 @@ export interface AwsControltowerLandingZoneArgs {
 }
 
 export class aws_controltower_landing_zone extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsControltowerLandingZoneArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsControltowerLandingZoneArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_controltower_landing_zone", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataAwsImagebuilderImagePipelineArgs {
 }
 
 export class data_aws_imagebuilder_image_pipeline extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsImagebuilderImagePipelineArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsImagebuilderImagePipelineArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_imagebuilder_image_pipeline", resourceName);
   }

@@ -25,7 +25,7 @@ export interface DataAwsEcrLifecyclePolicyDocumentArgs {
 }
 
 export class data_aws_ecr_lifecycle_policy_document extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEcrLifecyclePolicyDocumentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEcrLifecyclePolicyDocumentArgs) {
     const meta = {rule:{isBlock:true,action:{isBlock:true},selection:{isBlock:true}}};
     super(terraformConfig, "data", args, meta, "aws_ecr_lifecycle_policy_document", resourceName);
   }

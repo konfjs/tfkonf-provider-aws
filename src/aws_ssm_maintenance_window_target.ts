@@ -15,7 +15,7 @@ export interface AwsSsmMaintenanceWindowTargetArgs {
 }
 
 export class aws_ssm_maintenance_window_target extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSsmMaintenanceWindowTargetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSsmMaintenanceWindowTargetArgs) {
     const meta = {targets:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ssm_maintenance_window_target", resourceName);
   }

@@ -5,7 +5,7 @@ export interface AwsIamAccountAliasArgs {
 }
 
 export class aws_iam_account_alias extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIamAccountAliasArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIamAccountAliasArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_iam_account_alias", resourceName);
   }

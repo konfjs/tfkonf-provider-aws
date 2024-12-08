@@ -10,7 +10,7 @@ export interface DataAwsVpcSecurityGroupRuleArgs {
 }
 
 export class data_aws_vpc_security_group_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsVpcSecurityGroupRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsVpcSecurityGroupRuleArgs) {
     const meta = {filter:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_vpc_security_group_rule", resourceName);
   }

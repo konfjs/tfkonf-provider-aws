@@ -45,7 +45,7 @@ export interface AwsConnectInstanceStorageConfigArgs {
 }
 
 export class aws_connect_instance_storage_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsConnectInstanceStorageConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsConnectInstanceStorageConfigArgs) {
     const meta = {storage_config:{isBlock:true,kinesis_firehose_config:{isBlock:true},kinesis_stream_config:{isBlock:true},kinesis_video_stream_config:{isBlock:true,encryption_config:{isBlock:true}},s3_config:{isBlock:true,encryption_config:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "aws_connect_instance_storage_config", resourceName);
   }

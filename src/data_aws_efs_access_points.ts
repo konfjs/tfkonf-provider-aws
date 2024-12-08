@@ -5,7 +5,7 @@ export interface DataAwsEfsAccessPointsArgs {
 }
 
 export class data_aws_efs_access_points extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEfsAccessPointsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEfsAccessPointsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_efs_access_points", resourceName);
   }

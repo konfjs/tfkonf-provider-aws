@@ -7,7 +7,7 @@ export interface AwsQuicksightIngestionArgs {
 }
 
 export class aws_quicksight_ingestion extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsQuicksightIngestionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsQuicksightIngestionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_quicksight_ingestion", resourceName);
   }

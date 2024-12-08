@@ -6,7 +6,7 @@ export interface AwsNetworkAclArgs {
 }
 
 export class aws_network_acl extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNetworkAclArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNetworkAclArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_network_acl", resourceName);
   }

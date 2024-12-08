@@ -5,7 +5,7 @@ export interface DataAwsRdsCertificateArgs {
 }
 
 export class data_aws_rds_certificate extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsRdsCertificateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsRdsCertificateArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_rds_certificate", resourceName);
   }

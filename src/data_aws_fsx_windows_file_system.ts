@@ -5,7 +5,7 @@ export interface DataAwsFsxWindowsFileSystemArgs {
 }
 
 export class data_aws_fsx_windows_file_system extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsFsxWindowsFileSystemArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsFsxWindowsFileSystemArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_fsx_windows_file_system", resourceName);
   }

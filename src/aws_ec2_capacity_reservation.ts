@@ -24,7 +24,7 @@ export interface AwsEc2CapacityReservationArgs {
 }
 
 export class aws_ec2_capacity_reservation extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEc2CapacityReservationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEc2CapacityReservationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ec2_capacity_reservation", resourceName);
   }

@@ -13,7 +13,7 @@ export interface AwsSesv2EmailIdentityArgs {
 }
 
 export class aws_sesv2_email_identity extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSesv2EmailIdentityArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSesv2EmailIdentityArgs) {
     const meta = {dkim_signing_attributes:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_sesv2_email_identity", resourceName);
   }

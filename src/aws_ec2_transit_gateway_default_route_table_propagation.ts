@@ -13,7 +13,7 @@ export interface AwsEc2TransitGatewayDefaultRouteTablePropagationArgs {
 }
 
 export class aws_ec2_transit_gateway_default_route_table_propagation extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEc2TransitGatewayDefaultRouteTablePropagationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEc2TransitGatewayDefaultRouteTablePropagationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ec2_transit_gateway_default_route_table_propagation", resourceName);
   }

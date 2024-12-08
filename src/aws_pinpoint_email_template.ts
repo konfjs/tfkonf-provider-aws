@@ -22,7 +22,7 @@ export interface AwsPinpointEmailTemplateArgs {
 }
 
 export class aws_pinpoint_email_template extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsPinpointEmailTemplateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsPinpointEmailTemplateArgs) {
     const meta = {email_template:{isBlock:true,header:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_pinpoint_email_template", resourceName);
   }

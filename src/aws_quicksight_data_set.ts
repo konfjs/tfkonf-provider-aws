@@ -212,7 +212,7 @@ export interface AwsQuicksightDataSetArgs {
 }
 
 export class aws_quicksight_data_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsQuicksightDataSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsQuicksightDataSetArgs) {
     const meta = {column_groups:{isBlock:true,geo_spatial_column_group:{isBlock:true}},column_level_permission_rules:{isBlock:true},data_set_usage_configuration:{isBlock:true},field_folders:{isBlock:true},logical_table_map:{isBlock:true,data_transforms:{isBlock:true,cast_column_type_operation:{isBlock:true},create_columns_operation:{isBlock:true,columns:{isBlock:true}},filter_operation:{isBlock:true},project_operation:{isBlock:true},rename_column_operation:{isBlock:true},tag_column_operation:{isBlock:true,tags:{isBlock:true,column_description:{isBlock:true}}},untag_column_operation:{isBlock:true}},source:{isBlock:true,join_instruction:{isBlock:true,left_join_key_properties:{isBlock:true},right_join_key_properties:{isBlock:true}}}},permissions:{isBlock:true},physical_table_map:{isBlock:true,custom_sql:{isBlock:true,columns:{isBlock:true}},relational_table:{isBlock:true,input_columns:{isBlock:true}},s3_source:{isBlock:true,input_columns:{isBlock:true},upload_settings:{isBlock:true}}},refresh_properties:{isBlock:true,refresh_configuration:{isBlock:true,incremental_refresh:{isBlock:true,lookback_window:{isBlock:true}}}},row_level_permission_data_set:{isBlock:true},row_level_permission_tag_configuration:{isBlock:true,tag_rules:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_quicksight_data_set", resourceName);
   }

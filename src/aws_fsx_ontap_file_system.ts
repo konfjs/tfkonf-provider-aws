@@ -25,7 +25,7 @@ export interface AwsFsxOntapFileSystemArgs {
 }
 
 export class aws_fsx_ontap_file_system extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsFsxOntapFileSystemArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsFsxOntapFileSystemArgs) {
     const meta = {disk_iops_configuration:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_fsx_ontap_file_system", resourceName);
   }

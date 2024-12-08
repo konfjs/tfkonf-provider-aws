@@ -16,7 +16,7 @@ export interface AwsAccessanalyzerAnalyzerArgs {
 }
 
 export class aws_accessanalyzer_analyzer extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAccessanalyzerAnalyzerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAccessanalyzerAnalyzerArgs) {
     const meta = {configuration:{isBlock:true,unused_access:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_accessanalyzer_analyzer", resourceName);
   }

@@ -17,7 +17,7 @@ export interface AwsOpensearchVpcEndpointArgs {
 }
 
 export class aws_opensearch_vpc_endpoint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsOpensearchVpcEndpointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsOpensearchVpcEndpointArgs) {
     const meta = {timeouts:{isBlock:true},vpc_options:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_opensearch_vpc_endpoint", resourceName);
   }

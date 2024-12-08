@@ -22,7 +22,7 @@ export interface AwsStoragegatewayFileSystemAssociationArgs {
 }
 
 export class aws_storagegateway_file_system_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsStoragegatewayFileSystemAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsStoragegatewayFileSystemAssociationArgs) {
     const meta = {cache_attributes:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_storagegateway_file_system_association", resourceName);
   }

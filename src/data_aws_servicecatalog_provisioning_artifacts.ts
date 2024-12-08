@@ -11,7 +11,7 @@ export interface DataAwsServicecatalogProvisioningArtifactsArgs {
 }
 
 export class data_aws_servicecatalog_provisioning_artifacts extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsServicecatalogProvisioningArtifactsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsServicecatalogProvisioningArtifactsArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_servicecatalog_provisioning_artifacts", resourceName);
   }

@@ -39,7 +39,7 @@ export interface AwsOpsworksInstanceArgs {
 }
 
 export class aws_opsworks_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsOpsworksInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsOpsworksInstanceArgs) {
     const meta = {ebs_block_device:{isBlock:true},ephemeral_block_device:{isBlock:true},root_block_device:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_opsworks_instance", resourceName);
   }

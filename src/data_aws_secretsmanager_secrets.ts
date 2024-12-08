@@ -10,7 +10,7 @@ export interface DataAwsSecretsmanagerSecretsArgs {
 }
 
 export class data_aws_secretsmanager_secrets extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSecretsmanagerSecretsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSecretsmanagerSecretsArgs) {
     const meta = {filter:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_secretsmanager_secrets", resourceName);
   }

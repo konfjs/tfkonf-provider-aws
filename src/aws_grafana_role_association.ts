@@ -14,7 +14,7 @@ export interface AwsGrafanaRoleAssociationArgs {
 }
 
 export class aws_grafana_role_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGrafanaRoleAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGrafanaRoleAssociationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_grafana_role_association", resourceName);
   }

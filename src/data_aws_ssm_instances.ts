@@ -10,7 +10,7 @@ export interface DataAwsSsmInstancesArgs {
 }
 
 export class data_aws_ssm_instances extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSsmInstancesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSsmInstancesArgs) {
     const meta = {filter:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_ssm_instances", resourceName);
   }

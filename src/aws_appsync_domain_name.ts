@@ -7,7 +7,7 @@ export interface AwsAppsyncDomainNameArgs {
 }
 
 export class aws_appsync_domain_name extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppsyncDomainNameArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppsyncDomainNameArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_appsync_domain_name", resourceName);
   }

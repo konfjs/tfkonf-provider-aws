@@ -22,7 +22,7 @@ export interface AwsSecuritylakeSubscriberNotificationArgs {
 }
 
 export class aws_securitylake_subscriber_notification extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSecuritylakeSubscriberNotificationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSecuritylakeSubscriberNotificationArgs) {
     const meta = {configuration:{isBlock:true,https_notification_configuration:{isBlock:true},sqs_notification_configuration:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_securitylake_subscriber_notification", resourceName);
   }

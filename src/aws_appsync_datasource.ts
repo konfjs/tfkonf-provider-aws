@@ -72,7 +72,7 @@ export interface AwsAppsyncDatasourceArgs {
 }
 
 export class aws_appsync_datasource extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppsyncDatasourceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppsyncDatasourceArgs) {
     const meta = {dynamodb_config:{isBlock:true,delta_sync_config:{isBlock:true}},elasticsearch_config:{isBlock:true},event_bridge_config:{isBlock:true},http_config:{isBlock:true,authorization_config:{isBlock:true,aws_iam_config:{isBlock:true}}},lambda_config:{isBlock:true},opensearchservice_config:{isBlock:true},relational_database_config:{isBlock:true,http_endpoint_config:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_appsync_datasource", resourceName);
   }

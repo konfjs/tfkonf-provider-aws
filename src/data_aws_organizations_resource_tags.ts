@@ -5,7 +5,7 @@ export interface DataAwsOrganizationsResourceTagsArgs {
 }
 
 export class data_aws_organizations_resource_tags extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsOrganizationsResourceTagsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsOrganizationsResourceTagsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_organizations_resource_tags", resourceName);
   }

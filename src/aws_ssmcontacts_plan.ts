@@ -26,7 +26,7 @@ export interface AwsSsmcontactsPlanArgs {
 }
 
 export class aws_ssmcontacts_plan extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSsmcontactsPlanArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSsmcontactsPlanArgs) {
     const meta = {stage:{isBlock:true,target:{isBlock:true,channel_target_info:{isBlock:true},contact_target_info:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "aws_ssmcontacts_plan", resourceName);
   }

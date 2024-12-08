@@ -15,7 +15,7 @@ export interface AwsDatasyncLocationAzureBlobArgs {
 }
 
 export class aws_datasync_location_azure_blob extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDatasyncLocationAzureBlobArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDatasyncLocationAzureBlobArgs) {
     const meta = {sas_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_datasync_location_azure_blob", resourceName);
   }

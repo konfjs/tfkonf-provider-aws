@@ -6,7 +6,7 @@ export interface AwsLightsailBucketResourceAccessArgs {
 }
 
 export class aws_lightsail_bucket_resource_access extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLightsailBucketResourceAccessArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLightsailBucketResourceAccessArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_lightsail_bucket_resource_access", resourceName);
   }

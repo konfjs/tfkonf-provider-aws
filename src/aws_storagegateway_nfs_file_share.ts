@@ -41,7 +41,7 @@ export interface AwsStoragegatewayNfsFileShareArgs {
 }
 
 export class aws_storagegateway_nfs_file_share extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsStoragegatewayNfsFileShareArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsStoragegatewayNfsFileShareArgs) {
     const meta = {cache_attributes:{isBlock:true},nfs_file_share_defaults:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_storagegateway_nfs_file_share", resourceName);
   }

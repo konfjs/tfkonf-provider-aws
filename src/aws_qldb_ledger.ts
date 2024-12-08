@@ -13,7 +13,7 @@ export interface AwsQldbLedgerArgs {
 }
 
 export class aws_qldb_ledger extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsQldbLedgerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsQldbLedgerArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_qldb_ledger", resourceName);
   }

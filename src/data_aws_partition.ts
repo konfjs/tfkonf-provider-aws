@@ -4,7 +4,7 @@ export interface DataAwsPartitionArgs {
 }
 
 export class data_aws_partition extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsPartitionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsPartitionArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_partition", resourceName);
   }

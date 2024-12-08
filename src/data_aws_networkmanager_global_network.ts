@@ -5,7 +5,7 @@ export interface DataAwsNetworkmanagerGlobalNetworkArgs {
 }
 
 export class data_aws_networkmanager_global_network extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsNetworkmanagerGlobalNetworkArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsNetworkmanagerGlobalNetworkArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_networkmanager_global_network", resourceName);
   }

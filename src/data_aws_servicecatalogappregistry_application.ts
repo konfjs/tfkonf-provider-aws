@@ -5,7 +5,7 @@ export interface DataAwsServicecatalogappregistryApplicationArgs {
 }
 
 export class data_aws_servicecatalogappregistry_application extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsServicecatalogappregistryApplicationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsServicecatalogappregistryApplicationArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_servicecatalogappregistry_application", resourceName);
   }

@@ -8,7 +8,7 @@ export interface AwsRumMetricsDestinationArgs {
 }
 
 export class aws_rum_metrics_destination extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRumMetricsDestinationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRumMetricsDestinationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_rum_metrics_destination", resourceName);
   }

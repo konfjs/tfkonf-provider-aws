@@ -18,7 +18,7 @@ export interface AwsBatchSchedulingPolicyArgs {
 }
 
 export class aws_batch_scheduling_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBatchSchedulingPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBatchSchedulingPolicyArgs) {
     const meta = {fair_share_policy:{isBlock:true,share_distribution:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_batch_scheduling_policy", resourceName);
   }

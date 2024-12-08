@@ -6,7 +6,7 @@ export interface DataAwsLambdaFunctionArgs {
 }
 
 export class data_aws_lambda_function extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsLambdaFunctionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsLambdaFunctionArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_lambda_function", resourceName);
   }

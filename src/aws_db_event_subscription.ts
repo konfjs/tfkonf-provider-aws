@@ -17,7 +17,7 @@ export interface AwsDbEventSubscriptionArgs {
 }
 
 export class aws_db_event_subscription extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDbEventSubscriptionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDbEventSubscriptionArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_db_event_subscription", resourceName);
   }

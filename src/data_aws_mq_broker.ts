@@ -4,7 +4,7 @@ export interface DataAwsMqBrokerArgs {
 }
 
 export class data_aws_mq_broker extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsMqBrokerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsMqBrokerArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_mq_broker", resourceName);
   }

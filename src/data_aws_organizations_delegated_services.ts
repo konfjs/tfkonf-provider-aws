@@ -5,7 +5,7 @@ export interface DataAwsOrganizationsDelegatedServicesArgs {
 }
 
 export class data_aws_organizations_delegated_services extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsOrganizationsDelegatedServicesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsOrganizationsDelegatedServicesArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_organizations_delegated_services", resourceName);
   }

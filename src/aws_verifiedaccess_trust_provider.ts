@@ -33,7 +33,7 @@ export interface AwsVerifiedaccessTrustProviderArgs {
 }
 
 export class aws_verifiedaccess_trust_provider extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVerifiedaccessTrustProviderArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVerifiedaccessTrustProviderArgs) {
     const meta = {device_options:{isBlock:true},oidc_options:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_verifiedaccess_trust_provider", resourceName);
   }

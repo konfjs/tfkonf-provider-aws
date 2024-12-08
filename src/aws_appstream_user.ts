@@ -10,7 +10,7 @@ export interface AwsAppstreamUserArgs {
 }
 
 export class aws_appstream_user extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppstreamUserArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppstreamUserArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_appstream_user", resourceName);
   }

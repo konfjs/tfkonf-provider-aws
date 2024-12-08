@@ -75,7 +75,7 @@ export interface AwsSsmMaintenanceWindowTaskArgs {
 }
 
 export class aws_ssm_maintenance_window_task extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSsmMaintenanceWindowTaskArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSsmMaintenanceWindowTaskArgs) {
     const meta = {targets:{isBlock:true},task_invocation_parameters:{isBlock:true,automation_parameters:{isBlock:true,parameter:{isBlock:true}},lambda_parameters:{isBlock:true},run_command_parameters:{isBlock:true,cloudwatch_config:{isBlock:true},notification_config:{isBlock:true},parameter:{isBlock:true}},step_functions_parameters:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_ssm_maintenance_window_task", resourceName);
   }

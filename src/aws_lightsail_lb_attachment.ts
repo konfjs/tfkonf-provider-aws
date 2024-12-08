@@ -6,7 +6,7 @@ export interface AwsLightsailLbAttachmentArgs {
 }
 
 export class aws_lightsail_lb_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLightsailLbAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLightsailLbAttachmentArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_lightsail_lb_attachment", resourceName);
   }

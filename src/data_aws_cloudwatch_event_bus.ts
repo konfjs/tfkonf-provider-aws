@@ -5,7 +5,7 @@ export interface DataAwsCloudwatchEventBusArgs {
 }
 
 export class data_aws_cloudwatch_event_bus extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCloudwatchEventBusArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCloudwatchEventBusArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_cloudwatch_event_bus", resourceName);
   }

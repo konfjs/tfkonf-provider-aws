@@ -32,7 +32,7 @@ export interface AwsNetworkmanagerDeviceArgs {
 }
 
 export class aws_networkmanager_device extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNetworkmanagerDeviceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNetworkmanagerDeviceArgs) {
     const meta = {aws_location:{isBlock:true},location:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_networkmanager_device", resourceName);
   }

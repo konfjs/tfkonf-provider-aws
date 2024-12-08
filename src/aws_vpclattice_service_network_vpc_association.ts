@@ -15,7 +15,7 @@ export interface AwsVpclatticeServiceNetworkVpcAssociationArgs {
 }
 
 export class aws_vpclattice_service_network_vpc_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpclatticeServiceNetworkVpcAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpclatticeServiceNetworkVpcAssociationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_vpclattice_service_network_vpc_association", resourceName);
   }

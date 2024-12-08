@@ -7,7 +7,7 @@ export interface AwsIamUserSshKeyArgs {
 }
 
 export class aws_iam_user_ssh_key extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIamUserSshKeyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIamUserSshKeyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_iam_user_ssh_key", resourceName);
   }

@@ -16,7 +16,7 @@ export interface DataAwsEc2CoipPoolsArgs {
 }
 
 export class data_aws_ec2_coip_pools extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEc2CoipPoolsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEc2CoipPoolsArgs) {
     const meta = {filter:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_ec2_coip_pools", resourceName);
   }

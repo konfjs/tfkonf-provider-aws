@@ -13,7 +13,7 @@ export interface AwsDbClusterSnapshotArgs {
 }
 
 export class aws_db_cluster_snapshot extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDbClusterSnapshotArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDbClusterSnapshotArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_db_cluster_snapshot", resourceName);
   }

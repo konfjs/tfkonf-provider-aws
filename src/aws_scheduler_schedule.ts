@@ -101,7 +101,7 @@ export interface AwsSchedulerScheduleArgs {
 }
 
 export class aws_scheduler_schedule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSchedulerScheduleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSchedulerScheduleArgs) {
     const meta = {flexible_time_window:{isBlock:true},target:{isBlock:true,dead_letter_config:{isBlock:true},ecs_parameters:{isBlock:true,capacity_provider_strategy:{isBlock:true},network_configuration:{isBlock:true},placement_constraints:{isBlock:true},placement_strategy:{isBlock:true}},eventbridge_parameters:{isBlock:true},kinesis_parameters:{isBlock:true},retry_policy:{isBlock:true},sagemaker_pipeline_parameters:{isBlock:true,pipeline_parameter:{isBlock:true}},sqs_parameters:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_scheduler_schedule", resourceName);
   }

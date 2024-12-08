@@ -86,7 +86,7 @@ export interface AwsBedrockagentKnowledgeBaseArgs {
 }
 
 export class aws_bedrockagent_knowledge_base extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBedrockagentKnowledgeBaseArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBedrockagentKnowledgeBaseArgs) {
     const meta = {knowledge_base_configuration:{isBlock:true,vector_knowledge_base_configuration:{isBlock:true}},storage_configuration:{isBlock:true,opensearch_serverless_configuration:{isBlock:true,field_mapping:{isBlock:true}},pinecone_configuration:{isBlock:true,field_mapping:{isBlock:true}},rds_configuration:{isBlock:true,field_mapping:{isBlock:true}},redis_enterprise_cloud_configuration:{isBlock:true,field_mapping:{isBlock:true}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_bedrockagent_knowledge_base", resourceName);
   }

@@ -19,7 +19,7 @@ export interface AwsSecurityGroupRuleArgs {
 }
 
 export class aws_security_group_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSecurityGroupRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSecurityGroupRuleArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_security_group_rule", resourceName);
   }

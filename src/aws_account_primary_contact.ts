@@ -17,7 +17,7 @@ export interface AwsAccountPrimaryContactArgs {
 }
 
 export class aws_account_primary_contact extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAccountPrimaryContactArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAccountPrimaryContactArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_account_primary_contact", resourceName);
   }

@@ -18,7 +18,7 @@ export interface AwsSagemakerAppArgs {
 }
 
 export class aws_sagemaker_app extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSagemakerAppArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSagemakerAppArgs) {
     const meta = {resource_spec:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_sagemaker_app", resourceName);
   }

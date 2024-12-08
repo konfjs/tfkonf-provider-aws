@@ -5,7 +5,7 @@ export interface DataAwsElasticBeanstalkApplicationArgs {
 }
 
 export class data_aws_elastic_beanstalk_application extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsElasticBeanstalkApplicationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsElasticBeanstalkApplicationArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_elastic_beanstalk_application", resourceName);
   }

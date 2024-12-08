@@ -32,7 +32,7 @@ export interface AwsTimestreaminfluxdbDbInstanceArgs {
 }
 
 export class aws_timestreaminfluxdb_db_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsTimestreaminfluxdbDbInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsTimestreaminfluxdbDbInstanceArgs) {
     const meta = {log_delivery_configuration:{isBlock:true,s3_configuration:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_timestreaminfluxdb_db_instance", resourceName);
   }

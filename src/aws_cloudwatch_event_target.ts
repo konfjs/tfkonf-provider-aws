@@ -123,7 +123,7 @@ export interface AwsCloudwatchEventTargetArgs {
 }
 
 export class aws_cloudwatch_event_target extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudwatchEventTargetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudwatchEventTargetArgs) {
     const meta = {appsync_target:{isBlock:true},batch_target:{isBlock:true},dead_letter_config:{isBlock:true},ecs_target:{isBlock:true,capacity_provider_strategy:{isBlock:true},network_configuration:{isBlock:true},ordered_placement_strategy:{isBlock:true},placement_constraint:{isBlock:true}},http_target:{isBlock:true},input_transformer:{isBlock:true},kinesis_target:{isBlock:true},redshift_target:{isBlock:true},retry_policy:{isBlock:true},run_command_targets:{isBlock:true},sagemaker_pipeline_target:{isBlock:true,pipeline_parameter_list:{isBlock:true}},sqs_target:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_cloudwatch_event_target", resourceName);
   }

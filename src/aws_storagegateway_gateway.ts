@@ -39,7 +39,7 @@ export interface AwsStoragegatewayGatewayArgs {
 }
 
 export class aws_storagegateway_gateway extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsStoragegatewayGatewayArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsStoragegatewayGatewayArgs) {
     const meta = {maintenance_start_time:{isBlock:true},smb_active_directory_settings:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_storagegateway_gateway", resourceName);
   }

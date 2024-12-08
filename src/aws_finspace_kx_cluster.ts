@@ -93,7 +93,7 @@ export interface AwsFinspaceKxClusterArgs {
 }
 
 export class aws_finspace_kx_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsFinspaceKxClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsFinspaceKxClusterArgs) {
     const meta = {auto_scaling_configuration:{isBlock:true},cache_storage_configurations:{isBlock:true},capacity_configuration:{isBlock:true},code:{isBlock:true},database:{isBlock:true,cache_configurations:{isBlock:true}},savedown_storage_configuration:{isBlock:true},scaling_group_configuration:{isBlock:true},tickerplant_log_configuration:{isBlock:true},timeouts:{isBlock:true},vpc_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_finspace_kx_cluster", resourceName);
   }

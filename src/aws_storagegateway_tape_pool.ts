@@ -9,7 +9,7 @@ export interface AwsStoragegatewayTapePoolArgs {
 }
 
 export class aws_storagegateway_tape_pool extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsStoragegatewayTapePoolArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsStoragegatewayTapePoolArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_storagegateway_tape_pool", resourceName);
   }

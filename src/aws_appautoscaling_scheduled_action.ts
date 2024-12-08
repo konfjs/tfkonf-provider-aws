@@ -18,7 +18,7 @@ export interface AwsAppautoscalingScheduledActionArgs {
 }
 
 export class aws_appautoscaling_scheduled_action extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppautoscalingScheduledActionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppautoscalingScheduledActionArgs) {
     const meta = {scalable_target_action:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_appautoscaling_scheduled_action", resourceName);
   }

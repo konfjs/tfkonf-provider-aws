@@ -27,7 +27,7 @@ export interface AwsCloudtrailEventDataStoreArgs {
 }
 
 export class aws_cloudtrail_event_data_store extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudtrailEventDataStoreArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudtrailEventDataStoreArgs) {
     const meta = {advanced_event_selector:{isBlock:true,field_selector:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_cloudtrail_event_data_store", resourceName);
   }

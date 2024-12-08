@@ -5,7 +5,7 @@ export interface DataAwsMskBootstrapBrokersArgs {
 }
 
 export class data_aws_msk_bootstrap_brokers extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsMskBootstrapBrokersArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsMskBootstrapBrokersArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_msk_bootstrap_brokers", resourceName);
   }

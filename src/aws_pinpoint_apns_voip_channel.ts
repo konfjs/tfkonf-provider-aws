@@ -13,7 +13,7 @@ export interface AwsPinpointApnsVoipChannelArgs {
 }
 
 export class aws_pinpoint_apns_voip_channel extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsPinpointApnsVoipChannelArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsPinpointApnsVoipChannelArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_pinpoint_apns_voip_channel", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataAwsResourceexplorer2SearchArgs {
 }
 
 export class data_aws_resourceexplorer2_search extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsResourceexplorer2SearchArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsResourceexplorer2SearchArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_resourceexplorer2_search", resourceName);
   }

@@ -12,7 +12,7 @@ export interface DataAwsRamResourceShareArgs {
 }
 
 export class data_aws_ram_resource_share extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsRamResourceShareArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsRamResourceShareArgs) {
     const meta = {filter:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_ram_resource_share", resourceName);
   }

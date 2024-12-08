@@ -6,7 +6,7 @@ export interface AwsAcmpcaPolicyArgs {
 }
 
 export class aws_acmpca_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAcmpcaPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAcmpcaPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_acmpca_policy", resourceName);
   }

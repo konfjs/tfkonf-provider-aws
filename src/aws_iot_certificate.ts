@@ -7,7 +7,7 @@ export interface AwsIotCertificateArgs {
 }
 
 export class aws_iot_certificate extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIotCertificateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIotCertificateArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_iot_certificate", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataAwsSesDomainIdentityArgs {
 }
 
 export class data_aws_ses_domain_identity extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSesDomainIdentityArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSesDomainIdentityArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_ses_domain_identity", resourceName);
   }

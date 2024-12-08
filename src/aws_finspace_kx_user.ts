@@ -15,7 +15,7 @@ export interface AwsFinspaceKxUserArgs {
 }
 
 export class aws_finspace_kx_user extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsFinspaceKxUserArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsFinspaceKxUserArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_finspace_kx_user", resourceName);
   }

@@ -151,7 +151,7 @@ export interface AwsBatchJobDefinitionArgs {
 }
 
 export class aws_batch_job_definition extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBatchJobDefinitionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBatchJobDefinitionArgs) {
     const meta = {eks_properties:{isBlock:true,pod_properties:{isBlock:true,containers:{isBlock:true,env:{isBlock:true},resources:{isBlock:true},security_context:{isBlock:true},volume_mounts:{isBlock:true}},image_pull_secret:{isBlock:true},init_containers:{isBlock:true,env:{isBlock:true},resources:{isBlock:true},security_context:{isBlock:true},volume_mounts:{isBlock:true}},metadata:{isBlock:true},volumes:{isBlock:true,empty_dir:{isBlock:true},host_path:{isBlock:true},secret:{isBlock:true}}}},retry_strategy:{isBlock:true,evaluate_on_exit:{isBlock:true}},timeout:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_batch_job_definition", resourceName);
   }

@@ -68,7 +68,7 @@ export interface AwsEmrcontainersJobTemplateArgs {
 }
 
 export class aws_emrcontainers_job_template extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEmrcontainersJobTemplateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEmrcontainersJobTemplateArgs) {
     const meta = {job_template_data:{isBlock:true,configuration_overrides:{isBlock:true,application_configuration:{isBlock:true,configurations:{isBlock:true}},monitoring_configuration:{isBlock:true,cloud_watch_monitoring_configuration:{isBlock:true},s3_monitoring_configuration:{isBlock:true}}},job_driver:{isBlock:true,spark_sql_job_driver:{isBlock:true},spark_submit_job_driver:{isBlock:true}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_emrcontainers_job_template", resourceName);
   }

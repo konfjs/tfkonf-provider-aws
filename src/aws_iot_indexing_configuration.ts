@@ -46,7 +46,7 @@ export interface AwsIotIndexingConfigurationArgs {
 }
 
 export class aws_iot_indexing_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIotIndexingConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIotIndexingConfigurationArgs) {
     const meta = {thing_group_indexing_configuration:{isBlock:true,custom_field:{isBlock:true},managed_field:{isBlock:true}},thing_indexing_configuration:{isBlock:true,custom_field:{isBlock:true},filter:{isBlock:true},managed_field:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_iot_indexing_configuration", resourceName);
   }

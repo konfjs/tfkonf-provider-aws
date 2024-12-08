@@ -6,7 +6,7 @@ export interface AwsSagemakerImageVersionArgs {
 }
 
 export class aws_sagemaker_image_version extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSagemakerImageVersionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSagemakerImageVersionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_sagemaker_image_version", resourceName);
   }

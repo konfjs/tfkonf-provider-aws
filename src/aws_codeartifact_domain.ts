@@ -6,7 +6,7 @@ export interface AwsCodeartifactDomainArgs {
 }
 
 export class aws_codeartifact_domain extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCodeartifactDomainArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCodeartifactDomainArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_codeartifact_domain", resourceName);
   }

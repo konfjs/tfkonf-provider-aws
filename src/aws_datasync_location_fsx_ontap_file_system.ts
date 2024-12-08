@@ -32,7 +32,7 @@ export interface AwsDatasyncLocationFsxOntapFileSystemArgs {
 }
 
 export class aws_datasync_location_fsx_ontap_file_system extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDatasyncLocationFsxOntapFileSystemArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDatasyncLocationFsxOntapFileSystemArgs) {
     const meta = {protocol:{isBlock:true,nfs:{isBlock:true,mount_options:{isBlock:true}},smb:{isBlock:true,mount_options:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "aws_datasync_location_fsx_ontap_file_system", resourceName);
   }

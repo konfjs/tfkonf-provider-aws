@@ -13,7 +13,7 @@ export interface AwsWorkspacesIpGroupArgs {
 }
 
 export class aws_workspaces_ip_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsWorkspacesIpGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsWorkspacesIpGroupArgs) {
     const meta = {rules:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_workspaces_ip_group", resourceName);
   }

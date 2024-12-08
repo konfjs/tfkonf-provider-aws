@@ -36,7 +36,7 @@ export interface AwsOpsworksStackArgs {
 }
 
 export class aws_opsworks_stack extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsOpsworksStackArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsOpsworksStackArgs) {
     const meta = {custom_cookbooks_source:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_opsworks_stack", resourceName);
   }

@@ -16,7 +16,7 @@ export interface AwsChatbotSlackChannelConfigurationArgs {
 }
 
 export class aws_chatbot_slack_channel_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsChatbotSlackChannelConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsChatbotSlackChannelConfigurationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_chatbot_slack_channel_configuration", resourceName);
   }

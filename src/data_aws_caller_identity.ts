@@ -4,7 +4,7 @@ export interface DataAwsCallerIdentityArgs {
 }
 
 export class data_aws_caller_identity extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCallerIdentityArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCallerIdentityArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_caller_identity", resourceName);
   }

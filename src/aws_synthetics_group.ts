@@ -6,7 +6,7 @@ export interface AwsSyntheticsGroupArgs {
 }
 
 export class aws_synthetics_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSyntheticsGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSyntheticsGroupArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_synthetics_group", resourceName);
   }

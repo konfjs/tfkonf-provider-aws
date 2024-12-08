@@ -21,7 +21,7 @@ export interface AwsGlueDataCatalogEncryptionSettingsArgs {
 }
 
 export class aws_glue_data_catalog_encryption_settings extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGlueDataCatalogEncryptionSettingsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGlueDataCatalogEncryptionSettingsArgs) {
     const meta = {data_catalog_encryption_settings:{isBlock:true,connection_password_encryption:{isBlock:true},encryption_at_rest:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_glue_data_catalog_encryption_settings", resourceName);
   }

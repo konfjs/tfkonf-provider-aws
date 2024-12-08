@@ -7,7 +7,7 @@ export interface AwsRedshiftDataShareAuthorizationArgs {
 }
 
 export class aws_redshift_data_share_authorization extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRedshiftDataShareAuthorizationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRedshiftDataShareAuthorizationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_redshift_data_share_authorization", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataAwsIvsStreamKeyArgs {
 }
 
 export class data_aws_ivs_stream_key extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsIvsStreamKeyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsIvsStreamKeyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_ivs_stream_key", resourceName);
   }

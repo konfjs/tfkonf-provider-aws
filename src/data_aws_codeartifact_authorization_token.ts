@@ -6,7 +6,7 @@ export interface DataAwsCodeartifactAuthorizationTokenArgs {
 }
 
 export class data_aws_codeartifact_authorization_token extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCodeartifactAuthorizationTokenArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCodeartifactAuthorizationTokenArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_codeartifact_authorization_token", resourceName);
   }

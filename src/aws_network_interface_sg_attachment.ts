@@ -13,7 +13,7 @@ export interface AwsNetworkInterfaceSgAttachmentArgs {
 }
 
 export class aws_network_interface_sg_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNetworkInterfaceSgAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNetworkInterfaceSgAttachmentArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_network_interface_sg_attachment", resourceName);
   }

@@ -178,7 +178,7 @@ export interface AwsQuicksightDataSourceArgs {
 }
 
 export class aws_quicksight_data_source extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsQuicksightDataSourceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsQuicksightDataSourceArgs) {
     const meta = {credentials:{isBlock:true,credential_pair:{isBlock:true}},parameters:{isBlock:true,amazon_elasticsearch:{isBlock:true},athena:{isBlock:true},aurora:{isBlock:true},aurora_postgresql:{isBlock:true},aws_iot_analytics:{isBlock:true},databricks:{isBlock:true},jira:{isBlock:true},maria_db:{isBlock:true},mysql:{isBlock:true},oracle:{isBlock:true},postgresql:{isBlock:true},presto:{isBlock:true},rds:{isBlock:true},redshift:{isBlock:true},s3:{isBlock:true,manifest_file_location:{isBlock:true}},service_now:{isBlock:true},snowflake:{isBlock:true},spark:{isBlock:true},sql_server:{isBlock:true},teradata:{isBlock:true},twitter:{isBlock:true}},permission:{isBlock:true},ssl_properties:{isBlock:true},vpc_connection_properties:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_quicksight_data_source", resourceName);
   }

@@ -47,7 +47,7 @@ export interface AwsComprehendDocumentClassifierArgs {
 }
 
 export class aws_comprehend_document_classifier extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsComprehendDocumentClassifierArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsComprehendDocumentClassifierArgs) {
     const meta = {input_data_config:{isBlock:true,augmented_manifests:{isBlock:true}},output_data_config:{isBlock:true},timeouts:{isBlock:true},vpc_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_comprehend_document_classifier", resourceName);
   }

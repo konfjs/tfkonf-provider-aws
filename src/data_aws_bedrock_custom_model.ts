@@ -5,7 +5,7 @@ export interface DataAwsBedrockCustomModelArgs {
 }
 
 export class data_aws_bedrock_custom_model extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsBedrockCustomModelArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsBedrockCustomModelArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_bedrock_custom_model", resourceName);
   }

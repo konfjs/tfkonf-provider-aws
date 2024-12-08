@@ -17,7 +17,7 @@ export interface AwsXraySamplingRuleArgs {
 }
 
 export class aws_xray_sampling_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsXraySamplingRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsXraySamplingRuleArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_xray_sampling_rule", resourceName);
   }

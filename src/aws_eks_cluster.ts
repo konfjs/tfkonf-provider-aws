@@ -63,7 +63,7 @@ export interface AwsEksClusterArgs {
 }
 
 export class aws_eks_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEksClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEksClusterArgs) {
     const meta = {access_config:{isBlock:true},encryption_config:{isBlock:true,provider:{isBlock:true}},kubernetes_network_config:{isBlock:true},outpost_config:{isBlock:true,control_plane_placement:{isBlock:true}},timeouts:{isBlock:true},upgrade_policy:{isBlock:true},vpc_config:{isBlock:true},zonal_shift_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_eks_cluster", resourceName);
   }

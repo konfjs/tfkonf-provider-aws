@@ -5,7 +5,7 @@ export interface DataAwsBedrockInferenceProfileArgs {
 }
 
 export class data_aws_bedrock_inference_profile extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsBedrockInferenceProfileArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsBedrockInferenceProfileArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_bedrock_inference_profile", resourceName);
   }

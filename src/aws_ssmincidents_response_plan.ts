@@ -53,7 +53,7 @@ export interface AwsSsmincidentsResponsePlanArgs {
 }
 
 export class aws_ssmincidents_response_plan extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSsmincidentsResponsePlanArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSsmincidentsResponsePlanArgs) {
     const meta = {action:{isBlock:true,ssm_automation:{isBlock:true,parameter:{isBlock:true}}},incident_template:{isBlock:true,notification_target:{isBlock:true}},integration:{isBlock:true,pagerduty:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_ssmincidents_response_plan", resourceName);
   }

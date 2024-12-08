@@ -6,7 +6,7 @@ export interface AwsEgressOnlyInternetGatewayArgs {
 }
 
 export class aws_egress_only_internet_gateway extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEgressOnlyInternetGatewayArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEgressOnlyInternetGatewayArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_egress_only_internet_gateway", resourceName);
   }

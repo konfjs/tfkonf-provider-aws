@@ -17,7 +17,7 @@ export interface AwsRoute53recoverycontrolconfigSafetyRuleArgs {
 }
 
 export class aws_route53recoverycontrolconfig_safety_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRoute53recoverycontrolconfigSafetyRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRoute53recoverycontrolconfigSafetyRuleArgs) {
     const meta = {rule_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_route53recoverycontrolconfig_safety_rule", resourceName);
   }

@@ -16,7 +16,7 @@ export interface DataAwsPrefixListArgs {
 }
 
 export class data_aws_prefix_list extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsPrefixListArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsPrefixListArgs) {
     const meta = {filter:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_prefix_list", resourceName);
   }

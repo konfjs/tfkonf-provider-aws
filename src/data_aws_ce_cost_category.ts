@@ -5,7 +5,7 @@ export interface DataAwsCeCostCategoryArgs {
 }
 
 export class data_aws_ce_cost_category extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCeCostCategoryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCeCostCategoryArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_ce_cost_category", resourceName);
   }

@@ -11,7 +11,7 @@ export interface AwsApprunnerObservabilityConfigurationArgs {
 }
 
 export class aws_apprunner_observability_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApprunnerObservabilityConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApprunnerObservabilityConfigurationArgs) {
     const meta = {trace_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_apprunner_observability_configuration", resourceName);
   }

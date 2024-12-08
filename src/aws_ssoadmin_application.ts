@@ -20,7 +20,7 @@ export interface AwsSsoadminApplicationArgs {
 }
 
 export class aws_ssoadmin_application extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSsoadminApplicationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSsoadminApplicationArgs) {
     const meta = {portal_options:{isBlock:true,sign_in_options:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_ssoadmin_application", resourceName);
   }

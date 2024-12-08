@@ -28,7 +28,7 @@ export interface AwsLexBotAliasArgs {
 }
 
 export class aws_lex_bot_alias extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLexBotAliasArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLexBotAliasArgs) {
     const meta = {conversation_logs:{isBlock:true,log_settings:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_lex_bot_alias", resourceName);
   }

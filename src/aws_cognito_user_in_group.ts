@@ -7,7 +7,7 @@ export interface AwsCognitoUserInGroupArgs {
 }
 
 export class aws_cognito_user_in_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCognitoUserInGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCognitoUserInGroupArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_cognito_user_in_group", resourceName);
   }

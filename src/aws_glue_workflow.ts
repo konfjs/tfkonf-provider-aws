@@ -9,7 +9,7 @@ export interface AwsGlueWorkflowArgs {
 }
 
 export class aws_glue_workflow extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGlueWorkflowArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGlueWorkflowArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_glue_workflow", resourceName);
   }

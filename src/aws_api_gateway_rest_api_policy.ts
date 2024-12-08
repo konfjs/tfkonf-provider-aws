@@ -6,7 +6,7 @@ export interface AwsApiGatewayRestApiPolicyArgs {
 }
 
 export class aws_api_gateway_rest_api_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApiGatewayRestApiPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApiGatewayRestApiPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_api_gateway_rest_api_policy", resourceName);
   }

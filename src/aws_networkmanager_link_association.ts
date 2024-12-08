@@ -13,7 +13,7 @@ export interface AwsNetworkmanagerLinkAssociationArgs {
 }
 
 export class aws_networkmanager_link_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNetworkmanagerLinkAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNetworkmanagerLinkAssociationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_networkmanager_link_association", resourceName);
   }

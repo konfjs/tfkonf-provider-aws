@@ -13,7 +13,7 @@ export interface AwsEcsClusterCapacityProvidersArgs {
 }
 
 export class aws_ecs_cluster_capacity_providers extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEcsClusterCapacityProvidersArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEcsClusterCapacityProvidersArgs) {
     const meta = {default_capacity_provider_strategy:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ecs_cluster_capacity_providers", resourceName);
   }

@@ -15,7 +15,7 @@ export interface AwsGlueDataQualityRulesetArgs {
 }
 
 export class aws_glue_data_quality_ruleset extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGlueDataQualityRulesetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGlueDataQualityRulesetArgs) {
     const meta = {target_table:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_glue_data_quality_ruleset", resourceName);
   }

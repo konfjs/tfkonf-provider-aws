@@ -5,7 +5,7 @@ export interface DataAwsS3BucketPolicyArgs {
 }
 
 export class data_aws_s3_bucket_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsS3BucketPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsS3BucketPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_s3_bucket_policy", resourceName);
   }

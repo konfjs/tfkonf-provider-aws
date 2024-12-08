@@ -18,7 +18,7 @@ export interface AwsSsmincidentsReplicationSetArgs {
 }
 
 export class aws_ssmincidents_replication_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSsmincidentsReplicationSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSsmincidentsReplicationSetArgs) {
     const meta = {region:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ssmincidents_replication_set", resourceName);
   }

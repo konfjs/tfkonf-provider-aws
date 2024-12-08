@@ -61,7 +61,7 @@ export interface AwsComprehendEntityRecognizerArgs {
 }
 
 export class aws_comprehend_entity_recognizer extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsComprehendEntityRecognizerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsComprehendEntityRecognizerArgs) {
     const meta = {input_data_config:{isBlock:true,annotations:{isBlock:true},augmented_manifests:{isBlock:true},documents:{isBlock:true},entity_list:{isBlock:true},entity_types:{isBlock:true}},timeouts:{isBlock:true},vpc_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_comprehend_entity_recognizer", resourceName);
   }

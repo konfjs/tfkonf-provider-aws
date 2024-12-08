@@ -6,7 +6,7 @@ export interface DataAwsVpclatticeListenerArgs {
 }
 
 export class data_aws_vpclattice_listener extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsVpclatticeListenerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsVpclatticeListenerArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_vpclattice_listener", resourceName);
   }

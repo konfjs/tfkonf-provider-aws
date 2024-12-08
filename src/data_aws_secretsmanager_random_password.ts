@@ -12,7 +12,7 @@ export interface DataAwsSecretsmanagerRandomPasswordArgs {
 }
 
 export class data_aws_secretsmanager_random_password extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSecretsmanagerRandomPasswordArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSecretsmanagerRandomPasswordArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_secretsmanager_random_password", resourceName);
   }

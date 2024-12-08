@@ -33,7 +33,7 @@ export interface AwsS3BucketAnalyticsConfigurationArgs {
 }
 
 export class aws_s3_bucket_analytics_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3BucketAnalyticsConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3BucketAnalyticsConfigurationArgs) {
     const meta = {filter:{isBlock:true},storage_class_analysis:{isBlock:true,data_export:{isBlock:true,destination:{isBlock:true,s3_bucket_destination:{isBlock:true}}}}};
     super(terraformConfig, "resource", args, meta, "aws_s3_bucket_analytics_configuration", resourceName);
   }

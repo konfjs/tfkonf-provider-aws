@@ -15,7 +15,7 @@ export interface AwsFinspaceKxDatabaseArgs {
 }
 
 export class aws_finspace_kx_database extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsFinspaceKxDatabaseArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsFinspaceKxDatabaseArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_finspace_kx_database", resourceName);
   }

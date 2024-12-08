@@ -13,7 +13,7 @@ export interface AwsDefaultRouteTableArgs {
 }
 
 export class aws_default_route_table extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDefaultRouteTableArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDefaultRouteTableArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_default_route_table", resourceName);
   }

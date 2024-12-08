@@ -5,7 +5,7 @@ export interface AwsS3controlAccessGrantsInstanceResourcePolicyArgs {
 }
 
 export class aws_s3control_access_grants_instance_resource_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3controlAccessGrantsInstanceResourcePolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3controlAccessGrantsInstanceResourcePolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_s3control_access_grants_instance_resource_policy", resourceName);
   }

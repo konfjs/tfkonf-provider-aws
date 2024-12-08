@@ -6,7 +6,7 @@ export interface AwsStoragegatewayWorkingStorageArgs {
 }
 
 export class aws_storagegateway_working_storage extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsStoragegatewayWorkingStorageArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsStoragegatewayWorkingStorageArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_storagegateway_working_storage", resourceName);
   }

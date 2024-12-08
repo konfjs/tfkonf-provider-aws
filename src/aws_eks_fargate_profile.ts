@@ -21,7 +21,7 @@ export interface AwsEksFargateProfileArgs {
 }
 
 export class aws_eks_fargate_profile extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEksFargateProfileArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEksFargateProfileArgs) {
     const meta = {selector:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_eks_fargate_profile", resourceName);
   }

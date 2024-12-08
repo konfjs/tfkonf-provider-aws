@@ -5,7 +5,7 @@ export interface DataAwsKinesisStreamArgs {
 }
 
 export class data_aws_kinesis_stream extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsKinesisStreamArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsKinesisStreamArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_kinesis_stream", resourceName);
   }

@@ -4,7 +4,7 @@ export interface DataAwsShieldProtectionArgs {
 }
 
 export class data_aws_shield_protection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsShieldProtectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsShieldProtectionArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_shield_protection", resourceName);
   }

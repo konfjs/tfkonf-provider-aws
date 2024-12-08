@@ -76,7 +76,7 @@ export interface AwsImagebuilderDistributionConfigurationArgs {
 }
 
 export class aws_imagebuilder_distribution_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsImagebuilderDistributionConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsImagebuilderDistributionConfigurationArgs) {
     const meta = {distribution:{isBlock:true,ami_distribution_configuration:{isBlock:true,launch_permission:{isBlock:true}},container_distribution_configuration:{isBlock:true,target_repository:{isBlock:true}},fast_launch_configuration:{isBlock:true,launch_template:{isBlock:true},snapshot_configuration:{isBlock:true}},launch_template_configuration:{isBlock:true},s3_export_configuration:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_imagebuilder_distribution_configuration", resourceName);
   }

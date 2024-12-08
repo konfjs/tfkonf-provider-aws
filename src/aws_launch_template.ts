@@ -237,7 +237,7 @@ export interface AwsLaunchTemplateArgs {
 }
 
 export class aws_launch_template extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLaunchTemplateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLaunchTemplateArgs) {
     const meta = {block_device_mappings:{isBlock:true,ebs:{isBlock:true}},capacity_reservation_specification:{isBlock:true,capacity_reservation_target:{isBlock:true}},cpu_options:{isBlock:true},credit_specification:{isBlock:true},elastic_gpu_specifications:{isBlock:true},elastic_inference_accelerator:{isBlock:true},enclave_options:{isBlock:true},hibernation_options:{isBlock:true},iam_instance_profile:{isBlock:true},instance_market_options:{isBlock:true,spot_options:{isBlock:true}},instance_requirements:{isBlock:true,accelerator_count:{isBlock:true},accelerator_total_memory_mib:{isBlock:true},baseline_ebs_bandwidth_mbps:{isBlock:true},memory_gib_per_vcpu:{isBlock:true},memory_mib:{isBlock:true},network_bandwidth_gbps:{isBlock:true},network_interface_count:{isBlock:true},total_local_storage_gb:{isBlock:true},vcpu_count:{isBlock:true}},license_specification:{isBlock:true},maintenance_options:{isBlock:true},metadata_options:{isBlock:true},monitoring:{isBlock:true},network_interfaces:{isBlock:true},placement:{isBlock:true},private_dns_name_options:{isBlock:true},tag_specifications:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_launch_template", resourceName);
   }

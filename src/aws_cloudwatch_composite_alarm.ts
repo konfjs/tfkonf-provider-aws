@@ -19,7 +19,7 @@ export interface AwsCloudwatchCompositeAlarmArgs {
 }
 
 export class aws_cloudwatch_composite_alarm extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudwatchCompositeAlarmArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudwatchCompositeAlarmArgs) {
     const meta = {actions_suppressor:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_cloudwatch_composite_alarm", resourceName);
   }

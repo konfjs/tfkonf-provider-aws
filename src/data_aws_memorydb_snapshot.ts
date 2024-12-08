@@ -5,7 +5,7 @@ export interface DataAwsMemorydbSnapshotArgs {
 }
 
 export class data_aws_memorydb_snapshot extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsMemorydbSnapshotArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsMemorydbSnapshotArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_memorydb_snapshot", resourceName);
   }

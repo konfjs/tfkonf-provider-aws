@@ -6,7 +6,7 @@ export interface AwsCloudwatchEventBusPolicyArgs {
 }
 
 export class aws_cloudwatch_event_bus_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudwatchEventBusPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudwatchEventBusPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_cloudwatch_event_bus_policy", resourceName);
   }

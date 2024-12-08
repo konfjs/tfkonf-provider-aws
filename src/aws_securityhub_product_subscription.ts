@@ -5,7 +5,7 @@ export interface AwsSecurityhubProductSubscriptionArgs {
 }
 
 export class aws_securityhub_product_subscription extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSecurityhubProductSubscriptionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSecurityhubProductSubscriptionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_securityhub_product_subscription", resourceName);
   }

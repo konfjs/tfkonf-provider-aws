@@ -5,7 +5,7 @@ export interface DataAwsWafIpsetArgs {
 }
 
 export class data_aws_waf_ipset extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsWafIpsetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsWafIpsetArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_waf_ipset", resourceName);
   }

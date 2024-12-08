@@ -51,7 +51,7 @@ export interface AwsGameliftFleetArgs {
 }
 
 export class aws_gamelift_fleet extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGameliftFleetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGameliftFleetArgs) {
     const meta = {certificate_configuration:{isBlock:true},ec2_inbound_permission:{isBlock:true},resource_creation_limit_policy:{isBlock:true},runtime_configuration:{isBlock:true,server_process:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_gamelift_fleet", resourceName);
   }

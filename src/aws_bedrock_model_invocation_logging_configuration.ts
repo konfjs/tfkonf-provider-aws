@@ -29,7 +29,7 @@ export interface AwsBedrockModelInvocationLoggingConfigurationArgs {
 }
 
 export class aws_bedrock_model_invocation_logging_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBedrockModelInvocationLoggingConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBedrockModelInvocationLoggingConfigurationArgs) {
     const meta = {logging_config:{isBlock:true,cloudwatch_config:{isBlock:true,large_data_delivery_s3_config:{isBlock:true}},s3_config:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_bedrock_model_invocation_logging_configuration", resourceName);
   }

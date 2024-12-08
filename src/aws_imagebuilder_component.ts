@@ -14,7 +14,7 @@ export interface AwsImagebuilderComponentArgs {
 }
 
 export class aws_imagebuilder_component extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsImagebuilderComponentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsImagebuilderComponentArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_imagebuilder_component", resourceName);
   }

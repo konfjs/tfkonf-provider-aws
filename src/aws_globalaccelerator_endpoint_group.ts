@@ -29,7 +29,7 @@ export interface AwsGlobalacceleratorEndpointGroupArgs {
 }
 
 export class aws_globalaccelerator_endpoint_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGlobalacceleratorEndpointGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGlobalacceleratorEndpointGroupArgs) {
     const meta = {endpoint_configuration:{isBlock:true},port_override:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_globalaccelerator_endpoint_group", resourceName);
   }

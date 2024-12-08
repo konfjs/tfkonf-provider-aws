@@ -5,7 +5,7 @@ export interface DataAwsS3controlMultiRegionAccessPointArgs {
 }
 
 export class data_aws_s3control_multi_region_access_point extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsS3controlMultiRegionAccessPointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsS3controlMultiRegionAccessPointArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_s3control_multi_region_access_point", resourceName);
   }

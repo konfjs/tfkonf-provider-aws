@@ -5,7 +5,7 @@ export interface DataAwsElasticsearchDomainArgs {
 }
 
 export class data_aws_elasticsearch_domain extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsElasticsearchDomainArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsElasticsearchDomainArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_elasticsearch_domain", resourceName);
   }

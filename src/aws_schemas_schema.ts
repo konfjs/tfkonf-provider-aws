@@ -10,7 +10,7 @@ export interface AwsSchemasSchemaArgs {
 }
 
 export class aws_schemas_schema extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSchemasSchemaArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSchemasSchemaArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_schemas_schema", resourceName);
   }

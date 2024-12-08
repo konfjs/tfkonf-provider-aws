@@ -11,7 +11,7 @@ export interface DataAwsSsmPatchBaselinesArgs {
 }
 
 export class data_aws_ssm_patch_baselines extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSsmPatchBaselinesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSsmPatchBaselinesArgs) {
     const meta = {filter:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_ssm_patch_baselines", resourceName);
   }

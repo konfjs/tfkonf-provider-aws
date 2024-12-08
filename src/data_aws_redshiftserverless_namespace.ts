@@ -5,7 +5,7 @@ export interface DataAwsRedshiftserverlessNamespaceArgs {
 }
 
 export class data_aws_redshiftserverless_namespace extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsRedshiftserverlessNamespaceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsRedshiftserverlessNamespaceArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_redshiftserverless_namespace", resourceName);
   }

@@ -14,7 +14,7 @@ export interface AwsElasticacheParameterGroupArgs {
 }
 
 export class aws_elasticache_parameter_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsElasticacheParameterGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsElasticacheParameterGroupArgs) {
     const meta = {parameter:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_elasticache_parameter_group", resourceName);
   }

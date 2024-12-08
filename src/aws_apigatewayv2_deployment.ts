@@ -7,7 +7,7 @@ export interface AwsApigatewayv2DeploymentArgs {
 }
 
 export class aws_apigatewayv2_deployment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApigatewayv2DeploymentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApigatewayv2DeploymentArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_apigatewayv2_deployment", resourceName);
   }

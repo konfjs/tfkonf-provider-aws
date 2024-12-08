@@ -6,7 +6,7 @@ export interface DataAwsWafv2WebAclArgs {
 }
 
 export class data_aws_wafv2_web_acl extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsWafv2WebAclArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsWafv2WebAclArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_wafv2_web_acl", resourceName);
   }

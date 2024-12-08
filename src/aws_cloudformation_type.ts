@@ -13,7 +13,7 @@ export interface AwsCloudformationTypeArgs {
 }
 
 export class aws_cloudformation_type extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudformationTypeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudformationTypeArgs) {
     const meta = {logging_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_cloudformation_type", resourceName);
   }

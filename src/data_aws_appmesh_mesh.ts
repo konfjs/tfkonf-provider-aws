@@ -5,7 +5,7 @@ export interface DataAwsAppmeshMeshArgs {
 }
 
 export class data_aws_appmesh_mesh extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsAppmeshMeshArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsAppmeshMeshArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_appmesh_mesh", resourceName);
   }

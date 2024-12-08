@@ -13,7 +13,7 @@ export interface AwsDbInstanceRoleAssociationArgs {
 }
 
 export class aws_db_instance_role_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDbInstanceRoleAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDbInstanceRoleAssociationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_db_instance_role_association", resourceName);
   }

@@ -21,7 +21,7 @@ export interface AwsRolesanywhereTrustAnchorArgs {
 }
 
 export class aws_rolesanywhere_trust_anchor extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRolesanywhereTrustAnchorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRolesanywhereTrustAnchorArgs) {
     const meta = {notification_settings:{isBlock:true},source:{isBlock:true,source_data:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_rolesanywhere_trust_anchor", resourceName);
   }

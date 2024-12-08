@@ -81,7 +81,7 @@ export interface AwsRekognitionStreamProcessorArgs {
 }
 
 export class aws_rekognition_stream_processor extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRekognitionStreamProcessorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRekognitionStreamProcessorArgs) {
     const meta = {data_sharing_preference:{isBlock:true},input:{isBlock:true,kinesis_video_stream:{isBlock:true}},notification_channel:{isBlock:true},output:{isBlock:true,kinesis_data_stream:{isBlock:true},s3_destination:{isBlock:true}},regions_of_interest:{isBlock:true,bounding_box:{isBlock:true},polygon:{isBlock:true}},settings:{isBlock:true,connected_home:{isBlock:true},face_search:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_rekognition_stream_processor", resourceName);
   }

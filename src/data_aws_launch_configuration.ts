@@ -5,7 +5,7 @@ export interface DataAwsLaunchConfigurationArgs {
 }
 
 export class data_aws_launch_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsLaunchConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsLaunchConfigurationArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_launch_configuration", resourceName);
   }

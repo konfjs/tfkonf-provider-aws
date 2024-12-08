@@ -6,7 +6,7 @@ export interface DataAwsConnectPromptArgs {
 }
 
 export class data_aws_connect_prompt extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsConnectPromptArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsConnectPromptArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_connect_prompt", resourceName);
   }

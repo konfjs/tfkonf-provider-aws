@@ -9,7 +9,7 @@ export interface AwsSnsSmsPreferencesArgs {
 }
 
 export class aws_sns_sms_preferences extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSnsSmsPreferencesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSnsSmsPreferencesArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_sns_sms_preferences", resourceName);
   }

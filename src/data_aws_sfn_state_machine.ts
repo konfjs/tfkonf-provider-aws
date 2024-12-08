@@ -5,7 +5,7 @@ export interface DataAwsSfnStateMachineArgs {
 }
 
 export class data_aws_sfn_state_machine extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSfnStateMachineArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSfnStateMachineArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_sfn_state_machine", resourceName);
   }

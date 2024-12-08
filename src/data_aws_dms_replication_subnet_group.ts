@@ -5,7 +5,7 @@ export interface DataAwsDmsReplicationSubnetGroupArgs {
 }
 
 export class data_aws_dms_replication_subnet_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsDmsReplicationSubnetGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsDmsReplicationSubnetGroupArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_dms_replication_subnet_group", resourceName);
   }

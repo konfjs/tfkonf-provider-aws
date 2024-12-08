@@ -9,7 +9,7 @@ export interface DataAwsEbsDefaultKmsKeyArgs {
 }
 
 export class data_aws_ebs_default_kms_key extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEbsDefaultKmsKeyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEbsDefaultKmsKeyArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_ebs_default_kms_key", resourceName);
   }

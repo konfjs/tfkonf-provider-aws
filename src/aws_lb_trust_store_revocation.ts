@@ -13,7 +13,7 @@ export interface AwsLbTrustStoreRevocationArgs {
 }
 
 export class aws_lb_trust_store_revocation extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLbTrustStoreRevocationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLbTrustStoreRevocationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_lb_trust_store_revocation", resourceName);
   }

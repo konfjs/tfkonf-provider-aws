@@ -13,7 +13,7 @@ export interface AwsPinpointApnsSandboxChannelArgs {
 }
 
 export class aws_pinpoint_apns_sandbox_channel extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsPinpointApnsSandboxChannelArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsPinpointApnsSandboxChannelArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_pinpoint_apns_sandbox_channel", resourceName);
   }

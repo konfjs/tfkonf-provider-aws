@@ -29,7 +29,7 @@ export interface AwsConfigRemediationConfigurationArgs {
 }
 
 export class aws_config_remediation_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsConfigRemediationConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsConfigRemediationConfigurationArgs) {
     const meta = {execution_controls:{isBlock:true,ssm_controls:{isBlock:true}},parameter:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_config_remediation_configuration", resourceName);
   }

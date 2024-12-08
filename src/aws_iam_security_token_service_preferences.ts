@@ -5,7 +5,7 @@ export interface AwsIamSecurityTokenServicePreferencesArgs {
 }
 
 export class aws_iam_security_token_service_preferences extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIamSecurityTokenServicePreferencesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIamSecurityTokenServicePreferencesArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_iam_security_token_service_preferences", resourceName);
   }

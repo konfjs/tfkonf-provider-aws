@@ -8,7 +8,7 @@ export interface AwsApprunnerVpcConnectorArgs {
 }
 
 export class aws_apprunner_vpc_connector extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApprunnerVpcConnectorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApprunnerVpcConnectorArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_apprunner_vpc_connector", resourceName);
   }

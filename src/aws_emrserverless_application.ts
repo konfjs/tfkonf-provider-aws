@@ -57,7 +57,7 @@ export interface AwsEmrserverlessApplicationArgs {
 }
 
 export class aws_emrserverless_application extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEmrserverlessApplicationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEmrserverlessApplicationArgs) {
     const meta = {auto_start_configuration:{isBlock:true},auto_stop_configuration:{isBlock:true},image_configuration:{isBlock:true},initial_capacity:{isBlock:true,initial_capacity_config:{isBlock:true,worker_configuration:{isBlock:true}}},interactive_configuration:{isBlock:true},maximum_capacity:{isBlock:true},network_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_emrserverless_application", resourceName);
   }

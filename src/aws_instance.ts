@@ -97,7 +97,7 @@ export interface AwsInstanceArgs {
 }
 
 export class aws_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsInstanceArgs) {
     const meta = {capacity_reservation_specification:{isBlock:true,capacity_reservation_target:{isBlock:true}},cpu_options:{isBlock:true},credit_specification:{isBlock:true},ebs_block_device:{isBlock:true},enclave_options:{isBlock:true},ephemeral_block_device:{isBlock:true},instance_market_options:{isBlock:true,spot_options:{isBlock:true}},launch_template:{isBlock:true},maintenance_options:{isBlock:true},metadata_options:{isBlock:true},network_interface:{isBlock:true},private_dns_name_options:{isBlock:true},root_block_device:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_instance", resourceName);
   }

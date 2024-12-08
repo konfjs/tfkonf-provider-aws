@@ -12,7 +12,7 @@ export interface AwsDxGatewayArgs {
 }
 
 export class aws_dx_gateway extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDxGatewayArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDxGatewayArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_dx_gateway", resourceName);
   }

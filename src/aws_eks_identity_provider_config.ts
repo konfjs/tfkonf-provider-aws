@@ -24,7 +24,7 @@ export interface AwsEksIdentityProviderConfigArgs {
 }
 
 export class aws_eks_identity_provider_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEksIdentityProviderConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEksIdentityProviderConfigArgs) {
     const meta = {oidc:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_eks_identity_provider_config", resourceName);
   }

@@ -38,7 +38,7 @@ export interface AwsServicecatalogProvisionedProductArgs {
 }
 
 export class aws_servicecatalog_provisioned_product extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsServicecatalogProvisionedProductArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsServicecatalogProvisionedProductArgs) {
     const meta = {provisioning_parameters:{isBlock:true},stack_set_provisioning_preferences:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_servicecatalog_provisioned_product", resourceName);
   }

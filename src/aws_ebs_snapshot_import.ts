@@ -34,7 +34,7 @@ export interface AwsEbsSnapshotImportArgs {
 }
 
 export class aws_ebs_snapshot_import extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEbsSnapshotImportArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEbsSnapshotImportArgs) {
     const meta = {client_data:{isBlock:true},disk_container:{isBlock:true,user_bucket:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ebs_snapshot_import", resourceName);
   }

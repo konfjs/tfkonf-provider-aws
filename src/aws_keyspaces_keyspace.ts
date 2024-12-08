@@ -17,7 +17,7 @@ export interface AwsKeyspacesKeyspaceArgs {
 }
 
 export class aws_keyspaces_keyspace extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsKeyspacesKeyspaceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsKeyspacesKeyspaceArgs) {
     const meta = {replication_specification:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_keyspaces_keyspace", resourceName);
   }

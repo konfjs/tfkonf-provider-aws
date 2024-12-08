@@ -6,7 +6,7 @@ export interface AwsAppstreamFleetStackAssociationArgs {
 }
 
 export class aws_appstream_fleet_stack_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppstreamFleetStackAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppstreamFleetStackAssociationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_appstream_fleet_stack_association", resourceName);
   }

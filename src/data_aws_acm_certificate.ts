@@ -8,7 +8,7 @@ export interface DataAwsAcmCertificateArgs {
 }
 
 export class data_aws_acm_certificate extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsAcmCertificateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsAcmCertificateArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_acm_certificate", resourceName);
   }

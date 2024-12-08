@@ -5,7 +5,7 @@ export interface DataAwsAppintegrationsEventIntegrationArgs {
 }
 
 export class data_aws_appintegrations_event_integration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsAppintegrationsEventIntegrationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsAppintegrationsEventIntegrationArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_appintegrations_event_integration", resourceName);
   }

@@ -6,7 +6,7 @@ export interface AwsAmplifyBackendEnvironmentArgs {
 }
 
 export class aws_amplify_backend_environment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAmplifyBackendEnvironmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAmplifyBackendEnvironmentArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_amplify_backend_environment", resourceName);
   }

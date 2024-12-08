@@ -5,7 +5,7 @@ export interface DataAwsMskconnectConnectorArgs {
 }
 
 export class data_aws_mskconnect_connector extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsMskconnectConnectorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsMskconnectConnectorArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_mskconnect_connector", resourceName);
   }

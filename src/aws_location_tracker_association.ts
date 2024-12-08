@@ -12,7 +12,7 @@ export interface AwsLocationTrackerAssociationArgs {
 }
 
 export class aws_location_tracker_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLocationTrackerAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLocationTrackerAssociationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_location_tracker_association", resourceName);
   }

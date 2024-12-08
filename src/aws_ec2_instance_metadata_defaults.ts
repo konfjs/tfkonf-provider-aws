@@ -4,7 +4,7 @@ export interface AwsEc2InstanceMetadataDefaultsArgs {
 }
 
 export class aws_ec2_instance_metadata_defaults extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEc2InstanceMetadataDefaultsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEc2InstanceMetadataDefaultsArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ec2_instance_metadata_defaults", resourceName);
   }

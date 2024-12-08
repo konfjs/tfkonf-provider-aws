@@ -12,7 +12,7 @@ export interface AwsCloudsearchDomainServiceAccessPolicyArgs {
 }
 
 export class aws_cloudsearch_domain_service_access_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudsearchDomainServiceAccessPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudsearchDomainServiceAccessPolicyArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_cloudsearch_domain_service_access_policy", resourceName);
   }

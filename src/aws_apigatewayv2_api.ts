@@ -27,7 +27,7 @@ export interface AwsApigatewayv2ApiArgs {
 }
 
 export class aws_apigatewayv2_api extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApigatewayv2ApiArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApigatewayv2ApiArgs) {
     const meta = {cors_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_apigatewayv2_api", resourceName);
   }

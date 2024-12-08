@@ -17,7 +17,7 @@ export interface AwsDatasyncLocationNfsArgs {
 }
 
 export class aws_datasync_location_nfs extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDatasyncLocationNfsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDatasyncLocationNfsArgs) {
     const meta = {mount_options:{isBlock:true},on_prem_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_datasync_location_nfs", resourceName);
   }

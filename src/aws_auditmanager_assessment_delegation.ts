@@ -9,7 +9,7 @@ export interface AwsAuditmanagerAssessmentDelegationArgs {
 }
 
 export class aws_auditmanager_assessment_delegation extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAuditmanagerAssessmentDelegationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAuditmanagerAssessmentDelegationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_auditmanager_assessment_delegation", resourceName);
   }

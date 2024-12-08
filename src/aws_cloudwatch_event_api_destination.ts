@@ -10,7 +10,7 @@ export interface AwsCloudwatchEventApiDestinationArgs {
 }
 
 export class aws_cloudwatch_event_api_destination extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudwatchEventApiDestinationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudwatchEventApiDestinationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_cloudwatch_event_api_destination", resourceName);
   }

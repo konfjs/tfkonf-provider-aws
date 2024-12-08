@@ -84,7 +84,7 @@ export interface AwsLambdaFunctionArgs {
 }
 
 export class aws_lambda_function extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLambdaFunctionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLambdaFunctionArgs) {
     const meta = {dead_letter_config:{isBlock:true},environment:{isBlock:true},ephemeral_storage:{isBlock:true},file_system_config:{isBlock:true},image_config:{isBlock:true},logging_config:{isBlock:true},snap_start:{isBlock:true},timeouts:{isBlock:true},tracing_config:{isBlock:true},vpc_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_lambda_function", resourceName);
   }

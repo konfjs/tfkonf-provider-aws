@@ -48,7 +48,7 @@ export interface AwsEksNodeGroupArgs {
 }
 
 export class aws_eks_node_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEksNodeGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEksNodeGroupArgs) {
     const meta = {launch_template:{isBlock:true},remote_access:{isBlock:true},scaling_config:{isBlock:true},taint:{isBlock:true},timeouts:{isBlock:true},update_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_eks_node_group", resourceName);
   }

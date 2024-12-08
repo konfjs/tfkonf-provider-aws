@@ -19,7 +19,7 @@ export interface AwsNetworkmanagerConnectAttachmentArgs {
 }
 
 export class aws_networkmanager_connect_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNetworkmanagerConnectAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNetworkmanagerConnectAttachmentArgs) {
     const meta = {options:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_networkmanager_connect_attachment", resourceName);
   }

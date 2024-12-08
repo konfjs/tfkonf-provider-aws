@@ -32,7 +32,7 @@ export interface AwsCleanroomsCollaborationArgs {
 }
 
 export class aws_cleanrooms_collaboration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCleanroomsCollaborationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCleanroomsCollaborationArgs) {
     const meta = {data_encryption_metadata:{isBlock:true},member:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_cleanrooms_collaboration", resourceName);
   }

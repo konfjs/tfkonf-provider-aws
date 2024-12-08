@@ -6,7 +6,7 @@ export interface AwsSsmPatchGroupArgs {
 }
 
 export class aws_ssm_patch_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSsmPatchGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSsmPatchGroupArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ssm_patch_group", resourceName);
   }

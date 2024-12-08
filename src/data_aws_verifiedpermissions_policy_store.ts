@@ -5,7 +5,7 @@ export interface DataAwsVerifiedpermissionsPolicyStoreArgs {
 }
 
 export class data_aws_verifiedpermissions_policy_store extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsVerifiedpermissionsPolicyStoreArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsVerifiedpermissionsPolicyStoreArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_verifiedpermissions_policy_store", resourceName);
   }

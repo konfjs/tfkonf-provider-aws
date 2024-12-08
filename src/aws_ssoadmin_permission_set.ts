@@ -15,7 +15,7 @@ export interface AwsSsoadminPermissionSetArgs {
 }
 
 export class aws_ssoadmin_permission_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSsoadminPermissionSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSsoadminPermissionSetArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ssoadmin_permission_set", resourceName);
   }

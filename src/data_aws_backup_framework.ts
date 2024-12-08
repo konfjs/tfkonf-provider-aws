@@ -5,7 +5,7 @@ export interface DataAwsBackupFrameworkArgs {
 }
 
 export class data_aws_backup_framework extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsBackupFrameworkArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsBackupFrameworkArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_backup_framework", resourceName);
   }

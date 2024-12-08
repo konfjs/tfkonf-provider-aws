@@ -12,7 +12,7 @@ export interface AwsDatazoneUserProfileArgs {
 }
 
 export class aws_datazone_user_profile extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDatazoneUserProfileArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDatazoneUserProfileArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_datazone_user_profile", resourceName);
   }

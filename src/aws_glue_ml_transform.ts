@@ -33,7 +33,7 @@ export interface AwsGlueMlTransformArgs {
 }
 
 export class aws_glue_ml_transform extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGlueMlTransformArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGlueMlTransformArgs) {
     const meta = {input_record_tables:{isBlock:true},parameters:{isBlock:true,find_matches_parameters:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_glue_ml_transform", resourceName);
   }

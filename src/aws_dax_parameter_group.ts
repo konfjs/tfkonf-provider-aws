@@ -12,7 +12,7 @@ export interface AwsDaxParameterGroupArgs {
 }
 
 export class aws_dax_parameter_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDaxParameterGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDaxParameterGroupArgs) {
     const meta = {parameters:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_dax_parameter_group", resourceName);
   }

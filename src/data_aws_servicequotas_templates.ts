@@ -9,7 +9,7 @@ export interface DataAwsServicequotasTemplatesArgs {
 }
 
 export class data_aws_servicequotas_templates extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsServicequotasTemplatesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsServicequotasTemplatesArgs) {
     const meta = {templates:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_servicequotas_templates", resourceName);
   }

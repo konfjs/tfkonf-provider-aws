@@ -30,7 +30,7 @@ export interface AwsS3BucketNotificationArgs {
 }
 
 export class aws_s3_bucket_notification extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3BucketNotificationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3BucketNotificationArgs) {
     const meta = {lambda_function:{isBlock:true},queue:{isBlock:true},topic:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_s3_bucket_notification", resourceName);
   }

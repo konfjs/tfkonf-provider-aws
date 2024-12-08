@@ -13,7 +13,7 @@ export interface DataAwsBedrockagentAgentVersionsArgs {
 }
 
 export class data_aws_bedrockagent_agent_versions extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsBedrockagentAgentVersionsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsBedrockagentAgentVersionsArgs) {
     const meta = {agent_version_summaries:{isBlock:true,guardrail_configuration:{isBlock:true}}};
     super(terraformConfig, "data", args, meta, "aws_bedrockagent_agent_versions", resourceName);
   }

@@ -15,7 +15,7 @@ export interface AwsDbParameterGroupArgs {
 }
 
 export class aws_db_parameter_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDbParameterGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDbParameterGroupArgs) {
     const meta = {parameter:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_db_parameter_group", resourceName);
   }

@@ -28,7 +28,7 @@ export interface AwsFinspaceKxDataviewArgs {
 }
 
 export class aws_finspace_kx_dataview extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsFinspaceKxDataviewArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsFinspaceKxDataviewArgs) {
     const meta = {segment_configurations:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_finspace_kx_dataview", resourceName);
   }

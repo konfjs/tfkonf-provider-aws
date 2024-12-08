@@ -5,7 +5,7 @@ export interface AwsSecurityhubInviteAccepterArgs {
 }
 
 export class aws_securityhub_invite_accepter extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSecurityhubInviteAccepterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSecurityhubInviteAccepterArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_securityhub_invite_accepter", resourceName);
   }

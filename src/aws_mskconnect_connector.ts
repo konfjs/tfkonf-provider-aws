@@ -110,7 +110,7 @@ export interface AwsMskconnectConnectorArgs {
 }
 
 export class aws_mskconnect_connector extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMskconnectConnectorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMskconnectConnectorArgs) {
     const meta = {capacity:{isBlock:true,autoscaling:{isBlock:true,scale_in_policy:{isBlock:true},scale_out_policy:{isBlock:true}},provisioned_capacity:{isBlock:true}},kafka_cluster:{isBlock:true,apache_kafka_cluster:{isBlock:true,vpc:{isBlock:true}}},kafka_cluster_client_authentication:{isBlock:true},kafka_cluster_encryption_in_transit:{isBlock:true},log_delivery:{isBlock:true,worker_log_delivery:{isBlock:true,cloudwatch_logs:{isBlock:true},firehose:{isBlock:true},s3:{isBlock:true}}},plugin:{isBlock:true,custom_plugin:{isBlock:true}},timeouts:{isBlock:true},worker_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_mskconnect_connector", resourceName);
   }

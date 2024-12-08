@@ -8,7 +8,7 @@ export interface AwsIamOpenidConnectProviderArgs {
 }
 
 export class aws_iam_openid_connect_provider extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIamOpenidConnectProviderArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIamOpenidConnectProviderArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_iam_openid_connect_provider", resourceName);
   }

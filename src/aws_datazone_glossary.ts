@@ -9,7 +9,7 @@ export interface AwsDatazoneGlossaryArgs {
 }
 
 export class aws_datazone_glossary extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDatazoneGlossaryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDatazoneGlossaryArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_datazone_glossary", resourceName);
   }

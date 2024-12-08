@@ -17,7 +17,7 @@ export interface AwsElasticsearchVpcEndpointArgs {
 }
 
 export class aws_elasticsearch_vpc_endpoint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsElasticsearchVpcEndpointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsElasticsearchVpcEndpointArgs) {
     const meta = {timeouts:{isBlock:true},vpc_options:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_elasticsearch_vpc_endpoint", resourceName);
   }

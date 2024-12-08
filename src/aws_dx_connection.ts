@@ -10,7 +10,7 @@ export interface AwsDxConnectionArgs {
 }
 
 export class aws_dx_connection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDxConnectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDxConnectionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_dx_connection", resourceName);
   }

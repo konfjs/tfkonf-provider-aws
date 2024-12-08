@@ -10,7 +10,7 @@ export interface AwsMacie2InvitationAccepterArgs {
 }
 
 export class aws_macie2_invitation_accepter extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMacie2InvitationAccepterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMacie2InvitationAccepterArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_macie2_invitation_accepter", resourceName);
   }

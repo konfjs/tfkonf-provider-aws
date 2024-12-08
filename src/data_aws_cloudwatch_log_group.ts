@@ -5,7 +5,7 @@ export interface DataAwsCloudwatchLogGroupArgs {
 }
 
 export class data_aws_cloudwatch_log_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCloudwatchLogGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCloudwatchLogGroupArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_cloudwatch_log_group", resourceName);
   }

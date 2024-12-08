@@ -14,7 +14,7 @@ export interface AwsBedrockProvisionedModelThroughputArgs {
 }
 
 export class aws_bedrock_provisioned_model_throughput extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBedrockProvisionedModelThroughputArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBedrockProvisionedModelThroughputArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_bedrock_provisioned_model_throughput", resourceName);
   }

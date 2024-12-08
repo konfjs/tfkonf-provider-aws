@@ -7,7 +7,7 @@ export interface AwsS3controlAccessGrantsLocationArgs {
 }
 
 export class aws_s3control_access_grants_location extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3controlAccessGrantsLocationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3controlAccessGrantsLocationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_s3control_access_grants_location", resourceName);
   }

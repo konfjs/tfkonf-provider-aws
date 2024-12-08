@@ -12,7 +12,7 @@ export interface AwsShieldDrtAccessLogBucketAssociationArgs {
 }
 
 export class aws_shield_drt_access_log_bucket_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsShieldDrtAccessLogBucketAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsShieldDrtAccessLogBucketAssociationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_shield_drt_access_log_bucket_association", resourceName);
   }

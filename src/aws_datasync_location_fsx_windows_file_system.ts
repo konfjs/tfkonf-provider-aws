@@ -10,7 +10,7 @@ export interface AwsDatasyncLocationFsxWindowsFileSystemArgs {
 }
 
 export class aws_datasync_location_fsx_windows_file_system extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDatasyncLocationFsxWindowsFileSystemArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDatasyncLocationFsxWindowsFileSystemArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_datasync_location_fsx_windows_file_system", resourceName);
   }

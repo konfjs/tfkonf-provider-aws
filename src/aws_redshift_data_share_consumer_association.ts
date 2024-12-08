@@ -9,7 +9,7 @@ export interface AwsRedshiftDataShareConsumerAssociationArgs {
 }
 
 export class aws_redshift_data_share_consumer_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRedshiftDataShareConsumerAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRedshiftDataShareConsumerAssociationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_redshift_data_share_consumer_association", resourceName);
   }

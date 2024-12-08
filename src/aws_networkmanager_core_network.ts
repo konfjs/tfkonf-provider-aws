@@ -18,7 +18,7 @@ export interface AwsNetworkmanagerCoreNetworkArgs {
 }
 
 export class aws_networkmanager_core_network extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNetworkmanagerCoreNetworkArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNetworkmanagerCoreNetworkArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_networkmanager_core_network", resourceName);
   }

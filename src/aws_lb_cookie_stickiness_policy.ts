@@ -8,7 +8,7 @@ export interface AwsLbCookieStickinessPolicyArgs {
 }
 
 export class aws_lb_cookie_stickiness_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLbCookieStickinessPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLbCookieStickinessPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_lb_cookie_stickiness_policy", resourceName);
   }

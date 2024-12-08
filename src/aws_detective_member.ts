@@ -9,7 +9,7 @@ export interface AwsDetectiveMemberArgs {
 }
 
 export class aws_detective_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDetectiveMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDetectiveMemberArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_detective_member", resourceName);
   }

@@ -11,7 +11,7 @@ export interface AwsDocdbClusterSnapshotArgs {
 }
 
 export class aws_docdb_cluster_snapshot extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDocdbClusterSnapshotArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDocdbClusterSnapshotArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_docdb_cluster_snapshot", resourceName);
   }

@@ -7,7 +7,7 @@ export interface AwsKmsKeyPolicyArgs {
 }
 
 export class aws_kms_key_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsKmsKeyPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsKmsKeyPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_kms_key_policy", resourceName);
   }

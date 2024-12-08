@@ -6,7 +6,7 @@ export interface AwsRoute53VpcAssociationAuthorizationArgs {
 }
 
 export class aws_route53_vpc_association_authorization extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRoute53VpcAssociationAuthorizationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRoute53VpcAssociationAuthorizationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_route53_vpc_association_authorization", resourceName);
   }

@@ -9,7 +9,7 @@ export interface AwsAthenaDataCatalogArgs {
 }
 
 export class aws_athena_data_catalog extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAthenaDataCatalogArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAthenaDataCatalogArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_athena_data_catalog", resourceName);
   }

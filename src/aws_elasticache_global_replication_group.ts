@@ -15,7 +15,7 @@ export interface AwsElasticacheGlobalReplicationGroupArgs {
 }
 
 export class aws_elasticache_global_replication_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsElasticacheGlobalReplicationGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsElasticacheGlobalReplicationGroupArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_elasticache_global_replication_group", resourceName);
   }

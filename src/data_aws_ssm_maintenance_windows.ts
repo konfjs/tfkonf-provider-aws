@@ -10,7 +10,7 @@ export interface DataAwsSsmMaintenanceWindowsArgs {
 }
 
 export class data_aws_ssm_maintenance_windows extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSsmMaintenanceWindowsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSsmMaintenanceWindowsArgs) {
     const meta = {filter:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_ssm_maintenance_windows", resourceName);
   }

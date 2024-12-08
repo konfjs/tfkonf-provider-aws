@@ -25,7 +25,7 @@ export interface AwsMskconnectCustomPluginArgs {
 }
 
 export class aws_mskconnect_custom_plugin extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMskconnectCustomPluginArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMskconnectCustomPluginArgs) {
     const meta = {location:{isBlock:true,s3:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_mskconnect_custom_plugin", resourceName);
   }

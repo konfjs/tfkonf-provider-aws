@@ -9,7 +9,7 @@ export interface AwsMacie2CustomDataIdentifierArgs {
 }
 
 export class aws_macie2_custom_data_identifier extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMacie2CustomDataIdentifierArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMacie2CustomDataIdentifierArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_macie2_custom_data_identifier", resourceName);
   }

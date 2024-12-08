@@ -21,7 +21,7 @@ export interface AwsMedialiveMultiplexArgs {
 }
 
 export class aws_medialive_multiplex extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMedialiveMultiplexArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMedialiveMultiplexArgs) {
     const meta = {multiplex_settings:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_medialive_multiplex", resourceName);
   }

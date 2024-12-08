@@ -6,7 +6,7 @@ export interface DataAwsWafregionalSubscribedRuleGroupArgs {
 }
 
 export class data_aws_wafregional_subscribed_rule_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsWafregionalSubscribedRuleGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsWafregionalSubscribedRuleGroupArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_wafregional_subscribed_rule_group", resourceName);
   }

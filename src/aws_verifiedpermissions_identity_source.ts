@@ -47,7 +47,7 @@ export interface AwsVerifiedpermissionsIdentitySourceArgs {
 }
 
 export class aws_verifiedpermissions_identity_source extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVerifiedpermissionsIdentitySourceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVerifiedpermissionsIdentitySourceArgs) {
     const meta = {configuration:{isBlock:true,cognito_user_pool_configuration:{isBlock:true,group_configuration:{isBlock:true}},open_id_connect_configuration:{isBlock:true,group_configuration:{isBlock:true},token_selection:{isBlock:true,access_token_only:{isBlock:true},identity_token_only:{isBlock:true}}}}};
     super(terraformConfig, "resource", args, meta, "aws_verifiedpermissions_identity_source", resourceName);
   }

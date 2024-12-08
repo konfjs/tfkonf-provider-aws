@@ -12,7 +12,7 @@ export interface DataAwsSsoadminApplicationProvidersArgs {
 }
 
 export class data_aws_ssoadmin_application_providers extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSsoadminApplicationProvidersArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSsoadminApplicationProvidersArgs) {
     const meta = {application_providers:{isBlock:true,display_data:{isBlock:true}}};
     super(terraformConfig, "data", args, meta, "aws_ssoadmin_application_providers", resourceName);
   }

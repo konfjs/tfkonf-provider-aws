@@ -6,7 +6,7 @@ export interface AwsEcsAccountSettingDefaultArgs {
 }
 
 export class aws_ecs_account_setting_default extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEcsAccountSettingDefaultArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEcsAccountSettingDefaultArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ecs_account_setting_default", resourceName);
   }

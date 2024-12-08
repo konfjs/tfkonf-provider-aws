@@ -6,7 +6,7 @@ export interface AwsEcrLifecyclePolicyArgs {
 }
 
 export class aws_ecr_lifecycle_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEcrLifecyclePolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEcrLifecyclePolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ecr_lifecycle_policy", resourceName);
   }

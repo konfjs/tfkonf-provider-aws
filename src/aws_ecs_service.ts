@@ -165,7 +165,7 @@ export interface AwsEcsServiceArgs {
 }
 
 export class aws_ecs_service extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEcsServiceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEcsServiceArgs) {
     const meta = {alarms:{isBlock:true},capacity_provider_strategy:{isBlock:true},deployment_circuit_breaker:{isBlock:true},deployment_controller:{isBlock:true},load_balancer:{isBlock:true},network_configuration:{isBlock:true},ordered_placement_strategy:{isBlock:true},placement_constraints:{isBlock:true},service_connect_configuration:{isBlock:true,log_configuration:{isBlock:true,secret_option:{isBlock:true}},service:{isBlock:true,client_alias:{isBlock:true},timeout:{isBlock:true},tls:{isBlock:true,issuer_cert_authority:{isBlock:true}}}},service_registries:{isBlock:true},timeouts:{isBlock:true},volume_configuration:{isBlock:true,managed_ebs_volume:{isBlock:true,tag_specifications:{isBlock:true}}},vpc_lattice_configurations:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ecs_service", resourceName);
   }

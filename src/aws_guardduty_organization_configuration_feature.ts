@@ -13,7 +13,7 @@ export interface AwsGuarddutyOrganizationConfigurationFeatureArgs {
 }
 
 export class aws_guardduty_organization_configuration_feature extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGuarddutyOrganizationConfigurationFeatureArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGuarddutyOrganizationConfigurationFeatureArgs) {
     const meta = {additional_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_guardduty_organization_configuration_feature", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataAwsWafregionalIpsetArgs {
 }
 
 export class data_aws_wafregional_ipset extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsWafregionalIpsetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsWafregionalIpsetArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_wafregional_ipset", resourceName);
   }

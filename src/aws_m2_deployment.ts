@@ -16,7 +16,7 @@ export interface AwsM2DeploymentArgs {
 }
 
 export class aws_m2_deployment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsM2DeploymentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsM2DeploymentArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_m2_deployment", resourceName);
   }

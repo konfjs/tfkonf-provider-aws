@@ -10,7 +10,7 @@ export interface AwsS3BucketOwnershipControlsArgs {
 }
 
 export class aws_s3_bucket_ownership_controls extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3BucketOwnershipControlsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3BucketOwnershipControlsArgs) {
     const meta = {rule:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_s3_bucket_ownership_controls", resourceName);
   }

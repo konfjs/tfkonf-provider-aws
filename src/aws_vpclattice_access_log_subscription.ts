@@ -7,7 +7,7 @@ export interface AwsVpclatticeAccessLogSubscriptionArgs {
 }
 
 export class aws_vpclattice_access_log_subscription extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpclatticeAccessLogSubscriptionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpclatticeAccessLogSubscriptionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_vpclattice_access_log_subscription", resourceName);
   }

@@ -7,7 +7,7 @@ export interface AwsAppsyncApiKeyArgs {
 }
 
 export class aws_appsync_api_key extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppsyncApiKeyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppsyncApiKeyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_appsync_api_key", resourceName);
   }

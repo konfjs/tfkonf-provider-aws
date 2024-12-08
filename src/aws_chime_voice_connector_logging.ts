@@ -7,7 +7,7 @@ export interface AwsChimeVoiceConnectorLoggingArgs {
 }
 
 export class aws_chime_voice_connector_logging extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsChimeVoiceConnectorLoggingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsChimeVoiceConnectorLoggingArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_chime_voice_connector_logging", resourceName);
   }

@@ -6,7 +6,7 @@ export interface DataAwsEcsContainerDefinitionArgs {
 }
 
 export class data_aws_ecs_container_definition extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEcsContainerDefinitionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEcsContainerDefinitionArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_ecs_container_definition", resourceName);
   }

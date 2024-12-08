@@ -13,7 +13,7 @@ export interface AwsNeptuneGlobalClusterArgs {
 }
 
 export class aws_neptune_global_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNeptuneGlobalClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNeptuneGlobalClusterArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_neptune_global_cluster", resourceName);
   }

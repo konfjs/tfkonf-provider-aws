@@ -63,7 +63,7 @@ export interface AwsDbInstanceArgs {
 }
 
 export class aws_db_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDbInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDbInstanceArgs) {
     const meta = {blue_green_update:{isBlock:true},restore_to_point_in_time:{isBlock:true},s3_import:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_db_instance", resourceName);
   }

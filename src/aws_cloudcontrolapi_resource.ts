@@ -15,7 +15,7 @@ export interface AwsCloudcontrolapiResourceArgs {
 }
 
 export class aws_cloudcontrolapi_resource extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudcontrolapiResourceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudcontrolapiResourceArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_cloudcontrolapi_resource", resourceName);
   }

@@ -11,7 +11,7 @@ export interface AwsCustomerGatewayArgs {
 }
 
 export class aws_customer_gateway extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCustomerGatewayArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCustomerGatewayArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_customer_gateway", resourceName);
   }

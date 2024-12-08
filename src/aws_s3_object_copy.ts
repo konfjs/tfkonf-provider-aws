@@ -33,7 +33,7 @@ export interface AwsS3ObjectCopyArgs {
 }
 
 export class aws_s3_object_copy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3ObjectCopyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3ObjectCopyArgs) {
     const meta = {grant:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_s3_object_copy", resourceName);
   }

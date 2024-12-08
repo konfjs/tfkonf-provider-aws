@@ -8,7 +8,7 @@ export interface AwsBackupVaultLockConfigurationArgs {
 }
 
 export class aws_backup_vault_lock_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBackupVaultLockConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBackupVaultLockConfigurationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_backup_vault_lock_configuration", resourceName);
   }

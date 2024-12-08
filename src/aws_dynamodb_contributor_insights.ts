@@ -12,7 +12,7 @@ export interface AwsDynamodbContributorInsightsArgs {
 }
 
 export class aws_dynamodb_contributor_insights extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDynamodbContributorInsightsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDynamodbContributorInsightsArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_dynamodb_contributor_insights", resourceName);
   }

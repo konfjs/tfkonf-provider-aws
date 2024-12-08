@@ -5,7 +5,7 @@ export interface DataAwsLocationRouteCalculatorArgs {
 }
 
 export class data_aws_location_route_calculator extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsLocationRouteCalculatorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsLocationRouteCalculatorArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_location_route_calculator", resourceName);
   }

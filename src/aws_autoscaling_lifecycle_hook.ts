@@ -11,7 +11,7 @@ export interface AwsAutoscalingLifecycleHookArgs {
 }
 
 export class aws_autoscaling_lifecycle_hook extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAutoscalingLifecycleHookArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAutoscalingLifecycleHookArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_autoscaling_lifecycle_hook", resourceName);
   }

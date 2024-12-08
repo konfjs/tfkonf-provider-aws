@@ -16,7 +16,7 @@ export interface DataAwsNetworkAclsArgs {
 }
 
 export class data_aws_network_acls extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsNetworkAclsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsNetworkAclsArgs) {
     const meta = {filter:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_network_acls", resourceName);
   }

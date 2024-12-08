@@ -19,7 +19,7 @@ export interface AwsControltowerControlArgs {
 }
 
 export class aws_controltower_control extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsControltowerControlArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsControltowerControlArgs) {
     const meta = {parameters:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_controltower_control", resourceName);
   }

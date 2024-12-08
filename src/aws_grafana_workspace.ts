@@ -33,7 +33,7 @@ export interface AwsGrafanaWorkspaceArgs {
 }
 
 export class aws_grafana_workspace extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGrafanaWorkspaceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGrafanaWorkspaceArgs) {
     const meta = {network_access_control:{isBlock:true},timeouts:{isBlock:true},vpc_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_grafana_workspace", resourceName);
   }

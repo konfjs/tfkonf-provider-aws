@@ -61,7 +61,7 @@ export interface AwsSagemakerEndpointArgs {
 }
 
 export class aws_sagemaker_endpoint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSagemakerEndpointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSagemakerEndpointArgs) {
     const meta = {deployment_config:{isBlock:true,auto_rollback_configuration:{isBlock:true,alarms:{isBlock:true}},blue_green_update_policy:{isBlock:true,traffic_routing_configuration:{isBlock:true,canary_size:{isBlock:true},linear_step_size:{isBlock:true}}},rolling_update_policy:{isBlock:true,maximum_batch_size:{isBlock:true},rollback_maximum_batch_size:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "aws_sagemaker_endpoint", resourceName);
   }

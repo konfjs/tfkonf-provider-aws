@@ -21,7 +21,7 @@ export interface AwsCognitoIdentityPoolRolesAttachmentArgs {
 }
 
 export class aws_cognito_identity_pool_roles_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCognitoIdentityPoolRolesAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCognitoIdentityPoolRolesAttachmentArgs) {
     const meta = {role_mapping:{isBlock:true,mapping_rule:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_cognito_identity_pool_roles_attachment", resourceName);
   }

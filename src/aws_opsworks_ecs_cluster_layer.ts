@@ -83,7 +83,7 @@ export interface AwsOpsworksEcsClusterLayerArgs {
 }
 
 export class aws_opsworks_ecs_cluster_layer extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsOpsworksEcsClusterLayerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsOpsworksEcsClusterLayerArgs) {
     const meta = {cloudwatch_configuration:{isBlock:true,log_streams:{isBlock:true}},ebs_volume:{isBlock:true},load_based_auto_scaling:{isBlock:true,downscaling:{isBlock:true},upscaling:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_opsworks_ecs_cluster_layer", resourceName);
   }

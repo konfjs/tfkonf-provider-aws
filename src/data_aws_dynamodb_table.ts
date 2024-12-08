@@ -9,7 +9,7 @@ export interface DataAwsDynamodbTableArgs {
 }
 
 export class data_aws_dynamodb_table extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsDynamodbTableArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsDynamodbTableArgs) {
     const meta = {server_side_encryption:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_dynamodb_table", resourceName);
   }

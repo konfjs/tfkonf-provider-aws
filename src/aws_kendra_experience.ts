@@ -31,7 +31,7 @@ export interface AwsKendraExperienceArgs {
 }
 
 export class aws_kendra_experience extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsKendraExperienceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsKendraExperienceArgs) {
     const meta = {configuration:{isBlock:true,content_source_configuration:{isBlock:true},user_identity_configuration:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_kendra_experience", resourceName);
   }

@@ -162,7 +162,7 @@ export interface AwsSpotFleetRequestArgs {
 }
 
 export class aws_spot_fleet_request extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSpotFleetRequestArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSpotFleetRequestArgs) {
     const meta = {launch_specification:{isBlock:true,ebs_block_device:{isBlock:true},ephemeral_block_device:{isBlock:true},root_block_device:{isBlock:true}},launch_template_config:{isBlock:true,launch_template_specification:{isBlock:true},overrides:{isBlock:true,instance_requirements:{isBlock:true,accelerator_count:{isBlock:true},accelerator_total_memory_mib:{isBlock:true},baseline_ebs_bandwidth_mbps:{isBlock:true},memory_gib_per_vcpu:{isBlock:true},memory_mib:{isBlock:true},network_bandwidth_gbps:{isBlock:true},network_interface_count:{isBlock:true},total_local_storage_gb:{isBlock:true},vcpu_count:{isBlock:true}}}},spot_maintenance_strategies:{isBlock:true,capacity_rebalance:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_spot_fleet_request", resourceName);
   }

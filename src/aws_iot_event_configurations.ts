@@ -5,7 +5,7 @@ export interface AwsIotEventConfigurationsArgs {
 }
 
 export class aws_iot_event_configurations extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIotEventConfigurationsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIotEventConfigurationsArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_iot_event_configurations", resourceName);
   }

@@ -26,7 +26,7 @@ export interface AwsQuicksightAccountSubscriptionArgs {
 }
 
 export class aws_quicksight_account_subscription extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsQuicksightAccountSubscriptionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsQuicksightAccountSubscriptionArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_quicksight_account_subscription", resourceName);
   }

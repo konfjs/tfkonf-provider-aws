@@ -5,7 +5,7 @@ export interface AwsEmrSecurityConfigurationArgs {
 }
 
 export class aws_emr_security_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEmrSecurityConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEmrSecurityConfigurationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_emr_security_configuration", resourceName);
   }

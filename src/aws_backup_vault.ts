@@ -12,7 +12,7 @@ export interface AwsBackupVaultArgs {
 }
 
 export class aws_backup_vault extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBackupVaultArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBackupVaultArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_backup_vault", resourceName);
   }

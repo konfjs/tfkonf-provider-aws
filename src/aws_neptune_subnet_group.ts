@@ -7,7 +7,7 @@ export interface AwsNeptuneSubnetGroupArgs {
 }
 
 export class aws_neptune_subnet_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNeptuneSubnetGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNeptuneSubnetGroupArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_neptune_subnet_group", resourceName);
   }

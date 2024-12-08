@@ -11,7 +11,7 @@ export interface AwsOrganizationsAccountArgs {
 }
 
 export class aws_organizations_account extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsOrganizationsAccountArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsOrganizationsAccountArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_organizations_account", resourceName);
   }

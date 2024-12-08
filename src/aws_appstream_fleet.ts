@@ -23,7 +23,7 @@ export interface AwsAppstreamFleetArgs {
 }
 
 export class aws_appstream_fleet extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppstreamFleetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppstreamFleetArgs) {
     const meta = {compute_capacity:{isBlock:true},domain_join_info:{isBlock:true},vpc_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_appstream_fleet", resourceName);
   }

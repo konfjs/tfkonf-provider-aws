@@ -124,7 +124,7 @@ export interface AwsLexIntentArgs {
 }
 
 export class aws_lex_intent extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLexIntentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLexIntentArgs) {
     const meta = {conclusion_statement:{isBlock:true,message:{isBlock:true}},confirmation_prompt:{isBlock:true,message:{isBlock:true}},dialog_code_hook:{isBlock:true},follow_up_prompt:{isBlock:true,prompt:{isBlock:true,message:{isBlock:true}},rejection_statement:{isBlock:true,message:{isBlock:true}}},fulfillment_activity:{isBlock:true,code_hook:{isBlock:true}},rejection_statement:{isBlock:true,message:{isBlock:true}},slot:{isBlock:true,value_elicitation_prompt:{isBlock:true,message:{isBlock:true}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_lex_intent", resourceName);
   }

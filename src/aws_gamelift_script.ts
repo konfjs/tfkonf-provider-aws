@@ -16,7 +16,7 @@ export interface AwsGameliftScriptArgs {
 }
 
 export class aws_gamelift_script extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGameliftScriptArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGameliftScriptArgs) {
     const meta = {storage_location:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_gamelift_script", resourceName);
   }

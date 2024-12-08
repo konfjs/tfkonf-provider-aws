@@ -11,7 +11,7 @@ export interface AwsRedshiftHsmConfigurationArgs {
 }
 
 export class aws_redshift_hsm_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRedshiftHsmConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRedshiftHsmConfigurationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_redshift_hsm_configuration", resourceName);
   }

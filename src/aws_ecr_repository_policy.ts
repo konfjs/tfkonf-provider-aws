@@ -6,7 +6,7 @@ export interface AwsEcrRepositoryPolicyArgs {
 }
 
 export class aws_ecr_repository_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEcrRepositoryPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEcrRepositoryPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ecr_repository_policy", resourceName);
   }

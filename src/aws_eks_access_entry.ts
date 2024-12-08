@@ -14,7 +14,7 @@ export interface AwsEksAccessEntryArgs {
 }
 
 export class aws_eks_access_entry extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEksAccessEntryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEksAccessEntryArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_eks_access_entry", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataAwsCloudfrontRealtimeLogConfigArgs {
 }
 
 export class data_aws_cloudfront_realtime_log_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCloudfrontRealtimeLogConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCloudfrontRealtimeLogConfigArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_cloudfront_realtime_log_config", resourceName);
   }

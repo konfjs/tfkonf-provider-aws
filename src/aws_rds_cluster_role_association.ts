@@ -13,7 +13,7 @@ export interface AwsRdsClusterRoleAssociationArgs {
 }
 
 export class aws_rds_cluster_role_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRdsClusterRoleAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRdsClusterRoleAssociationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_rds_cluster_role_association", resourceName);
   }

@@ -5,7 +5,7 @@ export interface AwsSesv2AccountSuppressionAttributesArgs {
 }
 
 export class aws_sesv2_account_suppression_attributes extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSesv2AccountSuppressionAttributesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSesv2AccountSuppressionAttributesArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_sesv2_account_suppression_attributes", resourceName);
   }

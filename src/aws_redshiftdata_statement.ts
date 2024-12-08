@@ -23,7 +23,7 @@ export interface AwsRedshiftdataStatementArgs {
 }
 
 export class aws_redshiftdata_statement extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRedshiftdataStatementArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRedshiftdataStatementArgs) {
     const meta = {parameters:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_redshiftdata_statement", resourceName);
   }

@@ -32,7 +32,7 @@ export interface AwsIvschatLoggingConfigurationArgs {
 }
 
 export class aws_ivschat_logging_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIvschatLoggingConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIvschatLoggingConfigurationArgs) {
     const meta = {destination_configuration:{isBlock:true,cloudwatch_logs:{isBlock:true},firehose:{isBlock:true},s3:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ivschat_logging_configuration", resourceName);
   }

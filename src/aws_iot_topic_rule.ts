@@ -364,7 +364,7 @@ export interface AwsIotTopicRuleArgs {
 }
 
 export class aws_iot_topic_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIotTopicRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIotTopicRuleArgs) {
     const meta = {cloudwatch_alarm:{isBlock:true},cloudwatch_logs:{isBlock:true},cloudwatch_metric:{isBlock:true},dynamodb:{isBlock:true},dynamodbv2:{isBlock:true,put_item:{isBlock:true}},elasticsearch:{isBlock:true},error_action:{isBlock:true,cloudwatch_alarm:{isBlock:true},cloudwatch_logs:{isBlock:true},cloudwatch_metric:{isBlock:true},dynamodb:{isBlock:true},dynamodbv2:{isBlock:true,put_item:{isBlock:true}},elasticsearch:{isBlock:true},firehose:{isBlock:true},http:{isBlock:true,http_header:{isBlock:true}},iot_analytics:{isBlock:true},iot_events:{isBlock:true},kafka:{isBlock:true,header:{isBlock:true}},kinesis:{isBlock:true},lambda:{isBlock:true},republish:{isBlock:true},s3:{isBlock:true},sns:{isBlock:true},sqs:{isBlock:true},step_functions:{isBlock:true},timestream:{isBlock:true,dimension:{isBlock:true},timestamp:{isBlock:true}}},firehose:{isBlock:true},http:{isBlock:true,http_header:{isBlock:true}},iot_analytics:{isBlock:true},iot_events:{isBlock:true},kafka:{isBlock:true,header:{isBlock:true}},kinesis:{isBlock:true},lambda:{isBlock:true},republish:{isBlock:true},s3:{isBlock:true},sns:{isBlock:true},sqs:{isBlock:true},step_functions:{isBlock:true},timestream:{isBlock:true,dimension:{isBlock:true},timestamp:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_iot_topic_rule", resourceName);
   }

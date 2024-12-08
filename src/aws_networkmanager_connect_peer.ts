@@ -21,7 +21,7 @@ export interface AwsNetworkmanagerConnectPeerArgs {
 }
 
 export class aws_networkmanager_connect_peer extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNetworkmanagerConnectPeerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNetworkmanagerConnectPeerArgs) {
     const meta = {bgp_options:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_networkmanager_connect_peer", resourceName);
   }

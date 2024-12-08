@@ -11,7 +11,7 @@ export interface DataAwsServicecatalogConstraintArgs {
 }
 
 export class data_aws_servicecatalog_constraint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsServicecatalogConstraintArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsServicecatalogConstraintArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_servicecatalog_constraint", resourceName);
   }

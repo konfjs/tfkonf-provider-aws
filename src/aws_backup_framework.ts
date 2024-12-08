@@ -30,7 +30,7 @@ export interface AwsBackupFrameworkArgs {
 }
 
 export class aws_backup_framework extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBackupFrameworkArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBackupFrameworkArgs) {
     const meta = {control:{isBlock:true,input_parameter:{isBlock:true},scope:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_backup_framework", resourceName);
   }

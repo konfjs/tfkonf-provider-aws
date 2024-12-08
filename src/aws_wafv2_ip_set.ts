@@ -10,7 +10,7 @@ export interface AwsWafv2IpSetArgs {
 }
 
 export class aws_wafv2_ip_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsWafv2IpSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsWafv2IpSetArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_wafv2_ip_set", resourceName);
   }

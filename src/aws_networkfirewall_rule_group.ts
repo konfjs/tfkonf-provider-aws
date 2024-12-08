@@ -161,7 +161,7 @@ export interface AwsNetworkfirewallRuleGroupArgs {
 }
 
 export class aws_networkfirewall_rule_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNetworkfirewallRuleGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNetworkfirewallRuleGroupArgs) {
     const meta = {encryption_configuration:{isBlock:true},rule_group:{isBlock:true,reference_sets:{isBlock:true,ip_set_references:{isBlock:true,ip_set_reference:{isBlock:true}}},rule_variables:{isBlock:true,ip_sets:{isBlock:true,ip_set:{isBlock:true}},port_sets:{isBlock:true,port_set:{isBlock:true}}},rules_source:{isBlock:true,rules_source_list:{isBlock:true},stateful_rule:{isBlock:true,header:{isBlock:true},rule_option:{isBlock:true}},stateless_rules_and_custom_actions:{isBlock:true,custom_action:{isBlock:true,action_definition:{isBlock:true,publish_metric_action:{isBlock:true,dimension:{isBlock:true}}}},stateless_rule:{isBlock:true,rule_definition:{isBlock:true,match_attributes:{isBlock:true,destination:{isBlock:true},destination_port:{isBlock:true},source:{isBlock:true},source_port:{isBlock:true},tcp_flag:{isBlock:true}}}}}},stateful_rule_options:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_networkfirewall_rule_group", resourceName);
   }

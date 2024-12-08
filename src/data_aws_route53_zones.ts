@@ -4,7 +4,7 @@ export interface DataAwsRoute53ZonesArgs {
 }
 
 export class data_aws_route53_zones extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsRoute53ZonesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsRoute53ZonesArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_route53_zones", resourceName);
   }

@@ -29,7 +29,7 @@ export interface AwsEvidentlyFeatureArgs {
 }
 
 export class aws_evidently_feature extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEvidentlyFeatureArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEvidentlyFeatureArgs) {
     const meta = {timeouts:{isBlock:true},variations:{isBlock:true,value:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_evidently_feature", resourceName);
   }

@@ -12,7 +12,7 @@ export interface AwsWorkspacesConnectionAliasArgs {
 }
 
 export class aws_workspaces_connection_alias extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsWorkspacesConnectionAliasArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsWorkspacesConnectionAliasArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_workspaces_connection_alias", resourceName);
   }

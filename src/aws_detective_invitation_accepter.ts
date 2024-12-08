@@ -5,7 +5,7 @@ export interface AwsDetectiveInvitationAccepterArgs {
 }
 
 export class aws_detective_invitation_accepter extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDetectiveInvitationAccepterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDetectiveInvitationAccepterArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_detective_invitation_accepter", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataAwsElasticacheServerlessCacheArgs {
 }
 
 export class data_aws_elasticache_serverless_cache extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsElasticacheServerlessCacheArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsElasticacheServerlessCacheArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_elasticache_serverless_cache", resourceName);
   }

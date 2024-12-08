@@ -59,7 +59,7 @@ export interface AwsLbTargetGroupArgs {
 }
 
 export class aws_lb_target_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLbTargetGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLbTargetGroupArgs) {
     const meta = {health_check:{isBlock:true},stickiness:{isBlock:true},target_failover:{isBlock:true},target_group_health:{isBlock:true,dns_failover:{isBlock:true},unhealthy_state_routing:{isBlock:true}},target_health_state:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_lb_target_group", resourceName);
   }

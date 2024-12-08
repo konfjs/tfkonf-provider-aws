@@ -5,7 +5,7 @@ export interface DataAwsServerlessapplicationrepositoryApplicationArgs {
 }
 
 export class data_aws_serverlessapplicationrepository_application extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsServerlessapplicationrepositoryApplicationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsServerlessapplicationrepositoryApplicationArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_serverlessapplicationrepository_application", resourceName);
   }

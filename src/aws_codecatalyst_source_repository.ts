@@ -15,7 +15,7 @@ export interface AwsCodecatalystSourceRepositoryArgs {
 }
 
 export class aws_codecatalyst_source_repository extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCodecatalystSourceRepositoryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCodecatalystSourceRepositoryArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_codecatalyst_source_repository", resourceName);
   }

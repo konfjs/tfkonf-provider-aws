@@ -35,7 +35,7 @@ export interface AwsCloudwatchEventEndpointArgs {
 }
 
 export class aws_cloudwatch_event_endpoint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudwatchEventEndpointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudwatchEventEndpointArgs) {
     const meta = {event_bus:{isBlock:true},replication_config:{isBlock:true},routing_config:{isBlock:true,failover_config:{isBlock:true,primary:{isBlock:true},secondary:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "aws_cloudwatch_event_endpoint", resourceName);
   }

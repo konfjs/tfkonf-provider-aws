@@ -17,7 +17,7 @@ export interface AwsApiGatewayDeploymentArgs {
 }
 
 export class aws_api_gateway_deployment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApiGatewayDeploymentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApiGatewayDeploymentArgs) {
     const meta = {canary_settings:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_api_gateway_deployment", resourceName);
   }

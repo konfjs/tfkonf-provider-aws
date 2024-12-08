@@ -8,7 +8,7 @@ export interface AwsVpcNetworkPerformanceMetricSubscriptionArgs {
 }
 
 export class aws_vpc_network_performance_metric_subscription extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpcNetworkPerformanceMetricSubscriptionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpcNetworkPerformanceMetricSubscriptionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_vpc_network_performance_metric_subscription", resourceName);
   }

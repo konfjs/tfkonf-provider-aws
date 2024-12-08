@@ -6,7 +6,7 @@ export interface AwsSnsTopicDataProtectionPolicyArgs {
 }
 
 export class aws_sns_topic_data_protection_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSnsTopicDataProtectionPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSnsTopicDataProtectionPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_sns_topic_data_protection_policy", resourceName);
   }

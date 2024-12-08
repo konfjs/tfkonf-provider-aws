@@ -12,7 +12,7 @@ export interface AwsIvsChannelArgs {
 }
 
 export class aws_ivs_channel extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIvsChannelArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIvsChannelArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ivs_channel", resourceName);
   }

@@ -13,7 +13,7 @@ export interface AwsServicecatalogBudgetResourceAssociationArgs {
 }
 
 export class aws_servicecatalog_budget_resource_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsServicecatalogBudgetResourceAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsServicecatalogBudgetResourceAssociationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_servicecatalog_budget_resource_association", resourceName);
   }

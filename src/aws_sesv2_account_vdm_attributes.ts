@@ -15,7 +15,7 @@ export interface AwsSesv2AccountVdmAttributesArgs {
 }
 
 export class aws_sesv2_account_vdm_attributes extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSesv2AccountVdmAttributesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSesv2AccountVdmAttributesArgs) {
     const meta = {dashboard_attributes:{isBlock:true},guardian_attributes:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_sesv2_account_vdm_attributes", resourceName);
   }

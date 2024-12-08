@@ -54,7 +54,7 @@ export interface AwsEvidentlyLaunchArgs {
 }
 
 export class aws_evidently_launch extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEvidentlyLaunchArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEvidentlyLaunchArgs) {
     const meta = {groups:{isBlock:true},metric_monitors:{isBlock:true,metric_definition:{isBlock:true}},scheduled_splits_config:{isBlock:true,steps:{isBlock:true,segment_overrides:{isBlock:true}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_evidently_launch", resourceName);
   }

@@ -10,7 +10,7 @@ export interface AwsDevicefarmInstanceProfileArgs {
 }
 
 export class aws_devicefarm_instance_profile extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDevicefarmInstanceProfileArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDevicefarmInstanceProfileArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_devicefarm_instance_profile", resourceName);
   }

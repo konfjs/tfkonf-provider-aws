@@ -17,7 +17,7 @@ export interface AwsWafRegexMatchSetArgs {
 }
 
 export class aws_waf_regex_match_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsWafRegexMatchSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsWafRegexMatchSetArgs) {
     const meta = {regex_match_tuple:{isBlock:true,field_to_match:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_waf_regex_match_set", resourceName);
   }

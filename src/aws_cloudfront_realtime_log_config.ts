@@ -18,7 +18,7 @@ export interface AwsCloudfrontRealtimeLogConfigArgs {
 }
 
 export class aws_cloudfront_realtime_log_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudfrontRealtimeLogConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudfrontRealtimeLogConfigArgs) {
     const meta = {endpoint:{isBlock:true,kinesis_stream_config:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_cloudfront_realtime_log_config", resourceName);
   }

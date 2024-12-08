@@ -12,7 +12,7 @@ export interface AwsVpnGatewayRoutePropagationArgs {
 }
 
 export class aws_vpn_gateway_route_propagation extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpnGatewayRoutePropagationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpnGatewayRoutePropagationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_vpn_gateway_route_propagation", resourceName);
   }

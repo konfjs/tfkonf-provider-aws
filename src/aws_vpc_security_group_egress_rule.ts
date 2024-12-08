@@ -14,7 +14,7 @@ export interface AwsVpcSecurityGroupEgressRuleArgs {
 }
 
 export class aws_vpc_security_group_egress_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpcSecurityGroupEgressRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpcSecurityGroupEgressRuleArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_vpc_security_group_egress_rule", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataAwsBackupPlanArgs {
 }
 
 export class data_aws_backup_plan extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsBackupPlanArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsBackupPlanArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_backup_plan", resourceName);
   }

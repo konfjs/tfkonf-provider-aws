@@ -7,7 +7,7 @@ export interface AwsEfsFileSystemPolicyArgs {
 }
 
 export class aws_efs_file_system_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEfsFileSystemPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEfsFileSystemPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_efs_file_system_policy", resourceName);
   }

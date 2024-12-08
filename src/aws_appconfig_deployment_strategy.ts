@@ -12,7 +12,7 @@ export interface AwsAppconfigDeploymentStrategyArgs {
 }
 
 export class aws_appconfig_deployment_strategy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppconfigDeploymentStrategyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppconfigDeploymentStrategyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_appconfig_deployment_strategy", resourceName);
   }

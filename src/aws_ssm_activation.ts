@@ -9,7 +9,7 @@ export interface AwsSsmActivationArgs {
 }
 
 export class aws_ssm_activation extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSsmActivationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSsmActivationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ssm_activation", resourceName);
   }

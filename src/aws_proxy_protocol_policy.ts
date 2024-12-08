@@ -6,7 +6,7 @@ export interface AwsProxyProtocolPolicyArgs {
 }
 
 export class aws_proxy_protocol_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsProxyProtocolPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsProxyProtocolPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_proxy_protocol_policy", resourceName);
   }

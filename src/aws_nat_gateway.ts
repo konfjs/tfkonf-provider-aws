@@ -16,7 +16,7 @@ export interface AwsNatGatewayArgs {
 }
 
 export class aws_nat_gateway extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNatGatewayArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNatGatewayArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_nat_gateway", resourceName);
   }

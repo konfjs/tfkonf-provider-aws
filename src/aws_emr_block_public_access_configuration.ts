@@ -11,7 +11,7 @@ export interface AwsEmrBlockPublicAccessConfigurationArgs {
 }
 
 export class aws_emr_block_public_access_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEmrBlockPublicAccessConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEmrBlockPublicAccessConfigurationArgs) {
     const meta = {permitted_public_security_group_rule_range:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_emr_block_public_access_configuration", resourceName);
   }

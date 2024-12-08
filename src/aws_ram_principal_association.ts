@@ -6,7 +6,7 @@ export interface AwsRamPrincipalAssociationArgs {
 }
 
 export class aws_ram_principal_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRamPrincipalAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRamPrincipalAssociationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ram_principal_association", resourceName);
   }

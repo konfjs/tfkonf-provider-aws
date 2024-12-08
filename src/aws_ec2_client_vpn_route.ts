@@ -14,7 +14,7 @@ export interface AwsEc2ClientVpnRouteArgs {
 }
 
 export class aws_ec2_client_vpn_route extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEc2ClientVpnRouteArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEc2ClientVpnRouteArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ec2_client_vpn_route", resourceName);
   }

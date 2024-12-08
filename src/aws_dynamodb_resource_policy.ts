@@ -6,7 +6,7 @@ export interface AwsDynamodbResourcePolicyArgs {
 }
 
 export class aws_dynamodb_resource_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDynamodbResourcePolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDynamodbResourcePolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_dynamodb_resource_policy", resourceName);
   }

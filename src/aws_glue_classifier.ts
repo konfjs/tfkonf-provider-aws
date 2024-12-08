@@ -35,7 +35,7 @@ export interface AwsGlueClassifierArgs {
 }
 
 export class aws_glue_classifier extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGlueClassifierArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGlueClassifierArgs) {
     const meta = {csv_classifier:{isBlock:true},grok_classifier:{isBlock:true},json_classifier:{isBlock:true},xml_classifier:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_glue_classifier", resourceName);
   }

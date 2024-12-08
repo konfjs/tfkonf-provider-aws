@@ -6,7 +6,7 @@ export interface AwsVpcEndpointPrivateDnsArgs {
 }
 
 export class aws_vpc_endpoint_private_dns extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpcEndpointPrivateDnsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpcEndpointPrivateDnsArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_vpc_endpoint_private_dns", resourceName);
   }

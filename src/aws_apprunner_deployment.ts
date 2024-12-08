@@ -10,7 +10,7 @@ export interface AwsApprunnerDeploymentArgs {
 }
 
 export class aws_apprunner_deployment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApprunnerDeploymentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApprunnerDeploymentArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_apprunner_deployment", resourceName);
   }

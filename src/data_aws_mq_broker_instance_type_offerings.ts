@@ -7,7 +7,7 @@ export interface DataAwsMqBrokerInstanceTypeOfferingsArgs {
 }
 
 export class data_aws_mq_broker_instance_type_offerings extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsMqBrokerInstanceTypeOfferingsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsMqBrokerInstanceTypeOfferingsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_mq_broker_instance_type_offerings", resourceName);
   }

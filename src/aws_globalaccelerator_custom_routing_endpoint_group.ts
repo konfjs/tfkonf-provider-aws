@@ -23,7 +23,7 @@ export interface AwsGlobalacceleratorCustomRoutingEndpointGroupArgs {
 }
 
 export class aws_globalaccelerator_custom_routing_endpoint_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGlobalacceleratorCustomRoutingEndpointGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGlobalacceleratorCustomRoutingEndpointGroupArgs) {
     const meta = {destination_configuration:{isBlock:true},endpoint_configuration:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_globalaccelerator_custom_routing_endpoint_group", resourceName);
   }

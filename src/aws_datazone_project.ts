@@ -15,7 +15,7 @@ export interface AwsDatazoneProjectArgs {
 }
 
 export class aws_datazone_project extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDatazoneProjectArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDatazoneProjectArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_datazone_project", resourceName);
   }

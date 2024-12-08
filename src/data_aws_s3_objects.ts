@@ -12,7 +12,7 @@ export interface DataAwsS3ObjectsArgs {
 }
 
 export class data_aws_s3_objects extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsS3ObjectsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsS3ObjectsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_s3_objects", resourceName);
   }

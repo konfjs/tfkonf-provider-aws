@@ -15,7 +15,7 @@ export interface DataAwsEc2LocalGatewayVirtualInterfaceArgs {
 }
 
 export class data_aws_ec2_local_gateway_virtual_interface extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEc2LocalGatewayVirtualInterfaceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEc2LocalGatewayVirtualInterfaceArgs) {
     const meta = {filter:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_ec2_local_gateway_virtual_interface", resourceName);
   }

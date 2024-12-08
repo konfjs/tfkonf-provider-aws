@@ -18,7 +18,7 @@ export interface AwsVpcIpamPoolCidrArgs {
 }
 
 export class aws_vpc_ipam_pool_cidr extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpcIpamPoolCidrArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpcIpamPoolCidrArgs) {
     const meta = {cidr_authorization_context:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_vpc_ipam_pool_cidr", resourceName);
   }

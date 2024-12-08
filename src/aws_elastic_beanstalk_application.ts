@@ -15,7 +15,7 @@ export interface AwsElasticBeanstalkApplicationArgs {
 }
 
 export class aws_elastic_beanstalk_application extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsElasticBeanstalkApplicationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsElasticBeanstalkApplicationArgs) {
     const meta = {appversion_lifecycle:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_elastic_beanstalk_application", resourceName);
   }

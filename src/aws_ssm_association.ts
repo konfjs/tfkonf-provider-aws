@@ -29,7 +29,7 @@ export interface AwsSsmAssociationArgs {
 }
 
 export class aws_ssm_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSsmAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSsmAssociationArgs) {
     const meta = {output_location:{isBlock:true},targets:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ssm_association", resourceName);
   }

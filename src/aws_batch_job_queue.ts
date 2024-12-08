@@ -31,7 +31,7 @@ export interface AwsBatchJobQueueArgs {
 }
 
 export class aws_batch_job_queue extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBatchJobQueueArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBatchJobQueueArgs) {
     const meta = {compute_environment_order:{isBlock:true},job_state_time_limit_action:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_batch_job_queue", resourceName);
   }

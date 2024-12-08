@@ -98,7 +98,7 @@ export interface AwsGlueCatalogTableArgs {
 }
 
 export class aws_glue_catalog_table extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGlueCatalogTableArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGlueCatalogTableArgs) {
     const meta = {open_table_format_input:{isBlock:true,iceberg_input:{isBlock:true}},partition_index:{isBlock:true},partition_keys:{isBlock:true},storage_descriptor:{isBlock:true,columns:{isBlock:true},schema_reference:{isBlock:true,schema_id:{isBlock:true}},ser_de_info:{isBlock:true},skewed_info:{isBlock:true},sort_columns:{isBlock:true}},target_table:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_glue_catalog_table", resourceName);
   }

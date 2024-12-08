@@ -5,7 +5,7 @@ export interface DataAwsGlueConnectionArgs {
 }
 
 export class data_aws_glue_connection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsGlueConnectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsGlueConnectionArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_glue_connection", resourceName);
   }

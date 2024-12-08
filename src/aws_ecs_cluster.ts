@@ -42,7 +42,7 @@ export interface AwsEcsClusterArgs {
 }
 
 export class aws_ecs_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEcsClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEcsClusterArgs) {
     const meta = {configuration:{isBlock:true,execute_command_configuration:{isBlock:true,log_configuration:{isBlock:true}},managed_storage_configuration:{isBlock:true}},service_connect_defaults:{isBlock:true},setting:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ecs_cluster", resourceName);
   }

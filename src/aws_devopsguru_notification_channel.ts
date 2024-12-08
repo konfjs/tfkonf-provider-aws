@@ -15,7 +15,7 @@ export interface AwsDevopsguruNotificationChannelArgs {
 }
 
 export class aws_devopsguru_notification_channel extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDevopsguruNotificationChannelArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDevopsguruNotificationChannelArgs) {
     const meta = {filters:{isBlock:true},sns:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_devopsguru_notification_channel", resourceName);
   }

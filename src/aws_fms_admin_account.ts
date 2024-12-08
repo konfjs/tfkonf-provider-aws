@@ -10,7 +10,7 @@ export interface AwsFmsAdminAccountArgs {
 }
 
 export class aws_fms_admin_account extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsFmsAdminAccountArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsFmsAdminAccountArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_fms_admin_account", resourceName);
   }

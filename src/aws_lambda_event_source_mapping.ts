@@ -67,7 +67,7 @@ export interface AwsLambdaEventSourceMappingArgs {
 }
 
 export class aws_lambda_event_source_mapping extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLambdaEventSourceMappingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLambdaEventSourceMappingArgs) {
     const meta = {amazon_managed_kafka_event_source_config:{isBlock:true},destination_config:{isBlock:true,on_failure:{isBlock:true}},document_db_event_source_config:{isBlock:true},filter_criteria:{isBlock:true,filter:{isBlock:true}},scaling_config:{isBlock:true},self_managed_event_source:{isBlock:true},self_managed_kafka_event_source_config:{isBlock:true},source_access_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_lambda_event_source_mapping", resourceName);
   }

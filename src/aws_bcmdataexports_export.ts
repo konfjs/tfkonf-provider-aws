@@ -47,7 +47,7 @@ export interface AwsBcmdataexportsExportArgs {
 }
 
 export class aws_bcmdataexports_export extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBcmdataexportsExportArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBcmdataexportsExportArgs) {
     const meta = {export:{isBlock:true,data_query:{isBlock:true},destination_configurations:{isBlock:true,s3_destination:{isBlock:true,s3_output_configurations:{isBlock:true}}},refresh_cadence:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_bcmdataexports_export", resourceName);
   }

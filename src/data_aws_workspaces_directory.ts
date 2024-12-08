@@ -5,7 +5,7 @@ export interface DataAwsWorkspacesDirectoryArgs {
 }
 
 export class data_aws_workspaces_directory extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsWorkspacesDirectoryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsWorkspacesDirectoryArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_workspaces_directory", resourceName);
   }

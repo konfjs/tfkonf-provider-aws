@@ -6,7 +6,7 @@ export interface AwsCeCostAllocationTagArgs {
 }
 
 export class aws_ce_cost_allocation_tag extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCeCostAllocationTagArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCeCostAllocationTagArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ce_cost_allocation_tag", resourceName);
   }

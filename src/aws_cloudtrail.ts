@@ -51,7 +51,7 @@ export interface AwsCloudtrailArgs {
 }
 
 export class aws_cloudtrail extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudtrailArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudtrailArgs) {
     const meta = {advanced_event_selector:{isBlock:true,field_selector:{isBlock:true}},event_selector:{isBlock:true,data_resource:{isBlock:true}},insight_selector:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_cloudtrail", resourceName);
   }

@@ -4,7 +4,7 @@ export interface DataAwsSfnActivityArgs {
 }
 
 export class data_aws_sfn_activity extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSfnActivityArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSfnActivityArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_sfn_activity", resourceName);
   }

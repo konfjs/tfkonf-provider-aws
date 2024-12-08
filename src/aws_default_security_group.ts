@@ -6,7 +6,7 @@ export interface AwsDefaultSecurityGroupArgs {
 }
 
 export class aws_default_security_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDefaultSecurityGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDefaultSecurityGroupArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_default_security_group", resourceName);
   }

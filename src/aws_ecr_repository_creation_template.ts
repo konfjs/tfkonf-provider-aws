@@ -17,7 +17,7 @@ export interface AwsEcrRepositoryCreationTemplateArgs {
 }
 
 export class aws_ecr_repository_creation_template extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEcrRepositoryCreationTemplateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEcrRepositoryCreationTemplateArgs) {
     const meta = {encryption_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ecr_repository_creation_template", resourceName);
   }

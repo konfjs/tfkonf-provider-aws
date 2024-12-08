@@ -6,7 +6,7 @@ export interface DataAwsDxRouterConfigurationArgs {
 }
 
 export class data_aws_dx_router_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsDxRouterConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsDxRouterConfigurationArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_dx_router_configuration", resourceName);
   }

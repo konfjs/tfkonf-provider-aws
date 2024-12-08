@@ -52,7 +52,7 @@ export interface AwsLexBotArgs {
 }
 
 export class aws_lex_bot extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLexBotArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLexBotArgs) {
     const meta = {abort_statement:{isBlock:true,message:{isBlock:true}},clarification_prompt:{isBlock:true,message:{isBlock:true}},intent:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_lex_bot", resourceName);
   }

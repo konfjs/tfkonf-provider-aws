@@ -118,7 +118,7 @@ export interface DataAwsCeTagsArgs {
 }
 
 export class data_aws_ce_tags extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCeTagsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCeTagsArgs) {
     const meta = {filter:{isBlock:true,and:{isBlock:true,cost_category:{isBlock:true},dimension:{isBlock:true},tags:{isBlock:true}},cost_category:{isBlock:true},dimension:{isBlock:true},not:{isBlock:true,cost_category:{isBlock:true},dimension:{isBlock:true},tags:{isBlock:true}},or:{isBlock:true,cost_category:{isBlock:true},dimension:{isBlock:true},tags:{isBlock:true}},tags:{isBlock:true}},sort_by:{isBlock:true},time_period:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_ce_tags", resourceName);
   }

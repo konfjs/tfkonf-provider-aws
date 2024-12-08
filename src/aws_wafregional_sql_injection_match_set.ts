@@ -16,7 +16,7 @@ export interface AwsWafregionalSqlInjectionMatchSetArgs {
 }
 
 export class aws_wafregional_sql_injection_match_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsWafregionalSqlInjectionMatchSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsWafregionalSqlInjectionMatchSetArgs) {
     const meta = {sql_injection_match_tuple:{isBlock:true,field_to_match:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_wafregional_sql_injection_match_set", resourceName);
   }

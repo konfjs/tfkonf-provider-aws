@@ -36,7 +36,7 @@ export interface AwsCloudfrontFieldLevelEncryptionConfigArgs {
 }
 
 export class aws_cloudfront_field_level_encryption_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudfrontFieldLevelEncryptionConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudfrontFieldLevelEncryptionConfigArgs) {
     const meta = {content_type_profile_config:{isBlock:true,content_type_profiles:{isBlock:true,items:{isBlock:true}}},query_arg_profile_config:{isBlock:true,query_arg_profiles:{isBlock:true,items:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "aws_cloudfront_field_level_encryption_config", resourceName);
   }

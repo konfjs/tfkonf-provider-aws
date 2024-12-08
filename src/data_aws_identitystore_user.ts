@@ -27,7 +27,7 @@ export interface DataAwsIdentitystoreUserArgs {
 }
 
 export class data_aws_identitystore_user extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsIdentitystoreUserArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsIdentitystoreUserArgs) {
     const meta = {alternate_identifier:{isBlock:true,external_id:{isBlock:true},unique_attribute:{isBlock:true}},filter:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_identitystore_user", resourceName);
   }

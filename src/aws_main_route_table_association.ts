@@ -13,7 +13,7 @@ export interface AwsMainRouteTableAssociationArgs {
 }
 
 export class aws_main_route_table_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMainRouteTableAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMainRouteTableAssociationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_main_route_table_association", resourceName);
   }

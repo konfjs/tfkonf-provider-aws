@@ -33,7 +33,7 @@ export interface AwsDefaultNetworkAclArgs {
 }
 
 export class aws_default_network_acl extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDefaultNetworkAclArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDefaultNetworkAclArgs) {
     const meta = {egress:{isBlock:true},ingress:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_default_network_acl", resourceName);
   }

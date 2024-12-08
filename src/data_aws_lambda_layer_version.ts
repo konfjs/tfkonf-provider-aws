@@ -7,7 +7,7 @@ export interface DataAwsLambdaLayerVersionArgs {
 }
 
 export class data_aws_lambda_layer_version extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsLambdaLayerVersionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsLambdaLayerVersionArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_lambda_layer_version", resourceName);
   }

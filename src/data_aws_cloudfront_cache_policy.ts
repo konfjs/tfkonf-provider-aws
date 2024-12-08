@@ -6,7 +6,7 @@ export interface DataAwsCloudfrontCachePolicyArgs {
 }
 
 export class data_aws_cloudfront_cache_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCloudfrontCachePolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCloudfrontCachePolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_cloudfront_cache_policy", resourceName);
   }

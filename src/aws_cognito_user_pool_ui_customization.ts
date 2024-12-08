@@ -8,7 +8,7 @@ export interface AwsCognitoUserPoolUiCustomizationArgs {
 }
 
 export class aws_cognito_user_pool_ui_customization extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCognitoUserPoolUiCustomizationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCognitoUserPoolUiCustomizationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_cognito_user_pool_ui_customization", resourceName);
   }

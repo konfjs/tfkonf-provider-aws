@@ -13,7 +13,7 @@ export interface AwsApprunnerVpcIngressConnectionArgs {
 }
 
 export class aws_apprunner_vpc_ingress_connection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApprunnerVpcIngressConnectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApprunnerVpcIngressConnectionArgs) {
     const meta = {ingress_vpc_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_apprunner_vpc_ingress_connection", resourceName);
   }

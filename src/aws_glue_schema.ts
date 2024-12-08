@@ -10,7 +10,7 @@ export interface AwsGlueSchemaArgs {
 }
 
 export class aws_glue_schema extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGlueSchemaArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGlueSchemaArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_glue_schema", resourceName);
   }

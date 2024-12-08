@@ -7,7 +7,7 @@ export interface AwsSsoadminApplicationAccessScopeArgs {
 }
 
 export class aws_ssoadmin_application_access_scope extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSsoadminApplicationAccessScopeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSsoadminApplicationAccessScopeArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ssoadmin_application_access_scope", resourceName);
   }

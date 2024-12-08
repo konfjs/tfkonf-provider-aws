@@ -8,7 +8,7 @@ export interface AwsLambdaRuntimeManagementConfigArgs {
 }
 
 export class aws_lambda_runtime_management_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLambdaRuntimeManagementConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLambdaRuntimeManagementConfigArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_lambda_runtime_management_config", resourceName);
   }

@@ -10,7 +10,7 @@ export interface AwsAppsyncApiCacheArgs {
 }
 
 export class aws_appsync_api_cache extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppsyncApiCacheArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppsyncApiCacheArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_appsync_api_cache", resourceName);
   }

@@ -41,7 +41,7 @@ export interface AwsAppsyncResolverArgs {
 }
 
 export class aws_appsync_resolver extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppsyncResolverArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppsyncResolverArgs) {
     const meta = {caching_config:{isBlock:true},pipeline_config:{isBlock:true},runtime:{isBlock:true},sync_config:{isBlock:true,lambda_conflict_handler_config:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_appsync_resolver", resourceName);
   }

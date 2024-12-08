@@ -86,7 +86,7 @@ export interface AwsEcsTaskDefinitionArgs {
 }
 
 export class aws_ecs_task_definition extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEcsTaskDefinitionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEcsTaskDefinitionArgs) {
     const meta = {ephemeral_storage:{isBlock:true},inference_accelerator:{isBlock:true},placement_constraints:{isBlock:true},proxy_configuration:{isBlock:true},runtime_platform:{isBlock:true},volume:{isBlock:true,docker_volume_configuration:{isBlock:true},efs_volume_configuration:{isBlock:true,authorization_config:{isBlock:true}},fsx_windows_file_server_volume_configuration:{isBlock:true,authorization_config:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "aws_ecs_task_definition", resourceName);
   }

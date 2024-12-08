@@ -11,7 +11,7 @@ export interface AwsNetworkmanagerAttachmentAccepterArgs {
 }
 
 export class aws_networkmanager_attachment_accepter extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNetworkmanagerAttachmentAccepterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNetworkmanagerAttachmentAccepterArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_networkmanager_attachment_accepter", resourceName);
   }

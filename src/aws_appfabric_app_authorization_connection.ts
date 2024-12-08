@@ -17,7 +17,7 @@ export interface AwsAppfabricAppAuthorizationConnectionArgs {
 }
 
 export class aws_appfabric_app_authorization_connection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppfabricAppAuthorizationConnectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppfabricAppAuthorizationConnectionArgs) {
     const meta = {auth_request:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_appfabric_app_authorization_connection", resourceName);
   }

@@ -83,7 +83,7 @@ export interface AwsFisExperimentTemplateArgs {
 }
 
 export class aws_fis_experiment_template extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsFisExperimentTemplateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsFisExperimentTemplateArgs) {
     const meta = {action:{isBlock:true,parameter:{isBlock:true},target:{isBlock:true}},experiment_options:{isBlock:true},log_configuration:{isBlock:true,cloudwatch_logs_configuration:{isBlock:true},s3_configuration:{isBlock:true}},stop_condition:{isBlock:true},target:{isBlock:true,filter:{isBlock:true},resource_tag:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_fis_experiment_template", resourceName);
   }

@@ -14,7 +14,7 @@ export interface AwsCloudfrontMonitoringSubscriptionArgs {
 }
 
 export class aws_cloudfront_monitoring_subscription extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudfrontMonitoringSubscriptionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudfrontMonitoringSubscriptionArgs) {
     const meta = {monitoring_subscription:{isBlock:true,realtime_metrics_subscription_config:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_cloudfront_monitoring_subscription", resourceName);
   }

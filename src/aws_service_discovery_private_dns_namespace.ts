@@ -8,7 +8,7 @@ export interface AwsServiceDiscoveryPrivateDnsNamespaceArgs {
 }
 
 export class aws_service_discovery_private_dns_namespace extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsServiceDiscoveryPrivateDnsNamespaceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsServiceDiscoveryPrivateDnsNamespaceArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_service_discovery_private_dns_namespace", resourceName);
   }

@@ -39,7 +39,7 @@ export interface AwsElastictranscoderPipelineArgs {
 }
 
 export class aws_elastictranscoder_pipeline extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsElastictranscoderPipelineArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsElastictranscoderPipelineArgs) {
     const meta = {content_config:{isBlock:true},content_config_permissions:{isBlock:true},notifications:{isBlock:true},thumbnail_config:{isBlock:true},thumbnail_config_permissions:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_elastictranscoder_pipeline", resourceName);
   }

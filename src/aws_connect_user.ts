@@ -26,7 +26,7 @@ export interface AwsConnectUserArgs {
 }
 
 export class aws_connect_user extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsConnectUserArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsConnectUserArgs) {
     const meta = {identity_info:{isBlock:true},phone_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_connect_user", resourceName);
   }

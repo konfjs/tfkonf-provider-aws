@@ -19,7 +19,7 @@ export interface AwsWafRuleGroupArgs {
 }
 
 export class aws_waf_rule_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsWafRuleGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsWafRuleGroupArgs) {
     const meta = {activated_rule:{isBlock:true,action:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_waf_rule_group", resourceName);
   }

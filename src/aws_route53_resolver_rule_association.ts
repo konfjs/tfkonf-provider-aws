@@ -13,7 +13,7 @@ export interface AwsRoute53ResolverRuleAssociationArgs {
 }
 
 export class aws_route53_resolver_rule_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRoute53ResolverRuleAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRoute53ResolverRuleAssociationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_route53_resolver_rule_association", resourceName);
   }

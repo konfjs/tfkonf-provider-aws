@@ -9,7 +9,7 @@ export interface AwsAppconfigHostedConfigurationVersionArgs {
 }
 
 export class aws_appconfig_hosted_configuration_version extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppconfigHostedConfigurationVersionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppconfigHostedConfigurationVersionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_appconfig_hosted_configuration_version", resourceName);
   }

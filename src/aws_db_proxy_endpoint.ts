@@ -16,7 +16,7 @@ export interface AwsDbProxyEndpointArgs {
 }
 
 export class aws_db_proxy_endpoint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDbProxyEndpointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDbProxyEndpointArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_db_proxy_endpoint", resourceName);
   }

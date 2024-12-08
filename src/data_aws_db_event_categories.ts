@@ -5,7 +5,7 @@ export interface DataAwsDbEventCategoriesArgs {
 }
 
 export class data_aws_db_event_categories extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsDbEventCategoriesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsDbEventCategoriesArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_db_event_categories", resourceName);
   }

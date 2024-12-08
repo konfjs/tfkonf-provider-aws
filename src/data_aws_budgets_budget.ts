@@ -6,7 +6,7 @@ export interface DataAwsBudgetsBudgetArgs {
 }
 
 export class data_aws_budgets_budget extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsBudgetsBudgetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsBudgetsBudgetArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_budgets_budget", resourceName);
   }

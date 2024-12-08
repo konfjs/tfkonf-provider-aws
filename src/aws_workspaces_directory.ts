@@ -43,7 +43,7 @@ export interface AwsWorkspacesDirectoryArgs {
 }
 
 export class aws_workspaces_directory extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsWorkspacesDirectoryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsWorkspacesDirectoryArgs) {
     const meta = {saml_properties:{isBlock:true},self_service_permissions:{isBlock:true},workspace_access_properties:{isBlock:true},workspace_creation_properties:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_workspaces_directory", resourceName);
   }

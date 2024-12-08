@@ -19,7 +19,7 @@ export interface AwsEksAccessPolicyAssociationArgs {
 }
 
 export class aws_eks_access_policy_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEksAccessPolicyAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEksAccessPolicyAssociationArgs) {
     const meta = {access_scope:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_eks_access_policy_association", resourceName);
   }

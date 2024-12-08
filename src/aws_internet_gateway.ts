@@ -12,7 +12,7 @@ export interface AwsInternetGatewayArgs {
 }
 
 export class aws_internet_gateway extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsInternetGatewayArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsInternetGatewayArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_internet_gateway", resourceName);
   }

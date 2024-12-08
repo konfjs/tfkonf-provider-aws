@@ -7,7 +7,7 @@ export interface AwsSesIdentityPolicyArgs {
 }
 
 export class aws_ses_identity_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSesIdentityPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSesIdentityPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ses_identity_policy", resourceName);
   }

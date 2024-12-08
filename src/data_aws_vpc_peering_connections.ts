@@ -15,7 +15,7 @@ export interface DataAwsVpcPeeringConnectionsArgs {
 }
 
 export class data_aws_vpc_peering_connections extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsVpcPeeringConnectionsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsVpcPeeringConnectionsArgs) {
     const meta = {filter:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_vpc_peering_connections", resourceName);
   }

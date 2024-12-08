@@ -5,7 +5,7 @@ export interface DataAwsMskconnectCustomPluginArgs {
 }
 
 export class data_aws_mskconnect_custom_plugin extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsMskconnectCustomPluginArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsMskconnectCustomPluginArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_mskconnect_custom_plugin", resourceName);
   }

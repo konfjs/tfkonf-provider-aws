@@ -16,7 +16,7 @@ export interface AwsKinesisVideoStreamArgs {
 }
 
 export class aws_kinesis_video_stream extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsKinesisVideoStreamArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsKinesisVideoStreamArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_kinesis_video_stream", resourceName);
   }

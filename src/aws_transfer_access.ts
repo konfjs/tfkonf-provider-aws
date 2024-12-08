@@ -23,7 +23,7 @@ export interface AwsTransferAccessArgs {
 }
 
 export class aws_transfer_access extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsTransferAccessArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsTransferAccessArgs) {
     const meta = {home_directory_mappings:{isBlock:true},posix_profile:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_transfer_access", resourceName);
   }

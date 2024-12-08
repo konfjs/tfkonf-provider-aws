@@ -14,7 +14,7 @@ export interface AwsNetworkmanagerCustomerGatewayAssociationArgs {
 }
 
 export class aws_networkmanager_customer_gateway_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNetworkmanagerCustomerGatewayAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNetworkmanagerCustomerGatewayAssociationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_networkmanager_customer_gateway_association", resourceName);
   }

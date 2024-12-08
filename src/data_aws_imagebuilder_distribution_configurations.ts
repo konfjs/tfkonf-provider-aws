@@ -10,7 +10,7 @@ export interface DataAwsImagebuilderDistributionConfigurationsArgs {
 }
 
 export class data_aws_imagebuilder_distribution_configurations extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsImagebuilderDistributionConfigurationsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsImagebuilderDistributionConfigurationsArgs) {
     const meta = {filter:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_imagebuilder_distribution_configurations", resourceName);
   }

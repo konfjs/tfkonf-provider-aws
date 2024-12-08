@@ -33,7 +33,7 @@ export interface AwsNeptuneClusterArgs {
 }
 
 export class aws_neptune_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNeptuneClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNeptuneClusterArgs) {
     const meta = {serverless_v2_scaling_configuration:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_neptune_cluster", resourceName);
   }

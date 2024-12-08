@@ -8,7 +8,7 @@ export interface AwsServicequotasTemplateArgs {
 }
 
 export class aws_servicequotas_template extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsServicequotasTemplateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsServicequotasTemplateArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_servicequotas_template", resourceName);
   }

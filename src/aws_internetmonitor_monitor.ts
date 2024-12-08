@@ -27,7 +27,7 @@ export interface AwsInternetmonitorMonitorArgs {
 }
 
 export class aws_internetmonitor_monitor extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsInternetmonitorMonitorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsInternetmonitorMonitorArgs) {
     const meta = {health_events_config:{isBlock:true},internet_measurements_log_delivery:{isBlock:true,s3_config:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_internetmonitor_monitor", resourceName);
   }

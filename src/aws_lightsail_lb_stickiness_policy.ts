@@ -7,7 +7,7 @@ export interface AwsLightsailLbStickinessPolicyArgs {
 }
 
 export class aws_lightsail_lb_stickiness_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLightsailLbStickinessPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLightsailLbStickinessPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_lightsail_lb_stickiness_policy", resourceName);
   }

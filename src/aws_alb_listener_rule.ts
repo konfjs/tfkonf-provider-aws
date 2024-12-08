@@ -105,7 +105,7 @@ export interface AwsAlbListenerRuleArgs {
 }
 
 export class aws_alb_listener_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAlbListenerRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAlbListenerRuleArgs) {
     const meta = {action:{isBlock:true,authenticate_cognito:{isBlock:true},authenticate_oidc:{isBlock:true},fixed_response:{isBlock:true},forward:{isBlock:true,stickiness:{isBlock:true},target_group:{isBlock:true}},redirect:{isBlock:true}},condition:{isBlock:true,host_header:{isBlock:true},http_header:{isBlock:true},http_request_method:{isBlock:true},path_pattern:{isBlock:true},query_string:{isBlock:true},source_ip:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_alb_listener_rule", resourceName);
   }

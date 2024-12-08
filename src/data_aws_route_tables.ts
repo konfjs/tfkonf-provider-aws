@@ -16,7 +16,7 @@ export interface DataAwsRouteTablesArgs {
 }
 
 export class data_aws_route_tables extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsRouteTablesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsRouteTablesArgs) {
     const meta = {filter:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_route_tables", resourceName);
   }

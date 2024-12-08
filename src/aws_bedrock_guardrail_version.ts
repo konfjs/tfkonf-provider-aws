@@ -13,7 +13,7 @@ export interface AwsBedrockGuardrailVersionArgs {
 }
 
 export class aws_bedrock_guardrail_version extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBedrockGuardrailVersionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBedrockGuardrailVersionArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_bedrock_guardrail_version", resourceName);
   }

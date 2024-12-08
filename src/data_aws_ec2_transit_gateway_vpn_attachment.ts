@@ -17,7 +17,7 @@ export interface DataAwsEc2TransitGatewayVpnAttachmentArgs {
 }
 
 export class data_aws_ec2_transit_gateway_vpn_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEc2TransitGatewayVpnAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEc2TransitGatewayVpnAttachmentArgs) {
     const meta = {filter:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_ec2_transit_gateway_vpn_attachment", resourceName);
   }

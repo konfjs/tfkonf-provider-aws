@@ -56,7 +56,7 @@ export interface AwsBudgetsBudgetArgs {
 }
 
 export class aws_budgets_budget extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBudgetsBudgetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBudgetsBudgetArgs) {
     const meta = {auto_adjust_data:{isBlock:true,historical_options:{isBlock:true}},cost_filter:{isBlock:true},cost_types:{isBlock:true},notification:{isBlock:true},planned_limit:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_budgets_budget", resourceName);
   }

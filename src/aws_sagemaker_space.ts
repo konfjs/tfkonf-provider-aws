@@ -130,7 +130,7 @@ export interface AwsSagemakerSpaceArgs {
 }
 
 export class aws_sagemaker_space extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSagemakerSpaceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSagemakerSpaceArgs) {
     const meta = {ownership_settings:{isBlock:true},space_settings:{isBlock:true,code_editor_app_settings:{isBlock:true,app_lifecycle_management:{isBlock:true,idle_settings:{isBlock:true}},default_resource_spec:{isBlock:true}},custom_file_system:{isBlock:true,efs_file_system:{isBlock:true}},jupyter_lab_app_settings:{isBlock:true,app_lifecycle_management:{isBlock:true,idle_settings:{isBlock:true}},code_repository:{isBlock:true},default_resource_spec:{isBlock:true}},jupyter_server_app_settings:{isBlock:true,code_repository:{isBlock:true},default_resource_spec:{isBlock:true}},kernel_gateway_app_settings:{isBlock:true,custom_image:{isBlock:true},default_resource_spec:{isBlock:true}},space_storage_settings:{isBlock:true,ebs_storage_settings:{isBlock:true}}},space_sharing_settings:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_sagemaker_space", resourceName);
   }

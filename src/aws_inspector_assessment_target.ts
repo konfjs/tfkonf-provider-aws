@@ -6,7 +6,7 @@ export interface AwsInspectorAssessmentTargetArgs {
 }
 
 export class aws_inspector_assessment_target extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsInspectorAssessmentTargetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsInspectorAssessmentTargetArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_inspector_assessment_target", resourceName);
   }

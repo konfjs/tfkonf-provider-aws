@@ -13,7 +13,7 @@ export interface AwsDatasyncLocationObjectStorageArgs {
 }
 
 export class aws_datasync_location_object_storage extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDatasyncLocationObjectStorageArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDatasyncLocationObjectStorageArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_datasync_location_object_storage", resourceName);
   }

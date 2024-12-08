@@ -12,7 +12,7 @@ export interface AwsRoute53recoveryreadinessReadinessCheckArgs {
 }
 
 export class aws_route53recoveryreadiness_readiness_check extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRoute53recoveryreadinessReadinessCheckArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRoute53recoveryreadinessReadinessCheckArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_route53recoveryreadiness_readiness_check", resourceName);
   }

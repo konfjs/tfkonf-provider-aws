@@ -11,7 +11,7 @@ export interface AwsEc2TransitGatewayVpcAttachmentArgs {
 }
 
 export class aws_ec2_transit_gateway_vpc_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEc2TransitGatewayVpcAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEc2TransitGatewayVpcAttachmentArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ec2_transit_gateway_vpc_attachment", resourceName);
   }

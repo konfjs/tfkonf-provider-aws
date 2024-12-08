@@ -31,7 +31,7 @@ export interface AwsLexv2modelsBotArgs {
 }
 
 export class aws_lexv2models_bot extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLexv2modelsBotArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLexv2modelsBotArgs) {
     const meta = {data_privacy:{isBlock:true},members:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_lexv2models_bot", resourceName);
   }

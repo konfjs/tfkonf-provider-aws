@@ -17,7 +17,7 @@ export interface AwsDocdbEventSubscriptionArgs {
 }
 
 export class aws_docdb_event_subscription extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDocdbEventSubscriptionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDocdbEventSubscriptionArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_docdb_event_subscription", resourceName);
   }

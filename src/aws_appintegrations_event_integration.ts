@@ -13,7 +13,7 @@ export interface AwsAppintegrationsEventIntegrationArgs {
 }
 
 export class aws_appintegrations_event_integration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppintegrationsEventIntegrationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppintegrationsEventIntegrationArgs) {
     const meta = {event_filter:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_appintegrations_event_integration", resourceName);
   }

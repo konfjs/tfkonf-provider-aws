@@ -288,7 +288,7 @@ export interface AwsAppmeshRouteArgs {
 }
 
 export class aws_appmesh_route extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppmeshRouteArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppmeshRouteArgs) {
     const meta = {spec:{isBlock:true,grpc_route:{isBlock:true,action:{isBlock:true,weighted_target:{isBlock:true}},match:{isBlock:true,metadata:{isBlock:true,match:{isBlock:true,range:{isBlock:true}}}},retry_policy:{isBlock:true,per_retry_timeout:{isBlock:true}},timeout:{isBlock:true,idle:{isBlock:true},per_request:{isBlock:true}}},http2_route:{isBlock:true,action:{isBlock:true,weighted_target:{isBlock:true}},match:{isBlock:true,header:{isBlock:true,match:{isBlock:true,range:{isBlock:true}}},path:{isBlock:true},query_parameter:{isBlock:true,match:{isBlock:true}}},retry_policy:{isBlock:true,per_retry_timeout:{isBlock:true}},timeout:{isBlock:true,idle:{isBlock:true},per_request:{isBlock:true}}},http_route:{isBlock:true,action:{isBlock:true,weighted_target:{isBlock:true}},match:{isBlock:true,header:{isBlock:true,match:{isBlock:true,range:{isBlock:true}}},path:{isBlock:true},query_parameter:{isBlock:true,match:{isBlock:true}}},retry_policy:{isBlock:true,per_retry_timeout:{isBlock:true}},timeout:{isBlock:true,idle:{isBlock:true},per_request:{isBlock:true}}},tcp_route:{isBlock:true,action:{isBlock:true,weighted_target:{isBlock:true}},match:{isBlock:true},timeout:{isBlock:true,idle:{isBlock:true}}}}};
     super(terraformConfig, "resource", args, meta, "aws_appmesh_route", resourceName);
   }

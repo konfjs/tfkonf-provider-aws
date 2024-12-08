@@ -16,7 +16,7 @@ export interface AwsRdsExportTaskArgs {
 }
 
 export class aws_rds_export_task extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRdsExportTaskArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRdsExportTaskArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_rds_export_task", resourceName);
   }

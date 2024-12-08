@@ -6,7 +6,7 @@ export interface AwsAppsyncDomainNameApiAssociationArgs {
 }
 
 export class aws_appsync_domain_name_api_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppsyncDomainNameApiAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppsyncDomainNameApiAssociationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_appsync_domain_name_api_association", resourceName);
   }

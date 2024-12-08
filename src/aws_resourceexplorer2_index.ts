@@ -13,7 +13,7 @@ export interface AwsResourceexplorer2IndexArgs {
 }
 
 export class aws_resourceexplorer2_index extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsResourceexplorer2IndexArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsResourceexplorer2IndexArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_resourceexplorer2_index", resourceName);
   }

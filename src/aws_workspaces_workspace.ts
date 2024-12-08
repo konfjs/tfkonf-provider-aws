@@ -26,7 +26,7 @@ export interface AwsWorkspacesWorkspaceArgs {
 }
 
 export class aws_workspaces_workspace extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsWorkspacesWorkspaceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsWorkspacesWorkspaceArgs) {
     const meta = {timeouts:{isBlock:true},workspace_properties:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_workspaces_workspace", resourceName);
   }

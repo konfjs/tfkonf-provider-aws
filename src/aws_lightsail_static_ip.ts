@@ -5,7 +5,7 @@ export interface AwsLightsailStaticIpArgs {
 }
 
 export class aws_lightsail_static_ip extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLightsailStaticIpArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLightsailStaticIpArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_lightsail_static_ip", resourceName);
   }

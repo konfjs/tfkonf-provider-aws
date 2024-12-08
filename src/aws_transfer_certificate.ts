@@ -10,7 +10,7 @@ export interface AwsTransferCertificateArgs {
 }
 
 export class aws_transfer_certificate extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsTransferCertificateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsTransferCertificateArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_transfer_certificate", resourceName);
   }

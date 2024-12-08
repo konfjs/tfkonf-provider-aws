@@ -13,7 +13,7 @@ export interface AwsSagemakerCodeRepositoryArgs {
 }
 
 export class aws_sagemaker_code_repository extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSagemakerCodeRepositoryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSagemakerCodeRepositoryArgs) {
     const meta = {git_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_sagemaker_code_repository", resourceName);
   }

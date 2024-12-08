@@ -37,7 +37,7 @@ export interface AwsGuarddutyDetectorArgs {
 }
 
 export class aws_guardduty_detector extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGuarddutyDetectorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGuarddutyDetectorArgs) {
     const meta = {datasources:{isBlock:true,kubernetes:{isBlock:true,audit_logs:{isBlock:true}},malware_protection:{isBlock:true,scan_ec2_instance_with_findings:{isBlock:true,ebs_volumes:{isBlock:true}}},s3_logs:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_guardduty_detector", resourceName);
   }

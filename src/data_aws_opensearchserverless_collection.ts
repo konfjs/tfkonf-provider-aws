@@ -4,7 +4,7 @@ export interface DataAwsOpensearchserverlessCollectionArgs {
 }
 
 export class data_aws_opensearchserverless_collection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsOpensearchserverlessCollectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsOpensearchserverlessCollectionArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_opensearchserverless_collection", resourceName);
   }

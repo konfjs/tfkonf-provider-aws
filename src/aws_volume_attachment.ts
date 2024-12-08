@@ -16,7 +16,7 @@ export interface AwsVolumeAttachmentArgs {
 }
 
 export class aws_volume_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVolumeAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVolumeAttachmentArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_volume_attachment", resourceName);
   }

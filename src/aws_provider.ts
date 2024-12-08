@@ -370,7 +370,7 @@ export interface AwsProviderArgs {
 }
 
 export class aws_provider extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, args: AwsProviderArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, readonly args: AwsProviderArgs) {
     const meta = {assume_role:{isBlock:true},assume_role_with_web_identity:{isBlock:true},default_tags:{isBlock:true},endpoints:{isBlock:true},ignore_tags:{isBlock:true}};
     super(terraformConfig, "provider", args, meta, "aws");
   }

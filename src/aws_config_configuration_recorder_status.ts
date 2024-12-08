@@ -6,7 +6,7 @@ export interface AwsConfigConfigurationRecorderStatusArgs {
 }
 
 export class aws_config_configuration_recorder_status extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsConfigConfigurationRecorderStatusArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsConfigConfigurationRecorderStatusArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_config_configuration_recorder_status", resourceName);
   }

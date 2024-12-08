@@ -13,7 +13,7 @@ export interface AwsDbInstanceAutomatedBackupsReplicationArgs {
 }
 
 export class aws_db_instance_automated_backups_replication extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDbInstanceAutomatedBackupsReplicationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDbInstanceAutomatedBackupsReplicationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_db_instance_automated_backups_replication", resourceName);
   }

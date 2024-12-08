@@ -19,7 +19,7 @@ export interface AwsSsmDocumentArgs {
 }
 
 export class aws_ssm_document extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSsmDocumentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSsmDocumentArgs) {
     const meta = {attachments_source:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ssm_document", resourceName);
   }

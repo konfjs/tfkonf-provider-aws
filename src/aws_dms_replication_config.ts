@@ -27,7 +27,7 @@ export interface AwsDmsReplicationConfigArgs {
 }
 
 export class aws_dms_replication_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDmsReplicationConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDmsReplicationConfigArgs) {
     const meta = {compute_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_dms_replication_config", resourceName);
   }

@@ -19,7 +19,7 @@ export interface AwsS3BucketIntelligentTieringConfigurationArgs {
 }
 
 export class aws_s3_bucket_intelligent_tiering_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3BucketIntelligentTieringConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3BucketIntelligentTieringConfigurationArgs) {
     const meta = {filter:{isBlock:true},tiering:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_s3_bucket_intelligent_tiering_configuration", resourceName);
   }

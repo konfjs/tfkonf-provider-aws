@@ -8,7 +8,7 @@ export interface AwsRedshiftEndpointAuthorizationArgs {
 }
 
 export class aws_redshift_endpoint_authorization extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRedshiftEndpointAuthorizationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRedshiftEndpointAuthorizationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_redshift_endpoint_authorization", resourceName);
   }

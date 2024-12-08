@@ -24,7 +24,7 @@ export interface AwsEfsAccessPointArgs {
 }
 
 export class aws_efs_access_point extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEfsAccessPointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEfsAccessPointArgs) {
     const meta = {posix_user:{isBlock:true},root_directory:{isBlock:true,creation_info:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_efs_access_point", resourceName);
   }

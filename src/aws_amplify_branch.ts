@@ -20,7 +20,7 @@ export interface AwsAmplifyBranchArgs {
 }
 
 export class aws_amplify_branch extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAmplifyBranchArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAmplifyBranchArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_amplify_branch", resourceName);
   }

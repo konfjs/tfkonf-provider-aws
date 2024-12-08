@@ -5,7 +5,7 @@ export interface DataAwsGlueDataCatalogEncryptionSettingsArgs {
 }
 
 export class data_aws_glue_data_catalog_encryption_settings extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsGlueDataCatalogEncryptionSettingsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsGlueDataCatalogEncryptionSettingsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_glue_data_catalog_encryption_settings", resourceName);
   }

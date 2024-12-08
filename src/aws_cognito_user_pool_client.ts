@@ -18,7 +18,7 @@ export interface AwsCognitoUserPoolClientArgs {
 }
 
 export class aws_cognito_user_pool_client extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCognitoUserPoolClientArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCognitoUserPoolClientArgs) {
     const meta = {analytics_configuration:{isBlock:true},token_validity_units:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_cognito_user_pool_client", resourceName);
   }

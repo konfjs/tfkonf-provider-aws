@@ -71,7 +71,7 @@ export interface AwsLexv2modelsSlotTypeArgs {
 }
 
 export class aws_lexv2models_slot_type extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLexv2modelsSlotTypeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLexv2modelsSlotTypeArgs) {
     const meta = {composite_slot_type_setting:{isBlock:true,sub_slots:{isBlock:true}},external_source_setting:{isBlock:true,grammar_slot_type_setting:{isBlock:true,source:{isBlock:true}}},slot_type_values:{isBlock:true,sample_value:{isBlock:true},synonyms:{isBlock:true}},timeouts:{isBlock:true},value_selection_setting:{isBlock:true,advanced_recognition_setting:{isBlock:true},regex_filter:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_lexv2models_slot_type", resourceName);
   }

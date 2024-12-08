@@ -7,7 +7,7 @@ export interface AwsCodedeployAppArgs {
 }
 
 export class aws_codedeploy_app extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCodedeployAppArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCodedeployAppArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_codedeploy_app", resourceName);
   }

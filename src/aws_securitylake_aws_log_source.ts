@@ -10,7 +10,7 @@ export interface AwsSecuritylakeAwsLogSourceArgs {
 }
 
 export class aws_securitylake_aws_log_source extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSecuritylakeAwsLogSourceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSecuritylakeAwsLogSourceArgs) {
     const meta = {source:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_securitylake_aws_log_source", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataAwsRdsClusterArgs {
 }
 
 export class data_aws_rds_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsRdsClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsRdsClusterArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_rds_cluster", resourceName);
   }

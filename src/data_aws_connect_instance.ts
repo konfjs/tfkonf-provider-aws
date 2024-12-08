@@ -4,7 +4,7 @@ export interface DataAwsConnectInstanceArgs {
 }
 
 export class data_aws_connect_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsConnectInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsConnectInstanceArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_connect_instance", resourceName);
   }

@@ -7,7 +7,7 @@ export interface AwsIamSigningCertificateArgs {
 }
 
 export class aws_iam_signing_certificate extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIamSigningCertificateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIamSigningCertificateArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_iam_signing_certificate", resourceName);
   }

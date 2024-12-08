@@ -5,7 +5,7 @@ export interface DataAwsDxLocationArgs {
 }
 
 export class data_aws_dx_location extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsDxLocationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsDxLocationArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_dx_location", resourceName);
   }

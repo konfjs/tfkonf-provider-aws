@@ -7,7 +7,7 @@ export interface AwsApiGatewayUsagePlanKeyArgs {
 }
 
 export class aws_api_gateway_usage_plan_key extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApiGatewayUsagePlanKeyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApiGatewayUsagePlanKeyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_api_gateway_usage_plan_key", resourceName);
   }

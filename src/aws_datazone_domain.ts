@@ -21,7 +21,7 @@ export interface AwsDatazoneDomainArgs {
 }
 
 export class aws_datazone_domain extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDatazoneDomainArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDatazoneDomainArgs) {
     const meta = {single_sign_on:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_datazone_domain", resourceName);
   }

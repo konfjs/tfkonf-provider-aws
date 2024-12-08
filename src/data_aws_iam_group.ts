@@ -5,7 +5,7 @@ export interface DataAwsIamGroupArgs {
 }
 
 export class data_aws_iam_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsIamGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsIamGroupArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_iam_group", resourceName);
   }

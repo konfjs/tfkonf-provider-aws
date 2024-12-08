@@ -12,7 +12,7 @@ export interface AwsElasticsearchDomainPolicyArgs {
 }
 
 export class aws_elasticsearch_domain_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsElasticsearchDomainPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsElasticsearchDomainPolicyArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_elasticsearch_domain_policy", resourceName);
   }

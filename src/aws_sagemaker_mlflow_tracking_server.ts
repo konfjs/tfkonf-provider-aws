@@ -10,7 +10,7 @@ export interface AwsSagemakerMlflowTrackingServerArgs {
 }
 
 export class aws_sagemaker_mlflow_tracking_server extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSagemakerMlflowTrackingServerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSagemakerMlflowTrackingServerArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_sagemaker_mlflow_tracking_server", resourceName);
   }

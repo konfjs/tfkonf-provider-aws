@@ -17,7 +17,7 @@ export interface AwsIotThingGroupArgs {
 }
 
 export class aws_iot_thing_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIotThingGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIotThingGroupArgs) {
     const meta = {properties:{isBlock:true,attribute_payload:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_iot_thing_group", resourceName);
   }

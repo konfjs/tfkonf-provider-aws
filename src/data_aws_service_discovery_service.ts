@@ -7,7 +7,7 @@ export interface DataAwsServiceDiscoveryServiceArgs {
 }
 
 export class data_aws_service_discovery_service extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsServiceDiscoveryServiceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsServiceDiscoveryServiceArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_service_discovery_service", resourceName);
   }

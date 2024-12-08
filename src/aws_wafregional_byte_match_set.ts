@@ -18,7 +18,7 @@ export interface AwsWafregionalByteMatchSetArgs {
 }
 
 export class aws_wafregional_byte_match_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsWafregionalByteMatchSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsWafregionalByteMatchSetArgs) {
     const meta = {byte_match_tuples:{isBlock:true,field_to_match:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_wafregional_byte_match_set", resourceName);
   }

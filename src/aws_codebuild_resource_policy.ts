@@ -6,7 +6,7 @@ export interface AwsCodebuildResourcePolicyArgs {
 }
 
 export class aws_codebuild_resource_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCodebuildResourcePolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCodebuildResourcePolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_codebuild_resource_policy", resourceName);
   }

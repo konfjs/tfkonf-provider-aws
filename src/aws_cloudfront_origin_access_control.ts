@@ -9,7 +9,7 @@ export interface AwsCloudfrontOriginAccessControlArgs {
 }
 
 export class aws_cloudfront_origin_access_control extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudfrontOriginAccessControlArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudfrontOriginAccessControlArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_cloudfront_origin_access_control", resourceName);
   }

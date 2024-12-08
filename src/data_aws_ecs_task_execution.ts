@@ -78,7 +78,7 @@ export interface DataAwsEcsTaskExecutionArgs {
 }
 
 export class data_aws_ecs_task_execution extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEcsTaskExecutionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEcsTaskExecutionArgs) {
     const meta = {capacity_provider_strategy:{isBlock:true},network_configuration:{isBlock:true},overrides:{isBlock:true,container_overrides:{isBlock:true,environment:{isBlock:true},resource_requirements:{isBlock:true}},inference_accelerator_overrides:{isBlock:true}},placement_constraints:{isBlock:true},placement_strategy:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_ecs_task_execution", resourceName);
   }

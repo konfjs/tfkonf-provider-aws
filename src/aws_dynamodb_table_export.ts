@@ -14,7 +14,7 @@ export interface AwsDynamodbTableExportArgs {
 }
 
 export class aws_dynamodb_table_export extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDynamodbTableExportArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDynamodbTableExportArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_dynamodb_table_export", resourceName);
   }

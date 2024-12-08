@@ -8,7 +8,7 @@ export interface AwsS3outpostsEndpointArgs {
 }
 
 export class aws_s3outposts_endpoint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3outpostsEndpointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3outpostsEndpointArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_s3outposts_endpoint", resourceName);
   }

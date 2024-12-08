@@ -17,7 +17,7 @@ export interface AwsSesConfigurationSetArgs {
 }
 
 export class aws_ses_configuration_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSesConfigurationSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSesConfigurationSetArgs) {
     const meta = {delivery_options:{isBlock:true},tracking_options:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ses_configuration_set", resourceName);
   }

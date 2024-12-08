@@ -183,7 +183,7 @@ export interface AwsCloudfrontDistributionArgs {
 }
 
 export class aws_cloudfront_distribution extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudfrontDistributionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudfrontDistributionArgs) {
     const meta = {custom_error_response:{isBlock:true},default_cache_behavior:{isBlock:true,forwarded_values:{isBlock:true,cookies:{isBlock:true}},function_association:{isBlock:true},lambda_function_association:{isBlock:true}},logging_config:{isBlock:true},ordered_cache_behavior:{isBlock:true,forwarded_values:{isBlock:true,cookies:{isBlock:true}},function_association:{isBlock:true},lambda_function_association:{isBlock:true}},origin:{isBlock:true,custom_header:{isBlock:true},custom_origin_config:{isBlock:true},origin_shield:{isBlock:true},s3_origin_config:{isBlock:true}},origin_group:{isBlock:true,failover_criteria:{isBlock:true},member:{isBlock:true}},restrictions:{isBlock:true,geo_restriction:{isBlock:true}},viewer_certificate:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_cloudfront_distribution", resourceName);
   }

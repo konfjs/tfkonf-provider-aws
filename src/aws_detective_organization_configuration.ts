@@ -6,7 +6,7 @@ export interface AwsDetectiveOrganizationConfigurationArgs {
 }
 
 export class aws_detective_organization_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDetectiveOrganizationConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDetectiveOrganizationConfigurationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_detective_organization_configuration", resourceName);
   }

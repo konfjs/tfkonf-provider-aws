@@ -13,7 +13,7 @@ export interface AwsQuicksightIamPolicyAssignmentArgs {
 }
 
 export class aws_quicksight_iam_policy_assignment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsQuicksightIamPolicyAssignmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsQuicksightIamPolicyAssignmentArgs) {
     const meta = {identities:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_quicksight_iam_policy_assignment", resourceName);
   }

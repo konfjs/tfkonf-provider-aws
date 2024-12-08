@@ -14,7 +14,7 @@ export interface AwsSecretsmanagerSecretRotationArgs {
 }
 
 export class aws_secretsmanager_secret_rotation extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSecretsmanagerSecretRotationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSecretsmanagerSecretRotationArgs) {
     const meta = {rotation_rules:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_secretsmanager_secret_rotation", resourceName);
   }

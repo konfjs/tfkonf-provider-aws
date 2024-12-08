@@ -19,7 +19,7 @@ export interface AwsDirectoryServiceRadiusSettingsArgs {
 }
 
 export class aws_directory_service_radius_settings extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDirectoryServiceRadiusSettingsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDirectoryServiceRadiusSettingsArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_directory_service_radius_settings", resourceName);
   }

@@ -19,7 +19,7 @@ export interface AwsIvschatRoomArgs {
 }
 
 export class aws_ivschat_room extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIvschatRoomArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIvschatRoomArgs) {
     const meta = {message_review_handler:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ivschat_room", resourceName);
   }

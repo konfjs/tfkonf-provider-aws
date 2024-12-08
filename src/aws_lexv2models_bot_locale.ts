@@ -21,7 +21,7 @@ export interface AwsLexv2modelsBotLocaleArgs {
 }
 
 export class aws_lexv2models_bot_locale extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLexv2modelsBotLocaleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLexv2modelsBotLocaleArgs) {
     const meta = {timeouts:{isBlock:true},voice_settings:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_lexv2models_bot_locale", resourceName);
   }

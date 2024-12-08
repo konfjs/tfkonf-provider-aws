@@ -42,7 +42,7 @@ export interface AwsFsxOpenzfsVolumeArgs {
 }
 
 export class aws_fsx_openzfs_volume extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsFsxOpenzfsVolumeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsFsxOpenzfsVolumeArgs) {
     const meta = {nfs_exports:{isBlock:true,client_configurations:{isBlock:true}},origin_snapshot:{isBlock:true},timeouts:{isBlock:true},user_and_group_quotas:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_fsx_openzfs_volume", resourceName);
   }

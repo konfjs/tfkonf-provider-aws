@@ -16,7 +16,7 @@ export interface AwsS3BucketCorsConfigurationArgs {
 }
 
 export class aws_s3_bucket_cors_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3BucketCorsConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3BucketCorsConfigurationArgs) {
     const meta = {cors_rule:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_s3_bucket_cors_configuration", resourceName);
   }

@@ -5,7 +5,7 @@ export interface AwsConfigRetentionConfigurationArgs {
 }
 
 export class aws_config_retention_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsConfigRetentionConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsConfigRetentionConfigurationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_config_retention_configuration", resourceName);
   }

@@ -13,7 +13,7 @@ export interface AwsGrafanaLicenseAssociationArgs {
 }
 
 export class aws_grafana_license_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGrafanaLicenseAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGrafanaLicenseAssociationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_grafana_license_association", resourceName);
   }

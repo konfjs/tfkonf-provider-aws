@@ -5,7 +5,7 @@ export interface DataAwsSignerSigningJobArgs {
 }
 
 export class data_aws_signer_signing_job extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSignerSigningJobArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSignerSigningJobArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_signer_signing_job", resourceName);
   }

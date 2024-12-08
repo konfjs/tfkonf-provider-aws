@@ -8,7 +8,7 @@ export interface AwsRedshiftPartnerArgs {
 }
 
 export class aws_redshift_partner extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRedshiftPartnerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRedshiftPartnerArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_redshift_partner", resourceName);
   }

@@ -12,7 +12,7 @@ export interface AwsVpcArgs {
 }
 
 export class aws_vpc extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpcArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpcArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_vpc", resourceName);
   }

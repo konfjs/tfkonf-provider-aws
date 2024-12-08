@@ -6,7 +6,7 @@ export interface AwsSsmServiceSettingArgs {
 }
 
 export class aws_ssm_service_setting extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSsmServiceSettingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSsmServiceSettingArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ssm_service_setting", resourceName);
   }

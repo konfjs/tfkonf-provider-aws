@@ -8,7 +8,7 @@ export interface DataAwsSsmPatchBaselineArgs {
 }
 
 export class data_aws_ssm_patch_baseline extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSsmPatchBaselineArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSsmPatchBaselineArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_ssm_patch_baseline", resourceName);
   }

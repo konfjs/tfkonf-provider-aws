@@ -19,7 +19,7 @@ export interface AwsSagemakerProjectArgs {
 }
 
 export class aws_sagemaker_project extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSagemakerProjectArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSagemakerProjectArgs) {
     const meta = {service_catalog_provisioning_details:{isBlock:true,provisioning_parameter:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_sagemaker_project", resourceName);
   }

@@ -6,7 +6,7 @@ export interface AwsOrganizationsResourcePolicyArgs {
 }
 
 export class aws_organizations_resource_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsOrganizationsResourcePolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsOrganizationsResourcePolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_organizations_resource_policy", resourceName);
   }

@@ -8,7 +8,7 @@ export interface AwsRedshiftserverlessEndpointAccessArgs {
 }
 
 export class aws_redshiftserverless_endpoint_access extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRedshiftserverlessEndpointAccessArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRedshiftserverlessEndpointAccessArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_redshiftserverless_endpoint_access", resourceName);
   }

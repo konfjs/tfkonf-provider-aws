@@ -16,7 +16,7 @@ export interface AwsVpclatticeTargetGroupAttachmentArgs {
 }
 
 export class aws_vpclattice_target_group_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpclatticeTargetGroupAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpclatticeTargetGroupAttachmentArgs) {
     const meta = {target:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_vpclattice_target_group_attachment", resourceName);
   }

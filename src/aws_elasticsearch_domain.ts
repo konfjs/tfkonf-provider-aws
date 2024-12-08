@@ -116,7 +116,7 @@ export interface AwsElasticsearchDomainArgs {
 }
 
 export class aws_elasticsearch_domain extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsElasticsearchDomainArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsElasticsearchDomainArgs) {
     const meta = {advanced_security_options:{isBlock:true,master_user_options:{isBlock:true}},auto_tune_options:{isBlock:true,maintenance_schedule:{isBlock:true,duration:{isBlock:true}}},cluster_config:{isBlock:true,cold_storage_options:{isBlock:true},zone_awareness_config:{isBlock:true}},cognito_options:{isBlock:true},domain_endpoint_options:{isBlock:true},ebs_options:{isBlock:true},encrypt_at_rest:{isBlock:true},log_publishing_options:{isBlock:true},node_to_node_encryption:{isBlock:true},snapshot_options:{isBlock:true},timeouts:{isBlock:true},vpc_options:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_elasticsearch_domain", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataAwsRedshiftServiceAccountArgs {
 }
 
 export class data_aws_redshift_service_account extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsRedshiftServiceAccountArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsRedshiftServiceAccountArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_redshift_service_account", resourceName);
   }

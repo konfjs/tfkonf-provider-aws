@@ -7,7 +7,7 @@ export interface AwsIamAccessKeyArgs {
 }
 
 export class aws_iam_access_key extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIamAccessKeyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIamAccessKeyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_iam_access_key", resourceName);
   }

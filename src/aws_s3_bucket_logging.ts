@@ -34,7 +34,7 @@ export interface AwsS3BucketLoggingArgs {
 }
 
 export class aws_s3_bucket_logging extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3BucketLoggingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3BucketLoggingArgs) {
     const meta = {target_grant:{isBlock:true,grantee:{isBlock:true}},target_object_key_format:{isBlock:true,partitioned_prefix:{isBlock:true},simple_prefix:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_s3_bucket_logging", resourceName);
   }

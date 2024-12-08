@@ -4,7 +4,7 @@ export interface DataAwsCanonicalUserIdArgs {
 }
 
 export class data_aws_canonical_user_id extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCanonicalUserIdArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCanonicalUserIdArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_canonical_user_id", resourceName);
   }

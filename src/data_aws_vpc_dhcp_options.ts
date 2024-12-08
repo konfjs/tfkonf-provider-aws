@@ -15,7 +15,7 @@ export interface DataAwsVpcDhcpOptionsArgs {
 }
 
 export class data_aws_vpc_dhcp_options extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsVpcDhcpOptionsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsVpcDhcpOptionsArgs) {
     const meta = {filter:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_vpc_dhcp_options", resourceName);
   }

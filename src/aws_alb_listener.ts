@@ -79,7 +79,7 @@ export interface AwsAlbListenerArgs {
 }
 
 export class aws_alb_listener extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAlbListenerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAlbListenerArgs) {
     const meta = {default_action:{isBlock:true,authenticate_cognito:{isBlock:true},authenticate_oidc:{isBlock:true},fixed_response:{isBlock:true},forward:{isBlock:true,stickiness:{isBlock:true},target_group:{isBlock:true}},redirect:{isBlock:true}},mutual_authentication:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_alb_listener", resourceName);
   }

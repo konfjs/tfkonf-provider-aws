@@ -10,7 +10,7 @@ export interface DataAwsDbSnapshotArgs {
 }
 
 export class data_aws_db_snapshot extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsDbSnapshotArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsDbSnapshotArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_db_snapshot", resourceName);
   }

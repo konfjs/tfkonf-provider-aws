@@ -7,7 +7,7 @@ export interface DataAwsConnectInstanceStorageConfigArgs {
 }
 
 export class data_aws_connect_instance_storage_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsConnectInstanceStorageConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsConnectInstanceStorageConfigArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_connect_instance_storage_config", resourceName);
   }

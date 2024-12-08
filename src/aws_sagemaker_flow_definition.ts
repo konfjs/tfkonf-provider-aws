@@ -50,7 +50,7 @@ export interface AwsSagemakerFlowDefinitionArgs {
 }
 
 export class aws_sagemaker_flow_definition extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSagemakerFlowDefinitionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSagemakerFlowDefinitionArgs) {
     const meta = {human_loop_activation_config:{isBlock:true,human_loop_activation_conditions_config:{isBlock:true}},human_loop_config:{isBlock:true,public_workforce_task_price:{isBlock:true,amount_in_usd:{isBlock:true}}},human_loop_request_source:{isBlock:true},output_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_sagemaker_flow_definition", resourceName);
   }

@@ -8,7 +8,7 @@ export interface AwsCognitoIdentityPoolProviderPrincipalTagArgs {
 }
 
 export class aws_cognito_identity_pool_provider_principal_tag extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCognitoIdentityPoolProviderPrincipalTagArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCognitoIdentityPoolProviderPrincipalTagArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_cognito_identity_pool_provider_principal_tag", resourceName);
   }

@@ -24,7 +24,7 @@ export interface AwsPaymentcryptographyKeyArgs {
 }
 
 export class aws_paymentcryptography_key extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsPaymentcryptographyKeyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsPaymentcryptographyKeyArgs) {
     const meta = {key_attributes:{isBlock:true,key_modes_of_use:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_paymentcryptography_key", resourceName);
   }

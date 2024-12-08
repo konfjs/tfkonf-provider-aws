@@ -9,7 +9,7 @@ export interface AwsCognitoIdentityProviderArgs {
 }
 
 export class aws_cognito_identity_provider extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCognitoIdentityProviderArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCognitoIdentityProviderArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_cognito_identity_provider", resourceName);
   }

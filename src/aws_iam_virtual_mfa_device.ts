@@ -7,7 +7,7 @@ export interface AwsIamVirtualMfaDeviceArgs {
 }
 
 export class aws_iam_virtual_mfa_device extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIamVirtualMfaDeviceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIamVirtualMfaDeviceArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_iam_virtual_mfa_device", resourceName);
   }

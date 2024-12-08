@@ -7,7 +7,7 @@ export interface DataAwsAppmeshGatewayRouteArgs {
 }
 
 export class data_aws_appmesh_gateway_route extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsAppmeshGatewayRouteArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsAppmeshGatewayRouteArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_appmesh_gateway_route", resourceName);
   }

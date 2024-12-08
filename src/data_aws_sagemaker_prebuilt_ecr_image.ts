@@ -8,7 +8,7 @@ export interface DataAwsSagemakerPrebuiltEcrImageArgs {
 }
 
 export class data_aws_sagemaker_prebuilt_ecr_image extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSagemakerPrebuiltEcrImageArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSagemakerPrebuiltEcrImageArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_sagemaker_prebuilt_ecr_image", resourceName);
   }

@@ -18,7 +18,7 @@ export interface AwsConnectQueueArgs {
 }
 
 export class aws_connect_queue extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsConnectQueueArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsConnectQueueArgs) {
     const meta = {outbound_caller_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_connect_queue", resourceName);
   }

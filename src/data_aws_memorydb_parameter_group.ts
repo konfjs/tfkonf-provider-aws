@@ -5,7 +5,7 @@ export interface DataAwsMemorydbParameterGroupArgs {
 }
 
 export class data_aws_memorydb_parameter_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsMemorydbParameterGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsMemorydbParameterGroupArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_memorydb_parameter_group", resourceName);
   }

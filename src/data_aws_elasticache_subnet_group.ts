@@ -6,7 +6,7 @@ export interface DataAwsElasticacheSubnetGroupArgs {
 }
 
 export class data_aws_elasticache_subnet_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsElasticacheSubnetGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsElasticacheSubnetGroupArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_elasticache_subnet_group", resourceName);
   }

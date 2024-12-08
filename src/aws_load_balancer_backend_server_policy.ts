@@ -7,7 +7,7 @@ export interface AwsLoadBalancerBackendServerPolicyArgs {
 }
 
 export class aws_load_balancer_backend_server_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLoadBalancerBackendServerPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLoadBalancerBackendServerPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_load_balancer_backend_server_policy", resourceName);
   }

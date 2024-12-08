@@ -6,7 +6,7 @@ export interface AwsCodeartifactDomainPermissionsPolicyArgs {
 }
 
 export class aws_codeartifact_domain_permissions_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCodeartifactDomainPermissionsPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCodeartifactDomainPermissionsPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_codeartifact_domain_permissions_policy", resourceName);
   }

@@ -11,7 +11,7 @@ export interface AwsCloudhsmV2HsmArgs {
 }
 
 export class aws_cloudhsm_v2_hsm extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudhsmV2HsmArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudhsmV2HsmArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_cloudhsm_v2_hsm", resourceName);
   }

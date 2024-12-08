@@ -7,7 +7,7 @@ export interface AwsSecretsmanagerSecretPolicyArgs {
 }
 
 export class aws_secretsmanager_secret_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSecretsmanagerSecretPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSecretsmanagerSecretPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_secretsmanager_secret_policy", resourceName);
   }

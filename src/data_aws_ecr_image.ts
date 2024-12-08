@@ -7,7 +7,7 @@ export interface DataAwsEcrImageArgs {
 }
 
 export class data_aws_ecr_image extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEcrImageArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEcrImageArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_ecr_image", resourceName);
   }

@@ -100,7 +100,7 @@ export interface AwsApprunnerServiceArgs {
 }
 
 export class aws_apprunner_service extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApprunnerServiceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApprunnerServiceArgs) {
     const meta = {encryption_configuration:{isBlock:true},health_check_configuration:{isBlock:true},instance_configuration:{isBlock:true},network_configuration:{isBlock:true,egress_configuration:{isBlock:true},ingress_configuration:{isBlock:true}},observability_configuration:{isBlock:true},source_configuration:{isBlock:true,authentication_configuration:{isBlock:true},code_repository:{isBlock:true,code_configuration:{isBlock:true,code_configuration_values:{isBlock:true}},source_code_version:{isBlock:true}},image_repository:{isBlock:true,image_configuration:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "aws_apprunner_service", resourceName);
   }

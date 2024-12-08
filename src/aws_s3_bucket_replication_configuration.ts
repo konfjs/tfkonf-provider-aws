@@ -92,7 +92,7 @@ export interface AwsS3BucketReplicationConfigurationArgs {
 }
 
 export class aws_s3_bucket_replication_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3BucketReplicationConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3BucketReplicationConfigurationArgs) {
     const meta = {rule:{isBlock:true,delete_marker_replication:{isBlock:true},destination:{isBlock:true,access_control_translation:{isBlock:true},encryption_configuration:{isBlock:true},metrics:{isBlock:true,event_threshold:{isBlock:true}},replication_time:{isBlock:true,time:{isBlock:true}}},existing_object_replication:{isBlock:true},filter:{isBlock:true,and:{isBlock:true},tag:{isBlock:true}},source_selection_criteria:{isBlock:true,replica_modifications:{isBlock:true},sse_kms_encrypted_objects:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "aws_s3_bucket_replication_configuration", resourceName);
   }

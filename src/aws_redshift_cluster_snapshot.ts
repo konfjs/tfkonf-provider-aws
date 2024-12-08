@@ -8,7 +8,7 @@ export interface AwsRedshiftClusterSnapshotArgs {
 }
 
 export class aws_redshift_cluster_snapshot extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRedshiftClusterSnapshotArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRedshiftClusterSnapshotArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_redshift_cluster_snapshot", resourceName);
   }

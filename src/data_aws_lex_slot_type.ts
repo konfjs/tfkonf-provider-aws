@@ -6,7 +6,7 @@ export interface DataAwsLexSlotTypeArgs {
 }
 
 export class data_aws_lex_slot_type extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsLexSlotTypeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsLexSlotTypeArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_lex_slot_type", resourceName);
   }

@@ -6,7 +6,7 @@ export interface AwsRoute53HostedZoneDnssecArgs {
 }
 
 export class aws_route53_hosted_zone_dnssec extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRoute53HostedZoneDnssecArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRoute53HostedZoneDnssecArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_route53_hosted_zone_dnssec", resourceName);
   }

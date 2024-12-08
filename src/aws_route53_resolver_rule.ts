@@ -24,7 +24,7 @@ export interface AwsRoute53ResolverRuleArgs {
 }
 
 export class aws_route53_resolver_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRoute53ResolverRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRoute53ResolverRuleArgs) {
     const meta = {target_ip:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_route53_resolver_rule", resourceName);
   }

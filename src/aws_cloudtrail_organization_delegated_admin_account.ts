@@ -5,7 +5,7 @@ export interface AwsCloudtrailOrganizationDelegatedAdminAccountArgs {
 }
 
 export class aws_cloudtrail_organization_delegated_admin_account extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudtrailOrganizationDelegatedAdminAccountArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudtrailOrganizationDelegatedAdminAccountArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_cloudtrail_organization_delegated_admin_account", resourceName);
   }

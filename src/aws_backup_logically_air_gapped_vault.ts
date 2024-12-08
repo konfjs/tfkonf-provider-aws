@@ -13,7 +13,7 @@ export interface AwsBackupLogicallyAirGappedVaultArgs {
 }
 
 export class aws_backup_logically_air_gapped_vault extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBackupLogicallyAirGappedVaultArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBackupLogicallyAirGappedVaultArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_backup_logically_air_gapped_vault", resourceName);
   }

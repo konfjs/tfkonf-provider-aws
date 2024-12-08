@@ -31,7 +31,7 @@ export interface AwsS3ObjectArgs {
 }
 
 export class aws_s3_object extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3ObjectArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3ObjectArgs) {
     const meta = {override_provider:{isBlock:true,default_tags:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_s3_object", resourceName);
   }

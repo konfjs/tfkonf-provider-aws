@@ -6,7 +6,7 @@ export interface AwsSnsTopicPolicyArgs {
 }
 
 export class aws_sns_topic_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSnsTopicPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSnsTopicPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_sns_topic_policy", resourceName);
   }

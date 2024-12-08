@@ -7,7 +7,7 @@ export interface AwsServiceDiscoveryHttpNamespaceArgs {
 }
 
 export class aws_service_discovery_http_namespace extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsServiceDiscoveryHttpNamespaceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsServiceDiscoveryHttpNamespaceArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_service_discovery_http_namespace", resourceName);
   }

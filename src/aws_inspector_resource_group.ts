@@ -5,7 +5,7 @@ export interface AwsInspectorResourceGroupArgs {
 }
 
 export class aws_inspector_resource_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsInspectorResourceGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsInspectorResourceGroupArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_inspector_resource_group", resourceName);
   }

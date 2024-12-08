@@ -5,7 +5,7 @@ export interface AwsDxConnectionConfirmationArgs {
 }
 
 export class aws_dx_connection_confirmation extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDxConnectionConfirmationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDxConnectionConfirmationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_dx_connection_confirmation", resourceName);
   }

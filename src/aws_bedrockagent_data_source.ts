@@ -104,7 +104,7 @@ export interface AwsBedrockagentDataSourceArgs {
 }
 
 export class aws_bedrockagent_data_source extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBedrockagentDataSourceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBedrockagentDataSourceArgs) {
     const meta = {data_source_configuration:{isBlock:true,s3_configuration:{isBlock:true}},server_side_encryption_configuration:{isBlock:true},timeouts:{isBlock:true},vector_ingestion_configuration:{isBlock:true,chunking_configuration:{isBlock:true,fixed_size_chunking_configuration:{isBlock:true},hierarchical_chunking_configuration:{isBlock:true,level_configuration:{isBlock:true}},semantic_chunking_configuration:{isBlock:true}},custom_transformation_configuration:{isBlock:true,intermediate_storage:{isBlock:true,s3_location:{isBlock:true}},transformation:{isBlock:true,transformation_function:{isBlock:true,transformation_lambda_configuration:{isBlock:true}}}},parsing_configuration:{isBlock:true,bedrock_foundation_model_configuration:{isBlock:true,parsing_prompt:{isBlock:true}}}}};
     super(terraformConfig, "resource", args, meta, "aws_bedrockagent_data_source", resourceName);
   }

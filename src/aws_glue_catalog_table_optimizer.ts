@@ -14,7 +14,7 @@ export interface AwsGlueCatalogTableOptimizerArgs {
 }
 
 export class aws_glue_catalog_table_optimizer extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGlueCatalogTableOptimizerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGlueCatalogTableOptimizerArgs) {
     const meta = {configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_glue_catalog_table_optimizer", resourceName);
   }

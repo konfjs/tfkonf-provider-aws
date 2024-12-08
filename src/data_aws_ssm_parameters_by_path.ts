@@ -7,7 +7,7 @@ export interface DataAwsSsmParametersByPathArgs {
 }
 
 export class data_aws_ssm_parameters_by_path extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSsmParametersByPathArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSsmParametersByPathArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_ssm_parameters_by_path", resourceName);
   }

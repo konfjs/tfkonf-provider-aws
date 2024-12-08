@@ -6,7 +6,7 @@ export interface DataAwsKmsKeyArgs {
 }
 
 export class data_aws_kms_key extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsKmsKeyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsKmsKeyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_kms_key", resourceName);
   }

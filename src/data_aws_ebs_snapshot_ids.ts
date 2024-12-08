@@ -17,7 +17,7 @@ export interface DataAwsEbsSnapshotIdsArgs {
 }
 
 export class data_aws_ebs_snapshot_ids extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEbsSnapshotIdsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEbsSnapshotIdsArgs) {
     const meta = {filter:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_ebs_snapshot_ids", resourceName);
   }

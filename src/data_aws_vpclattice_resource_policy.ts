@@ -5,7 +5,7 @@ export interface DataAwsVpclatticeResourcePolicyArgs {
 }
 
 export class data_aws_vpclattice_resource_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsVpclatticeResourcePolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsVpclatticeResourcePolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_vpclattice_resource_policy", resourceName);
   }

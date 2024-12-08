@@ -36,7 +36,7 @@ export interface AwsLaunchConfigurationArgs {
 }
 
 export class aws_launch_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLaunchConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLaunchConfigurationArgs) {
     const meta = {ebs_block_device:{isBlock:true},ephemeral_block_device:{isBlock:true},metadata_options:{isBlock:true},root_block_device:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_launch_configuration", resourceName);
   }

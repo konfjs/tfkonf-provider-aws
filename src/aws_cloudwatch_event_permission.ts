@@ -15,7 +15,7 @@ export interface AwsCloudwatchEventPermissionArgs {
 }
 
 export class aws_cloudwatch_event_permission extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudwatchEventPermissionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudwatchEventPermissionArgs) {
     const meta = {condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_cloudwatch_event_permission", resourceName);
   }

@@ -18,7 +18,7 @@ export interface AwsVpcIpamResourceDiscoveryArgs {
 }
 
 export class aws_vpc_ipam_resource_discovery extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpcIpamResourceDiscoveryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpcIpamResourceDiscoveryArgs) {
     const meta = {operating_regions:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_vpc_ipam_resource_discovery", resourceName);
   }

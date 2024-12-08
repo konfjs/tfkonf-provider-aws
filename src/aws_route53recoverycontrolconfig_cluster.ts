@@ -5,7 +5,7 @@ export interface AwsRoute53recoverycontrolconfigClusterArgs {
 }
 
 export class aws_route53recoverycontrolconfig_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRoute53recoverycontrolconfigClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRoute53recoverycontrolconfigClusterArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_route53recoverycontrolconfig_cluster", resourceName);
   }

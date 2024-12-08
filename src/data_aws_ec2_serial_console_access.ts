@@ -9,7 +9,7 @@ export interface DataAwsEc2SerialConsoleAccessArgs {
 }
 
 export class data_aws_ec2_serial_console_access extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEc2SerialConsoleAccessArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEc2SerialConsoleAccessArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_ec2_serial_console_access", resourceName);
   }

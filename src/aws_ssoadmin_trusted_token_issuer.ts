@@ -21,7 +21,7 @@ export interface AwsSsoadminTrustedTokenIssuerArgs {
 }
 
 export class aws_ssoadmin_trusted_token_issuer extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSsoadminTrustedTokenIssuerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSsoadminTrustedTokenIssuerArgs) {
     const meta = {trusted_token_issuer_configuration:{isBlock:true,oidc_jwt_configuration:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_ssoadmin_trusted_token_issuer", resourceName);
   }

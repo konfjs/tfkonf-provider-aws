@@ -14,7 +14,7 @@ export interface DataAwsAuditmanagerControlArgs {
 }
 
 export class data_aws_auditmanager_control extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsAuditmanagerControlArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsAuditmanagerControlArgs) {
     const meta = {control_mapping_sources:{isBlock:true,source_keyword:{isBlock:true}}};
     super(terraformConfig, "data", args, meta, "aws_auditmanager_control", resourceName);
   }

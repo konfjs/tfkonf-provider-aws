@@ -12,7 +12,7 @@ export interface AwsSagemakerDeviceArgs {
 }
 
 export class aws_sagemaker_device extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSagemakerDeviceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSagemakerDeviceArgs) {
     const meta = {device:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_sagemaker_device", resourceName);
   }

@@ -11,7 +11,7 @@ export interface AwsAccessanalyzerArchiveRuleArgs {
 }
 
 export class aws_accessanalyzer_archive_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAccessanalyzerArchiveRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAccessanalyzerArchiveRuleArgs) {
     const meta = {filter:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_accessanalyzer_archive_rule", resourceName);
   }

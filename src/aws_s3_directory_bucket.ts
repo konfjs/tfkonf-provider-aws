@@ -10,7 +10,7 @@ export interface AwsS3DirectoryBucketArgs {
 }
 
 export class aws_s3_directory_bucket extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3DirectoryBucketArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3DirectoryBucketArgs) {
     const meta = {location:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_s3_directory_bucket", resourceName);
   }

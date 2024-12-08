@@ -42,7 +42,7 @@ export interface AwsElbArgs {
 }
 
 export class aws_elb extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsElbArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsElbArgs) {
     const meta = {access_logs:{isBlock:true},health_check:{isBlock:true},listener:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_elb", resourceName);
   }

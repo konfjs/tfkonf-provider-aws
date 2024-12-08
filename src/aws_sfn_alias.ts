@@ -19,7 +19,7 @@ export interface AwsSfnAliasArgs {
 }
 
 export class aws_sfn_alias extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSfnAliasArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSfnAliasArgs) {
     const meta = {routing_configuration:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_sfn_alias", resourceName);
   }

@@ -12,7 +12,7 @@ export interface AwsRedshiftClusterIamRolesArgs {
 }
 
 export class aws_redshift_cluster_iam_roles extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRedshiftClusterIamRolesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRedshiftClusterIamRolesArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_redshift_cluster_iam_roles", resourceName);
   }

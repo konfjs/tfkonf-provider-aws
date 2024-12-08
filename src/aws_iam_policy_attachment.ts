@@ -9,7 +9,7 @@ export interface AwsIamPolicyAttachmentArgs {
 }
 
 export class aws_iam_policy_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIamPolicyAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIamPolicyAttachmentArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_iam_policy_attachment", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataAwsWafRuleArgs {
 }
 
 export class data_aws_waf_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsWafRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsWafRuleArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_waf_rule", resourceName);
   }

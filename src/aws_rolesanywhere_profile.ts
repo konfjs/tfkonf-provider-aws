@@ -11,7 +11,7 @@ export interface AwsRolesanywhereProfileArgs {
 }
 
 export class aws_rolesanywhere_profile extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRolesanywhereProfileArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRolesanywhereProfileArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_rolesanywhere_profile", resourceName);
   }

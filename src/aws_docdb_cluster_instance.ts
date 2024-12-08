@@ -20,7 +20,7 @@ export interface AwsDocdbClusterInstanceArgs {
 }
 
 export class aws_docdb_cluster_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDocdbClusterInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDocdbClusterInstanceArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_docdb_cluster_instance", resourceName);
   }

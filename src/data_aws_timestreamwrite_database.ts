@@ -5,7 +5,7 @@ export interface DataAwsTimestreamwriteDatabaseArgs {
 }
 
 export class data_aws_timestreamwrite_database extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsTimestreamwriteDatabaseArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsTimestreamwriteDatabaseArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_timestreamwrite_database", resourceName);
   }

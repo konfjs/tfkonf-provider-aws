@@ -188,7 +188,7 @@ export interface AwsAppmeshVirtualGatewayArgs {
 }
 
 export class aws_appmesh_virtual_gateway extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppmeshVirtualGatewayArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppmeshVirtualGatewayArgs) {
     const meta = {spec:{isBlock:true,backend_defaults:{isBlock:true,client_policy:{isBlock:true,tls:{isBlock:true,certificate:{isBlock:true,file:{isBlock:true},sds:{isBlock:true}},validation:{isBlock:true,subject_alternative_names:{isBlock:true,match:{isBlock:true}},trust:{isBlock:true,acm:{isBlock:true},file:{isBlock:true},sds:{isBlock:true}}}}}},listener:{isBlock:true,connection_pool:{isBlock:true,grpc:{isBlock:true},http:{isBlock:true},http2:{isBlock:true}},health_check:{isBlock:true},port_mapping:{isBlock:true},tls:{isBlock:true,certificate:{isBlock:true,acm:{isBlock:true},file:{isBlock:true},sds:{isBlock:true}},validation:{isBlock:true,subject_alternative_names:{isBlock:true,match:{isBlock:true}},trust:{isBlock:true,file:{isBlock:true},sds:{isBlock:true}}}}},logging:{isBlock:true,access_log:{isBlock:true,file:{isBlock:true,format:{isBlock:true,json:{isBlock:true}}}}}}};
     super(terraformConfig, "resource", args, meta, "aws_appmesh_virtual_gateway", resourceName);
   }

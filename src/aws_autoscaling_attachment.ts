@@ -7,7 +7,7 @@ export interface AwsAutoscalingAttachmentArgs {
 }
 
 export class aws_autoscaling_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAutoscalingAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAutoscalingAttachmentArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_autoscaling_attachment", resourceName);
   }

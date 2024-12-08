@@ -5,7 +5,7 @@ export interface DataAwsConnectRoutingProfileArgs {
 }
 
 export class data_aws_connect_routing_profile extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsConnectRoutingProfileArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsConnectRoutingProfileArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_connect_routing_profile", resourceName);
   }

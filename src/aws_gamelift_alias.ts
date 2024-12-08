@@ -14,7 +14,7 @@ export interface AwsGameliftAliasArgs {
 }
 
 export class aws_gamelift_alias extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGameliftAliasArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGameliftAliasArgs) {
     const meta = {routing_strategy:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_gamelift_alias", resourceName);
   }

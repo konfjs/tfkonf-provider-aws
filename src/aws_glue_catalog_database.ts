@@ -31,7 +31,7 @@ export interface AwsGlueCatalogDatabaseArgs {
 }
 
 export class aws_glue_catalog_database extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGlueCatalogDatabaseArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGlueCatalogDatabaseArgs) {
     const meta = {create_table_default_permission:{isBlock:true,principal:{isBlock:true}},federated_database:{isBlock:true},target_database:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_glue_catalog_database", resourceName);
   }

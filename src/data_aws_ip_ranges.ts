@@ -7,7 +7,7 @@ export interface DataAwsIpRangesArgs {
 }
 
 export class data_aws_ip_ranges extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsIpRangesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsIpRangesArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_ip_ranges", resourceName);
   }

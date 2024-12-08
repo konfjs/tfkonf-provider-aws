@@ -11,7 +11,7 @@ export interface AwsDefaultVpcArgs {
 }
 
 export class aws_default_vpc extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDefaultVpcArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDefaultVpcArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_default_vpc", resourceName);
   }

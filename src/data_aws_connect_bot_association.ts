@@ -10,7 +10,7 @@ export interface DataAwsConnectBotAssociationArgs {
 }
 
 export class data_aws_connect_bot_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsConnectBotAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsConnectBotAssociationArgs) {
     const meta = {lex_bot:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_connect_bot_association", resourceName);
   }

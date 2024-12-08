@@ -19,7 +19,7 @@ export interface AwsGrafanaWorkspaceSamlConfigurationArgs {
 }
 
 export class aws_grafana_workspace_saml_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGrafanaWorkspaceSamlConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGrafanaWorkspaceSamlConfigurationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_grafana_workspace_saml_configuration", resourceName);
   }

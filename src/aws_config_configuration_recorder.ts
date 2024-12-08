@@ -35,7 +35,7 @@ export interface AwsConfigConfigurationRecorderArgs {
 }
 
 export class aws_config_configuration_recorder extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsConfigConfigurationRecorderArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsConfigConfigurationRecorderArgs) {
     const meta = {recording_group:{isBlock:true,exclusion_by_resource_types:{isBlock:true},recording_strategy:{isBlock:true}},recording_mode:{isBlock:true,recording_mode_override:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_config_configuration_recorder", resourceName);
   }

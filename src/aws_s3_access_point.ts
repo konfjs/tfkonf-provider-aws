@@ -19,7 +19,7 @@ export interface AwsS3AccessPointArgs {
 }
 
 export class aws_s3_access_point extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3AccessPointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3AccessPointArgs) {
     const meta = {public_access_block_configuration:{isBlock:true},vpc_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_s3_access_point", resourceName);
   }

@@ -35,7 +35,7 @@ export interface AwsLightsailContainerServiceDeploymentVersionArgs {
 }
 
 export class aws_lightsail_container_service_deployment_version extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLightsailContainerServiceDeploymentVersionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLightsailContainerServiceDeploymentVersionArgs) {
     const meta = {container:{isBlock:true},public_endpoint:{isBlock:true,health_check:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_lightsail_container_service_deployment_version", resourceName);
   }

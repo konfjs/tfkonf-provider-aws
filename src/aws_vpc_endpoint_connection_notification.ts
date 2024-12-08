@@ -8,7 +8,7 @@ export interface AwsVpcEndpointConnectionNotificationArgs {
 }
 
 export class aws_vpc_endpoint_connection_notification extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpcEndpointConnectionNotificationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpcEndpointConnectionNotificationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_vpc_endpoint_connection_notification", resourceName);
   }

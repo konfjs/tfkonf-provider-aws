@@ -10,7 +10,7 @@ export interface DataAwsFsxOntapStorageVirtualMachinesArgs {
 }
 
 export class data_aws_fsx_ontap_storage_virtual_machines extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsFsxOntapStorageVirtualMachinesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsFsxOntapStorageVirtualMachinesArgs) {
     const meta = {filter:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_fsx_ontap_storage_virtual_machines", resourceName);
   }

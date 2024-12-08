@@ -30,7 +30,7 @@ export interface AwsMskServerlessClusterArgs {
 }
 
 export class aws_msk_serverless_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMskServerlessClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMskServerlessClusterArgs) {
     const meta = {client_authentication:{isBlock:true,sasl:{isBlock:true,iam:{isBlock:true}}},timeouts:{isBlock:true},vpc_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_msk_serverless_cluster", resourceName);
   }

@@ -34,7 +34,7 @@ export interface AwsRedshiftScheduledActionArgs {
 }
 
 export class aws_redshift_scheduled_action extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRedshiftScheduledActionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRedshiftScheduledActionArgs) {
     const meta = {target_action:{isBlock:true,pause_cluster:{isBlock:true},resize_cluster:{isBlock:true},resume_cluster:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_redshift_scheduled_action", resourceName);
   }

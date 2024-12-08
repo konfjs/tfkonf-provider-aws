@@ -42,7 +42,7 @@ export interface AwsBedrockCustomModelArgs {
 }
 
 export class aws_bedrock_custom_model extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBedrockCustomModelArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBedrockCustomModelArgs) {
     const meta = {output_data_config:{isBlock:true},timeouts:{isBlock:true},training_data_config:{isBlock:true},validation_data_config:{isBlock:true,validator:{isBlock:true}},vpc_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_bedrock_custom_model", resourceName);
   }

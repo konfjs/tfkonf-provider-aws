@@ -5,7 +5,7 @@ export interface DataAwsSesv2ConfigurationSetArgs {
 }
 
 export class data_aws_sesv2_configuration_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSesv2ConfigurationSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSesv2ConfigurationSetArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_sesv2_configuration_set", resourceName);
   }

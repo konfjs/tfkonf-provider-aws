@@ -62,7 +62,7 @@ export interface AwsLightsailDistributionArgs {
 }
 
 export class aws_lightsail_distribution extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLightsailDistributionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLightsailDistributionArgs) {
     const meta = {cache_behavior:{isBlock:true},cache_behavior_settings:{isBlock:true,forwarded_cookies:{isBlock:true},forwarded_headers:{isBlock:true},forwarded_query_strings:{isBlock:true}},default_cache_behavior:{isBlock:true},origin:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_lightsail_distribution", resourceName);
   }

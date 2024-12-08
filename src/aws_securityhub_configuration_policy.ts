@@ -69,7 +69,7 @@ export interface AwsSecurityhubConfigurationPolicyArgs {
 }
 
 export class aws_securityhub_configuration_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSecurityhubConfigurationPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSecurityhubConfigurationPolicyArgs) {
     const meta = {configuration_policy:{isBlock:true,security_controls_configuration:{isBlock:true,security_control_custom_parameter:{isBlock:true,parameter:{isBlock:true,bool:{isBlock:true},double:{isBlock:true},enum:{isBlock:true},enum_list:{isBlock:true},int:{isBlock:true},int_list:{isBlock:true},string:{isBlock:true},string_list:{isBlock:true}}}}}};
     super(terraformConfig, "resource", args, meta, "aws_securityhub_configuration_policy", resourceName);
   }

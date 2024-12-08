@@ -39,7 +39,7 @@ export interface AwsSsmPatchBaselineArgs {
 }
 
 export class aws_ssm_patch_baseline extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSsmPatchBaselineArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSsmPatchBaselineArgs) {
     const meta = {approval_rule:{isBlock:true,patch_filter:{isBlock:true}},global_filter:{isBlock:true},source:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ssm_patch_baseline", resourceName);
   }

@@ -7,7 +7,7 @@ export interface DataAwsKmsCiphertextArgs {
 }
 
 export class data_aws_kms_ciphertext extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsKmsCiphertextArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsKmsCiphertextArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_kms_ciphertext", resourceName);
   }

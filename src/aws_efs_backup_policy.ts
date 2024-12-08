@@ -10,7 +10,7 @@ export interface AwsEfsBackupPolicyArgs {
 }
 
 export class aws_efs_backup_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEfsBackupPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEfsBackupPolicyArgs) {
     const meta = {backup_policy:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_efs_backup_policy", resourceName);
   }

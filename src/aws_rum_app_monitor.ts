@@ -26,7 +26,7 @@ export interface AwsRumAppMonitorArgs {
 }
 
 export class aws_rum_app_monitor extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRumAppMonitorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRumAppMonitorArgs) {
     const meta = {app_monitor_configuration:{isBlock:true},custom_events:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_rum_app_monitor", resourceName);
   }

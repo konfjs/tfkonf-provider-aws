@@ -55,7 +55,7 @@ export interface AwsDmsS3EndpointArgs {
 }
 
 export class aws_dms_s3_endpoint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDmsS3EndpointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDmsS3EndpointArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_dms_s3_endpoint", resourceName);
   }

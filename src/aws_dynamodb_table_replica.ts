@@ -15,7 +15,7 @@ export interface AwsDynamodbTableReplicaArgs {
 }
 
 export class aws_dynamodb_table_replica extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDynamodbTableReplicaArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDynamodbTableReplicaArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_dynamodb_table_replica", resourceName);
   }

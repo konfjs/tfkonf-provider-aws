@@ -32,7 +32,7 @@ export interface AwsServiceDiscoveryServiceArgs {
 }
 
 export class aws_service_discovery_service extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsServiceDiscoveryServiceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsServiceDiscoveryServiceArgs) {
     const meta = {dns_config:{isBlock:true,dns_records:{isBlock:true}},health_check_config:{isBlock:true},health_check_custom_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_service_discovery_service", resourceName);
   }

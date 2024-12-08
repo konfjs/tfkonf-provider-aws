@@ -9,7 +9,7 @@ export interface DataAwsLbListenerArgs {
 }
 
 export class data_aws_lb_listener extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsLbListenerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsLbListenerArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_lb_listener", resourceName);
   }

@@ -11,7 +11,7 @@ export interface AwsVpcEndpointServicePrivateDnsVerificationArgs {
 }
 
 export class aws_vpc_endpoint_service_private_dns_verification extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpcEndpointServicePrivateDnsVerificationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpcEndpointServicePrivateDnsVerificationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_vpc_endpoint_service_private_dns_verification", resourceName);
   }

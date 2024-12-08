@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@tfkonf/core':
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.2.1
+        version: 0.2.1
     devDependencies:
       typescript:
         specifier: 5.7.2
@@ -18,8 +18,8 @@ importers:
 
 packages:
 
-  '@tfkonf/core@0.2.0':
-    resolution: {integrity: sha512-Q+dDKqMGtWb8y6nVxbSoh0d9H8UR/6b/QfMu39UbpEYmpl6Ed6kd1+ocVHWWVODuppx5gK/GVnNs8/rQ1UZr/A==}
+  '@tfkonf/core@0.2.1':
+    resolution: {integrity: sha512-qJMtToEhm3ap7rYiHQamW8G7HclvvRthF7usY33ysLWigzeb1Wml7r49jYPgzFDtqkIkNeMtmWMFF35FM+w+Zw==}
 
   typescript@5.7.2:
     resolution: {integrity: sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==}
@@ -28,6 +28,6 @@ packages:
 
 snapshots:
 
-  '@tfkonf/core@0.2.0': {}
+  '@tfkonf/core@0.2.1': {}
 
   typescript@5.7.2: {}

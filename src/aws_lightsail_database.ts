@@ -15,7 +15,7 @@ export interface AwsLightsailDatabaseArgs {
 }
 
 export class aws_lightsail_database extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLightsailDatabaseArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLightsailDatabaseArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_lightsail_database", resourceName);
   }

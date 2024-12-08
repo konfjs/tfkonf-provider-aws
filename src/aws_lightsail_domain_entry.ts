@@ -9,7 +9,7 @@ export interface AwsLightsailDomainEntryArgs {
 }
 
 export class aws_lightsail_domain_entry extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLightsailDomainEntryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLightsailDomainEntryArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_lightsail_domain_entry", resourceName);
   }

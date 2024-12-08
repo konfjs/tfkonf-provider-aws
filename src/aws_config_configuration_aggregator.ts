@@ -20,7 +20,7 @@ export interface AwsConfigConfigurationAggregatorArgs {
 }
 
 export class aws_config_configuration_aggregator extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsConfigConfigurationAggregatorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsConfigConfigurationAggregatorArgs) {
     const meta = {account_aggregation_source:{isBlock:true},organization_aggregation_source:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_config_configuration_aggregator", resourceName);
   }

@@ -5,7 +5,7 @@ export interface AwsSesReceiptRuleSetArgs {
 }
 
 export class aws_ses_receipt_rule_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSesReceiptRuleSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSesReceiptRuleSetArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ses_receipt_rule_set", resourceName);
   }

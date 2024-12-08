@@ -29,7 +29,7 @@ export interface AwsOamLinkArgs {
 }
 
 export class aws_oam_link extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsOamLinkArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsOamLinkArgs) {
     const meta = {link_configuration:{isBlock:true,log_group_configuration:{isBlock:true},metric_configuration:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_oam_link", resourceName);
   }

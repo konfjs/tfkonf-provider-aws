@@ -21,7 +21,7 @@ export interface AwsRdsCustomDbEngineVersionArgs {
 }
 
 export class aws_rds_custom_db_engine_version extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRdsCustomDbEngineVersionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRdsCustomDbEngineVersionArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_rds_custom_db_engine_version", resourceName);
   }

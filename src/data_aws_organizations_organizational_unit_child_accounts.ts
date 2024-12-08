@@ -5,7 +5,7 @@ export interface DataAwsOrganizationsOrganizationalUnitChildAccountsArgs {
 }
 
 export class data_aws_organizations_organizational_unit_child_accounts extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsOrganizationsOrganizationalUnitChildAccountsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsOrganizationsOrganizationalUnitChildAccountsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_organizations_organizational_unit_child_accounts", resourceName);
   }

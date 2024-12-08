@@ -5,7 +5,7 @@ export interface DataAwsBatchSchedulingPolicyArgs {
 }
 
 export class data_aws_batch_scheduling_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsBatchSchedulingPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsBatchSchedulingPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_batch_scheduling_policy", resourceName);
   }

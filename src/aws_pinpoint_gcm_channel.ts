@@ -9,7 +9,7 @@ export interface AwsPinpointGcmChannelArgs {
 }
 
 export class aws_pinpoint_gcm_channel extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsPinpointGcmChannelArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsPinpointGcmChannelArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_pinpoint_gcm_channel", resourceName);
   }

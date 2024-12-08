@@ -1,6 +1,6 @@
 {
   "name": "@tfkonf/provider-aws",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "konfjs",
     "url": "https://github.com/konfjs"
@@ -52,7 +52,7 @@
     "dist"
   ],
   "dependencies": {
-    "@tfkonf/core": "^0.2.0"
+    "@tfkonf/core": "^0.2.1"
   },
   "devDependencies": {
     "typescript": "5.7.2"

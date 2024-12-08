@@ -7,7 +7,7 @@ export interface AwsDaxSubnetGroupArgs {
 }
 
 export class aws_dax_subnet_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDaxSubnetGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDaxSubnetGroupArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_dax_subnet_group", resourceName);
   }

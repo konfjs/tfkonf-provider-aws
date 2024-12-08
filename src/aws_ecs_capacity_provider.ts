@@ -15,7 +15,7 @@ export interface AwsEcsCapacityProviderArgs {
 }
 
 export class aws_ecs_capacity_provider extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEcsCapacityProviderArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEcsCapacityProviderArgs) {
     const meta = {auto_scaling_group_provider:{isBlock:true,managed_scaling:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_ecs_capacity_provider", resourceName);
   }

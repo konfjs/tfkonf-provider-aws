@@ -35,7 +35,7 @@ export interface AwsVpclatticeTargetGroupArgs {
 }
 
 export class aws_vpclattice_target_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpclatticeTargetGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpclatticeTargetGroupArgs) {
     const meta = {config:{isBlock:true,health_check:{isBlock:true,matcher:{isBlock:true}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_vpclattice_target_group", resourceName);
   }

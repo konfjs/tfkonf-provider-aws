@@ -18,7 +18,7 @@ export interface AwsSsoadminCustomerManagedPolicyAttachmentArgs {
 }
 
 export class aws_ssoadmin_customer_managed_policy_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSsoadminCustomerManagedPolicyAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSsoadminCustomerManagedPolicyAttachmentArgs) {
     const meta = {customer_managed_policy_reference:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ssoadmin_customer_managed_policy_attachment", resourceName);
   }

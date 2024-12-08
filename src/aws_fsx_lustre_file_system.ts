@@ -40,7 +40,7 @@ export interface AwsFsxLustreFileSystemArgs {
 }
 
 export class aws_fsx_lustre_file_system extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsFsxLustreFileSystemArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsFsxLustreFileSystemArgs) {
     const meta = {log_configuration:{isBlock:true},metadata_configuration:{isBlock:true},root_squash_configuration:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_fsx_lustre_file_system", resourceName);
   }

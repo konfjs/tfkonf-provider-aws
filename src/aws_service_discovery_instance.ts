@@ -7,7 +7,7 @@ export interface AwsServiceDiscoveryInstanceArgs {
 }
 
 export class aws_service_discovery_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsServiceDiscoveryInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsServiceDiscoveryInstanceArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_service_discovery_instance", resourceName);
   }

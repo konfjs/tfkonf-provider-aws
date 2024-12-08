@@ -54,7 +54,7 @@ export interface AwsAcmpcaCertificateAuthorityArgs {
 }
 
 export class aws_acmpca_certificate_authority extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAcmpcaCertificateAuthorityArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAcmpcaCertificateAuthorityArgs) {
     const meta = {certificate_authority_configuration:{isBlock:true,subject:{isBlock:true}},revocation_configuration:{isBlock:true,crl_configuration:{isBlock:true},ocsp_configuration:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_acmpca_certificate_authority", resourceName);
   }

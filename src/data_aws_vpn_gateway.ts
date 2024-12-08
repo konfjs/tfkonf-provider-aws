@@ -15,7 +15,7 @@ export interface DataAwsVpnGatewayArgs {
 }
 
 export class data_aws_vpn_gateway extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsVpnGatewayArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsVpnGatewayArgs) {
     const meta = {filter:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_vpn_gateway", resourceName);
   }

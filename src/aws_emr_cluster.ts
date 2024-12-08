@@ -179,7 +179,7 @@ export interface AwsEmrClusterArgs {
 }
 
 export class aws_emr_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEmrClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEmrClusterArgs) {
     const meta = {auto_termination_policy:{isBlock:true},bootstrap_action:{isBlock:true},core_instance_fleet:{isBlock:true,instance_type_configs:{isBlock:true,configurations:{isBlock:true},ebs_config:{isBlock:true}},launch_specifications:{isBlock:true,on_demand_specification:{isBlock:true},spot_specification:{isBlock:true}}},core_instance_group:{isBlock:true,ebs_config:{isBlock:true}},ec2_attributes:{isBlock:true},kerberos_attributes:{isBlock:true},master_instance_fleet:{isBlock:true,instance_type_configs:{isBlock:true,configurations:{isBlock:true},ebs_config:{isBlock:true}},launch_specifications:{isBlock:true,on_demand_specification:{isBlock:true},spot_specification:{isBlock:true}}},master_instance_group:{isBlock:true,ebs_config:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_emr_cluster", resourceName);
   }

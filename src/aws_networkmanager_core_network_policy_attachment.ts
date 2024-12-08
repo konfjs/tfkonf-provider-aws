@@ -11,7 +11,7 @@ export interface AwsNetworkmanagerCoreNetworkPolicyAttachmentArgs {
 }
 
 export class aws_networkmanager_core_network_policy_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNetworkmanagerCoreNetworkPolicyAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNetworkmanagerCoreNetworkPolicyAttachmentArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_networkmanager_core_network_policy_attachment", resourceName);
   }

@@ -26,7 +26,7 @@ export interface AwsAppconfigExtensionArgs {
 }
 
 export class aws_appconfig_extension extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppconfigExtensionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppconfigExtensionArgs) {
     const meta = {action_point:{isBlock:true,action:{isBlock:true}},parameter:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_appconfig_extension", resourceName);
   }

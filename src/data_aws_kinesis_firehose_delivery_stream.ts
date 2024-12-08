@@ -5,7 +5,7 @@ export interface DataAwsKinesisFirehoseDeliveryStreamArgs {
 }
 
 export class data_aws_kinesis_firehose_delivery_stream extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsKinesisFirehoseDeliveryStreamArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsKinesisFirehoseDeliveryStreamArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_kinesis_firehose_delivery_stream", resourceName);
   }

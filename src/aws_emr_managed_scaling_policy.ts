@@ -14,7 +14,7 @@ export interface AwsEmrManagedScalingPolicyArgs {
 }
 
 export class aws_emr_managed_scaling_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEmrManagedScalingPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEmrManagedScalingPolicyArgs) {
     const meta = {compute_limits:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_emr_managed_scaling_policy", resourceName);
   }

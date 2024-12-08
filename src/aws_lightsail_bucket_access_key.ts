@@ -5,7 +5,7 @@ export interface AwsLightsailBucketAccessKeyArgs {
 }
 
 export class aws_lightsail_bucket_access_key extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLightsailBucketAccessKeyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLightsailBucketAccessKeyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_lightsail_bucket_access_key", resourceName);
   }

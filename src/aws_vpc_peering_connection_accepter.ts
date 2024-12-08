@@ -23,7 +23,7 @@ export interface AwsVpcPeeringConnectionAccepterArgs {
 }
 
 export class aws_vpc_peering_connection_accepter extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpcPeeringConnectionAccepterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpcPeeringConnectionAccepterArgs) {
     const meta = {accepter:{isBlock:true},requester:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_vpc_peering_connection_accepter", resourceName);
   }

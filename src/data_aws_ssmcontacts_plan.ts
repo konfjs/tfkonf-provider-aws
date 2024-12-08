@@ -5,7 +5,7 @@ export interface DataAwsSsmcontactsPlanArgs {
 }
 
 export class data_aws_ssmcontacts_plan extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSsmcontactsPlanArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSsmcontactsPlanArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_ssmcontacts_plan", resourceName);
   }

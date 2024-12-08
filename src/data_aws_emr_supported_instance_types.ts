@@ -9,7 +9,7 @@ export interface DataAwsEmrSupportedInstanceTypesArgs {
 }
 
 export class data_aws_emr_supported_instance_types extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEmrSupportedInstanceTypesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEmrSupportedInstanceTypesArgs) {
     const meta = {supported_instance_types:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_emr_supported_instance_types", resourceName);
   }

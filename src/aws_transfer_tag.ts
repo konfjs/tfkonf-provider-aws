@@ -7,7 +7,7 @@ export interface AwsTransferTagArgs {
 }
 
 export class aws_transfer_tag extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsTransferTagArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsTransferTagArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_transfer_tag", resourceName);
   }

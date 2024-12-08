@@ -15,7 +15,7 @@ export interface AwsServicecatalogPortfolioArgs {
 }
 
 export class aws_servicecatalog_portfolio extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsServicecatalogPortfolioArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsServicecatalogPortfolioArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_servicecatalog_portfolio", resourceName);
   }

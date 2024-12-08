@@ -41,7 +41,7 @@ export interface AwsRoute53recoveryreadinessResourceSetArgs {
 }
 
 export class aws_route53recoveryreadiness_resource_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRoute53recoveryreadinessResourceSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRoute53recoveryreadinessResourceSetArgs) {
     const meta = {resources:{isBlock:true,dns_target_resource:{isBlock:true,target_resource:{isBlock:true,nlb_resource:{isBlock:true},r53_resource:{isBlock:true}}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_route53recoveryreadiness_resource_set", resourceName);
   }

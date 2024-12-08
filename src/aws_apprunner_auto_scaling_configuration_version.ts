@@ -9,7 +9,7 @@ export interface AwsApprunnerAutoScalingConfigurationVersionArgs {
 }
 
 export class aws_apprunner_auto_scaling_configuration_version extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApprunnerAutoScalingConfigurationVersionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApprunnerAutoScalingConfigurationVersionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_apprunner_auto_scaling_configuration_version", resourceName);
   }

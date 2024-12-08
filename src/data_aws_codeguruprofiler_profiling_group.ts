@@ -5,7 +5,7 @@ export interface DataAwsCodeguruprofilerProfilingGroupArgs {
 }
 
 export class data_aws_codeguruprofiler_profiling_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCodeguruprofilerProfilingGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCodeguruprofilerProfilingGroupArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_codeguruprofiler_profiling_group", resourceName);
   }

@@ -70,7 +70,7 @@ export interface AwsKeyspacesTableArgs {
 }
 
 export class aws_keyspaces_table extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsKeyspacesTableArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsKeyspacesTableArgs) {
     const meta = {capacity_specification:{isBlock:true},client_side_timestamps:{isBlock:true},comment:{isBlock:true},encryption_specification:{isBlock:true},point_in_time_recovery:{isBlock:true},schema_definition:{isBlock:true,clustering_key:{isBlock:true},column:{isBlock:true},partition_key:{isBlock:true},static_column:{isBlock:true}},timeouts:{isBlock:true},ttl:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_keyspaces_table", resourceName);
   }

@@ -42,7 +42,7 @@ export interface AwsOsisPipelineArgs {
 }
 
 export class aws_osis_pipeline extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsOsisPipelineArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsOsisPipelineArgs) {
     const meta = {buffer_options:{isBlock:true},encryption_at_rest_options:{isBlock:true},log_publishing_options:{isBlock:true,cloudwatch_log_destination:{isBlock:true}},timeouts:{isBlock:true},vpc_options:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_osis_pipeline", resourceName);
   }

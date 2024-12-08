@@ -10,7 +10,7 @@ export interface AwsVerifiedpermissionsSchemaArgs {
 }
 
 export class aws_verifiedpermissions_schema extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVerifiedpermissionsSchemaArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVerifiedpermissionsSchemaArgs) {
     const meta = {definition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_verifiedpermissions_schema", resourceName);
   }

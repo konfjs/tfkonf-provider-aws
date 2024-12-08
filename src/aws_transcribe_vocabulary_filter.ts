@@ -9,7 +9,7 @@ export interface AwsTranscribeVocabularyFilterArgs {
 }
 
 export class aws_transcribe_vocabulary_filter extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsTranscribeVocabularyFilterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsTranscribeVocabularyFilterArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_transcribe_vocabulary_filter", resourceName);
   }

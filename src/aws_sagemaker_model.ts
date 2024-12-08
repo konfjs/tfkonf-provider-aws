@@ -102,7 +102,7 @@ export interface AwsSagemakerModelArgs {
 }
 
 export class aws_sagemaker_model extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSagemakerModelArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSagemakerModelArgs) {
     const meta = {container:{isBlock:true,image_config:{isBlock:true,repository_auth_config:{isBlock:true}},model_data_source:{isBlock:true,s3_data_source:{isBlock:true,model_access_config:{isBlock:true}}},multi_model_config:{isBlock:true}},inference_execution_config:{isBlock:true},primary_container:{isBlock:true,image_config:{isBlock:true,repository_auth_config:{isBlock:true}},model_data_source:{isBlock:true,s3_data_source:{isBlock:true,model_access_config:{isBlock:true}}},multi_model_config:{isBlock:true}},vpc_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_sagemaker_model", resourceName);
   }

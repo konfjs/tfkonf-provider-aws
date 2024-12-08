@@ -41,7 +41,7 @@ export interface AwsS3BucketWebsiteConfigurationArgs {
 }
 
 export class aws_s3_bucket_website_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3BucketWebsiteConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3BucketWebsiteConfigurationArgs) {
     const meta = {error_document:{isBlock:true},index_document:{isBlock:true},redirect_all_requests_to:{isBlock:true},routing_rule:{isBlock:true,condition:{isBlock:true},redirect:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_s3_bucket_website_configuration", resourceName);
   }

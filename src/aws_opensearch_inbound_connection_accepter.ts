@@ -11,7 +11,7 @@ export interface AwsOpensearchInboundConnectionAccepterArgs {
 }
 
 export class aws_opensearch_inbound_connection_accepter extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsOpensearchInboundConnectionAccepterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsOpensearchInboundConnectionAccepterArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_opensearch_inbound_connection_accepter", resourceName);
   }

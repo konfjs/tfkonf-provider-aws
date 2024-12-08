@@ -17,7 +17,7 @@ export interface AwsSnsPlatformApplicationArgs {
 }
 
 export class aws_sns_platform_application extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSnsPlatformApplicationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSnsPlatformApplicationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_sns_platform_application", resourceName);
   }

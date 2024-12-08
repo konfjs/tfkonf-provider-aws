@@ -17,7 +17,7 @@ export interface AwsGlueConnectionArgs {
 }
 
 export class aws_glue_connection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGlueConnectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGlueConnectionArgs) {
     const meta = {physical_connection_requirements:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_glue_connection", resourceName);
   }

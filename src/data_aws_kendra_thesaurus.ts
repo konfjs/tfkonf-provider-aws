@@ -6,7 +6,7 @@ export interface DataAwsKendraThesaurusArgs {
 }
 
 export class data_aws_kendra_thesaurus extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsKendraThesaurusArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsKendraThesaurusArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_kendra_thesaurus", resourceName);
   }

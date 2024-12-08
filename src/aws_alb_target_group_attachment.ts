@@ -8,7 +8,7 @@ export interface AwsAlbTargetGroupAttachmentArgs {
 }
 
 export class aws_alb_target_group_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAlbTargetGroupAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAlbTargetGroupAttachmentArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_alb_target_group_attachment", resourceName);
   }

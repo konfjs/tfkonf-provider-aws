@@ -8,7 +8,7 @@ export interface AwsEc2NetworkInsightsAnalysisArgs {
 }
 
 export class aws_ec2_network_insights_analysis extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEc2NetworkInsightsAnalysisArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEc2NetworkInsightsAnalysisArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ec2_network_insights_analysis", resourceName);
   }

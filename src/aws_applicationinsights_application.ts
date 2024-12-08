@@ -12,7 +12,7 @@ export interface AwsApplicationinsightsApplicationArgs {
 }
 
 export class aws_applicationinsights_application extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApplicationinsightsApplicationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApplicationinsightsApplicationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_applicationinsights_application", resourceName);
   }

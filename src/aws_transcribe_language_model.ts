@@ -19,7 +19,7 @@ export interface AwsTranscribeLanguageModelArgs {
 }
 
 export class aws_transcribe_language_model extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsTranscribeLanguageModelArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsTranscribeLanguageModelArgs) {
     const meta = {input_data_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_transcribe_language_model", resourceName);
   }

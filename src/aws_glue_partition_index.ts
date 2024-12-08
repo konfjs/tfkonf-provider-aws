@@ -18,7 +18,7 @@ export interface AwsGluePartitionIndexArgs {
 }
 
 export class aws_glue_partition_index extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGluePartitionIndexArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGluePartitionIndexArgs) {
     const meta = {partition_index:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_glue_partition_index", resourceName);
   }

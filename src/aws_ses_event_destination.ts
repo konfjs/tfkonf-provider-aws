@@ -26,7 +26,7 @@ export interface AwsSesEventDestinationArgs {
 }
 
 export class aws_ses_event_destination extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSesEventDestinationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSesEventDestinationArgs) {
     const meta = {cloudwatch_destination:{isBlock:true},kinesis_destination:{isBlock:true},sns_destination:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ses_event_destination", resourceName);
   }

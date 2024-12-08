@@ -22,7 +22,7 @@ export interface AwsCodestarconnectionsHostArgs {
 }
 
 export class aws_codestarconnections_host extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCodestarconnectionsHostArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCodestarconnectionsHostArgs) {
     const meta = {timeouts:{isBlock:true},vpc_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_codestarconnections_host", resourceName);
   }

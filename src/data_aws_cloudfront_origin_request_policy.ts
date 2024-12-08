@@ -6,7 +6,7 @@ export interface DataAwsCloudfrontOriginRequestPolicyArgs {
 }
 
 export class data_aws_cloudfront_origin_request_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCloudfrontOriginRequestPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCloudfrontOriginRequestPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_cloudfront_origin_request_policy", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataAwsApiGatewayAuthorizersArgs {
 }
 
 export class data_aws_api_gateway_authorizers extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsApiGatewayAuthorizersArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsApiGatewayAuthorizersArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_api_gateway_authorizers", resourceName);
   }

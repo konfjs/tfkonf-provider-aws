@@ -22,7 +22,7 @@ export interface AwsQuicksightRefreshScheduleArgs {
 }
 
 export class aws_quicksight_refresh_schedule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsQuicksightRefreshScheduleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsQuicksightRefreshScheduleArgs) {
     const meta = {schedule:{isBlock:true,schedule_frequency:{isBlock:true,refresh_on_day:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "aws_quicksight_refresh_schedule", resourceName);
   }

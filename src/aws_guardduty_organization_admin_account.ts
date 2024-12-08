@@ -5,7 +5,7 @@ export interface AwsGuarddutyOrganizationAdminAccountArgs {
 }
 
 export class aws_guardduty_organization_admin_account extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGuarddutyOrganizationAdminAccountArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGuarddutyOrganizationAdminAccountArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_guardduty_organization_admin_account", resourceName);
   }

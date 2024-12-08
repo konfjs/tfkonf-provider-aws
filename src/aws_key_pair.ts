@@ -6,7 +6,7 @@ export interface AwsKeyPairArgs {
 }
 
 export class aws_key_pair extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsKeyPairArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsKeyPairArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_key_pair", resourceName);
   }

@@ -17,7 +17,7 @@ export interface AwsSecurityhubOrganizationConfigurationArgs {
 }
 
 export class aws_securityhub_organization_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSecurityhubOrganizationConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSecurityhubOrganizationConfigurationArgs) {
     const meta = {organization_configuration:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_securityhub_organization_configuration", resourceName);
   }

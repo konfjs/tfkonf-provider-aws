@@ -7,7 +7,7 @@ export interface DataAwsDocdbOrderableDbInstanceArgs {
 }
 
 export class data_aws_docdb_orderable_db_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsDocdbOrderableDbInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsDocdbOrderableDbInstanceArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_docdb_orderable_db_instance", resourceName);
   }

@@ -59,7 +59,7 @@ export interface AwsMskReplicatorArgs {
 }
 
 export class aws_msk_replicator extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMskReplicatorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMskReplicatorArgs) {
     const meta = {kafka_cluster:{isBlock:true,amazon_msk_cluster:{isBlock:true},vpc_config:{isBlock:true}},replication_info_list:{isBlock:true,consumer_group_replication:{isBlock:true},topic_replication:{isBlock:true,starting_position:{isBlock:true}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_msk_replicator", resourceName);
   }

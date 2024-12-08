@@ -6,7 +6,7 @@ export interface DataAwsKendraExperienceArgs {
 }
 
 export class data_aws_kendra_experience extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsKendraExperienceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsKendraExperienceArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_kendra_experience", resourceName);
   }

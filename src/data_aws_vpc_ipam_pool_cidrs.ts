@@ -16,7 +16,7 @@ export interface DataAwsVpcIpamPoolCidrsArgs {
 }
 
 export class data_aws_vpc_ipam_pool_cidrs extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsVpcIpamPoolCidrsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsVpcIpamPoolCidrsArgs) {
     const meta = {filter:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_vpc_ipam_pool_cidrs", resourceName);
   }

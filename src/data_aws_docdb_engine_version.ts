@@ -6,7 +6,7 @@ export interface DataAwsDocdbEngineVersionArgs {
 }
 
 export class data_aws_docdb_engine_version extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsDocdbEngineVersionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsDocdbEngineVersionArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_docdb_engine_version", resourceName);
   }

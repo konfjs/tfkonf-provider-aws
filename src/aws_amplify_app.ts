@@ -46,7 +46,7 @@ export interface AwsAmplifyAppArgs {
 }
 
 export class aws_amplify_app extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAmplifyAppArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAmplifyAppArgs) {
     const meta = {auto_branch_creation_config:{isBlock:true},cache_config:{isBlock:true},custom_rule:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_amplify_app", resourceName);
   }

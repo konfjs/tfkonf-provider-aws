@@ -32,7 +32,7 @@ export interface AwsGlueJobArgs {
 }
 
 export class aws_glue_job extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGlueJobArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGlueJobArgs) {
     const meta = {command:{isBlock:true},execution_property:{isBlock:true},notification_property:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_glue_job", resourceName);
   }

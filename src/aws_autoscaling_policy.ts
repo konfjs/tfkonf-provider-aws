@@ -193,7 +193,7 @@ export interface AwsAutoscalingPolicyArgs {
 }
 
 export class aws_autoscaling_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAutoscalingPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAutoscalingPolicyArgs) {
     const meta = {predictive_scaling_configuration:{isBlock:true,metric_specification:{isBlock:true,customized_capacity_metric_specification:{isBlock:true,metric_data_queries:{isBlock:true,metric_stat:{isBlock:true,metric:{isBlock:true,dimensions:{isBlock:true}}}}},customized_load_metric_specification:{isBlock:true,metric_data_queries:{isBlock:true,metric_stat:{isBlock:true,metric:{isBlock:true,dimensions:{isBlock:true}}}}},customized_scaling_metric_specification:{isBlock:true,metric_data_queries:{isBlock:true,metric_stat:{isBlock:true,metric:{isBlock:true,dimensions:{isBlock:true}}}}},predefined_load_metric_specification:{isBlock:true},predefined_metric_pair_specification:{isBlock:true},predefined_scaling_metric_specification:{isBlock:true}}},step_adjustment:{isBlock:true},target_tracking_configuration:{isBlock:true,customized_metric_specification:{isBlock:true,metric_dimension:{isBlock:true},metrics:{isBlock:true,metric_stat:{isBlock:true,metric:{isBlock:true,dimensions:{isBlock:true}}}}},predefined_metric_specification:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_autoscaling_policy", resourceName);
   }

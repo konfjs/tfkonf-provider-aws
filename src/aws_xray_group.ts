@@ -12,7 +12,7 @@ export interface AwsXrayGroupArgs {
 }
 
 export class aws_xray_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsXrayGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsXrayGroupArgs) {
     const meta = {insights_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_xray_group", resourceName);
   }

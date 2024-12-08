@@ -6,7 +6,7 @@ export interface AwsCloudwatchLogStreamArgs {
 }
 
 export class aws_cloudwatch_log_stream extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudwatchLogStreamArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudwatchLogStreamArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_cloudwatch_log_stream", resourceName);
   }

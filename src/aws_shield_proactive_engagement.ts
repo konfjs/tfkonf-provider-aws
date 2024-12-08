@@ -12,7 +12,7 @@ export interface AwsShieldProactiveEngagementArgs {
 }
 
 export class aws_shield_proactive_engagement extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsShieldProactiveEngagementArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsShieldProactiveEngagementArgs) {
     const meta = {emergency_contact:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_shield_proactive_engagement", resourceName);
   }

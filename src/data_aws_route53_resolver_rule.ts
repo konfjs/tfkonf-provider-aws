@@ -4,7 +4,7 @@ export interface DataAwsRoute53ResolverRuleArgs {
 }
 
 export class data_aws_route53_resolver_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsRoute53ResolverRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsRoute53ResolverRuleArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_route53_resolver_rule", resourceName);
   }

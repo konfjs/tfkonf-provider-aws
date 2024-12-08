@@ -9,7 +9,7 @@ export interface DataAwsOpensearchDomainArgs {
 }
 
 export class data_aws_opensearch_domain extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsOpensearchDomainArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsOpensearchDomainArgs) {
     const meta = {off_peak_window_options:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_opensearch_domain", resourceName);
   }

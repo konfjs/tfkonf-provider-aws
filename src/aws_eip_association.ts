@@ -5,7 +5,7 @@ export interface AwsEipAssociationArgs {
 }
 
 export class aws_eip_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEipAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEipAssociationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_eip_association", resourceName);
   }

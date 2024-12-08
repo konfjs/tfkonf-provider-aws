@@ -43,7 +43,7 @@ export interface AwsBackupSelectionArgs {
 }
 
 export class aws_backup_selection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBackupSelectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBackupSelectionArgs) {
     const meta = {condition:{isBlock:true,string_equals:{isBlock:true},string_like:{isBlock:true},string_not_equals:{isBlock:true},string_not_like:{isBlock:true}},selection_tag:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_backup_selection", resourceName);
   }

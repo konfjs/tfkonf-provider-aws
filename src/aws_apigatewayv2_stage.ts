@@ -34,7 +34,7 @@ export interface AwsApigatewayv2StageArgs {
 }
 
 export class aws_apigatewayv2_stage extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApigatewayv2StageArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApigatewayv2StageArgs) {
     const meta = {access_log_settings:{isBlock:true},default_route_settings:{isBlock:true},route_settings:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_apigatewayv2_stage", resourceName);
   }

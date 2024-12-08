@@ -17,7 +17,7 @@ export interface AwsAutoscalingTrafficSourceAttachmentArgs {
 }
 
 export class aws_autoscaling_traffic_source_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAutoscalingTrafficSourceAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAutoscalingTrafficSourceAttachmentArgs) {
     const meta = {timeouts:{isBlock:true},traffic_source:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_autoscaling_traffic_source_attachment", resourceName);
   }

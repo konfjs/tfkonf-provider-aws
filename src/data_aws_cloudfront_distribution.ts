@@ -5,7 +5,7 @@ export interface DataAwsCloudfrontDistributionArgs {
 }
 
 export class data_aws_cloudfront_distribution extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCloudfrontDistributionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCloudfrontDistributionArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_cloudfront_distribution", resourceName);
   }

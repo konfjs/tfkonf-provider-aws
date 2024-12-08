@@ -8,7 +8,7 @@ export interface AwsSagemakerStudioLifecycleConfigArgs {
 }
 
 export class aws_sagemaker_studio_lifecycle_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSagemakerStudioLifecycleConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSagemakerStudioLifecycleConfigArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_sagemaker_studio_lifecycle_config", resourceName);
   }

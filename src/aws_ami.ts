@@ -42,7 +42,7 @@ export interface AwsAmiArgs {
 }
 
 export class aws_ami extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAmiArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAmiArgs) {
     const meta = {ebs_block_device:{isBlock:true},ephemeral_block_device:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ami", resourceName);
   }

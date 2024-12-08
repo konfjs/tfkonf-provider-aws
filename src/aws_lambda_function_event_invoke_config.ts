@@ -22,7 +22,7 @@ export interface AwsLambdaFunctionEventInvokeConfigArgs {
 }
 
 export class aws_lambda_function_event_invoke_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLambdaFunctionEventInvokeConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLambdaFunctionEventInvokeConfigArgs) {
     const meta = {destination_config:{isBlock:true,on_failure:{isBlock:true},on_success:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_lambda_function_event_invoke_config", resourceName);
   }

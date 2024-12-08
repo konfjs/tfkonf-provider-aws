@@ -9,7 +9,7 @@ export interface AwsS3BucketPublicAccessBlockArgs {
 }
 
 export class aws_s3_bucket_public_access_block extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3BucketPublicAccessBlockArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3BucketPublicAccessBlockArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_s3_bucket_public_access_block", resourceName);
   }

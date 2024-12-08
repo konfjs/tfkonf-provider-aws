@@ -20,7 +20,7 @@ export interface AwsDirectoryServiceRegionArgs {
 }
 
 export class aws_directory_service_region extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDirectoryServiceRegionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDirectoryServiceRegionArgs) {
     const meta = {timeouts:{isBlock:true},vpc_settings:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_directory_service_region", resourceName);
   }

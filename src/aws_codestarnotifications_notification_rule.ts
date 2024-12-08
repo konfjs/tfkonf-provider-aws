@@ -16,7 +16,7 @@ export interface AwsCodestarnotificationsNotificationRuleArgs {
 }
 
 export class aws_codestarnotifications_notification_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCodestarnotificationsNotificationRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCodestarnotificationsNotificationRuleArgs) {
     const meta = {target:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_codestarnotifications_notification_rule", resourceName);
   }

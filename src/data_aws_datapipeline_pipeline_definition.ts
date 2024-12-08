@@ -9,7 +9,7 @@ export interface DataAwsDatapipelinePipelineDefinitionArgs {
 }
 
 export class data_aws_datapipeline_pipeline_definition extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsDatapipelinePipelineDefinitionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsDatapipelinePipelineDefinitionArgs) {
     const meta = {parameter_value:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_datapipeline_pipeline_definition", resourceName);
   }

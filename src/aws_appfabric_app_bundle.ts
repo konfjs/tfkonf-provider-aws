@@ -6,7 +6,7 @@ export interface AwsAppfabricAppBundleArgs {
 }
 
 export class aws_appfabric_app_bundle extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppfabricAppBundleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppfabricAppBundleArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_appfabric_app_bundle", resourceName);
   }

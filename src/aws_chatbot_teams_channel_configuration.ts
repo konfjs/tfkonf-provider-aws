@@ -17,7 +17,7 @@ export interface AwsChatbotTeamsChannelConfigurationArgs {
 }
 
 export class aws_chatbot_teams_channel_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsChatbotTeamsChannelConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsChatbotTeamsChannelConfigurationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_chatbot_teams_channel_configuration", resourceName);
   }

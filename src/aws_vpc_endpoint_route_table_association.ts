@@ -6,7 +6,7 @@ export interface AwsVpcEndpointRouteTableAssociationArgs {
 }
 
 export class aws_vpc_endpoint_route_table_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpcEndpointRouteTableAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpcEndpointRouteTableAssociationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_vpc_endpoint_route_table_association", resourceName);
   }

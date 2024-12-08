@@ -16,7 +16,7 @@ export interface AwsLambdaCodeSigningConfigArgs {
 }
 
 export class aws_lambda_code_signing_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLambdaCodeSigningConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLambdaCodeSigningConfigArgs) {
     const meta = {allowed_publishers:{isBlock:true},policies:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_lambda_code_signing_config", resourceName);
   }

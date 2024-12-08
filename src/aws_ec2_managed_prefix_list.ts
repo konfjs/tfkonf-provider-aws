@@ -14,7 +14,7 @@ export interface AwsEc2ManagedPrefixListArgs {
 }
 
 export class aws_ec2_managed_prefix_list extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEc2ManagedPrefixListArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEc2ManagedPrefixListArgs) {
     const meta = {entry:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ec2_managed_prefix_list", resourceName);
   }

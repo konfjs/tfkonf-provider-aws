@@ -18,7 +18,7 @@ export interface AwsWafByteMatchSetArgs {
 }
 
 export class aws_waf_byte_match_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsWafByteMatchSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsWafByteMatchSetArgs) {
     const meta = {byte_match_tuples:{isBlock:true,field_to_match:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_waf_byte_match_set", resourceName);
   }

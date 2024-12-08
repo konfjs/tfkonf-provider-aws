@@ -46,7 +46,7 @@ export interface AwsSyntheticsCanaryArgs {
 }
 
 export class aws_synthetics_canary extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSyntheticsCanaryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSyntheticsCanaryArgs) {
     const meta = {artifact_config:{isBlock:true,s3_encryption:{isBlock:true}},run_config:{isBlock:true},schedule:{isBlock:true},vpc_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_synthetics_canary", resourceName);
   }

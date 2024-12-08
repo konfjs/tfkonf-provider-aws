@@ -14,7 +14,7 @@ export interface AwsVpcIpamScopeArgs {
 }
 
 export class aws_vpc_ipam_scope extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpcIpamScopeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpcIpamScopeArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_vpc_ipam_scope", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataAwsGrafanaWorkspaceArgs {
 }
 
 export class data_aws_grafana_workspace extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsGrafanaWorkspaceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsGrafanaWorkspaceArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_grafana_workspace", resourceName);
   }

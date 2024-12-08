@@ -5,7 +5,7 @@ export interface DataAwsSsmcontactsRotationArgs {
 }
 
 export class data_aws_ssmcontacts_rotation extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSsmcontactsRotationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSsmcontactsRotationArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_ssmcontacts_rotation", resourceName);
   }

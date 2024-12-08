@@ -71,7 +71,7 @@ export interface AwsDatasyncTaskArgs {
 }
 
 export class aws_datasync_task extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDatasyncTaskArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDatasyncTaskArgs) {
     const meta = {excludes:{isBlock:true},includes:{isBlock:true},options:{isBlock:true},schedule:{isBlock:true},task_report_config:{isBlock:true,report_overrides:{isBlock:true},s3_destination:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_datasync_task", resourceName);
   }

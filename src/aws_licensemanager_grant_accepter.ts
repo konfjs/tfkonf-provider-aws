@@ -5,7 +5,7 @@ export interface AwsLicensemanagerGrantAccepterArgs {
 }
 
 export class aws_licensemanager_grant_accepter extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLicensemanagerGrantAccepterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLicensemanagerGrantAccepterArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_licensemanager_grant_accepter", resourceName);
   }

@@ -6,7 +6,7 @@ export interface DataAwsWafv2RuleGroupArgs {
 }
 
 export class data_aws_wafv2_rule_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsWafv2RuleGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsWafv2RuleGroupArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_wafv2_rule_group", resourceName);
   }

@@ -17,7 +17,7 @@ export interface AwsNeptuneEventSubscriptionArgs {
 }
 
 export class aws_neptune_event_subscription extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNeptuneEventSubscriptionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNeptuneEventSubscriptionArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_neptune_event_subscription", resourceName);
   }

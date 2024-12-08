@@ -5,7 +5,7 @@ export interface DataAwsApigatewayv2VpcLinkArgs {
 }
 
 export class data_aws_apigatewayv2_vpc_link extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsApigatewayv2VpcLinkArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsApigatewayv2VpcLinkArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_apigatewayv2_vpc_link", resourceName);
   }

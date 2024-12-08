@@ -6,7 +6,7 @@ export interface AwsCodecommitApprovalRuleTemplateAssociationArgs {
 }
 
 export class aws_codecommit_approval_rule_template_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCodecommitApprovalRuleTemplateAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCodecommitApprovalRuleTemplateAssociationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_codecommit_approval_rule_template_association", resourceName);
   }

@@ -24,7 +24,7 @@ export interface AwsBackupReportPlanArgs {
 }
 
 export class aws_backup_report_plan extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBackupReportPlanArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBackupReportPlanArgs) {
     const meta = {report_delivery_channel:{isBlock:true},report_setting:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_backup_report_plan", resourceName);
   }

@@ -12,7 +12,7 @@ export interface AwsSesv2DedicatedIpAssignmentArgs {
 }
 
 export class aws_sesv2_dedicated_ip_assignment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSesv2DedicatedIpAssignmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSesv2DedicatedIpAssignmentArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_sesv2_dedicated_ip_assignment", resourceName);
   }

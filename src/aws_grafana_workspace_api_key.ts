@@ -8,7 +8,7 @@ export interface AwsGrafanaWorkspaceApiKeyArgs {
 }
 
 export class aws_grafana_workspace_api_key extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGrafanaWorkspaceApiKeyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGrafanaWorkspaceApiKeyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_grafana_workspace_api_key", resourceName);
   }

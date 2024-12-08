@@ -116,7 +116,7 @@ export interface AwsDlmLifecyclePolicyArgs {
 }
 
 export class aws_dlm_lifecycle_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDlmLifecyclePolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDlmLifecyclePolicyArgs) {
     const meta = {policy_details:{isBlock:true,action:{isBlock:true,cross_region_copy:{isBlock:true,encryption_configuration:{isBlock:true},retain_rule:{isBlock:true}}},event_source:{isBlock:true,parameters:{isBlock:true}},parameters:{isBlock:true},schedule:{isBlock:true,create_rule:{isBlock:true},cross_region_copy_rule:{isBlock:true,deprecate_rule:{isBlock:true},retain_rule:{isBlock:true}},deprecate_rule:{isBlock:true},fast_restore_rule:{isBlock:true},retain_rule:{isBlock:true},share_rule:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "aws_dlm_lifecycle_policy", resourceName);
   }

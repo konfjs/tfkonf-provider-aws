@@ -58,7 +58,7 @@ export interface AwsLakeformationPermissionsArgs {
 }
 
 export class aws_lakeformation_permissions extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLakeformationPermissionsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLakeformationPermissionsArgs) {
     const meta = {data_cells_filter:{isBlock:true},data_location:{isBlock:true},database:{isBlock:true},lf_tag:{isBlock:true},lf_tag_policy:{isBlock:true,expression:{isBlock:true}},table:{isBlock:true},table_with_columns:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_lakeformation_permissions", resourceName);
   }

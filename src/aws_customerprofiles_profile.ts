@@ -78,7 +78,7 @@ export interface AwsCustomerprofilesProfileArgs {
 }
 
 export class aws_customerprofiles_profile extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCustomerprofilesProfileArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCustomerprofilesProfileArgs) {
     const meta = {address:{isBlock:true},billing_address:{isBlock:true},mailing_address:{isBlock:true},shipping_address:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_customerprofiles_profile", resourceName);
   }

@@ -8,7 +8,7 @@ export interface AwsRdsClusterActivityStreamArgs {
 }
 
 export class aws_rds_cluster_activity_stream extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRdsClusterActivityStreamArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRdsClusterActivityStreamArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_rds_cluster_activity_stream", resourceName);
   }

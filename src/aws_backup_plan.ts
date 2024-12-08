@@ -41,7 +41,7 @@ export interface AwsBackupPlanArgs {
 }
 
 export class aws_backup_plan extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBackupPlanArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBackupPlanArgs) {
     const meta = {advanced_backup_setting:{isBlock:true},rule:{isBlock:true,copy_action:{isBlock:true,lifecycle:{isBlock:true}},lifecycle:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_backup_plan", resourceName);
   }

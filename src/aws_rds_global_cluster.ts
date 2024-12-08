@@ -15,7 +15,7 @@ export interface AwsRdsGlobalClusterArgs {
 }
 
 export class aws_rds_global_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRdsGlobalClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRdsGlobalClusterArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_rds_global_cluster", resourceName);
   }

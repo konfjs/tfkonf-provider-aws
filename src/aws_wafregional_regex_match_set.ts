@@ -17,7 +17,7 @@ export interface AwsWafregionalRegexMatchSetArgs {
 }
 
 export class aws_wafregional_regex_match_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsWafregionalRegexMatchSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsWafregionalRegexMatchSetArgs) {
     const meta = {regex_match_tuple:{isBlock:true,field_to_match:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_wafregional_regex_match_set", resourceName);
   }

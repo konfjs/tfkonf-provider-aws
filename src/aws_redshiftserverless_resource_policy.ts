@@ -6,7 +6,7 @@ export interface AwsRedshiftserverlessResourcePolicyArgs {
 }
 
 export class aws_redshiftserverless_resource_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRedshiftserverlessResourcePolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRedshiftserverlessResourcePolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_redshiftserverless_resource_policy", resourceName);
   }

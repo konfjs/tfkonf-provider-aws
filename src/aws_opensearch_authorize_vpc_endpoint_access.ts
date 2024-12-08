@@ -6,7 +6,7 @@ export interface AwsOpensearchAuthorizeVpcEndpointAccessArgs {
 }
 
 export class aws_opensearch_authorize_vpc_endpoint_access extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsOpensearchAuthorizeVpcEndpointAccessArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsOpensearchAuthorizeVpcEndpointAccessArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_opensearch_authorize_vpc_endpoint_access", resourceName);
   }

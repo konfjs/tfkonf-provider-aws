@@ -12,7 +12,7 @@ export interface AwsEbsFastSnapshotRestoreArgs {
 }
 
 export class aws_ebs_fast_snapshot_restore extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEbsFastSnapshotRestoreArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEbsFastSnapshotRestoreArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ebs_fast_snapshot_restore", resourceName);
   }

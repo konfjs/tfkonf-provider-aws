@@ -71,7 +71,7 @@ export interface AwsS3BucketLifecycleConfigurationArgs {
 }
 
 export class aws_s3_bucket_lifecycle_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3BucketLifecycleConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3BucketLifecycleConfigurationArgs) {
     const meta = {rule:{isBlock:true,abort_incomplete_multipart_upload:{isBlock:true},expiration:{isBlock:true},filter:{isBlock:true,and:{isBlock:true},tag:{isBlock:true}},noncurrent_version_expiration:{isBlock:true},noncurrent_version_transition:{isBlock:true},transition:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_s3_bucket_lifecycle_configuration", resourceName);
   }

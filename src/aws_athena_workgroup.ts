@@ -40,7 +40,7 @@ export interface AwsAthenaWorkgroupArgs {
 }
 
 export class aws_athena_workgroup extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAthenaWorkgroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAthenaWorkgroupArgs) {
     const meta = {configuration:{isBlock:true,engine_version:{isBlock:true},result_configuration:{isBlock:true,acl_configuration:{isBlock:true},encryption_configuration:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "aws_athena_workgroup", resourceName);
   }

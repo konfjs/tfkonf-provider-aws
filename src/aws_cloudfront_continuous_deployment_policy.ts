@@ -33,7 +33,7 @@ export interface AwsCloudfrontContinuousDeploymentPolicyArgs {
 }
 
 export class aws_cloudfront_continuous_deployment_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudfrontContinuousDeploymentPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudfrontContinuousDeploymentPolicyArgs) {
     const meta = {staging_distribution_dns_names:{isBlock:true},traffic_config:{isBlock:true,single_header_config:{isBlock:true},single_weight_config:{isBlock:true,session_stickiness_config:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "aws_cloudfront_continuous_deployment_policy", resourceName);
   }

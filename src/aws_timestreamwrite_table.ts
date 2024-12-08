@@ -41,7 +41,7 @@ export interface AwsTimestreamwriteTableArgs {
 }
 
 export class aws_timestreamwrite_table extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsTimestreamwriteTableArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsTimestreamwriteTableArgs) {
     const meta = {magnetic_store_write_properties:{isBlock:true,magnetic_store_rejected_data_location:{isBlock:true,s3_configuration:{isBlock:true}}},retention_properties:{isBlock:true},schema:{isBlock:true,composite_partition_key:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_timestreamwrite_table", resourceName);
   }

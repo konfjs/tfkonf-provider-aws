@@ -16,7 +16,7 @@ export interface AwsMediaConvertQueueArgs {
 }
 
 export class aws_media_convert_queue extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMediaConvertQueueArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMediaConvertQueueArgs) {
     const meta = {reservation_plan_settings:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_media_convert_queue", resourceName);
   }

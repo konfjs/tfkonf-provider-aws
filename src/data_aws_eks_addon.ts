@@ -6,7 +6,7 @@ export interface DataAwsEksAddonArgs {
 }
 
 export class data_aws_eks_addon extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEksAddonArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEksAddonArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_eks_addon", resourceName);
   }

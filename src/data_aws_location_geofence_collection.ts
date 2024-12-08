@@ -5,7 +5,7 @@ export interface DataAwsLocationGeofenceCollectionArgs {
 }
 
 export class data_aws_location_geofence_collection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsLocationGeofenceCollectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsLocationGeofenceCollectionArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_location_geofence_collection", resourceName);
   }

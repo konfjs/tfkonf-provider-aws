@@ -4,7 +4,7 @@ export interface DataAwsLbTrustStoreArgs {
 }
 
 export class data_aws_lb_trust_store extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsLbTrustStoreArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsLbTrustStoreArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_lb_trust_store", resourceName);
   }

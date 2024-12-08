@@ -16,7 +16,7 @@ export interface AwsResourceexplorer2ViewArgs {
 }
 
 export class aws_resourceexplorer2_view extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsResourceexplorer2ViewArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsResourceexplorer2ViewArgs) {
     const meta = {filters:{isBlock:true},included_property:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_resourceexplorer2_view", resourceName);
   }

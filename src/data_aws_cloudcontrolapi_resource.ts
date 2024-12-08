@@ -8,7 +8,7 @@ export interface DataAwsCloudcontrolapiResourceArgs {
 }
 
 export class data_aws_cloudcontrolapi_resource extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCloudcontrolapiResourceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCloudcontrolapiResourceArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_cloudcontrolapi_resource", resourceName);
   }

@@ -161,7 +161,7 @@ export interface AwsKendraDataSourceArgs {
 }
 
 export class aws_kendra_data_source extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsKendraDataSourceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsKendraDataSourceArgs) {
     const meta = {configuration:{isBlock:true,s3_configuration:{isBlock:true,access_control_list_configuration:{isBlock:true},documents_metadata_configuration:{isBlock:true}},web_crawler_configuration:{isBlock:true,authentication_configuration:{isBlock:true,basic_authentication:{isBlock:true}},proxy_configuration:{isBlock:true},urls:{isBlock:true,seed_url_configuration:{isBlock:true},site_maps_configuration:{isBlock:true}}}},custom_document_enrichment_configuration:{isBlock:true,inline_configurations:{isBlock:true,condition:{isBlock:true,condition_on_value:{isBlock:true}},target:{isBlock:true,target_document_attribute_value:{isBlock:true}}},post_extraction_hook_configuration:{isBlock:true,invocation_condition:{isBlock:true,condition_on_value:{isBlock:true}}},pre_extraction_hook_configuration:{isBlock:true,invocation_condition:{isBlock:true,condition_on_value:{isBlock:true}}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_kendra_data_source", resourceName);
   }

@@ -9,7 +9,7 @@ export interface DataAwsEbsEncryptionByDefaultArgs {
 }
 
 export class data_aws_ebs_encryption_by_default extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEbsEncryptionByDefaultArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEbsEncryptionByDefaultArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_ebs_encryption_by_default", resourceName);
   }

@@ -7,7 +7,7 @@ export interface AwsAcmpcaPermissionArgs {
 }
 
 export class aws_acmpca_permission extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAcmpcaPermissionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAcmpcaPermissionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_acmpca_permission", resourceName);
   }

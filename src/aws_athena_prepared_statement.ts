@@ -15,7 +15,7 @@ export interface AwsAthenaPreparedStatementArgs {
 }
 
 export class aws_athena_prepared_statement extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAthenaPreparedStatementArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAthenaPreparedStatementArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_athena_prepared_statement", resourceName);
   }

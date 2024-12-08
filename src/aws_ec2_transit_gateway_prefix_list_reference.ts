@@ -8,7 +8,7 @@ export interface AwsEc2TransitGatewayPrefixListReferenceArgs {
 }
 
 export class aws_ec2_transit_gateway_prefix_list_reference extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEc2TransitGatewayPrefixListReferenceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEc2TransitGatewayPrefixListReferenceArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ec2_transit_gateway_prefix_list_reference", resourceName);
   }

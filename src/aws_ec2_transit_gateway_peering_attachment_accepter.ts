@@ -6,7 +6,7 @@ export interface AwsEc2TransitGatewayPeeringAttachmentAccepterArgs {
 }
 
 export class aws_ec2_transit_gateway_peering_attachment_accepter extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEc2TransitGatewayPeeringAttachmentAccepterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEc2TransitGatewayPeeringAttachmentAccepterArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ec2_transit_gateway_peering_attachment_accepter", resourceName);
   }

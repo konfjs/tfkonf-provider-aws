@@ -22,7 +22,7 @@ export interface AwsFlowLogArgs {
 }
 
 export class aws_flow_log extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsFlowLogArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsFlowLogArgs) {
     const meta = {destination_options:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_flow_log", resourceName);
   }

@@ -15,7 +15,7 @@ export interface DataAwsSubnetsArgs {
 }
 
 export class data_aws_subnets extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSubnetsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSubnetsArgs) {
     const meta = {filter:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_subnets", resourceName);
   }

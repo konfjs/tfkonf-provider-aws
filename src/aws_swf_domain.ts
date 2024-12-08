@@ -7,7 +7,7 @@ export interface AwsSwfDomainArgs {
 }
 
 export class aws_swf_domain extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSwfDomainArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSwfDomainArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_swf_domain", resourceName);
   }

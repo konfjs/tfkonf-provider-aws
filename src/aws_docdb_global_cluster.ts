@@ -14,7 +14,7 @@ export interface AwsDocdbGlobalClusterArgs {
 }
 
 export class aws_docdb_global_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDocdbGlobalClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDocdbGlobalClusterArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_docdb_global_cluster", resourceName);
   }

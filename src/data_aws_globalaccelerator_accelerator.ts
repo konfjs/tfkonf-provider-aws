@@ -4,7 +4,7 @@ export interface DataAwsGlobalacceleratorAcceleratorArgs {
 }
 
 export class data_aws_globalaccelerator_accelerator extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsGlobalacceleratorAcceleratorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsGlobalacceleratorAcceleratorArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_globalaccelerator_accelerator", resourceName);
   }

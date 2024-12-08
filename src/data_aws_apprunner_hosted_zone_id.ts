@@ -4,7 +4,7 @@ export interface DataAwsApprunnerHostedZoneIdArgs {
 }
 
 export class data_aws_apprunner_hosted_zone_id extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsApprunnerHostedZoneIdArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsApprunnerHostedZoneIdArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_apprunner_hosted_zone_id", resourceName);
   }

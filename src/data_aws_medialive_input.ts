@@ -5,7 +5,7 @@ export interface DataAwsMedialiveInputArgs {
 }
 
 export class data_aws_medialive_input extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsMedialiveInputArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsMedialiveInputArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_medialive_input", resourceName);
   }

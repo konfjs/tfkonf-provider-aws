@@ -8,7 +8,7 @@ export interface AwsEc2SubnetCidrReservationArgs {
 }
 
 export class aws_ec2_subnet_cidr_reservation extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEc2SubnetCidrReservationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEc2SubnetCidrReservationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ec2_subnet_cidr_reservation", resourceName);
   }

@@ -12,7 +12,7 @@ export interface AwsEc2InstanceConnectEndpointArgs {
 }
 
 export class aws_ec2_instance_connect_endpoint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEc2InstanceConnectEndpointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEc2InstanceConnectEndpointArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ec2_instance_connect_endpoint", resourceName);
   }

@@ -13,7 +13,7 @@ export interface AwsOpensearchserverlessCollectionArgs {
 }
 
 export class aws_opensearchserverless_collection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsOpensearchserverlessCollectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsOpensearchserverlessCollectionArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_opensearchserverless_collection", resourceName);
   }

@@ -6,7 +6,7 @@ export interface AwsRedshiftAuthenticationProfileArgs {
 }
 
 export class aws_redshift_authentication_profile extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRedshiftAuthenticationProfileArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRedshiftAuthenticationProfileArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_redshift_authentication_profile", resourceName);
   }

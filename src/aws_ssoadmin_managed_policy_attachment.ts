@@ -13,7 +13,7 @@ export interface AwsSsoadminManagedPolicyAttachmentArgs {
 }
 
 export class aws_ssoadmin_managed_policy_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSsoadminManagedPolicyAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSsoadminManagedPolicyAttachmentArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ssoadmin_managed_policy_attachment", resourceName);
   }

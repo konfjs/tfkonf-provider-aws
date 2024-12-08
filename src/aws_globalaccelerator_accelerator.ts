@@ -22,7 +22,7 @@ export interface AwsGlobalacceleratorAcceleratorArgs {
 }
 
 export class aws_globalaccelerator_accelerator extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGlobalacceleratorAcceleratorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGlobalacceleratorAcceleratorArgs) {
     const meta = {attributes:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_globalaccelerator_accelerator", resourceName);
   }

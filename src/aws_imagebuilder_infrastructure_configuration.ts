@@ -31,7 +31,7 @@ export interface AwsImagebuilderInfrastructureConfigurationArgs {
 }
 
 export class aws_imagebuilder_infrastructure_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsImagebuilderInfrastructureConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsImagebuilderInfrastructureConfigurationArgs) {
     const meta = {instance_metadata_options:{isBlock:true},logging:{isBlock:true,s3_logs:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_imagebuilder_infrastructure_configuration", resourceName);
   }

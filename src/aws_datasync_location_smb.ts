@@ -15,7 +15,7 @@ export interface AwsDatasyncLocationSmbArgs {
 }
 
 export class aws_datasync_location_smb extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDatasyncLocationSmbArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDatasyncLocationSmbArgs) {
     const meta = {mount_options:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_datasync_location_smb", resourceName);
   }

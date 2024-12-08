@@ -24,7 +24,7 @@ export interface AwsIvsRecordingConfigurationArgs {
 }
 
 export class aws_ivs_recording_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIvsRecordingConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIvsRecordingConfigurationArgs) {
     const meta = {destination_configuration:{isBlock:true,s3:{isBlock:true}},thumbnail_configuration:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ivs_recording_configuration", resourceName);
   }

@@ -6,7 +6,7 @@ export interface AwsSqsQueueRedriveAllowPolicyArgs {
 }
 
 export class aws_sqs_queue_redrive_allow_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSqsQueueRedriveAllowPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSqsQueueRedriveAllowPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_sqs_queue_redrive_allow_policy", resourceName);
   }

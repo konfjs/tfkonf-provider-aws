@@ -29,7 +29,7 @@ export interface AwsDbOptionGroupArgs {
 }
 
 export class aws_db_option_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDbOptionGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDbOptionGroupArgs) {
     const meta = {option:{isBlock:true,option_settings:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_db_option_group", resourceName);
   }

@@ -6,7 +6,7 @@ export interface AwsKinesisStreamConsumerArgs {
 }
 
 export class aws_kinesis_stream_consumer extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsKinesisStreamConsumerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsKinesisStreamConsumerArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_kinesis_stream_consumer", resourceName);
   }

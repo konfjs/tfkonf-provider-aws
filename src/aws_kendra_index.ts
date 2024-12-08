@@ -66,7 +66,7 @@ export interface AwsKendraIndexArgs {
 }
 
 export class aws_kendra_index extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsKendraIndexArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsKendraIndexArgs) {
     const meta = {capacity_units:{isBlock:true},document_metadata_configuration_updates:{isBlock:true,relevance:{isBlock:true},search:{isBlock:true}},server_side_encryption_configuration:{isBlock:true},timeouts:{isBlock:true},user_group_resolution_configuration:{isBlock:true},user_token_configurations:{isBlock:true,json_token_type_configuration:{isBlock:true},jwt_token_type_configuration:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_kendra_index", resourceName);
   }

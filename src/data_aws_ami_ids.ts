@@ -20,7 +20,7 @@ export interface DataAwsAmiIdsArgs {
 }
 
 export class data_aws_ami_ids extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsAmiIdsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsAmiIdsArgs) {
     const meta = {filter:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_ami_ids", resourceName);
   }

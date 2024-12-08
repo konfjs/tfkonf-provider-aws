@@ -7,7 +7,7 @@ export interface AwsEc2LocalGatewayRouteTableVpcAssociationArgs {
 }
 
 export class aws_ec2_local_gateway_route_table_vpc_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEc2LocalGatewayRouteTableVpcAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEc2LocalGatewayRouteTableVpcAssociationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ec2_local_gateway_route_table_vpc_association", resourceName);
   }

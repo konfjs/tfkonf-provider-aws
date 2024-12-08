@@ -5,7 +5,7 @@ export interface DataAwsAutoscalingGroupArgs {
 }
 
 export class data_aws_autoscaling_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsAutoscalingGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsAutoscalingGroupArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_autoscaling_group", resourceName);
   }

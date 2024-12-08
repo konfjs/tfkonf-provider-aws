@@ -12,7 +12,7 @@ export interface AwsRdsInstanceStateArgs {
 }
 
 export class aws_rds_instance_state extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRdsInstanceStateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRdsInstanceStateArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_rds_instance_state", resourceName);
   }

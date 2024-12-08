@@ -13,7 +13,7 @@ export interface AwsSfnActivityArgs {
 }
 
 export class aws_sfn_activity extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSfnActivityArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSfnActivityArgs) {
     const meta = {encryption_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_sfn_activity", resourceName);
   }

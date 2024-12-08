@@ -5,7 +5,7 @@ export interface DataAwsLicensemanagerReceivedLicenseArgs {
 }
 
 export class data_aws_licensemanager_received_license extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsLicensemanagerReceivedLicenseArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsLicensemanagerReceivedLicenseArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_licensemanager_received_license", resourceName);
   }

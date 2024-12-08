@@ -7,7 +7,7 @@ export interface DataAwsEksAddonVersionArgs {
 }
 
 export class data_aws_eks_addon_version extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEksAddonVersionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEksAddonVersionArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_eks_addon_version", resourceName);
   }

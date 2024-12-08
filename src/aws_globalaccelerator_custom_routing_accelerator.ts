@@ -22,7 +22,7 @@ export interface AwsGlobalacceleratorCustomRoutingAcceleratorArgs {
 }
 
 export class aws_globalaccelerator_custom_routing_accelerator extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGlobalacceleratorCustomRoutingAcceleratorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGlobalacceleratorCustomRoutingAcceleratorArgs) {
     const meta = {attributes:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_globalaccelerator_custom_routing_accelerator", resourceName);
   }

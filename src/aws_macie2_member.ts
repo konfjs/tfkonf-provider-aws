@@ -15,7 +15,7 @@ export interface AwsMacie2MemberArgs {
 }
 
 export class aws_macie2_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMacie2MemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMacie2MemberArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_macie2_member", resourceName);
   }

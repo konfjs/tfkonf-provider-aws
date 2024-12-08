@@ -16,7 +16,7 @@ export interface DataAwsVpcEndpointServiceArgs {
 }
 
 export class data_aws_vpc_endpoint_service extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsVpcEndpointServiceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsVpcEndpointServiceArgs) {
     const meta = {filter:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_vpc_endpoint_service", resourceName);
   }

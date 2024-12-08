@@ -27,7 +27,7 @@ export interface AwsSignerSigningJobArgs {
 }
 
 export class aws_signer_signing_job extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSignerSigningJobArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSignerSigningJobArgs) {
     const meta = {destination:{isBlock:true,s3:{isBlock:true}},source:{isBlock:true,s3:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_signer_signing_job", resourceName);
   }

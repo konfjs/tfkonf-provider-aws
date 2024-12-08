@@ -61,7 +61,7 @@ export interface AwsFsxOntapVolumeArgs {
 }
 
 export class aws_fsx_ontap_volume extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsFsxOntapVolumeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsFsxOntapVolumeArgs) {
     const meta = {aggregate_configuration:{isBlock:true},snaplock_configuration:{isBlock:true,autocommit_period:{isBlock:true},retention_period:{isBlock:true,default_retention:{isBlock:true},maximum_retention:{isBlock:true},minimum_retention:{isBlock:true}}},tiering_policy:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_fsx_ontap_volume", resourceName);
   }

@@ -6,7 +6,7 @@ export interface AwsVpclatticeResourcePolicyArgs {
 }
 
 export class aws_vpclattice_resource_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpclatticeResourcePolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpclatticeResourcePolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_vpclattice_resource_policy", resourceName);
   }

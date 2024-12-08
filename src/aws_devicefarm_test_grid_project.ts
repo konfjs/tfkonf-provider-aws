@@ -14,7 +14,7 @@ export interface AwsDevicefarmTestGridProjectArgs {
 }
 
 export class aws_devicefarm_test_grid_project extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDevicefarmTestGridProjectArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDevicefarmTestGridProjectArgs) {
     const meta = {vpc_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_devicefarm_test_grid_project", resourceName);
   }

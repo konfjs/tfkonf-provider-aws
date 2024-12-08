@@ -51,7 +51,7 @@ export interface AwsTransferServerArgs {
 }
 
 export class aws_transfer_server extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsTransferServerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsTransferServerArgs) {
     const meta = {endpoint_details:{isBlock:true},protocol_details:{isBlock:true},s3_storage_options:{isBlock:true},workflow_details:{isBlock:true,on_partial_upload:{isBlock:true},on_upload:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_transfer_server", resourceName);
   }

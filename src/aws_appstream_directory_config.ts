@@ -12,7 +12,7 @@ export interface AwsAppstreamDirectoryConfigArgs {
 }
 
 export class aws_appstream_directory_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppstreamDirectoryConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppstreamDirectoryConfigArgs) {
     const meta = {service_account_credentials:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_appstream_directory_config", resourceName);
   }

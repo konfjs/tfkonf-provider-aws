@@ -19,7 +19,7 @@ export interface AwsGlueDevEndpointArgs {
 }
 
 export class aws_glue_dev_endpoint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGlueDevEndpointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGlueDevEndpointArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_glue_dev_endpoint", resourceName);
   }

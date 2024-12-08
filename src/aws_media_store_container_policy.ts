@@ -6,7 +6,7 @@ export interface AwsMediaStoreContainerPolicyArgs {
 }
 
 export class aws_media_store_container_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMediaStoreContainerPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMediaStoreContainerPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_media_store_container_policy", resourceName);
   }

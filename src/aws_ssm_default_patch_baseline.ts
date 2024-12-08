@@ -6,7 +6,7 @@ export interface AwsSsmDefaultPatchBaselineArgs {
 }
 
 export class aws_ssm_default_patch_baseline extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSsmDefaultPatchBaselineArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSsmDefaultPatchBaselineArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ssm_default_patch_baseline", resourceName);
   }

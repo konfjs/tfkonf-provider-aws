@@ -45,7 +45,7 @@ export interface AwsImagebuilderImageArgs {
 }
 
 export class aws_imagebuilder_image extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsImagebuilderImageArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsImagebuilderImageArgs) {
     const meta = {image_scanning_configuration:{isBlock:true,ecr_configuration:{isBlock:true}},image_tests_configuration:{isBlock:true},timeouts:{isBlock:true},workflow:{isBlock:true,parameter:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_imagebuilder_image", resourceName);
   }

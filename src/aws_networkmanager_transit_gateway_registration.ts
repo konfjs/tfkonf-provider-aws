@@ -12,7 +12,7 @@ export interface AwsNetworkmanagerTransitGatewayRegistrationArgs {
 }
 
 export class aws_networkmanager_transit_gateway_registration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNetworkmanagerTransitGatewayRegistrationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNetworkmanagerTransitGatewayRegistrationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_networkmanager_transit_gateway_registration", resourceName);
   }

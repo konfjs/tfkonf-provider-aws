@@ -10,7 +10,7 @@ export interface AwsNeptuneClusterEndpointArgs {
 }
 
 export class aws_neptune_cluster_endpoint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNeptuneClusterEndpointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNeptuneClusterEndpointArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_neptune_cluster_endpoint", resourceName);
   }

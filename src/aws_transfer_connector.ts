@@ -26,7 +26,7 @@ export interface AwsTransferConnectorArgs {
 }
 
 export class aws_transfer_connector extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsTransferConnectorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsTransferConnectorArgs) {
     const meta = {as2_config:{isBlock:true},sftp_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_transfer_connector", resourceName);
   }

@@ -25,7 +25,7 @@ export interface AwsAppmeshVirtualServiceArgs {
 }
 
 export class aws_appmesh_virtual_service extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppmeshVirtualServiceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppmeshVirtualServiceArgs) {
     const meta = {spec:{isBlock:true,provider:{isBlock:true,virtual_node:{isBlock:true},virtual_router:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "aws_appmesh_virtual_service", resourceName);
   }

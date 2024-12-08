@@ -99,7 +99,7 @@ export interface AwsDynamodbTableArgs {
 }
 
 export class aws_dynamodb_table extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDynamodbTableArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDynamodbTableArgs) {
     const meta = {attribute:{isBlock:true},global_secondary_index:{isBlock:true,on_demand_throughput:{isBlock:true}},import_table:{isBlock:true,input_format_options:{isBlock:true,csv:{isBlock:true}},s3_bucket_source:{isBlock:true}},local_secondary_index:{isBlock:true},on_demand_throughput:{isBlock:true},point_in_time_recovery:{isBlock:true},replica:{isBlock:true},server_side_encryption:{isBlock:true},timeouts:{isBlock:true},ttl:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_dynamodb_table", resourceName);
   }

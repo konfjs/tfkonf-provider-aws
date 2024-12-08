@@ -6,7 +6,7 @@ export interface AwsLakeformationLfTagArgs {
 }
 
 export class aws_lakeformation_lf_tag extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLakeformationLfTagArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLakeformationLfTagArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_lakeformation_lf_tag", resourceName);
   }

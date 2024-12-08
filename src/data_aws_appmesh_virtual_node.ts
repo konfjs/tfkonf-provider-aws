@@ -6,7 +6,7 @@ export interface DataAwsAppmeshVirtualNodeArgs {
 }
 
 export class data_aws_appmesh_virtual_node extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsAppmeshVirtualNodeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsAppmeshVirtualNodeArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_appmesh_virtual_node", resourceName);
   }

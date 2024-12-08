@@ -101,7 +101,7 @@ export interface AwsSagemakerDataQualityJobDefinitionArgs {
 }
 
 export class aws_sagemaker_data_quality_job_definition extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSagemakerDataQualityJobDefinitionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSagemakerDataQualityJobDefinitionArgs) {
     const meta = {data_quality_app_specification:{isBlock:true},data_quality_baseline_config:{isBlock:true,constraints_resource:{isBlock:true},statistics_resource:{isBlock:true}},data_quality_job_input:{isBlock:true,batch_transform_input:{isBlock:true,dataset_format:{isBlock:true,csv:{isBlock:true},json:{isBlock:true}}},endpoint_input:{isBlock:true}},data_quality_job_output_config:{isBlock:true,monitoring_outputs:{isBlock:true,s3_output:{isBlock:true}}},job_resources:{isBlock:true,cluster_config:{isBlock:true}},network_config:{isBlock:true,vpc_config:{isBlock:true}},stopping_condition:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_sagemaker_data_quality_job_definition", resourceName);
   }

@@ -6,7 +6,7 @@ export interface DataAwsKendraFaqArgs {
 }
 
 export class data_aws_kendra_faq extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsKendraFaqArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsKendraFaqArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_kendra_faq", resourceName);
   }

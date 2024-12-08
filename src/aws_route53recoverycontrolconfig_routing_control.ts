@@ -6,7 +6,7 @@ export interface AwsRoute53recoverycontrolconfigRoutingControlArgs {
 }
 
 export class aws_route53recoverycontrolconfig_routing_control extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRoute53recoverycontrolconfigRoutingControlArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRoute53recoverycontrolconfigRoutingControlArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_route53recoverycontrolconfig_routing_control", resourceName);
   }

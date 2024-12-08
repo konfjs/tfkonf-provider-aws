@@ -28,7 +28,7 @@ export interface AwsVpcEndpointArgs {
 }
 
 export class aws_vpc_endpoint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpcEndpointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpcEndpointArgs) {
     const meta = {dns_options:{isBlock:true},subnet_configuration:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_vpc_endpoint", resourceName);
   }

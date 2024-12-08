@@ -23,7 +23,7 @@ export interface AwsMacie2FindingsFilterArgs {
 }
 
 export class aws_macie2_findings_filter extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMacie2FindingsFilterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMacie2FindingsFilterArgs) {
     const meta = {finding_criteria:{isBlock:true,criterion:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_macie2_findings_filter", resourceName);
   }

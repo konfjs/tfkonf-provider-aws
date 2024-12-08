@@ -4,7 +4,7 @@ export interface DataAwsEcrpublicAuthorizationTokenArgs {
 }
 
 export class data_aws_ecrpublic_authorization_token extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEcrpublicAuthorizationTokenArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEcrpublicAuthorizationTokenArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_ecrpublic_authorization_token", resourceName);
   }

@@ -8,7 +8,7 @@ export interface AwsIamPolicyArgs {
 }
 
 export class aws_iam_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIamPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIamPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_iam_policy", resourceName);
   }

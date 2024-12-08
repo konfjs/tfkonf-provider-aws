@@ -9,7 +9,7 @@ export interface AwsAppfabricIngestionArgs {
 }
 
 export class aws_appfabric_ingestion extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppfabricIngestionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppfabricIngestionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_appfabric_ingestion", resourceName);
   }

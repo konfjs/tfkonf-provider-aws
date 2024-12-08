@@ -5,7 +5,7 @@ export interface DataAwsGuarddutyFindingIdsArgs {
 }
 
 export class data_aws_guardduty_finding_ids extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsGuarddutyFindingIdsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsGuarddutyFindingIdsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_guardduty_finding_ids", resourceName);
   }

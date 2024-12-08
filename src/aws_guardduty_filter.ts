@@ -25,7 +25,7 @@ export interface AwsGuarddutyFilterArgs {
 }
 
 export class aws_guardduty_filter extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGuarddutyFilterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGuarddutyFilterArgs) {
     const meta = {finding_criteria:{isBlock:true,criterion:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_guardduty_filter", resourceName);
   }

@@ -19,7 +19,7 @@ export interface DataAwsRdsEngineVersionArgs {
 }
 
 export class data_aws_rds_engine_version extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsRdsEngineVersionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsRdsEngineVersionArgs) {
     const meta = {filter:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_rds_engine_version", resourceName);
   }

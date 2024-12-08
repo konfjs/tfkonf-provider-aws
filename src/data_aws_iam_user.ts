@@ -5,7 +5,7 @@ export interface DataAwsIamUserArgs {
 }
 
 export class data_aws_iam_user extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsIamUserArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsIamUserArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_iam_user", resourceName);
   }

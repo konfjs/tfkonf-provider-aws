@@ -18,7 +18,7 @@ export interface AwsRoute53domainsDelegationSignerRecordArgs {
 }
 
 export class aws_route53domains_delegation_signer_record extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRoute53domainsDelegationSignerRecordArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRoute53domainsDelegationSignerRecordArgs) {
     const meta = {signing_attributes:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_route53domains_delegation_signer_record", resourceName);
   }

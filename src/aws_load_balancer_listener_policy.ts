@@ -8,7 +8,7 @@ export interface AwsLoadBalancerListenerPolicyArgs {
 }
 
 export class aws_load_balancer_listener_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLoadBalancerListenerPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLoadBalancerListenerPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_load_balancer_listener_policy", resourceName);
   }

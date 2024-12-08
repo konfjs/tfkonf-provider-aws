@@ -64,7 +64,7 @@ export interface AwsVpnConnectionArgs {
 }
 
 export class aws_vpn_connection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpnConnectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpnConnectionArgs) {
     const meta = {tunnel1_log_options:{isBlock:true,cloudwatch_log_options:{isBlock:true}},tunnel2_log_options:{isBlock:true,cloudwatch_log_options:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_vpn_connection", resourceName);
   }

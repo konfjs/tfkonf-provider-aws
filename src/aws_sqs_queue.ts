@@ -13,7 +13,7 @@ export interface AwsSqsQueueArgs {
 }
 
 export class aws_sqs_queue extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSqsQueueArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSqsQueueArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_sqs_queue", resourceName);
   }

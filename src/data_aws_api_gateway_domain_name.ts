@@ -5,7 +5,7 @@ export interface DataAwsApiGatewayDomainNameArgs {
 }
 
 export class data_aws_api_gateway_domain_name extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsApiGatewayDomainNameArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsApiGatewayDomainNameArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_api_gateway_domain_name", resourceName);
   }

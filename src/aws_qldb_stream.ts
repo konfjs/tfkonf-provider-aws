@@ -22,7 +22,7 @@ export interface AwsQldbStreamArgs {
 }
 
 export class aws_qldb_stream extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsQldbStreamArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsQldbStreamArgs) {
     const meta = {kinesis_configuration:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_qldb_stream", resourceName);
   }

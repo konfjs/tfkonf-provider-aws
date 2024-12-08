@@ -14,7 +14,7 @@ export interface AwsOpensearchserverlessSecurityConfigArgs {
 }
 
 export class aws_opensearchserverless_security_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsOpensearchserverlessSecurityConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsOpensearchserverlessSecurityConfigArgs) {
     const meta = {saml_options:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_opensearchserverless_security_config", resourceName);
   }

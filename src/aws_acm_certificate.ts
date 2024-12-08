@@ -21,7 +21,7 @@ export interface AwsAcmCertificateArgs {
 }
 
 export class aws_acm_certificate extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAcmCertificateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAcmCertificateArgs) {
     const meta = {options:{isBlock:true},validation_option:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_acm_certificate", resourceName);
   }

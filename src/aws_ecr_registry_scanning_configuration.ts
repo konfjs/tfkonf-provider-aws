@@ -16,7 +16,7 @@ export interface AwsEcrRegistryScanningConfigurationArgs {
 }
 
 export class aws_ecr_registry_scanning_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEcrRegistryScanningConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEcrRegistryScanningConfigurationArgs) {
     const meta = {rule:{isBlock:true,repository_filter:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_ecr_registry_scanning_configuration", resourceName);
   }

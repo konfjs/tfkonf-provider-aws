@@ -20,7 +20,7 @@ export interface AwsNeptuneClusterInstanceArgs {
 }
 
 export class aws_neptune_cluster_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNeptuneClusterInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNeptuneClusterInstanceArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_neptune_cluster_instance", resourceName);
   }

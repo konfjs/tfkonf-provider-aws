@@ -5,7 +5,7 @@ export interface DataAwsCodebuildFleetArgs {
 }
 
 export class data_aws_codebuild_fleet extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCodebuildFleetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCodebuildFleetArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_codebuild_fleet", resourceName);
   }

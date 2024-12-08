@@ -8,7 +8,7 @@ export interface AwsEvidentlySegmentArgs {
 }
 
 export class aws_evidently_segment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEvidentlySegmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEvidentlySegmentArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_evidently_segment", resourceName);
   }

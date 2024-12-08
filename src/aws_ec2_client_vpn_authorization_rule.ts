@@ -15,7 +15,7 @@ export interface AwsEc2ClientVpnAuthorizationRuleArgs {
 }
 
 export class aws_ec2_client_vpn_authorization_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEc2ClientVpnAuthorizationRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEc2ClientVpnAuthorizationRuleArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ec2_client_vpn_authorization_rule", resourceName);
   }

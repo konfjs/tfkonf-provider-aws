@@ -174,7 +174,7 @@ export interface AwsCodebuildProjectArgs {
 }
 
 export class aws_codebuild_project extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCodebuildProjectArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCodebuildProjectArgs) {
     const meta = {artifacts:{isBlock:true},build_batch_config:{isBlock:true,restrictions:{isBlock:true}},cache:{isBlock:true},environment:{isBlock:true,environment_variable:{isBlock:true},fleet:{isBlock:true},registry_credential:{isBlock:true}},file_system_locations:{isBlock:true},logs_config:{isBlock:true,cloudwatch_logs:{isBlock:true},s3_logs:{isBlock:true}},secondary_artifacts:{isBlock:true},secondary_source_version:{isBlock:true},secondary_sources:{isBlock:true,build_status_config:{isBlock:true},git_submodules_config:{isBlock:true}},source:{isBlock:true,build_status_config:{isBlock:true},git_submodules_config:{isBlock:true}},vpc_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_codebuild_project", resourceName);
   }

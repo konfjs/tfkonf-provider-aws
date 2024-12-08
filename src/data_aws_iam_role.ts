@@ -5,7 +5,7 @@ export interface DataAwsIamRoleArgs {
 }
 
 export class data_aws_iam_role extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsIamRoleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsIamRoleArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_iam_role", resourceName);
   }

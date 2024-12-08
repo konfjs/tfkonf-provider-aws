@@ -6,7 +6,7 @@ export interface AwsPinpointsmsvoicev2OptOutListArgs {
 }
 
 export class aws_pinpointsmsvoicev2_opt_out_list extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsPinpointsmsvoicev2OptOutListArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsPinpointsmsvoicev2OptOutListArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_pinpointsmsvoicev2_opt_out_list", resourceName);
   }

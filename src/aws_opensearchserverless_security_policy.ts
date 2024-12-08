@@ -8,7 +8,7 @@ export interface AwsOpensearchserverlessSecurityPolicyArgs {
 }
 
 export class aws_opensearchserverless_security_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsOpensearchserverlessSecurityPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsOpensearchserverlessSecurityPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_opensearchserverless_security_policy", resourceName);
   }

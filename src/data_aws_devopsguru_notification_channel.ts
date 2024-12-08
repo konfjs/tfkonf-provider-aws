@@ -13,7 +13,7 @@ export interface DataAwsDevopsguruNotificationChannelArgs {
 }
 
 export class data_aws_devopsguru_notification_channel extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsDevopsguruNotificationChannelArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsDevopsguruNotificationChannelArgs) {
     const meta = {filters:{isBlock:true},sns:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_devopsguru_notification_channel", resourceName);
   }

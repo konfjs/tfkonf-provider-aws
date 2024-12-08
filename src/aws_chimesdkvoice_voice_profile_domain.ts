@@ -19,7 +19,7 @@ export interface AwsChimesdkvoiceVoiceProfileDomainArgs {
 }
 
 export class aws_chimesdkvoice_voice_profile_domain extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsChimesdkvoiceVoiceProfileDomainArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsChimesdkvoiceVoiceProfileDomainArgs) {
     const meta = {server_side_encryption_configuration:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_chimesdkvoice_voice_profile_domain", resourceName);
   }

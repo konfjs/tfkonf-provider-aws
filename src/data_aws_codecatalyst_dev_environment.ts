@@ -13,7 +13,7 @@ export interface DataAwsCodecatalystDevEnvironmentArgs {
 }
 
 export class data_aws_codecatalyst_dev_environment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCodecatalystDevEnvironmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCodecatalystDevEnvironmentArgs) {
     const meta = {repositories:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_codecatalyst_dev_environment", resourceName);
   }

@@ -15,7 +15,7 @@ export interface AwsServicecatalogProductPortfolioAssociationArgs {
 }
 
 export class aws_servicecatalog_product_portfolio_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsServicecatalogProductPortfolioAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsServicecatalogProductPortfolioAssociationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_servicecatalog_product_portfolio_association", resourceName);
   }

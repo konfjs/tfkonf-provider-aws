@@ -6,7 +6,7 @@ export interface AwsNetworkmonitorMonitorArgs {
 }
 
 export class aws_networkmonitor_monitor extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNetworkmonitorMonitorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNetworkmonitorMonitorArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_networkmonitor_monitor", resourceName);
   }

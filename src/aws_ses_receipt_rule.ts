@@ -66,7 +66,7 @@ export interface AwsSesReceiptRuleArgs {
 }
 
 export class aws_ses_receipt_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSesReceiptRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSesReceiptRuleArgs) {
     const meta = {add_header_action:{isBlock:true},bounce_action:{isBlock:true},lambda_action:{isBlock:true},s3_action:{isBlock:true},sns_action:{isBlock:true},stop_action:{isBlock:true},workmail_action:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ses_receipt_rule", resourceName);
   }

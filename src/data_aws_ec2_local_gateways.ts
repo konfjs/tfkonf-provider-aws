@@ -15,7 +15,7 @@ export interface DataAwsEc2LocalGatewaysArgs {
 }
 
 export class data_aws_ec2_local_gateways extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEc2LocalGatewaysArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEc2LocalGatewaysArgs) {
     const meta = {filter:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_ec2_local_gateways", resourceName);
   }

@@ -14,7 +14,7 @@ export interface AwsLbSslNegotiationPolicyArgs {
 }
 
 export class aws_lb_ssl_negotiation_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLbSslNegotiationPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLbSslNegotiationPolicyArgs) {
     const meta = {attribute:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_lb_ssl_negotiation_policy", resourceName);
   }

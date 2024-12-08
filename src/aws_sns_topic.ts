@@ -26,7 +26,7 @@ export interface AwsSnsTopicArgs {
 }
 
 export class aws_sns_topic extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSnsTopicArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSnsTopicArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_sns_topic", resourceName);
   }

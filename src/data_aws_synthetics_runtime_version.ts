@@ -7,7 +7,7 @@ export interface DataAwsSyntheticsRuntimeVersionArgs {
 }
 
 export class data_aws_synthetics_runtime_version extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSyntheticsRuntimeVersionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSyntheticsRuntimeVersionArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_synthetics_runtime_version", resourceName);
   }

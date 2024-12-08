@@ -7,7 +7,7 @@ export interface DataAwsSfnAliasArgs {
 }
 
 export class data_aws_sfn_alias extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSfnAliasArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSfnAliasArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_sfn_alias", resourceName);
   }

@@ -68,7 +68,7 @@ export interface AwsVpclatticeListenerRuleArgs {
 }
 
 export class aws_vpclattice_listener_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpclatticeListenerRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpclatticeListenerRuleArgs) {
     const meta = {action:{isBlock:true,fixed_response:{isBlock:true},forward:{isBlock:true,target_groups:{isBlock:true}}},match:{isBlock:true,http_match:{isBlock:true,header_matches:{isBlock:true,match:{isBlock:true}},path_match:{isBlock:true,match:{isBlock:true}}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_vpclattice_listener_rule", resourceName);
   }

@@ -14,7 +14,7 @@ export interface AwsCodecommitTriggerArgs {
 }
 
 export class aws_codecommit_trigger extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCodecommitTriggerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCodecommitTriggerArgs) {
     const meta = {trigger:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_codecommit_trigger", resourceName);
   }

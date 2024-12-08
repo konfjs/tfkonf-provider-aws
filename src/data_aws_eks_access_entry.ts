@@ -7,7 +7,7 @@ export interface DataAwsEksAccessEntryArgs {
 }
 
 export class data_aws_eks_access_entry extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEksAccessEntryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEksAccessEntryArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_eks_access_entry", resourceName);
   }

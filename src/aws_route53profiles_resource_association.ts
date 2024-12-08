@@ -15,7 +15,7 @@ export interface AwsRoute53profilesResourceAssociationArgs {
 }
 
 export class aws_route53profiles_resource_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRoute53profilesResourceAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRoute53profilesResourceAssociationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_route53profiles_resource_association", resourceName);
   }

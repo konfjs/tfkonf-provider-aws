@@ -10,7 +10,7 @@ export interface AwsKmsReplicaKeyArgs {
 }
 
 export class aws_kms_replica_key extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsKmsReplicaKeyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsKmsReplicaKeyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_kms_replica_key", resourceName);
   }

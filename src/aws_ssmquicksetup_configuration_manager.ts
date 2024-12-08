@@ -21,7 +21,7 @@ export interface AwsSsmquicksetupConfigurationManagerArgs {
 }
 
 export class aws_ssmquicksetup_configuration_manager extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSsmquicksetupConfigurationManagerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSsmquicksetupConfigurationManagerArgs) {
     const meta = {configuration_definition:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ssmquicksetup_configuration_manager", resourceName);
   }

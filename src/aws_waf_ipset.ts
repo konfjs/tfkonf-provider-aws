@@ -11,7 +11,7 @@ export interface AwsWafIpsetArgs {
 }
 
 export class aws_waf_ipset extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsWafIpsetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsWafIpsetArgs) {
     const meta = {ip_set_descriptors:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_waf_ipset", resourceName);
   }

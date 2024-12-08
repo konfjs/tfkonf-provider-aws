@@ -21,7 +21,7 @@ export interface AwsNetworkmanagerSiteArgs {
 }
 
 export class aws_networkmanager_site extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNetworkmanagerSiteArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNetworkmanagerSiteArgs) {
     const meta = {location:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_networkmanager_site", resourceName);
   }

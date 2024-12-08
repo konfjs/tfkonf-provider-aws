@@ -5,7 +5,7 @@ export interface DataAwsMemorydbSubnetGroupArgs {
 }
 
 export class data_aws_memorydb_subnet_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsMemorydbSubnetGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsMemorydbSubnetGroupArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_memorydb_subnet_group", resourceName);
   }

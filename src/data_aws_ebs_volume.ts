@@ -16,7 +16,7 @@ export interface DataAwsEbsVolumeArgs {
 }
 
 export class data_aws_ebs_volume extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEbsVolumeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEbsVolumeArgs) {
     const meta = {filter:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_ebs_volume", resourceName);
   }

@@ -6,7 +6,7 @@ export interface AwsRedshiftHsmClientCertificateArgs {
 }
 
 export class aws_redshift_hsm_client_certificate extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRedshiftHsmClientCertificateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRedshiftHsmClientCertificateArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_redshift_hsm_client_certificate", resourceName);
   }

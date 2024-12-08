@@ -11,7 +11,7 @@ export interface AwsInspector2MemberAssociationArgs {
 }
 
 export class aws_inspector2_member_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsInspector2MemberAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsInspector2MemberAssociationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_inspector2_member_association", resourceName);
   }

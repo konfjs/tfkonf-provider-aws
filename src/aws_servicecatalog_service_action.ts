@@ -23,7 +23,7 @@ export interface AwsServicecatalogServiceActionArgs {
 }
 
 export class aws_servicecatalog_service_action extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsServicecatalogServiceActionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsServicecatalogServiceActionArgs) {
     const meta = {definition:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_servicecatalog_service_action", resourceName);
   }

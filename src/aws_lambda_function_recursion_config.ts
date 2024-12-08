@@ -6,7 +6,7 @@ export interface AwsLambdaFunctionRecursionConfigArgs {
 }
 
 export class aws_lambda_function_recursion_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLambdaFunctionRecursionConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLambdaFunctionRecursionConfigArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_lambda_function_recursion_config", resourceName);
   }

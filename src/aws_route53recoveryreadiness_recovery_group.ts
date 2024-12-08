@@ -12,7 +12,7 @@ export interface AwsRoute53recoveryreadinessRecoveryGroupArgs {
 }
 
 export class aws_route53recoveryreadiness_recovery_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRoute53recoveryreadinessRecoveryGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRoute53recoveryreadinessRecoveryGroupArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_route53recoveryreadiness_recovery_group", resourceName);
   }

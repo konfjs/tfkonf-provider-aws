@@ -47,7 +47,7 @@ export interface AwsGluePartitionArgs {
 }
 
 export class aws_glue_partition extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGluePartitionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGluePartitionArgs) {
     const meta = {storage_descriptor:{isBlock:true,columns:{isBlock:true},ser_de_info:{isBlock:true},skewed_info:{isBlock:true},sort_columns:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_glue_partition", resourceName);
   }

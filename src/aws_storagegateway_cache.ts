@@ -6,7 +6,7 @@ export interface AwsStoragegatewayCacheArgs {
 }
 
 export class aws_storagegateway_cache extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsStoragegatewayCacheArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsStoragegatewayCacheArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_storagegateway_cache", resourceName);
   }

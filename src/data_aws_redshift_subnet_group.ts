@@ -5,7 +5,7 @@ export interface DataAwsRedshiftSubnetGroupArgs {
 }
 
 export class data_aws_redshift_subnet_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsRedshiftSubnetGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsRedshiftSubnetGroupArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_redshift_subnet_group", resourceName);
   }

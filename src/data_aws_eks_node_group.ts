@@ -6,7 +6,7 @@ export interface DataAwsEksNodeGroupArgs {
 }
 
 export class data_aws_eks_node_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEksNodeGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEksNodeGroupArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_eks_node_group", resourceName);
   }

@@ -11,7 +11,7 @@ export interface AwsSchedulerScheduleGroupArgs {
 }
 
 export class aws_scheduler_schedule_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSchedulerScheduleGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSchedulerScheduleGroupArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_scheduler_schedule_group", resourceName);
   }

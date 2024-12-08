@@ -7,7 +7,7 @@ export interface AwsMediaPackageChannelArgs {
 }
 
 export class aws_media_package_channel extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMediaPackageChannelArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMediaPackageChannelArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_media_package_channel", resourceName);
   }

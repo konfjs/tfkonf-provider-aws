@@ -14,7 +14,7 @@ export interface AwsNetworkmanagerSiteToSiteVpnAttachmentArgs {
 }
 
 export class aws_networkmanager_site_to_site_vpn_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNetworkmanagerSiteToSiteVpnAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNetworkmanagerSiteToSiteVpnAttachmentArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_networkmanager_site_to_site_vpn_attachment", resourceName);
   }

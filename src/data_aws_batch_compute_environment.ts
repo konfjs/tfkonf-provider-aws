@@ -5,7 +5,7 @@ export interface DataAwsBatchComputeEnvironmentArgs {
 }
 
 export class data_aws_batch_compute_environment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsBatchComputeEnvironmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsBatchComputeEnvironmentArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_batch_compute_environment", resourceName);
   }

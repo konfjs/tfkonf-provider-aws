@@ -64,7 +64,7 @@ export interface AwsSsmcontactsRotationArgs {
 }
 
 export class aws_ssmcontacts_rotation extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSsmcontactsRotationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSsmcontactsRotationArgs) {
     const meta = {recurrence:{isBlock:true,daily_settings:{isBlock:true},monthly_settings:{isBlock:true,hand_off_time:{isBlock:true}},shift_coverages:{isBlock:true,coverage_times:{isBlock:true,end:{isBlock:true},start:{isBlock:true}}},weekly_settings:{isBlock:true,hand_off_time:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "aws_ssmcontacts_rotation", resourceName);
   }

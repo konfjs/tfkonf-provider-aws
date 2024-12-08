@@ -16,7 +16,7 @@ export interface AwsSsoadminAccountAssignmentArgs {
 }
 
 export class aws_ssoadmin_account_assignment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSsoadminAccountAssignmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSsoadminAccountAssignmentArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ssoadmin_account_assignment", resourceName);
   }

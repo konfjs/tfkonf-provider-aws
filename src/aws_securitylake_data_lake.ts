@@ -39,7 +39,7 @@ export interface AwsSecuritylakeDataLakeArgs {
 }
 
 export class aws_securitylake_data_lake extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSecuritylakeDataLakeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSecuritylakeDataLakeArgs) {
     const meta = {configuration:{isBlock:true,lifecycle_configuration:{isBlock:true,expiration:{isBlock:true},transition:{isBlock:true}},replication_configuration:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_securitylake_data_lake", resourceName);
   }

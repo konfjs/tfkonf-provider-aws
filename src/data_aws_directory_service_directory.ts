@@ -5,7 +5,7 @@ export interface DataAwsDirectoryServiceDirectoryArgs {
 }
 
 export class data_aws_directory_service_directory extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsDirectoryServiceDirectoryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsDirectoryServiceDirectoryArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_directory_service_directory", resourceName);
   }

@@ -4,7 +4,7 @@ export interface DataAwsRegionArgs {
 }
 
 export class data_aws_region extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsRegionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsRegionArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_region", resourceName);
   }

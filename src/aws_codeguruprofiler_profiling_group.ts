@@ -11,7 +11,7 @@ export interface AwsCodeguruprofilerProfilingGroupArgs {
 }
 
 export class aws_codeguruprofiler_profiling_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCodeguruprofilerProfilingGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCodeguruprofilerProfilingGroupArgs) {
     const meta = {agent_orchestration_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_codeguruprofiler_profiling_group", resourceName);
   }

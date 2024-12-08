@@ -13,7 +13,7 @@ export interface DataAwsDevopsguruResourceCollectionArgs {
 }
 
 export class data_aws_devopsguru_resource_collection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsDevopsguruResourceCollectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsDevopsguruResourceCollectionArgs) {
     const meta = {cloudformation:{isBlock:true},tags:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_devopsguru_resource_collection", resourceName);
   }

@@ -10,7 +10,7 @@ export interface AwsRedshiftserverlessNamespaceArgs {
 }
 
 export class aws_redshiftserverless_namespace extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRedshiftserverlessNamespaceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRedshiftserverlessNamespaceArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_redshiftserverless_namespace", resourceName);
   }

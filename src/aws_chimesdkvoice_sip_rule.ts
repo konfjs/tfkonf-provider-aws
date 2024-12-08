@@ -15,7 +15,7 @@ export interface AwsChimesdkvoiceSipRuleArgs {
 }
 
 export class aws_chimesdkvoice_sip_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsChimesdkvoiceSipRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsChimesdkvoiceSipRuleArgs) {
     const meta = {target_applications:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_chimesdkvoice_sip_rule", resourceName);
   }

@@ -13,7 +13,7 @@ export interface DataAwsSsoadminApplicationArgs {
 }
 
 export class data_aws_ssoadmin_application extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSsoadminApplicationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSsoadminApplicationArgs) {
     const meta = {portal_options:{isBlock:true,sign_in_options:{isBlock:true}}};
     super(terraformConfig, "data", args, meta, "aws_ssoadmin_application", resourceName);
   }

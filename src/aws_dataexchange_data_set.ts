@@ -8,7 +8,7 @@ export interface AwsDataexchangeDataSetArgs {
 }
 
 export class aws_dataexchange_data_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDataexchangeDataSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDataexchangeDataSetArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_dataexchange_data_set", resourceName);
   }

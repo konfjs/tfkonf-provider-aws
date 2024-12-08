@@ -18,7 +18,7 @@ export interface AwsDocdbelasticClusterArgs {
 }
 
 export class aws_docdbelastic_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDocdbelasticClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDocdbelasticClusterArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_docdbelastic_cluster", resourceName);
   }

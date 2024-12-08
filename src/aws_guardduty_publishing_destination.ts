@@ -8,7 +8,7 @@ export interface AwsGuarddutyPublishingDestinationArgs {
 }
 
 export class aws_guardduty_publishing_destination extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGuarddutyPublishingDestinationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGuarddutyPublishingDestinationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_guardduty_publishing_destination", resourceName);
   }

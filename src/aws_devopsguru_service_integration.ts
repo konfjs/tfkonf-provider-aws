@@ -16,7 +16,7 @@ export interface AwsDevopsguruServiceIntegrationArgs {
 }
 
 export class aws_devopsguru_service_integration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDevopsguruServiceIntegrationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDevopsguruServiceIntegrationArgs) {
     const meta = {kms_server_side_encryption:{isBlock:true},logs_anomaly_detection:{isBlock:true},ops_center:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_devopsguru_service_integration", resourceName);
   }

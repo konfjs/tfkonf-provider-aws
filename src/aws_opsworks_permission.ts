@@ -6,7 +6,7 @@ export interface AwsOpsworksPermissionArgs {
 }
 
 export class aws_opsworks_permission extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsOpsworksPermissionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsOpsworksPermissionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_opsworks_permission", resourceName);
   }

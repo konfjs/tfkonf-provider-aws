@@ -18,7 +18,7 @@ export interface AwsDmsEventSubscriptionArgs {
 }
 
 export class aws_dms_event_subscription extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDmsEventSubscriptionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDmsEventSubscriptionArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_dms_event_subscription", resourceName);
   }

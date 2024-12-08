@@ -5,7 +5,7 @@ export interface AwsMacie2OrganizationAdminAccountArgs {
 }
 
 export class aws_macie2_organization_admin_account extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMacie2OrganizationAdminAccountArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMacie2OrganizationAdminAccountArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_macie2_organization_admin_account", resourceName);
   }

@@ -18,7 +18,7 @@ export interface AwsGlobalacceleratorCustomRoutingListenerArgs {
 }
 
 export class aws_globalaccelerator_custom_routing_listener extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGlobalacceleratorCustomRoutingListenerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGlobalacceleratorCustomRoutingListenerArgs) {
     const meta = {port_range:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_globalaccelerator_custom_routing_listener", resourceName);
   }

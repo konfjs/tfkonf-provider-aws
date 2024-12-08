@@ -5,7 +5,7 @@ export interface DataAwsIotEndpointArgs {
 }
 
 export class data_aws_iot_endpoint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsIotEndpointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsIotEndpointArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_iot_endpoint", resourceName);
   }

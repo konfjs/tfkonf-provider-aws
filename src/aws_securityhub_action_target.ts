@@ -7,7 +7,7 @@ export interface AwsSecurityhubActionTargetArgs {
 }
 
 export class aws_securityhub_action_target extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSecurityhubActionTargetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSecurityhubActionTargetArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_securityhub_action_target", resourceName);
   }

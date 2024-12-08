@@ -10,7 +10,7 @@ export interface DataAwsEc2NetworkInsightsPathArgs {
 }
 
 export class data_aws_ec2_network_insights_path extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEc2NetworkInsightsPathArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEc2NetworkInsightsPathArgs) {
     const meta = {filter:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_ec2_network_insights_path", resourceName);
   }

@@ -114,7 +114,7 @@ export interface AwsCeAnomalySubscriptionArgs {
 }
 
 export class aws_ce_anomaly_subscription extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCeAnomalySubscriptionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCeAnomalySubscriptionArgs) {
     const meta = {subscriber:{isBlock:true},threshold_expression:{isBlock:true,and:{isBlock:true,cost_category:{isBlock:true},dimension:{isBlock:true},tags:{isBlock:true}},cost_category:{isBlock:true},dimension:{isBlock:true},not:{isBlock:true,cost_category:{isBlock:true},dimension:{isBlock:true},tags:{isBlock:true}},or:{isBlock:true,cost_category:{isBlock:true},dimension:{isBlock:true},tags:{isBlock:true}},tags:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_ce_anomaly_subscription", resourceName);
   }

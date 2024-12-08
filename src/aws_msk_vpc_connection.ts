@@ -10,7 +10,7 @@ export interface AwsMskVpcConnectionArgs {
 }
 
 export class aws_msk_vpc_connection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMskVpcConnectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMskVpcConnectionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_msk_vpc_connection", resourceName);
   }

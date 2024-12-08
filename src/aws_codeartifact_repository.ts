@@ -18,7 +18,7 @@ export interface AwsCodeartifactRepositoryArgs {
 }
 
 export class aws_codeartifact_repository extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCodeartifactRepositoryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCodeartifactRepositoryArgs) {
     const meta = {external_connections:{isBlock:true},upstream:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_codeartifact_repository", resourceName);
   }

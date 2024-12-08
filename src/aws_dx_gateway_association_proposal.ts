@@ -7,7 +7,7 @@ export interface AwsDxGatewayAssociationProposalArgs {
 }
 
 export class aws_dx_gateway_association_proposal extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDxGatewayAssociationProposalArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDxGatewayAssociationProposalArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_dx_gateway_association_proposal", resourceName);
   }

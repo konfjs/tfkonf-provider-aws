@@ -7,7 +7,7 @@ export interface DataAwsNetworkmanagerDevicesArgs {
 }
 
 export class data_aws_networkmanager_devices extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsNetworkmanagerDevicesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsNetworkmanagerDevicesArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_networkmanager_devices", resourceName);
   }

@@ -10,7 +10,7 @@ export interface DataAwsEmrReleaseLabelsArgs {
 }
 
 export class data_aws_emr_release_labels extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEmrReleaseLabelsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEmrReleaseLabelsArgs) {
     const meta = {filters:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_emr_release_labels", resourceName);
   }

@@ -15,7 +15,7 @@ export interface AwsEc2TransitGatewayMulticastDomainArgs {
 }
 
 export class aws_ec2_transit_gateway_multicast_domain extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEc2TransitGatewayMulticastDomainArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEc2TransitGatewayMulticastDomainArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ec2_transit_gateway_multicast_domain", resourceName);
   }

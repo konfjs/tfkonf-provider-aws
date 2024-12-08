@@ -13,7 +13,7 @@ export interface AwsElasticacheReservedCacheNodeArgs {
 }
 
 export class aws_elasticache_reserved_cache_node extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsElasticacheReservedCacheNodeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsElasticacheReservedCacheNodeArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_elasticache_reserved_cache_node", resourceName);
   }

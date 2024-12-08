@@ -5,7 +5,7 @@ export interface AwsStoragegatewayUploadBufferArgs {
 }
 
 export class aws_storagegateway_upload_buffer extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsStoragegatewayUploadBufferArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsStoragegatewayUploadBufferArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_storagegateway_upload_buffer", resourceName);
   }

@@ -5,7 +5,7 @@ export interface AwsDefaultVpcDhcpOptionsArgs {
 }
 
 export class aws_default_vpc_dhcp_options extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDefaultVpcDhcpOptionsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDefaultVpcDhcpOptionsArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_default_vpc_dhcp_options", resourceName);
   }

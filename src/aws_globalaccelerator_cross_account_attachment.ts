@@ -14,7 +14,7 @@ export interface AwsGlobalacceleratorCrossAccountAttachmentArgs {
 }
 
 export class aws_globalaccelerator_cross_account_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGlobalacceleratorCrossAccountAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGlobalacceleratorCrossAccountAttachmentArgs) {
     const meta = {resource:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_globalaccelerator_cross_account_attachment", resourceName);
   }

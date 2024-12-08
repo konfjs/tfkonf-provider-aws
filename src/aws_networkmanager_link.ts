@@ -23,7 +23,7 @@ export interface AwsNetworkmanagerLinkArgs {
 }
 
 export class aws_networkmanager_link extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNetworkmanagerLinkArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNetworkmanagerLinkArgs) {
     const meta = {bandwidth:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_networkmanager_link", resourceName);
   }

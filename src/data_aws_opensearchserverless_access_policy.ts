@@ -6,7 +6,7 @@ export interface DataAwsOpensearchserverlessAccessPolicyArgs {
 }
 
 export class data_aws_opensearchserverless_access_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsOpensearchserverlessAccessPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsOpensearchserverlessAccessPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_opensearchserverless_access_policy", resourceName);
   }

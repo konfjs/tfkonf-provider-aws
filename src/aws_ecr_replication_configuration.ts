@@ -24,7 +24,7 @@ export interface AwsEcrReplicationConfigurationArgs {
 }
 
 export class aws_ecr_replication_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEcrReplicationConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEcrReplicationConfigurationArgs) {
     const meta = {replication_configuration:{isBlock:true,rule:{isBlock:true,destination:{isBlock:true},repository_filter:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "aws_ecr_replication_configuration", resourceName);
   }

@@ -37,7 +37,7 @@ export interface AwsSagemakerWorkforceArgs {
 }
 
 export class aws_sagemaker_workforce extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSagemakerWorkforceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSagemakerWorkforceArgs) {
     const meta = {cognito_config:{isBlock:true},oidc_config:{isBlock:true},source_ip_config:{isBlock:true},workforce_vpc_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_sagemaker_workforce", resourceName);
   }

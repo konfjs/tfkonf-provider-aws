@@ -11,7 +11,7 @@ export interface DataAwsImagebuilderImageRecipesArgs {
 }
 
 export class data_aws_imagebuilder_image_recipes extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsImagebuilderImageRecipesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsImagebuilderImageRecipesArgs) {
     const meta = {filter:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_imagebuilder_image_recipes", resourceName);
   }

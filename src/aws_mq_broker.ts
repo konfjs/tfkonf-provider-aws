@@ -68,7 +68,7 @@ export interface AwsMqBrokerArgs {
 }
 
 export class aws_mq_broker extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMqBrokerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMqBrokerArgs) {
     const meta = {configuration:{isBlock:true},encryption_options:{isBlock:true},ldap_server_metadata:{isBlock:true},logs:{isBlock:true},maintenance_window_start_time:{isBlock:true},timeouts:{isBlock:true},user:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_mq_broker", resourceName);
   }

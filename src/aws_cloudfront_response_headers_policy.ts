@@ -102,7 +102,7 @@ export interface AwsCloudfrontResponseHeadersPolicyArgs {
 }
 
 export class aws_cloudfront_response_headers_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudfrontResponseHeadersPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudfrontResponseHeadersPolicyArgs) {
     const meta = {cors_config:{isBlock:true,access_control_allow_headers:{isBlock:true},access_control_allow_methods:{isBlock:true},access_control_allow_origins:{isBlock:true},access_control_expose_headers:{isBlock:true}},custom_headers_config:{isBlock:true,items:{isBlock:true}},remove_headers_config:{isBlock:true,items:{isBlock:true}},security_headers_config:{isBlock:true,content_security_policy:{isBlock:true},content_type_options:{isBlock:true},frame_options:{isBlock:true},referrer_policy:{isBlock:true},strict_transport_security:{isBlock:true},xss_protection:{isBlock:true}},server_timing_headers_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_cloudfront_response_headers_policy", resourceName);
   }

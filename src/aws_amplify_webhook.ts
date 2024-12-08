@@ -7,7 +7,7 @@ export interface AwsAmplifyWebhookArgs {
 }
 
 export class aws_amplify_webhook extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAmplifyWebhookArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAmplifyWebhookArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_amplify_webhook", resourceName);
   }

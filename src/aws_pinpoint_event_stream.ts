@@ -7,7 +7,7 @@ export interface AwsPinpointEventStreamArgs {
 }
 
 export class aws_pinpoint_event_stream extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsPinpointEventStreamArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsPinpointEventStreamArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_pinpoint_event_stream", resourceName);
   }

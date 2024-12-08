@@ -20,7 +20,7 @@ export interface AwsGlobalacceleratorListenerArgs {
 }
 
 export class aws_globalaccelerator_listener extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGlobalacceleratorListenerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGlobalacceleratorListenerArgs) {
     const meta = {port_range:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_globalaccelerator_listener", resourceName);
   }

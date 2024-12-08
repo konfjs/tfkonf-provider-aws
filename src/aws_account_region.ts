@@ -13,7 +13,7 @@ export interface AwsAccountRegionArgs {
 }
 
 export class aws_account_region extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAccountRegionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAccountRegionArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_account_region", resourceName);
   }

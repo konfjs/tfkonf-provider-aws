@@ -6,7 +6,7 @@ export interface DataAwsSsmParameterArgs {
 }
 
 export class data_aws_ssm_parameter extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSsmParameterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSsmParameterArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_ssm_parameter", resourceName);
   }

@@ -10,7 +10,7 @@ export interface DataAwsRedshiftProducerDataSharesArgs {
 }
 
 export class data_aws_redshift_producer_data_shares extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsRedshiftProducerDataSharesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsRedshiftProducerDataSharesArgs) {
     const meta = {data_shares:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_redshift_producer_data_shares", resourceName);
   }

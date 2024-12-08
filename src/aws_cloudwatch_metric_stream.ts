@@ -39,7 +39,7 @@ export interface AwsCloudwatchMetricStreamArgs {
 }
 
 export class aws_cloudwatch_metric_stream extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudwatchMetricStreamArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudwatchMetricStreamArgs) {
     const meta = {exclude_filter:{isBlock:true},include_filter:{isBlock:true},statistics_configuration:{isBlock:true,include_metric:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_cloudwatch_metric_stream", resourceName);
   }

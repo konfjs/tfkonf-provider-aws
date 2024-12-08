@@ -77,7 +77,7 @@ export interface DataAwsRoute53TrafficPolicyDocumentArgs {
 }
 
 export class data_aws_route53_traffic_policy_document extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsRoute53TrafficPolicyDocumentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsRoute53TrafficPolicyDocumentArgs) {
     const meta = {endpoint:{isBlock:true},rule:{isBlock:true,geo_proximity_location:{isBlock:true},items:{isBlock:true},location:{isBlock:true},primary:{isBlock:true},region:{isBlock:true},secondary:{isBlock:true}}};
     super(terraformConfig, "data", args, meta, "aws_route53_traffic_policy_document", resourceName);
   }

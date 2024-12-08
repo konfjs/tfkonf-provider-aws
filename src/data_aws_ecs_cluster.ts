@@ -5,7 +5,7 @@ export interface DataAwsEcsClusterArgs {
 }
 
 export class data_aws_ecs_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEcsClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEcsClusterArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_ecs_cluster", resourceName);
   }

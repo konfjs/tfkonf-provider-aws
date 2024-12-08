@@ -17,7 +17,7 @@ export interface AwsMedialiveInputSecurityGroupArgs {
 }
 
 export class aws_medialive_input_security_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMedialiveInputSecurityGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMedialiveInputSecurityGroupArgs) {
     const meta = {timeouts:{isBlock:true},whitelist_rules:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_medialive_input_security_group", resourceName);
   }

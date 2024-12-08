@@ -65,7 +65,7 @@ export interface AwsSagemakerFeatureGroupArgs {
 }
 
 export class aws_sagemaker_feature_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSagemakerFeatureGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSagemakerFeatureGroupArgs) {
     const meta = {feature_definition:{isBlock:true,collection_config:{isBlock:true,vector_config:{isBlock:true}}},offline_store_config:{isBlock:true,data_catalog_config:{isBlock:true},s3_storage_config:{isBlock:true}},online_store_config:{isBlock:true,security_config:{isBlock:true},ttl_duration:{isBlock:true}},throughput_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_sagemaker_feature_group", resourceName);
   }

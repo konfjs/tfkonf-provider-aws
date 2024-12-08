@@ -10,7 +10,7 @@ export interface DataAwsEc2PublicIpv4PoolsArgs {
 }
 
 export class data_aws_ec2_public_ipv4_pools extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEc2PublicIpv4PoolsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEc2PublicIpv4PoolsArgs) {
     const meta = {filter:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_ec2_public_ipv4_pools", resourceName);
   }

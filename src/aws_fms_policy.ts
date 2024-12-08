@@ -44,7 +44,7 @@ export interface AwsFmsPolicyArgs {
 }
 
 export class aws_fms_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsFmsPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsFmsPolicyArgs) {
     const meta = {exclude_map:{isBlock:true},include_map:{isBlock:true},security_service_policy_data:{isBlock:true,policy_option:{isBlock:true,network_firewall_policy:{isBlock:true},third_party_firewall_policy:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "aws_fms_policy", resourceName);
   }

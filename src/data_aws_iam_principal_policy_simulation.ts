@@ -20,7 +20,7 @@ export interface DataAwsIamPrincipalPolicySimulationArgs {
 }
 
 export class data_aws_iam_principal_policy_simulation extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsIamPrincipalPolicySimulationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsIamPrincipalPolicySimulationArgs) {
     const meta = {context:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_iam_principal_policy_simulation", resourceName);
   }

@@ -14,7 +14,7 @@ export interface AwsConfigDeliveryChannelArgs {
 }
 
 export class aws_config_delivery_channel extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsConfigDeliveryChannelArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsConfigDeliveryChannelArgs) {
     const meta = {snapshot_delivery_properties:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_config_delivery_channel", resourceName);
   }

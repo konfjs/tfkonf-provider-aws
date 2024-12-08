@@ -9,7 +9,7 @@ export interface AwsLightsailLbArgs {
 }
 
 export class aws_lightsail_lb extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLightsailLbArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLightsailLbArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_lightsail_lb", resourceName);
   }

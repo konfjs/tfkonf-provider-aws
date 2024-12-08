@@ -5,7 +5,7 @@ export interface DataAwsOutpostsOutpostArgs {
 }
 
 export class data_aws_outposts_outpost extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsOutpostsOutpostArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsOutpostsOutpostArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_outposts_outpost", resourceName);
   }

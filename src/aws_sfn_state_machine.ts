@@ -35,7 +35,7 @@ export interface AwsSfnStateMachineArgs {
 }
 
 export class aws_sfn_state_machine extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSfnStateMachineArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSfnStateMachineArgs) {
     const meta = {encryption_configuration:{isBlock:true},logging_configuration:{isBlock:true},timeouts:{isBlock:true},tracing_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_sfn_state_machine", resourceName);
   }

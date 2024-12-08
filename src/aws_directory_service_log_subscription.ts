@@ -6,7 +6,7 @@ export interface AwsDirectoryServiceLogSubscriptionArgs {
 }
 
 export class aws_directory_service_log_subscription extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDirectoryServiceLogSubscriptionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDirectoryServiceLogSubscriptionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_directory_service_log_subscription", resourceName);
   }

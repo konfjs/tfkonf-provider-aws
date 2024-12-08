@@ -19,7 +19,7 @@ export interface AwsServicecatalogPortfolioShareArgs {
 }
 
 export class aws_servicecatalog_portfolio_share extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsServicecatalogPortfolioShareArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsServicecatalogPortfolioShareArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_servicecatalog_portfolio_share", resourceName);
   }

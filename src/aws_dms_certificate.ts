@@ -8,7 +8,7 @@ export interface AwsDmsCertificateArgs {
 }
 
 export class aws_dms_certificate extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDmsCertificateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDmsCertificateArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_dms_certificate", resourceName);
   }

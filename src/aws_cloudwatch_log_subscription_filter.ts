@@ -9,7 +9,7 @@ export interface AwsCloudwatchLogSubscriptionFilterArgs {
 }
 
 export class aws_cloudwatch_log_subscription_filter extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudwatchLogSubscriptionFilterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudwatchLogSubscriptionFilterArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_cloudwatch_log_subscription_filter", resourceName);
   }

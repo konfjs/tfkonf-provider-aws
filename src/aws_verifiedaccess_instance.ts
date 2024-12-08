@@ -7,7 +7,7 @@ export interface AwsVerifiedaccessInstanceArgs {
 }
 
 export class aws_verifiedaccess_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVerifiedaccessInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVerifiedaccessInstanceArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_verifiedaccess_instance", resourceName);
   }

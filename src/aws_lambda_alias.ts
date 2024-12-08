@@ -13,7 +13,7 @@ export interface AwsLambdaAliasArgs {
 }
 
 export class aws_lambda_alias extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLambdaAliasArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLambdaAliasArgs) {
     const meta = {routing_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_lambda_alias", resourceName);
   }

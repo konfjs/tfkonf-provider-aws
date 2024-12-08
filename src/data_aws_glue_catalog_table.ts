@@ -8,7 +8,7 @@ export interface DataAwsGlueCatalogTableArgs {
 }
 
 export class data_aws_glue_catalog_table extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsGlueCatalogTableArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsGlueCatalogTableArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_glue_catalog_table", resourceName);
   }

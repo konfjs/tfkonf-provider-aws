@@ -5,7 +5,7 @@ export interface DataAwsSsmcontactsContactChannelArgs {
 }
 
 export class data_aws_ssmcontacts_contact_channel extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSsmcontactsContactChannelArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSsmcontactsContactChannelArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_ssmcontacts_contact_channel", resourceName);
   }

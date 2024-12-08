@@ -14,7 +14,7 @@ export interface DataAwsResourcegroupstaggingapiResourcesArgs {
 }
 
 export class data_aws_resourcegroupstaggingapi_resources extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsResourcegroupstaggingapiResourcesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsResourcegroupstaggingapiResourcesArgs) {
     const meta = {tag_filter:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_resourcegroupstaggingapi_resources", resourceName);
   }

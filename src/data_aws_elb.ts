@@ -5,7 +5,7 @@ export interface DataAwsElbArgs {
 }
 
 export class data_aws_elb extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsElbArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsElbArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_elb", resourceName);
   }

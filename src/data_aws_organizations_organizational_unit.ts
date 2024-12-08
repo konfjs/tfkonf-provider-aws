@@ -6,7 +6,7 @@ export interface DataAwsOrganizationsOrganizationalUnitArgs {
 }
 
 export class data_aws_organizations_organizational_unit extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsOrganizationsOrganizationalUnitArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsOrganizationsOrganizationalUnitArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_organizations_organizational_unit", resourceName);
   }

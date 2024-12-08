@@ -35,7 +35,7 @@ export interface AwsRbinRuleArgs {
 }
 
 export class aws_rbin_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRbinRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRbinRuleArgs) {
     const meta = {lock_configuration:{isBlock:true,unlock_delay:{isBlock:true}},resource_tags:{isBlock:true},retention_period:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_rbin_rule", resourceName);
   }

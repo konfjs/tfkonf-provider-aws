@@ -5,7 +5,7 @@ export interface DataAwsCloudformationExportArgs {
 }
 
 export class data_aws_cloudformation_export extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCloudformationExportArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCloudformationExportArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_cloudformation_export", resourceName);
   }

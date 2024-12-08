@@ -20,7 +20,7 @@ export interface AwsAppmeshMeshArgs {
 }
 
 export class aws_appmesh_mesh extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppmeshMeshArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppmeshMeshArgs) {
     const meta = {spec:{isBlock:true,egress_filter:{isBlock:true},service_discovery:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_appmesh_mesh", resourceName);
   }

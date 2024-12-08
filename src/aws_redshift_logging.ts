@@ -9,7 +9,7 @@ export interface AwsRedshiftLoggingArgs {
 }
 
 export class aws_redshift_logging extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRedshiftLoggingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRedshiftLoggingArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_redshift_logging", resourceName);
   }

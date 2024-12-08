@@ -12,7 +12,7 @@ export interface AwsPrometheusWorkspaceArgs {
 }
 
 export class aws_prometheus_workspace extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsPrometheusWorkspaceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsPrometheusWorkspaceArgs) {
     const meta = {logging_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_prometheus_workspace", resourceName);
   }

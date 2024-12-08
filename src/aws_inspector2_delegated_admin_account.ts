@@ -11,7 +11,7 @@ export interface AwsInspector2DelegatedAdminAccountArgs {
 }
 
 export class aws_inspector2_delegated_admin_account extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsInspector2DelegatedAdminAccountArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsInspector2DelegatedAdminAccountArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_inspector2_delegated_admin_account", resourceName);
   }

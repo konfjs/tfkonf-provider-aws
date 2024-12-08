@@ -7,7 +7,7 @@ export interface AwsBackupVaultNotificationsArgs {
 }
 
 export class aws_backup_vault_notifications extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBackupVaultNotificationsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBackupVaultNotificationsArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_backup_vault_notifications", resourceName);
   }

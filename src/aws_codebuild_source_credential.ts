@@ -8,7 +8,7 @@ export interface AwsCodebuildSourceCredentialArgs {
 }
 
 export class aws_codebuild_source_credential extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCodebuildSourceCredentialArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCodebuildSourceCredentialArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_codebuild_source_credential", resourceName);
   }

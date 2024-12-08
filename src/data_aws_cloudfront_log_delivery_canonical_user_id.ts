@@ -5,7 +5,7 @@ export interface DataAwsCloudfrontLogDeliveryCanonicalUserIdArgs {
 }
 
 export class data_aws_cloudfront_log_delivery_canonical_user_id extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCloudfrontLogDeliveryCanonicalUserIdArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCloudfrontLogDeliveryCanonicalUserIdArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_cloudfront_log_delivery_canonical_user_id", resourceName);
   }

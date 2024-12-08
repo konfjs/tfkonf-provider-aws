@@ -21,7 +21,7 @@ export interface AwsApigatewayv2RouteArgs {
 }
 
 export class aws_apigatewayv2_route extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApigatewayv2RouteArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApigatewayv2RouteArgs) {
     const meta = {request_parameter:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_apigatewayv2_route", resourceName);
   }

@@ -16,7 +16,7 @@ export interface AwsAppintegrationsDataIntegrationArgs {
 }
 
 export class aws_appintegrations_data_integration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppintegrationsDataIntegrationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppintegrationsDataIntegrationArgs) {
     const meta = {schedule_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_appintegrations_data_integration", resourceName);
   }

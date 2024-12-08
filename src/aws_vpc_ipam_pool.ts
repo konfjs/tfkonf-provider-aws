@@ -26,7 +26,7 @@ export interface AwsVpcIpamPoolArgs {
 }
 
 export class aws_vpc_ipam_pool extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpcIpamPoolArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpcIpamPoolArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_vpc_ipam_pool", resourceName);
   }

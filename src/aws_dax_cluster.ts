@@ -25,7 +25,7 @@ export interface AwsDaxClusterArgs {
 }
 
 export class aws_dax_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDaxClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDaxClusterArgs) {
     const meta = {server_side_encryption:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_dax_cluster", resourceName);
   }

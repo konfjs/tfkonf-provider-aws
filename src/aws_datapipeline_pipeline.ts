@@ -7,7 +7,7 @@ export interface AwsDatapipelinePipelineArgs {
 }
 
 export class aws_datapipeline_pipeline extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDatapipelinePipelineArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDatapipelinePipelineArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_datapipeline_pipeline", resourceName);
   }

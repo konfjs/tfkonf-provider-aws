@@ -5,7 +5,7 @@ export interface AwsRoute53CidrCollectionArgs {
 }
 
 export class aws_route53_cidr_collection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRoute53CidrCollectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRoute53CidrCollectionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_route53_cidr_collection", resourceName);
   }

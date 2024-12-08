@@ -14,7 +14,7 @@ export interface AwsNetworkmanagerTransitGatewayConnectPeerAssociationArgs {
 }
 
 export class aws_networkmanager_transit_gateway_connect_peer_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNetworkmanagerTransitGatewayConnectPeerAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNetworkmanagerTransitGatewayConnectPeerAssociationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_networkmanager_transit_gateway_connect_peer_association", resourceName);
   }

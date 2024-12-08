@@ -7,7 +7,7 @@ export interface AwsRedshiftserverlessSnapshotArgs {
 }
 
 export class aws_redshiftserverless_snapshot extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRedshiftserverlessSnapshotArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRedshiftserverlessSnapshotArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_redshiftserverless_snapshot", resourceName);
   }

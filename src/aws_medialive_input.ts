@@ -43,7 +43,7 @@ export interface AwsMedialiveInputArgs {
 }
 
 export class aws_medialive_input extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMedialiveInputArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMedialiveInputArgs) {
     const meta = {destinations:{isBlock:true},input_devices:{isBlock:true},media_connect_flows:{isBlock:true},sources:{isBlock:true},timeouts:{isBlock:true},vpc:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_medialive_input", resourceName);
   }

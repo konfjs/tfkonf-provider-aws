@@ -4,7 +4,7 @@ export interface DataAwsOamLinksArgs {
 }
 
 export class data_aws_oam_links extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsOamLinksArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsOamLinksArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_oam_links", resourceName);
   }

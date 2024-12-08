@@ -5,7 +5,7 @@ export interface DataAwsDbProxyArgs {
 }
 
 export class data_aws_db_proxy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsDbProxyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsDbProxyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_db_proxy", resourceName);
   }

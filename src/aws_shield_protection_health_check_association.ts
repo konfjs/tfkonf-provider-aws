@@ -6,7 +6,7 @@ export interface AwsShieldProtectionHealthCheckAssociationArgs {
 }
 
 export class aws_shield_protection_health_check_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsShieldProtectionHealthCheckAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsShieldProtectionHealthCheckAssociationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_shield_protection_health_check_association", resourceName);
   }

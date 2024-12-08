@@ -5,7 +5,7 @@ export interface AwsEbsSnapshotBlockPublicAccessArgs {
 }
 
 export class aws_ebs_snapshot_block_public_access extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEbsSnapshotBlockPublicAccessArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEbsSnapshotBlockPublicAccessArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ebs_snapshot_block_public_access", resourceName);
   }

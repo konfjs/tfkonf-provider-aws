@@ -9,7 +9,7 @@ export interface DataAwsAlbTargetGroupArgs {
 }
 
 export class data_aws_alb_target_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsAlbTargetGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsAlbTargetGroupArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_alb_target_group", resourceName);
   }

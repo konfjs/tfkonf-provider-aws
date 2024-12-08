@@ -9,7 +9,7 @@ export interface DataAwsRdsReservedInstanceOfferingArgs {
 }
 
 export class data_aws_rds_reserved_instance_offering extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsRdsReservedInstanceOfferingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsRdsReservedInstanceOfferingArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_rds_reserved_instance_offering", resourceName);
   }

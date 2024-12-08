@@ -50,7 +50,7 @@ export interface AwsIdentitystoreUserArgs {
 }
 
 export class aws_identitystore_user extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIdentitystoreUserArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIdentitystoreUserArgs) {
     const meta = {addresses:{isBlock:true},emails:{isBlock:true},name:{isBlock:true},phone_numbers:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_identitystore_user", resourceName);
   }

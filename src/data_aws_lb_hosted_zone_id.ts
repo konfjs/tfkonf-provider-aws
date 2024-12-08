@@ -6,7 +6,7 @@ export interface DataAwsLbHostedZoneIdArgs {
 }
 
 export class data_aws_lb_hosted_zone_id extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsLbHostedZoneIdArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsLbHostedZoneIdArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_lb_hosted_zone_id", resourceName);
   }

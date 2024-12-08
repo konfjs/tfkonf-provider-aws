@@ -25,7 +25,7 @@ export interface AwsElasticacheUserArgs {
 }
 
 export class aws_elasticache_user extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsElasticacheUserArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsElasticacheUserArgs) {
     const meta = {authentication_mode:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_elasticache_user", resourceName);
   }

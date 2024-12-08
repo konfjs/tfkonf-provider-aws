@@ -8,7 +8,7 @@ export interface AwsApiGatewayBasePathMappingArgs {
 }
 
 export class aws_api_gateway_base_path_mapping extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApiGatewayBasePathMappingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApiGatewayBasePathMappingArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_api_gateway_base_path_mapping", resourceName);
   }

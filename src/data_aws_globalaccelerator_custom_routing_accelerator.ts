@@ -4,7 +4,7 @@ export interface DataAwsGlobalacceleratorCustomRoutingAcceleratorArgs {
 }
 
 export class data_aws_globalaccelerator_custom_routing_accelerator extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsGlobalacceleratorCustomRoutingAcceleratorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsGlobalacceleratorCustomRoutingAcceleratorArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_globalaccelerator_custom_routing_accelerator", resourceName);
   }

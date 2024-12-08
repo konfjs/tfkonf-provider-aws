@@ -17,7 +17,7 @@ export interface AwsIamRoleArgs {
 }
 
 export class aws_iam_role extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIamRoleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIamRoleArgs) {
     const meta = {inline_policy:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_iam_role", resourceName);
   }

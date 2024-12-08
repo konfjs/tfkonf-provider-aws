@@ -7,7 +7,7 @@ export interface AwsCloudwatchQueryDefinitionArgs {
 }
 
 export class aws_cloudwatch_query_definition extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudwatchQueryDefinitionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudwatchQueryDefinitionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_cloudwatch_query_definition", resourceName);
   }

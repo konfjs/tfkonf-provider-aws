@@ -6,7 +6,7 @@ export interface AwsElbAttachmentArgs {
 }
 
 export class aws_elb_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsElbAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsElbAttachmentArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_elb_attachment", resourceName);
   }

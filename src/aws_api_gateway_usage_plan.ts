@@ -34,7 +34,7 @@ export interface AwsApiGatewayUsagePlanArgs {
 }
 
 export class aws_api_gateway_usage_plan extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApiGatewayUsagePlanArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApiGatewayUsagePlanArgs) {
     const meta = {api_stages:{isBlock:true,throttle:{isBlock:true}},quota_settings:{isBlock:true},throttle_settings:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_api_gateway_usage_plan", resourceName);
   }

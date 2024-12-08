@@ -13,7 +13,7 @@ export interface AwsCloudwatchEventRuleArgs {
 }
 
 export class aws_cloudwatch_event_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudwatchEventRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudwatchEventRuleArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_cloudwatch_event_rule", resourceName);
   }

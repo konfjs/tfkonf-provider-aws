@@ -13,7 +13,7 @@ export interface AwsCognitoResourceServerArgs {
 }
 
 export class aws_cognito_resource_server extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCognitoResourceServerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCognitoResourceServerArgs) {
     const meta = {scope:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_cognito_resource_server", resourceName);
   }

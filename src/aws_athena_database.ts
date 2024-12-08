@@ -21,7 +21,7 @@ export interface AwsAthenaDatabaseArgs {
 }
 
 export class aws_athena_database extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAthenaDatabaseArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAthenaDatabaseArgs) {
     const meta = {acl_configuration:{isBlock:true},encryption_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_athena_database", resourceName);
   }

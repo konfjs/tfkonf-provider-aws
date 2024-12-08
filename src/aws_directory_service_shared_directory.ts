@@ -18,7 +18,7 @@ export interface AwsDirectoryServiceSharedDirectoryArgs {
 }
 
 export class aws_directory_service_shared_directory extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDirectoryServiceSharedDirectoryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDirectoryServiceSharedDirectoryArgs) {
     const meta = {target:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_directory_service_shared_directory", resourceName);
   }

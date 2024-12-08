@@ -16,7 +16,7 @@ export interface DataAwsAvailabilityZoneArgs {
 }
 
 export class data_aws_availability_zone extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsAvailabilityZoneArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsAvailabilityZoneArgs) {
     const meta = {filter:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_availability_zone", resourceName);
   }

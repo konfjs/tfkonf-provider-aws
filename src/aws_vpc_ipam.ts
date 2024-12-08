@@ -21,7 +21,7 @@ export interface AwsVpcIpamArgs {
 }
 
 export class aws_vpc_ipam extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpcIpamArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpcIpamArgs) {
     const meta = {operating_regions:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_vpc_ipam", resourceName);
   }

@@ -200,7 +200,7 @@ export interface AwsAutoscalingGroupArgs {
 }
 
 export class aws_autoscaling_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAutoscalingGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAutoscalingGroupArgs) {
     const meta = {initial_lifecycle_hook:{isBlock:true},instance_maintenance_policy:{isBlock:true},instance_refresh:{isBlock:true,preferences:{isBlock:true,alarm_specification:{isBlock:true}}},launch_template:{isBlock:true},mixed_instances_policy:{isBlock:true,instances_distribution:{isBlock:true},launch_template:{isBlock:true,launch_template_specification:{isBlock:true},override:{isBlock:true,instance_requirements:{isBlock:true,accelerator_count:{isBlock:true},accelerator_total_memory_mib:{isBlock:true},baseline_ebs_bandwidth_mbps:{isBlock:true},memory_gib_per_vcpu:{isBlock:true},memory_mib:{isBlock:true},network_bandwidth_gbps:{isBlock:true},network_interface_count:{isBlock:true},total_local_storage_gb:{isBlock:true},vcpu_count:{isBlock:true}},launch_template_specification:{isBlock:true}}}},tag:{isBlock:true},timeouts:{isBlock:true},traffic_source:{isBlock:true},warm_pool:{isBlock:true,instance_reuse_policy:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_autoscaling_group", resourceName);
   }

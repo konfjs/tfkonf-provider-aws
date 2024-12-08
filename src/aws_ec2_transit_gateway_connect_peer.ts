@@ -14,7 +14,7 @@ export interface AwsEc2TransitGatewayConnectPeerArgs {
 }
 
 export class aws_ec2_transit_gateway_connect_peer extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEc2TransitGatewayConnectPeerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEc2TransitGatewayConnectPeerArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ec2_transit_gateway_connect_peer", resourceName);
   }

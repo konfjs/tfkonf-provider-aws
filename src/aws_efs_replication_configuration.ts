@@ -17,7 +17,7 @@ export interface AwsEfsReplicationConfigurationArgs {
 }
 
 export class aws_efs_replication_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEfsReplicationConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEfsReplicationConfigurationArgs) {
     const meta = {destination:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_efs_replication_configuration", resourceName);
   }

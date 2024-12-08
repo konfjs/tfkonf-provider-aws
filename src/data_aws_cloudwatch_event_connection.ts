@@ -5,7 +5,7 @@ export interface DataAwsCloudwatchEventConnectionArgs {
 }
 
 export class data_aws_cloudwatch_event_connection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCloudwatchEventConnectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCloudwatchEventConnectionArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_cloudwatch_event_connection", resourceName);
   }

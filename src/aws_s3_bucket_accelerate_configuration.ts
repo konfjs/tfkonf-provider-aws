@@ -7,7 +7,7 @@ export interface AwsS3BucketAccelerateConfigurationArgs {
 }
 
 export class aws_s3_bucket_accelerate_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3BucketAccelerateConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3BucketAccelerateConfigurationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_s3_bucket_accelerate_configuration", resourceName);
   }

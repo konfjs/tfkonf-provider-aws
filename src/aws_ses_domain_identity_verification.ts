@@ -10,7 +10,7 @@ export interface AwsSesDomainIdentityVerificationArgs {
 }
 
 export class aws_ses_domain_identity_verification extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSesDomainIdentityVerificationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSesDomainIdentityVerificationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ses_domain_identity_verification", resourceName);
   }

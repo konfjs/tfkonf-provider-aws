@@ -8,7 +8,7 @@ export interface AwsCloudwatchLogDestinationArgs {
 }
 
 export class aws_cloudwatch_log_destination extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudwatchLogDestinationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudwatchLogDestinationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_cloudwatch_log_destination", resourceName);
   }

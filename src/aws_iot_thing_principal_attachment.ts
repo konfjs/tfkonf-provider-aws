@@ -6,7 +6,7 @@ export interface AwsIotThingPrincipalAttachmentArgs {
 }
 
 export class aws_iot_thing_principal_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIotThingPrincipalAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIotThingPrincipalAttachmentArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_iot_thing_principal_attachment", resourceName);
   }

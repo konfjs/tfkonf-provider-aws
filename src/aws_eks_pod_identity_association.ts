@@ -9,7 +9,7 @@ export interface AwsEksPodIdentityAssociationArgs {
 }
 
 export class aws_eks_pod_identity_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEksPodIdentityAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEksPodIdentityAssociationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_eks_pod_identity_association", resourceName);
   }

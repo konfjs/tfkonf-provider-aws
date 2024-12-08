@@ -6,7 +6,7 @@ export interface AwsVerifiedaccessInstanceTrustProviderAttachmentArgs {
 }
 
 export class aws_verifiedaccess_instance_trust_provider_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVerifiedaccessInstanceTrustProviderAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVerifiedaccessInstanceTrustProviderAttachmentArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_verifiedaccess_instance_trust_provider_attachment", resourceName);
   }

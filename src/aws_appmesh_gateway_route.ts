@@ -209,7 +209,7 @@ export interface AwsAppmeshGatewayRouteArgs {
 }
 
 export class aws_appmesh_gateway_route extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppmeshGatewayRouteArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppmeshGatewayRouteArgs) {
     const meta = {spec:{isBlock:true,grpc_route:{isBlock:true,action:{isBlock:true,target:{isBlock:true,virtual_service:{isBlock:true}}},match:{isBlock:true}},http2_route:{isBlock:true,action:{isBlock:true,rewrite:{isBlock:true,hostname:{isBlock:true},path:{isBlock:true},prefix:{isBlock:true}},target:{isBlock:true,virtual_service:{isBlock:true}}},match:{isBlock:true,header:{isBlock:true,match:{isBlock:true,range:{isBlock:true}}},hostname:{isBlock:true},path:{isBlock:true},query_parameter:{isBlock:true,match:{isBlock:true}}}},http_route:{isBlock:true,action:{isBlock:true,rewrite:{isBlock:true,hostname:{isBlock:true},path:{isBlock:true},prefix:{isBlock:true}},target:{isBlock:true,virtual_service:{isBlock:true}}},match:{isBlock:true,header:{isBlock:true,match:{isBlock:true,range:{isBlock:true}}},hostname:{isBlock:true},path:{isBlock:true},query_parameter:{isBlock:true,match:{isBlock:true}}}}}};
     super(terraformConfig, "resource", args, meta, "aws_appmesh_gateway_route", resourceName);
   }

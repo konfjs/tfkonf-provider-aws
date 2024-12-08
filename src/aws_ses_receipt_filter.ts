@@ -7,7 +7,7 @@ export interface AwsSesReceiptFilterArgs {
 }
 
 export class aws_ses_receipt_filter extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSesReceiptFilterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSesReceiptFilterArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ses_receipt_filter", resourceName);
   }

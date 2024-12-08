@@ -6,7 +6,7 @@ export interface AwsPrometheusAlertManagerDefinitionArgs {
 }
 
 export class aws_prometheus_alert_manager_definition extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsPrometheusAlertManagerDefinitionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsPrometheusAlertManagerDefinitionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_prometheus_alert_manager_definition", resourceName);
   }

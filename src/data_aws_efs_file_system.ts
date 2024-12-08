@@ -4,7 +4,7 @@ export interface DataAwsEfsFileSystemArgs {
 }
 
 export class data_aws_efs_file_system extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEfsFileSystemArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEfsFileSystemArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_efs_file_system", resourceName);
   }

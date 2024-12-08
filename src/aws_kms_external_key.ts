@@ -10,7 +10,7 @@ export interface AwsKmsExternalKeyArgs {
 }
 
 export class aws_kms_external_key extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsKmsExternalKeyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsKmsExternalKeyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_kms_external_key", resourceName);
   }

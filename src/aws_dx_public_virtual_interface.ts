@@ -17,7 +17,7 @@ export interface AwsDxPublicVirtualInterfaceArgs {
 }
 
 export class aws_dx_public_virtual_interface extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDxPublicVirtualInterfaceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDxPublicVirtualInterfaceArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_dx_public_virtual_interface", resourceName);
   }

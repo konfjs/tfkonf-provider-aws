@@ -12,7 +12,7 @@ export interface AwsElasticBeanstalkApplicationVersionArgs {
 }
 
 export class aws_elastic_beanstalk_application_version extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsElasticBeanstalkApplicationVersionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsElasticBeanstalkApplicationVersionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_elastic_beanstalk_application_version", resourceName);
   }

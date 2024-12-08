@@ -23,7 +23,7 @@ export interface AwsConnectRoutingProfileArgs {
 }
 
 export class aws_connect_routing_profile extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsConnectRoutingProfileArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsConnectRoutingProfileArgs) {
     const meta = {media_concurrencies:{isBlock:true},queue_configs:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_connect_routing_profile", resourceName);
   }

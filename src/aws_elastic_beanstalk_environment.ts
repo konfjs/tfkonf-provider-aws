@@ -20,7 +20,7 @@ export interface AwsElasticBeanstalkEnvironmentArgs {
 }
 
 export class aws_elastic_beanstalk_environment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsElasticBeanstalkEnvironmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsElasticBeanstalkEnvironmentArgs) {
     const meta = {setting:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_elastic_beanstalk_environment", resourceName);
   }

@@ -11,7 +11,7 @@ export interface AwsVpcEndpointPolicyArgs {
 }
 
 export class aws_vpc_endpoint_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpcEndpointPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpcEndpointPolicyArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_vpc_endpoint_policy", resourceName);
   }

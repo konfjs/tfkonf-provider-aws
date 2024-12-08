@@ -23,7 +23,7 @@ export interface AwsRoute53HealthCheckArgs {
 }
 
 export class aws_route53_health_check extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRoute53HealthCheckArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRoute53HealthCheckArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_route53_health_check", resourceName);
   }

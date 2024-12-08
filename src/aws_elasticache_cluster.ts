@@ -22,7 +22,7 @@ export interface AwsElasticacheClusterArgs {
 }
 
 export class aws_elasticache_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsElasticacheClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsElasticacheClusterArgs) {
     const meta = {log_delivery_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_elasticache_cluster", resourceName);
   }

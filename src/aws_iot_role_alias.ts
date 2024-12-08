@@ -8,7 +8,7 @@ export interface AwsIotRoleAliasArgs {
 }
 
 export class aws_iot_role_alias extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIotRoleAliasArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIotRoleAliasArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_iot_role_alias", resourceName);
   }

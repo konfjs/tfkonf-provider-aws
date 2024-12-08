@@ -6,7 +6,7 @@ export interface AwsXrayEncryptionConfigArgs {
 }
 
 export class aws_xray_encryption_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsXrayEncryptionConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsXrayEncryptionConfigArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_xray_encryption_config", resourceName);
   }

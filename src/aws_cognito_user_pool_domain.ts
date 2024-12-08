@@ -7,7 +7,7 @@ export interface AwsCognitoUserPoolDomainArgs {
 }
 
 export class aws_cognito_user_pool_domain extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCognitoUserPoolDomainArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCognitoUserPoolDomainArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_cognito_user_pool_domain", resourceName);
   }

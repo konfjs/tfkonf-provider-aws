@@ -17,7 +17,7 @@ export interface AwsIotCaCertificateArgs {
 }
 
 export class aws_iot_ca_certificate extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIotCaCertificateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIotCaCertificateArgs) {
     const meta = {registration_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_iot_ca_certificate", resourceName);
   }

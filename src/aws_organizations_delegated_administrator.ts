@@ -6,7 +6,7 @@ export interface AwsOrganizationsDelegatedAdministratorArgs {
 }
 
 export class aws_organizations_delegated_administrator extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsOrganizationsDelegatedAdministratorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsOrganizationsDelegatedAdministratorArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_organizations_delegated_administrator", resourceName);
   }

@@ -15,7 +15,7 @@ export interface DataAwsEc2TransitGatewayAttachmentsArgs {
 }
 
 export class data_aws_ec2_transit_gateway_attachments extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEc2TransitGatewayAttachmentsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEc2TransitGatewayAttachmentsArgs) {
     const meta = {filter:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_ec2_transit_gateway_attachments", resourceName);
   }

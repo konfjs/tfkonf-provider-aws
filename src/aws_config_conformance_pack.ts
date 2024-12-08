@@ -15,7 +15,7 @@ export interface AwsConfigConformancePackArgs {
 }
 
 export class aws_config_conformance_pack extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsConfigConformancePackArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsConfigConformancePackArgs) {
     const meta = {input_parameter:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_config_conformance_pack", resourceName);
   }

@@ -13,7 +13,7 @@ export interface AwsWafv2RegexPatternSetArgs {
 }
 
 export class aws_wafv2_regex_pattern_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsWafv2RegexPatternSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsWafv2RegexPatternSetArgs) {
     const meta = {regular_expression:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_wafv2_regex_pattern_set", resourceName);
   }

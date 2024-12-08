@@ -9,7 +9,7 @@ export interface AwsConnectSecurityProfileArgs {
 }
 
 export class aws_connect_security_profile extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsConnectSecurityProfileArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsConnectSecurityProfileArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_connect_security_profile", resourceName);
   }

@@ -13,7 +13,7 @@ export interface AwsLoadBalancerPolicyArgs {
 }
 
 export class aws_load_balancer_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLoadBalancerPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLoadBalancerPolicyArgs) {
     const meta = {policy_attribute:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_load_balancer_policy", resourceName);
   }

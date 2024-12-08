@@ -41,7 +41,7 @@ export interface AwsCodedeployDeploymentConfigArgs {
 }
 
 export class aws_codedeploy_deployment_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCodedeployDeploymentConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCodedeployDeploymentConfigArgs) {
     const meta = {minimum_healthy_hosts:{isBlock:true},traffic_routing_config:{isBlock:true,time_based_canary:{isBlock:true},time_based_linear:{isBlock:true}},zonal_config:{isBlock:true,minimum_healthy_hosts_per_zone:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_codedeploy_deployment_config", resourceName);
   }

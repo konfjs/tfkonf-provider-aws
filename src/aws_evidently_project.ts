@@ -29,7 +29,7 @@ export interface AwsEvidentlyProjectArgs {
 }
 
 export class aws_evidently_project extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEvidentlyProjectArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEvidentlyProjectArgs) {
     const meta = {data_delivery:{isBlock:true,cloudwatch_logs:{isBlock:true},s3_destination:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_evidently_project", resourceName);
   }

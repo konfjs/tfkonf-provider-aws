@@ -4,7 +4,7 @@ export interface AwsCostoptimizationhubEnrollmentStatusArgs {
 }
 
 export class aws_costoptimizationhub_enrollment_status extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCostoptimizationhubEnrollmentStatusArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCostoptimizationhubEnrollmentStatusArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_costoptimizationhub_enrollment_status", resourceName);
   }

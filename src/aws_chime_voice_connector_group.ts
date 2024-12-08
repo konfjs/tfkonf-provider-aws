@@ -11,7 +11,7 @@ export interface AwsChimeVoiceConnectorGroupArgs {
 }
 
 export class aws_chime_voice_connector_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsChimeVoiceConnectorGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsChimeVoiceConnectorGroupArgs) {
     const meta = {connector:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_chime_voice_connector_group", resourceName);
   }

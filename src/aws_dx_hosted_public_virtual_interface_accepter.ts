@@ -12,7 +12,7 @@ export interface AwsDxHostedPublicVirtualInterfaceAccepterArgs {
 }
 
 export class aws_dx_hosted_public_virtual_interface_accepter extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDxHostedPublicVirtualInterfaceAccepterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDxHostedPublicVirtualInterfaceAccepterArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_dx_hosted_public_virtual_interface_accepter", resourceName);
   }

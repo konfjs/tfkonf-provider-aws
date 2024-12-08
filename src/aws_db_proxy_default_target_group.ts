@@ -20,7 +20,7 @@ export interface AwsDbProxyDefaultTargetGroupArgs {
 }
 
 export class aws_db_proxy_default_target_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDbProxyDefaultTargetGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDbProxyDefaultTargetGroupArgs) {
     const meta = {connection_pool_config:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_db_proxy_default_target_group", resourceName);
   }

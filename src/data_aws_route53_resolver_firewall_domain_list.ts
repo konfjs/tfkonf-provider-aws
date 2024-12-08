@@ -5,7 +5,7 @@ export interface DataAwsRoute53ResolverFirewallDomainListArgs {
 }
 
 export class data_aws_route53_resolver_firewall_domain_list extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsRoute53ResolverFirewallDomainListArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsRoute53ResolverFirewallDomainListArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_route53_resolver_firewall_domain_list", resourceName);
   }

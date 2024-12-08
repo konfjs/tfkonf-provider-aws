@@ -5,7 +5,7 @@ export interface DataAwsGlueRegistryArgs {
 }
 
 export class data_aws_glue_registry extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsGlueRegistryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsGlueRegistryArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_glue_registry", resourceName);
   }

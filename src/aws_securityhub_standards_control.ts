@@ -6,7 +6,7 @@ export interface AwsSecurityhubStandardsControlArgs {
 }
 
 export class aws_securityhub_standards_control extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSecurityhubStandardsControlArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSecurityhubStandardsControlArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_securityhub_standards_control", resourceName);
   }

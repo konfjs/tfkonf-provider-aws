@@ -21,7 +21,7 @@ export interface AwsConfigOrganizationManagedRuleArgs {
 }
 
 export class aws_config_organization_managed_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsConfigOrganizationManagedRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsConfigOrganizationManagedRuleArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_config_organization_managed_rule", resourceName);
   }

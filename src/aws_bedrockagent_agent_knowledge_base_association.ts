@@ -14,7 +14,7 @@ export interface AwsBedrockagentAgentKnowledgeBaseAssociationArgs {
 }
 
 export class aws_bedrockagent_agent_knowledge_base_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBedrockagentAgentKnowledgeBaseAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBedrockagentAgentKnowledgeBaseAssociationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_bedrockagent_agent_knowledge_base_association", resourceName);
   }

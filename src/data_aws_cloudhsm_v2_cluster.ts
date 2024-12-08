@@ -5,7 +5,7 @@ export interface DataAwsCloudhsmV2ClusterArgs {
 }
 
 export class data_aws_cloudhsm_v2_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCloudhsmV2ClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCloudhsmV2ClusterArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_cloudhsm_v2_cluster", resourceName);
   }

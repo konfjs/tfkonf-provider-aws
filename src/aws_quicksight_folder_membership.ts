@@ -7,7 +7,7 @@ export interface AwsQuicksightFolderMembershipArgs {
 }
 
 export class aws_quicksight_folder_membership extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsQuicksightFolderMembershipArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsQuicksightFolderMembershipArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_quicksight_folder_membership", resourceName);
   }

@@ -4,7 +4,7 @@ export interface DataAwsIotRegistrationCodeArgs {
 }
 
 export class data_aws_iot_registration_code extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsIotRegistrationCodeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsIotRegistrationCodeArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_iot_registration_code", resourceName);
   }

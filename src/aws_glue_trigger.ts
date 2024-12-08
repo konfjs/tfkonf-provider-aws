@@ -53,7 +53,7 @@ export interface AwsGlueTriggerArgs {
 }
 
 export class aws_glue_trigger extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGlueTriggerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGlueTriggerArgs) {
     const meta = {actions:{isBlock:true,notification_property:{isBlock:true}},event_batching_condition:{isBlock:true},predicate:{isBlock:true,conditions:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_glue_trigger", resourceName);
   }

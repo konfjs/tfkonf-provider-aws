@@ -14,7 +14,7 @@ export interface AwsDocdbClusterParameterGroupArgs {
 }
 
 export class aws_docdb_cluster_parameter_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDocdbClusterParameterGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDocdbClusterParameterGroupArgs) {
     const meta = {parameter:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_docdb_cluster_parameter_group", resourceName);
   }

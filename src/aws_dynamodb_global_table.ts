@@ -17,7 +17,7 @@ export interface AwsDynamodbGlobalTableArgs {
 }
 
 export class aws_dynamodb_global_table extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDynamodbGlobalTableArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDynamodbGlobalTableArgs) {
     const meta = {replica:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_dynamodb_global_table", resourceName);
   }

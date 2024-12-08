@@ -7,7 +7,7 @@ export interface AwsDirectoryServiceConditionalForwarderArgs {
 }
 
 export class aws_directory_service_conditional_forwarder extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDirectoryServiceConditionalForwarderArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDirectoryServiceConditionalForwarderArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_directory_service_conditional_forwarder", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataAwsEmrcontainersVirtualClusterArgs {
 }
 
 export class data_aws_emrcontainers_virtual_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEmrcontainersVirtualClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEmrcontainersVirtualClusterArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_emrcontainers_virtual_cluster", resourceName);
   }

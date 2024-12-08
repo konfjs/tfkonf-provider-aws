@@ -11,7 +11,7 @@ export interface AwsRedshiftUsageLimitArgs {
 }
 
 export class aws_redshift_usage_limit extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRedshiftUsageLimitArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRedshiftUsageLimitArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_redshift_usage_limit", resourceName);
   }

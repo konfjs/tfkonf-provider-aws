@@ -5,7 +5,7 @@ export interface DataAwsQuicksightThemeArgs {
 }
 
 export class data_aws_quicksight_theme extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsQuicksightThemeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsQuicksightThemeArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_quicksight_theme", resourceName);
   }

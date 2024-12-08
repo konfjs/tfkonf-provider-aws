@@ -18,7 +18,7 @@ export interface AwsDbSnapshotCopyArgs {
 }
 
 export class aws_db_snapshot_copy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDbSnapshotCopyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDbSnapshotCopyArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_db_snapshot_copy", resourceName);
   }

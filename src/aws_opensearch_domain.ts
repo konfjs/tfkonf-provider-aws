@@ -133,7 +133,7 @@ export interface AwsOpensearchDomainArgs {
 }
 
 export class aws_opensearch_domain extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsOpensearchDomainArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsOpensearchDomainArgs) {
     const meta = {advanced_security_options:{isBlock:true,master_user_options:{isBlock:true}},auto_tune_options:{isBlock:true,maintenance_schedule:{isBlock:true,duration:{isBlock:true}}},cluster_config:{isBlock:true,cold_storage_options:{isBlock:true},zone_awareness_config:{isBlock:true}},cognito_options:{isBlock:true},domain_endpoint_options:{isBlock:true},ebs_options:{isBlock:true},encrypt_at_rest:{isBlock:true},log_publishing_options:{isBlock:true},node_to_node_encryption:{isBlock:true},off_peak_window_options:{isBlock:true,off_peak_window:{isBlock:true,window_start_time:{isBlock:true}}},snapshot_options:{isBlock:true},software_update_options:{isBlock:true},timeouts:{isBlock:true},vpc_options:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_opensearch_domain", resourceName);
   }

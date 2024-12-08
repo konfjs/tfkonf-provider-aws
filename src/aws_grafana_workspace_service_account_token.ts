@@ -8,7 +8,7 @@ export interface AwsGrafanaWorkspaceServiceAccountTokenArgs {
 }
 
 export class aws_grafana_workspace_service_account_token extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGrafanaWorkspaceServiceAccountTokenArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGrafanaWorkspaceServiceAccountTokenArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_grafana_workspace_service_account_token", resourceName);
   }

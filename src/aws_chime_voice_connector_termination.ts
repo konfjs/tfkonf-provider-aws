@@ -10,7 +10,7 @@ export interface AwsChimeVoiceConnectorTerminationArgs {
 }
 
 export class aws_chime_voice_connector_termination extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsChimeVoiceConnectorTerminationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsChimeVoiceConnectorTerminationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_chime_voice_connector_termination", resourceName);
   }

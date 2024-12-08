@@ -13,7 +13,7 @@ export interface AwsRoute53profilesProfileArgs {
 }
 
 export class aws_route53profiles_profile extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRoute53profilesProfileArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRoute53profilesProfileArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_route53profiles_profile", resourceName);
   }

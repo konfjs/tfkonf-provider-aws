@@ -17,7 +17,7 @@ export interface AwsSignerSigningProfileArgs {
 }
 
 export class aws_signer_signing_profile extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSignerSigningProfileArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSignerSigningProfileArgs) {
     const meta = {signature_validity_period:{isBlock:true},signing_material:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_signer_signing_profile", resourceName);
   }

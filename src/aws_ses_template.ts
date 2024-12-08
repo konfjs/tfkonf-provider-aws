@@ -8,7 +8,7 @@ export interface AwsSesTemplateArgs {
 }
 
 export class aws_ses_template extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSesTemplateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSesTemplateArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ses_template", resourceName);
   }

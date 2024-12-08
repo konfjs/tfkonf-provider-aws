@@ -6,7 +6,7 @@ export interface DataAwsAppconfigEnvironmentArgs {
 }
 
 export class data_aws_appconfig_environment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsAppconfigEnvironmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsAppconfigEnvironmentArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_appconfig_environment", resourceName);
   }

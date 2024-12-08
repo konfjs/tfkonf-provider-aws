@@ -14,7 +14,7 @@ export interface AwsVpcIpamResourceDiscoveryAssociationArgs {
 }
 
 export class aws_vpc_ipam_resource_discovery_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpcIpamResourceDiscoveryAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpcIpamResourceDiscoveryAssociationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_vpc_ipam_resource_discovery_association", resourceName);
   }

@@ -8,7 +8,7 @@ export interface AwsOpensearchserverlessAccessPolicyArgs {
 }
 
 export class aws_opensearchserverless_access_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsOpensearchserverlessAccessPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsOpensearchserverlessAccessPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_opensearchserverless_access_policy", resourceName);
   }

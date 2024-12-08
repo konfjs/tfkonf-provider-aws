@@ -12,7 +12,7 @@ export interface DataAwsRoute53ResolverQueryLogConfigArgs {
 }
 
 export class data_aws_route53_resolver_query_log_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsRoute53ResolverQueryLogConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsRoute53ResolverQueryLogConfigArgs) {
     const meta = {filter:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_route53_resolver_query_log_config", resourceName);
   }

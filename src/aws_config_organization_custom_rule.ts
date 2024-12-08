@@ -22,7 +22,7 @@ export interface AwsConfigOrganizationCustomRuleArgs {
 }
 
 export class aws_config_organization_custom_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsConfigOrganizationCustomRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsConfigOrganizationCustomRuleArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_config_organization_custom_rule", resourceName);
   }

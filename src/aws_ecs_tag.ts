@@ -7,7 +7,7 @@ export interface AwsEcsTagArgs {
 }
 
 export class aws_ecs_tag extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEcsTagArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEcsTagArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ecs_tag", resourceName);
   }

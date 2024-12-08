@@ -24,7 +24,7 @@ export interface AwsEc2TrafficMirrorFilterRuleArgs {
 }
 
 export class aws_ec2_traffic_mirror_filter_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEc2TrafficMirrorFilterRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEc2TrafficMirrorFilterRuleArgs) {
     const meta = {destination_port_range:{isBlock:true},source_port_range:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ec2_traffic_mirror_filter_rule", resourceName);
   }

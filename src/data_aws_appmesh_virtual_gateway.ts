@@ -6,7 +6,7 @@ export interface DataAwsAppmeshVirtualGatewayArgs {
 }
 
 export class data_aws_appmesh_virtual_gateway extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsAppmeshVirtualGatewayArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsAppmeshVirtualGatewayArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_appmesh_virtual_gateway", resourceName);
   }

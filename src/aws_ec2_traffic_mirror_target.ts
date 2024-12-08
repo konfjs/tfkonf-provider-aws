@@ -9,7 +9,7 @@ export interface AwsEc2TrafficMirrorTargetArgs {
 }
 
 export class aws_ec2_traffic_mirror_target extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEc2TrafficMirrorTargetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEc2TrafficMirrorTargetArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ec2_traffic_mirror_target", resourceName);
   }

@@ -47,7 +47,7 @@ export interface AwsEcsTaskSetArgs {
 }
 
 export class aws_ecs_task_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEcsTaskSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEcsTaskSetArgs) {
     const meta = {capacity_provider_strategy:{isBlock:true},load_balancer:{isBlock:true},network_configuration:{isBlock:true},scale:{isBlock:true},service_registries:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ecs_task_set", resourceName);
   }

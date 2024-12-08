@@ -9,7 +9,7 @@ export interface AwsApiGatewayModelArgs {
 }
 
 export class aws_api_gateway_model extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApiGatewayModelArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApiGatewayModelArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_api_gateway_model", resourceName);
   }

@@ -100,7 +100,7 @@ export interface AwsGlueCrawlerArgs {
 }
 
 export class aws_glue_crawler extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGlueCrawlerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGlueCrawlerArgs) {
     const meta = {catalog_target:{isBlock:true},delta_target:{isBlock:true},dynamodb_target:{isBlock:true},hudi_target:{isBlock:true},iceberg_target:{isBlock:true},jdbc_target:{isBlock:true},lake_formation_configuration:{isBlock:true},lineage_configuration:{isBlock:true},mongodb_target:{isBlock:true},recrawl_policy:{isBlock:true},s3_target:{isBlock:true},schema_change_policy:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_glue_crawler", resourceName);
   }

@@ -6,7 +6,7 @@ export interface AwsSesv2DedicatedIpPoolArgs {
 }
 
 export class aws_sesv2_dedicated_ip_pool extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSesv2DedicatedIpPoolArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSesv2DedicatedIpPoolArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_sesv2_dedicated_ip_pool", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataAwsConnectUserHierarchyGroupArgs {
 }
 
 export class data_aws_connect_user_hierarchy_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsConnectUserHierarchyGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsConnectUserHierarchyGroupArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_connect_user_hierarchy_group", resourceName);
   }

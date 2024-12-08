@@ -16,7 +16,7 @@ export interface AwsGuarddutyMemberArgs {
 }
 
 export class aws_guardduty_member extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGuarddutyMemberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGuarddutyMemberArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_guardduty_member", resourceName);
   }

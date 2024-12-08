@@ -10,7 +10,7 @@ export interface AwsLambdaInvocationArgs {
 }
 
 export class aws_lambda_invocation extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLambdaInvocationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLambdaInvocationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_lambda_invocation", resourceName);
   }

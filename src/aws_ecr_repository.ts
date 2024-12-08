@@ -23,7 +23,7 @@ export interface AwsEcrRepositoryArgs {
 }
 
 export class aws_ecr_repository extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEcrRepositoryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEcrRepositoryArgs) {
     const meta = {encryption_configuration:{isBlock:true},image_scanning_configuration:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ecr_repository", resourceName);
   }

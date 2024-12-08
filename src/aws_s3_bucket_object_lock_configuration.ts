@@ -19,7 +19,7 @@ export interface AwsS3BucketObjectLockConfigurationArgs {
 }
 
 export class aws_s3_bucket_object_lock_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3BucketObjectLockConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3BucketObjectLockConfigurationArgs) {
     const meta = {rule:{isBlock:true,default_retention:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_s3_bucket_object_lock_configuration", resourceName);
   }

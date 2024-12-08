@@ -7,7 +7,7 @@ export interface AwsDevicefarmProjectArgs {
 }
 
 export class aws_devicefarm_project extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDevicefarmProjectArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDevicefarmProjectArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_devicefarm_project", resourceName);
   }

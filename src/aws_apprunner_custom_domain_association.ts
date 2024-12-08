@@ -7,7 +7,7 @@ export interface AwsApprunnerCustomDomainAssociationArgs {
 }
 
 export class aws_apprunner_custom_domain_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApprunnerCustomDomainAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApprunnerCustomDomainAssociationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_apprunner_custom_domain_association", resourceName);
   }

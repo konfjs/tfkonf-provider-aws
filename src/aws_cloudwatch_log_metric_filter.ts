@@ -17,7 +17,7 @@ export interface AwsCloudwatchLogMetricFilterArgs {
 }
 
 export class aws_cloudwatch_log_metric_filter extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudwatchLogMetricFilterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudwatchLogMetricFilterArgs) {
     const meta = {metric_transformation:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_cloudwatch_log_metric_filter", resourceName);
   }

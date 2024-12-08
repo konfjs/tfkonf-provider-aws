@@ -6,7 +6,7 @@ export interface AwsKinesisResourcePolicyArgs {
 }
 
 export class aws_kinesis_resource_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsKinesisResourcePolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsKinesisResourcePolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_kinesis_resource_policy", resourceName);
   }

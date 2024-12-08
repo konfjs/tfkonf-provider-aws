@@ -13,7 +13,7 @@ export interface AwsSsoadminPermissionSetInlinePolicyArgs {
 }
 
 export class aws_ssoadmin_permission_set_inline_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSsoadminPermissionSetInlinePolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSsoadminPermissionSetInlinePolicyArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ssoadmin_permission_set_inline_policy", resourceName);
   }

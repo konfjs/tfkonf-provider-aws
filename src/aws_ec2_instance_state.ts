@@ -14,7 +14,7 @@ export interface AwsEc2InstanceStateArgs {
 }
 
 export class aws_ec2_instance_state extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEc2InstanceStateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEc2InstanceStateArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ec2_instance_state", resourceName);
   }

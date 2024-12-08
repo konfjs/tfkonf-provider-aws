@@ -32,7 +32,7 @@ export interface AwsVerifiedpermissionsPolicyArgs {
 }
 
 export class aws_verifiedpermissions_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVerifiedpermissionsPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVerifiedpermissionsPolicyArgs) {
     const meta = {definition:{isBlock:true,static:{isBlock:true},template_linked:{isBlock:true,principal:{isBlock:true},resource:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "aws_verifiedpermissions_policy", resourceName);
   }

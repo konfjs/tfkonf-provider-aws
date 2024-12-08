@@ -26,7 +26,7 @@ export interface AwsConnectHoursOfOperationArgs {
 }
 
 export class aws_connect_hours_of_operation extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsConnectHoursOfOperationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsConnectHoursOfOperationArgs) {
     const meta = {config:{isBlock:true,end_time:{isBlock:true},start_time:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_connect_hours_of_operation", resourceName);
   }

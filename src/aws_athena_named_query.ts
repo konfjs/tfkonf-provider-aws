@@ -9,7 +9,7 @@ export interface AwsAthenaNamedQueryArgs {
 }
 
 export class aws_athena_named_query extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAthenaNamedQueryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAthenaNamedQueryArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_athena_named_query", resourceName);
   }

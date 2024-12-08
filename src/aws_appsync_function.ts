@@ -29,7 +29,7 @@ export interface AwsAppsyncFunctionArgs {
 }
 
 export class aws_appsync_function extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppsyncFunctionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppsyncFunctionArgs) {
     const meta = {runtime:{isBlock:true},sync_config:{isBlock:true,lambda_conflict_handler_config:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_appsync_function", resourceName);
   }

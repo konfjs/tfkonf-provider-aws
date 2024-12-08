@@ -26,7 +26,7 @@ export interface AwsPinpointAppArgs {
 }
 
 export class aws_pinpoint_app extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsPinpointAppArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsPinpointAppArgs) {
     const meta = {campaign_hook:{isBlock:true},limits:{isBlock:true},quiet_time:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_pinpoint_app", resourceName);
   }

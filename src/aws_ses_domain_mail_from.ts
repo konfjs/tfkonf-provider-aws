@@ -7,7 +7,7 @@ export interface AwsSesDomainMailFromArgs {
 }
 
 export class aws_ses_domain_mail_from extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSesDomainMailFromArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSesDomainMailFromArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ses_domain_mail_from", resourceName);
   }

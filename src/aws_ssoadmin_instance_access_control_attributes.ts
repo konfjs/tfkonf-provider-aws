@@ -15,7 +15,7 @@ export interface AwsSsoadminInstanceAccessControlAttributesArgs {
 }
 
 export class aws_ssoadmin_instance_access_control_attributes extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSsoadminInstanceAccessControlAttributesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSsoadminInstanceAccessControlAttributesArgs) {
     const meta = {attribute:{isBlock:true,value:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_ssoadmin_instance_access_control_attributes", resourceName);
   }

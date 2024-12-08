@@ -42,7 +42,7 @@ export interface AwsVerifiedaccessEndpointArgs {
 }
 
 export class aws_verifiedaccess_endpoint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVerifiedaccessEndpointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVerifiedaccessEndpointArgs) {
     const meta = {load_balancer_options:{isBlock:true},network_interface_options:{isBlock:true},sse_specification:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_verifiedaccess_endpoint", resourceName);
   }

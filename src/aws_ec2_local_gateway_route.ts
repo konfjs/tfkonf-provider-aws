@@ -7,7 +7,7 @@ export interface AwsEc2LocalGatewayRouteArgs {
 }
 
 export class aws_ec2_local_gateway_route extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEc2LocalGatewayRouteArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEc2LocalGatewayRouteArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ec2_local_gateway_route", resourceName);
   }

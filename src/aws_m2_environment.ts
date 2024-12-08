@@ -40,7 +40,7 @@ export interface AwsM2EnvironmentArgs {
 }
 
 export class aws_m2_environment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsM2EnvironmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsM2EnvironmentArgs) {
     const meta = {high_availability_config:{isBlock:true},storage_configuration:{isBlock:true,efs:{isBlock:true},fsx:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_m2_environment", resourceName);
   }

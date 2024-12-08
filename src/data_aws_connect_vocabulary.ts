@@ -5,7 +5,7 @@ export interface DataAwsConnectVocabularyArgs {
 }
 
 export class data_aws_connect_vocabulary extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsConnectVocabularyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsConnectVocabularyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_connect_vocabulary", resourceName);
   }

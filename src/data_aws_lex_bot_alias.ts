@@ -6,7 +6,7 @@ export interface DataAwsLexBotAliasArgs {
 }
 
 export class data_aws_lex_bot_alias extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsLexBotAliasArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsLexBotAliasArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_lex_bot_alias", resourceName);
   }

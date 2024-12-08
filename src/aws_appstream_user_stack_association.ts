@@ -8,7 +8,7 @@ export interface AwsAppstreamUserStackAssociationArgs {
 }
 
 export class aws_appstream_user_stack_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppstreamUserStackAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppstreamUserStackAssociationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_appstream_user_stack_association", resourceName);
   }

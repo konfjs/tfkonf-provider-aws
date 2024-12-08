@@ -4,7 +4,7 @@ export interface DataAwsCloudfrontResponseHeadersPolicyArgs {
 }
 
 export class data_aws_cloudfront_response_headers_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCloudfrontResponseHeadersPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCloudfrontResponseHeadersPolicyArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_cloudfront_response_headers_policy", resourceName);
   }

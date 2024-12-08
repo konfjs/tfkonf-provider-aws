@@ -4,7 +4,7 @@ export interface AwsRamSharingWithOrganizationArgs {
 }
 
 export class aws_ram_sharing_with_organization extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRamSharingWithOrganizationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRamSharingWithOrganizationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ram_sharing_with_organization", resourceName);
   }

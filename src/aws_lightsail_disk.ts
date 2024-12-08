@@ -8,7 +8,7 @@ export interface AwsLightsailDiskArgs {
 }
 
 export class aws_lightsail_disk extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLightsailDiskArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLightsailDiskArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_lightsail_disk", resourceName);
   }

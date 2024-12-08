@@ -40,7 +40,7 @@ export interface AwsRoute53domainsRegisteredDomainArgs {
 }
 
 export class aws_route53domains_registered_domain extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRoute53domainsRegisteredDomainArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRoute53domainsRegisteredDomainArgs) {
     const meta = {admin_contact:{isBlock:true},billing_contact:{isBlock:true},name_server:{isBlock:true},registrant_contact:{isBlock:true},tech_contact:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_route53domains_registered_domain", resourceName);
   }

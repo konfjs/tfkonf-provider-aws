@@ -4,7 +4,7 @@ export interface DataAwsKmsCustomKeyStoreArgs {
 }
 
 export class data_aws_kms_custom_key_store extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsKmsCustomKeyStoreArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsKmsCustomKeyStoreArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_kms_custom_key_store", resourceName);
   }

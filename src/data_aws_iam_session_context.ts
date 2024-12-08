@@ -5,7 +5,7 @@ export interface DataAwsIamSessionContextArgs {
 }
 
 export class data_aws_iam_session_context extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsIamSessionContextArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsIamSessionContextArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_iam_session_context", resourceName);
   }

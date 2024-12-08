@@ -9,7 +9,7 @@ export interface AwsApigatewayv2RouteResponseArgs {
 }
 
 export class aws_apigatewayv2_route_response extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApigatewayv2RouteResponseArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApigatewayv2RouteResponseArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_apigatewayv2_route_response", resourceName);
   }

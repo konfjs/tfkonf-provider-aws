@@ -24,7 +24,7 @@ export interface AwsFinspaceKxVolumeArgs {
 }
 
 export class aws_finspace_kx_volume extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsFinspaceKxVolumeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsFinspaceKxVolumeArgs) {
     const meta = {nas1_configuration:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_finspace_kx_volume", resourceName);
   }

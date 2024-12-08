@@ -27,7 +27,7 @@ export interface AwsDatasyncLocationHdfsArgs {
 }
 
 export class aws_datasync_location_hdfs extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDatasyncLocationHdfsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDatasyncLocationHdfsArgs) {
     const meta = {name_node:{isBlock:true},qop_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_datasync_location_hdfs", resourceName);
   }

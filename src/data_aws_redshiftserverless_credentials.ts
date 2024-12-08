@@ -7,7 +7,7 @@ export interface DataAwsRedshiftserverlessCredentialsArgs {
 }
 
 export class data_aws_redshiftserverless_credentials extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsRedshiftserverlessCredentialsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsRedshiftserverlessCredentialsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_redshiftserverless_credentials", resourceName);
   }

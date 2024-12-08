@@ -20,7 +20,7 @@ export interface AwsRoute53ResolverEndpointArgs {
 }
 
 export class aws_route53_resolver_endpoint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRoute53ResolverEndpointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRoute53ResolverEndpointArgs) {
     const meta = {ip_address:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_route53_resolver_endpoint", resourceName);
   }

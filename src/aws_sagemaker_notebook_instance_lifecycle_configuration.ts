@@ -7,7 +7,7 @@ export interface AwsSagemakerNotebookInstanceLifecycleConfigurationArgs {
 }
 
 export class aws_sagemaker_notebook_instance_lifecycle_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSagemakerNotebookInstanceLifecycleConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSagemakerNotebookInstanceLifecycleConfigurationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_sagemaker_notebook_instance_lifecycle_configuration", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataAwsCloudfrontOriginAccessIdentityArgs {
 }
 
 export class data_aws_cloudfront_origin_access_identity extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCloudfrontOriginAccessIdentityArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCloudfrontOriginAccessIdentityArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_cloudfront_origin_access_identity", resourceName);
   }

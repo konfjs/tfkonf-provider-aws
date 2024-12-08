@@ -61,7 +61,7 @@ export interface AwsNetworkfirewallTlsInspectionConfigurationArgs {
 }
 
 export class aws_networkfirewall_tls_inspection_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNetworkfirewallTlsInspectionConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNetworkfirewallTlsInspectionConfigurationArgs) {
     const meta = {timeouts:{isBlock:true},tls_inspection_configuration:{isBlock:true,server_certificate_configuration:{isBlock:true,check_certificate_revocation_status:{isBlock:true},scope:{isBlock:true,destination:{isBlock:true},destination_ports:{isBlock:true},source:{isBlock:true},source_ports:{isBlock:true}},server_certificate:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "aws_networkfirewall_tls_inspection_configuration", resourceName);
   }

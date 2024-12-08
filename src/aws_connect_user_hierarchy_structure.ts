@@ -34,7 +34,7 @@ export interface AwsConnectUserHierarchyStructureArgs {
 }
 
 export class aws_connect_user_hierarchy_structure extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsConnectUserHierarchyStructureArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsConnectUserHierarchyStructureArgs) {
     const meta = {hierarchy_structure:{isBlock:true,level_five:{isBlock:true},level_four:{isBlock:true},level_one:{isBlock:true},level_three:{isBlock:true},level_two:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_connect_user_hierarchy_structure", resourceName);
   }

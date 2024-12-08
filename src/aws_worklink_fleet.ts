@@ -22,7 +22,7 @@ export interface AwsWorklinkFleetArgs {
 }
 
 export class aws_worklink_fleet extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsWorklinkFleetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsWorklinkFleetArgs) {
     const meta = {identity_provider:{isBlock:true},network:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_worklink_fleet", resourceName);
   }

@@ -12,7 +12,7 @@ export interface AwsAutoscalingGroupTagArgs {
 }
 
 export class aws_autoscaling_group_tag extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAutoscalingGroupTagArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAutoscalingGroupTagArgs) {
     const meta = {tag:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_autoscaling_group_tag", resourceName);
   }

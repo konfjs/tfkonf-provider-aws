@@ -33,7 +33,7 @@ export interface AwsDrsReplicationConfigurationTemplateArgs {
 }
 
 export class aws_drs_replication_configuration_template extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDrsReplicationConfigurationTemplateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDrsReplicationConfigurationTemplateArgs) {
     const meta = {pit_policy:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_drs_replication_configuration_template", resourceName);
   }

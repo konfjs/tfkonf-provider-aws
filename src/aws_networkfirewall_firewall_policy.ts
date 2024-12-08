@@ -76,7 +76,7 @@ export interface AwsNetworkfirewallFirewallPolicyArgs {
 }
 
 export class aws_networkfirewall_firewall_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNetworkfirewallFirewallPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNetworkfirewallFirewallPolicyArgs) {
     const meta = {encryption_configuration:{isBlock:true},firewall_policy:{isBlock:true,policy_variables:{isBlock:true,rule_variables:{isBlock:true,ip_set:{isBlock:true}}},stateful_engine_options:{isBlock:true},stateful_rule_group_reference:{isBlock:true,override:{isBlock:true}},stateless_custom_action:{isBlock:true,action_definition:{isBlock:true,publish_metric_action:{isBlock:true,dimension:{isBlock:true}}}},stateless_rule_group_reference:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_networkfirewall_firewall_policy", resourceName);
   }

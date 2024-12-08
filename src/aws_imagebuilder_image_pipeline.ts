@@ -50,7 +50,7 @@ export interface AwsImagebuilderImagePipelineArgs {
 }
 
 export class aws_imagebuilder_image_pipeline extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsImagebuilderImagePipelineArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsImagebuilderImagePipelineArgs) {
     const meta = {image_scanning_configuration:{isBlock:true,ecr_configuration:{isBlock:true}},image_tests_configuration:{isBlock:true},schedule:{isBlock:true},workflow:{isBlock:true,parameter:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_imagebuilder_image_pipeline", resourceName);
   }

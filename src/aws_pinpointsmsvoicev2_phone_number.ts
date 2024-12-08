@@ -18,7 +18,7 @@ export interface AwsPinpointsmsvoicev2PhoneNumberArgs {
 }
 
 export class aws_pinpointsmsvoicev2_phone_number extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsPinpointsmsvoicev2PhoneNumberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsPinpointsmsvoicev2PhoneNumberArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_pinpointsmsvoicev2_phone_number", resourceName);
   }

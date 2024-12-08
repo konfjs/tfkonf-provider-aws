@@ -12,7 +12,7 @@ export interface AwsEfsMountTargetArgs {
 }
 
 export class aws_efs_mount_target extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEfsMountTargetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEfsMountTargetArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_efs_mount_target", resourceName);
   }

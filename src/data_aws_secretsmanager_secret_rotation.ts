@@ -5,7 +5,7 @@ export interface DataAwsSecretsmanagerSecretRotationArgs {
 }
 
 export class data_aws_secretsmanager_secret_rotation extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSecretsmanagerSecretRotationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSecretsmanagerSecretRotationArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_secretsmanager_secret_rotation", resourceName);
   }

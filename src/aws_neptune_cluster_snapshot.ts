@@ -11,7 +11,7 @@ export interface AwsNeptuneClusterSnapshotArgs {
 }
 
 export class aws_neptune_cluster_snapshot extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNeptuneClusterSnapshotArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNeptuneClusterSnapshotArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_neptune_cluster_snapshot", resourceName);
   }

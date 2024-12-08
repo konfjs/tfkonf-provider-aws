@@ -6,7 +6,7 @@ export interface AwsApiGatewayClientCertificateArgs {
 }
 
 export class aws_api_gateway_client_certificate extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApiGatewayClientCertificateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApiGatewayClientCertificateArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_api_gateway_client_certificate", resourceName);
   }

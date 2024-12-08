@@ -6,7 +6,7 @@ export interface AwsBackupVaultPolicyArgs {
 }
 
 export class aws_backup_vault_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBackupVaultPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBackupVaultPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_backup_vault_policy", resourceName);
   }

@@ -12,7 +12,7 @@ export interface AwsChimesdkvoiceSipMediaApplicationArgs {
 }
 
 export class aws_chimesdkvoice_sip_media_application extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsChimesdkvoiceSipMediaApplicationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsChimesdkvoiceSipMediaApplicationArgs) {
     const meta = {endpoints:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_chimesdkvoice_sip_media_application", resourceName);
   }

@@ -10,7 +10,7 @@ export interface AwsMqConfigurationArgs {
 }
 
 export class aws_mq_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMqConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMqConfigurationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_mq_configuration", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataAwsOpensearchserverlessVpcEndpointArgs {
 }
 
 export class data_aws_opensearchserverless_vpc_endpoint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsOpensearchserverlessVpcEndpointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsOpensearchserverlessVpcEndpointArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_opensearchserverless_vpc_endpoint", resourceName);
   }

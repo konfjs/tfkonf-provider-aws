@@ -5,7 +5,7 @@ export interface DataAwsFsxOntapFileSystemArgs {
 }
 
 export class data_aws_fsx_ontap_file_system extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsFsxOntapFileSystemArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsFsxOntapFileSystemArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_fsx_ontap_file_system", resourceName);
   }

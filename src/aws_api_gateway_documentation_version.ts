@@ -7,7 +7,7 @@ export interface AwsApiGatewayDocumentationVersionArgs {
 }
 
 export class aws_api_gateway_documentation_version extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApiGatewayDocumentationVersionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApiGatewayDocumentationVersionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_api_gateway_documentation_version", resourceName);
   }

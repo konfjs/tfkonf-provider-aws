@@ -158,7 +158,7 @@ export interface AwsEc2FleetArgs {
 }
 
 export class aws_ec2_fleet extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEc2FleetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEc2FleetArgs) {
     const meta = {fleet_instance_set:{isBlock:true},launch_template_config:{isBlock:true,launch_template_specification:{isBlock:true},override:{isBlock:true,instance_requirements:{isBlock:true,accelerator_count:{isBlock:true},accelerator_total_memory_mib:{isBlock:true},baseline_ebs_bandwidth_mbps:{isBlock:true},memory_gib_per_vcpu:{isBlock:true},memory_mib:{isBlock:true},network_bandwidth_gbps:{isBlock:true},network_interface_count:{isBlock:true},total_local_storage_gb:{isBlock:true},vcpu_count:{isBlock:true}}}},on_demand_options:{isBlock:true,capacity_reservation_options:{isBlock:true}},spot_options:{isBlock:true,maintenance_strategies:{isBlock:true,capacity_rebalance:{isBlock:true}}},target_capacity_specification:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ec2_fleet", resourceName);
   }

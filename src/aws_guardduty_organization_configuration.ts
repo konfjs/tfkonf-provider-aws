@@ -36,7 +36,7 @@ export interface AwsGuarddutyOrganizationConfigurationArgs {
 }
 
 export class aws_guardduty_organization_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGuarddutyOrganizationConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGuarddutyOrganizationConfigurationArgs) {
     const meta = {datasources:{isBlock:true,kubernetes:{isBlock:true,audit_logs:{isBlock:true}},malware_protection:{isBlock:true,scan_ec2_instance_with_findings:{isBlock:true,ebs_volumes:{isBlock:true}}},s3_logs:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_guardduty_organization_configuration", resourceName);
   }

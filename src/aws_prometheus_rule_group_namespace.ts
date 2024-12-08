@@ -7,7 +7,7 @@ export interface AwsPrometheusRuleGroupNamespaceArgs {
 }
 
 export class aws_prometheus_rule_group_namespace extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsPrometheusRuleGroupNamespaceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsPrometheusRuleGroupNamespaceArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_prometheus_rule_group_namespace", resourceName);
   }

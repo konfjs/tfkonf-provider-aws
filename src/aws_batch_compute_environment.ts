@@ -48,7 +48,7 @@ export interface AwsBatchComputeEnvironmentArgs {
 }
 
 export class aws_batch_compute_environment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBatchComputeEnvironmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBatchComputeEnvironmentArgs) {
     const meta = {compute_resources:{isBlock:true,ec2_configuration:{isBlock:true},launch_template:{isBlock:true}},eks_configuration:{isBlock:true},update_policy:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_batch_compute_environment", resourceName);
   }

@@ -9,7 +9,7 @@ export interface DataAwsApiGatewayExportArgs {
 }
 
 export class data_aws_api_gateway_export extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsApiGatewayExportArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsApiGatewayExportArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_api_gateway_export", resourceName);
   }

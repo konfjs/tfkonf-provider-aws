@@ -6,7 +6,7 @@ export interface AwsCloudwatchDashboardArgs {
 }
 
 export class aws_cloudwatch_dashboard extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudwatchDashboardArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudwatchDashboardArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_cloudwatch_dashboard", resourceName);
   }

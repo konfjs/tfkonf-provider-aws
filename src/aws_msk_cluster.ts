@@ -136,7 +136,7 @@ export interface AwsMskClusterArgs {
 }
 
 export class aws_msk_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMskClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMskClusterArgs) {
     const meta = {broker_node_group_info:{isBlock:true,connectivity_info:{isBlock:true,public_access:{isBlock:true},vpc_connectivity:{isBlock:true,client_authentication:{isBlock:true,sasl:{isBlock:true}}}},storage_info:{isBlock:true,ebs_storage_info:{isBlock:true,provisioned_throughput:{isBlock:true}}}},client_authentication:{isBlock:true,sasl:{isBlock:true},tls:{isBlock:true}},configuration_info:{isBlock:true},encryption_info:{isBlock:true,encryption_in_transit:{isBlock:true}},logging_info:{isBlock:true,broker_logs:{isBlock:true,cloudwatch_logs:{isBlock:true},firehose:{isBlock:true},s3:{isBlock:true}}},open_monitoring:{isBlock:true,prometheus:{isBlock:true,jmx_exporter:{isBlock:true},node_exporter:{isBlock:true}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_msk_cluster", resourceName);
   }

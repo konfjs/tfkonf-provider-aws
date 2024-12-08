@@ -17,7 +17,7 @@ export interface AwsDevicefarmNetworkProfileArgs {
 }
 
 export class aws_devicefarm_network_profile extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDevicefarmNetworkProfileArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDevicefarmNetworkProfileArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_devicefarm_network_profile", resourceName);
   }

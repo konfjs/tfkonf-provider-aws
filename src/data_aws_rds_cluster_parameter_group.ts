@@ -5,7 +5,7 @@ export interface DataAwsRdsClusterParameterGroupArgs {
 }
 
 export class data_aws_rds_cluster_parameter_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsRdsClusterParameterGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsRdsClusterParameterGroupArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_rds_cluster_parameter_group", resourceName);
   }

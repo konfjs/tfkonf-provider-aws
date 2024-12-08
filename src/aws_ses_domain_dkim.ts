@@ -5,7 +5,7 @@ export interface AwsSesDomainDkimArgs {
 }
 
 export class aws_ses_domain_dkim extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSesDomainDkimArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSesDomainDkimArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ses_domain_dkim", resourceName);
   }

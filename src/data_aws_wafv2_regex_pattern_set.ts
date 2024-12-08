@@ -6,7 +6,7 @@ export interface DataAwsWafv2RegexPatternSetArgs {
 }
 
 export class data_aws_wafv2_regex_pattern_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsWafv2RegexPatternSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsWafv2RegexPatternSetArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_wafv2_regex_pattern_set", resourceName);
   }

@@ -22,7 +22,7 @@ export interface AwsSagemakerPipelineArgs {
 }
 
 export class aws_sagemaker_pipeline extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSagemakerPipelineArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSagemakerPipelineArgs) {
     const meta = {parallelism_configuration:{isBlock:true},pipeline_definition_s3_location:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_sagemaker_pipeline", resourceName);
   }

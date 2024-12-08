@@ -5,7 +5,7 @@ export interface DataAwsArnArgs {
 }
 
 export class data_aws_arn extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsArnArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsArnArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_arn", resourceName);
   }

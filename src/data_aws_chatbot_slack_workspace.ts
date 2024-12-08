@@ -5,7 +5,7 @@ export interface DataAwsChatbotSlackWorkspaceArgs {
 }
 
 export class data_aws_chatbot_slack_workspace extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsChatbotSlackWorkspaceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsChatbotSlackWorkspaceArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_chatbot_slack_workspace", resourceName);
   }

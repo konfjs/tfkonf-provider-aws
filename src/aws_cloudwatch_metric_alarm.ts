@@ -44,7 +44,7 @@ export interface AwsCloudwatchMetricAlarmArgs {
 }
 
 export class aws_cloudwatch_metric_alarm extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudwatchMetricAlarmArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudwatchMetricAlarmArgs) {
     const meta = {metric_query:{isBlock:true,metric:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_cloudwatch_metric_alarm", resourceName);
   }

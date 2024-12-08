@@ -6,7 +6,7 @@ export interface AwsIamUserGroupMembershipArgs {
 }
 
 export class aws_iam_user_group_membership extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIamUserGroupMembershipArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIamUserGroupMembershipArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_iam_user_group_membership", resourceName);
   }

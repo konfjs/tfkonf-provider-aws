@@ -12,7 +12,7 @@ export interface AwsSnapshotCreateVolumePermissionArgs {
 }
 
 export class aws_snapshot_create_volume_permission extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSnapshotCreateVolumePermissionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSnapshotCreateVolumePermissionArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_snapshot_create_volume_permission", resourceName);
   }

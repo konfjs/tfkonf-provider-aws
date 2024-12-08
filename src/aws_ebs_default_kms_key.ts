@@ -5,7 +5,7 @@ export interface AwsEbsDefaultKmsKeyArgs {
 }
 
 export class aws_ebs_default_kms_key extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEbsDefaultKmsKeyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEbsDefaultKmsKeyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ebs_default_kms_key", resourceName);
   }

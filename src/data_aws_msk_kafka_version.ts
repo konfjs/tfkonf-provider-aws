@@ -5,7 +5,7 @@ export interface DataAwsMskKafkaVersionArgs {
 }
 
 export class data_aws_msk_kafka_version extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsMskKafkaVersionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsMskKafkaVersionArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_msk_kafka_version", resourceName);
   }

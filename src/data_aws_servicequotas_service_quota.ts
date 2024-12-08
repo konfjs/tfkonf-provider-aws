@@ -5,7 +5,7 @@ export interface DataAwsServicequotasServiceQuotaArgs {
 }
 
 export class data_aws_servicequotas_service_quota extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsServicequotasServiceQuotaArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsServicequotasServiceQuotaArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_servicequotas_service_quota", resourceName);
   }

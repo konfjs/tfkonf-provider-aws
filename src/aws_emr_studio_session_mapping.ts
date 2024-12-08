@@ -7,7 +7,7 @@ export interface AwsEmrStudioSessionMappingArgs {
 }
 
 export class aws_emr_studio_session_mapping extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEmrStudioSessionMappingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEmrStudioSessionMappingArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_emr_studio_session_mapping", resourceName);
   }

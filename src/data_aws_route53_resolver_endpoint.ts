@@ -11,7 +11,7 @@ export interface DataAwsRoute53ResolverEndpointArgs {
 }
 
 export class data_aws_route53_resolver_endpoint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsRoute53ResolverEndpointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsRoute53ResolverEndpointArgs) {
     const meta = {filter:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_route53_resolver_endpoint", resourceName);
   }

@@ -6,7 +6,7 @@ export interface AwsLakeformationResourceArgs {
 }
 
 export class aws_lakeformation_resource extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLakeformationResourceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLakeformationResourceArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_lakeformation_resource", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataAwsServicePrincipalArgs {
 }
 
 export class data_aws_service_principal extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsServicePrincipalArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsServicePrincipalArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_service_principal", resourceName);
   }

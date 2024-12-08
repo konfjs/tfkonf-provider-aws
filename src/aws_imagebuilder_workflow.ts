@@ -12,7 +12,7 @@ export interface AwsImagebuilderWorkflowArgs {
 }
 
 export class aws_imagebuilder_workflow extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsImagebuilderWorkflowArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsImagebuilderWorkflowArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_imagebuilder_workflow", resourceName);
   }

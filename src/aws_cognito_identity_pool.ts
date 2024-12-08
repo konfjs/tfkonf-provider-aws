@@ -19,7 +19,7 @@ export interface AwsCognitoIdentityPoolArgs {
 }
 
 export class aws_cognito_identity_pool extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCognitoIdentityPoolArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCognitoIdentityPoolArgs) {
     const meta = {cognito_identity_providers:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_cognito_identity_pool", resourceName);
   }

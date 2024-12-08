@@ -5,7 +5,7 @@ export interface DataAwsLakeformationDataLakeSettingsArgs {
 }
 
 export class data_aws_lakeformation_data_lake_settings extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsLakeformationDataLakeSettingsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsLakeformationDataLakeSettingsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_lakeformation_data_lake_settings", resourceName);
   }

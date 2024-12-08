@@ -6,7 +6,7 @@ export interface AwsCloudwatchLogResourcePolicyArgs {
 }
 
 export class aws_cloudwatch_log_resource_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudwatchLogResourcePolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudwatchLogResourcePolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_cloudwatch_log_resource_policy", resourceName);
   }

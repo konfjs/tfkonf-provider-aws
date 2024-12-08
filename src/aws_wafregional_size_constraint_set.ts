@@ -18,7 +18,7 @@ export interface AwsWafregionalSizeConstraintSetArgs {
 }
 
 export class aws_wafregional_size_constraint_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsWafregionalSizeConstraintSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsWafregionalSizeConstraintSetArgs) {
     const meta = {size_constraints:{isBlock:true,field_to_match:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_wafregional_size_constraint_set", resourceName);
   }

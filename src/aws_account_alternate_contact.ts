@@ -17,7 +17,7 @@ export interface AwsAccountAlternateContactArgs {
 }
 
 export class aws_account_alternate_contact extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAccountAlternateContactArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAccountAlternateContactArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_account_alternate_contact", resourceName);
   }

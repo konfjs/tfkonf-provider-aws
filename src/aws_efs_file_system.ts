@@ -18,7 +18,7 @@ export interface AwsEfsFileSystemArgs {
 }
 
 export class aws_efs_file_system extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEfsFileSystemArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEfsFileSystemArgs) {
     const meta = {lifecycle_policy:{isBlock:true},protection:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_efs_file_system", resourceName);
   }

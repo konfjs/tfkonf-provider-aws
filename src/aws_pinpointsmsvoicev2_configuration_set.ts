@@ -8,7 +8,7 @@ export interface AwsPinpointsmsvoicev2ConfigurationSetArgs {
 }
 
 export class aws_pinpointsmsvoicev2_configuration_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsPinpointsmsvoicev2ConfigurationSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsPinpointsmsvoicev2ConfigurationSetArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_pinpointsmsvoicev2_configuration_set", resourceName);
   }

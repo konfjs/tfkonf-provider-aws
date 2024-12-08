@@ -15,7 +15,7 @@ export interface AwsServicecatalogTagOptionArgs {
 }
 
 export class aws_servicecatalog_tag_option extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsServicecatalogTagOptionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsServicecatalogTagOptionArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_servicecatalog_tag_option", resourceName);
   }

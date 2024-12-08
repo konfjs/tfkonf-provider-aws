@@ -5,7 +5,7 @@ export interface DataAwsMemorydbAclArgs {
 }
 
 export class data_aws_memorydb_acl extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsMemorydbAclArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsMemorydbAclArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_memorydb_acl", resourceName);
   }

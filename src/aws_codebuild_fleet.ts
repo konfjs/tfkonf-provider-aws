@@ -30,7 +30,7 @@ export interface AwsCodebuildFleetArgs {
 }
 
 export class aws_codebuild_fleet extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCodebuildFleetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCodebuildFleetArgs) {
     const meta = {scaling_configuration:{isBlock:true,target_tracking_scaling_configs:{isBlock:true}},vpc_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_codebuild_fleet", resourceName);
   }

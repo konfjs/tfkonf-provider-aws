@@ -7,7 +7,7 @@ export interface DataAwsDatazoneEnvironmentBlueprintArgs {
 }
 
 export class data_aws_datazone_environment_blueprint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsDatazoneEnvironmentBlueprintArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsDatazoneEnvironmentBlueprintArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_datazone_environment_blueprint", resourceName);
   }

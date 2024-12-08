@@ -18,7 +18,7 @@ export interface DataAwsKeyPairArgs {
 }
 
 export class data_aws_key_pair extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsKeyPairArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsKeyPairArgs) {
     const meta = {filter:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_key_pair", resourceName);
   }

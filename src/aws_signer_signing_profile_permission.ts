@@ -7,7 +7,7 @@ export interface AwsSignerSigningProfilePermissionArgs {
 }
 
 export class aws_signer_signing_profile_permission extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSignerSigningProfilePermissionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSignerSigningProfilePermissionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_signer_signing_profile_permission", resourceName);
   }

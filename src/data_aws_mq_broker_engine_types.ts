@@ -5,7 +5,7 @@ export interface DataAwsMqBrokerEngineTypesArgs {
 }
 
 export class data_aws_mq_broker_engine_types extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsMqBrokerEngineTypesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsMqBrokerEngineTypesArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_mq_broker_engine_types", resourceName);
   }

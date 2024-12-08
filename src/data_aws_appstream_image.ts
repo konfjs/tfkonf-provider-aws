@@ -7,7 +7,7 @@ export interface DataAwsAppstreamImageArgs {
 }
 
 export class data_aws_appstream_image extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsAppstreamImageArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsAppstreamImageArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_appstream_image", resourceName);
   }

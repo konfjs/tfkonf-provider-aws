@@ -123,7 +123,7 @@ export interface AwsCodedeployDeploymentGroupArgs {
 }
 
 export class aws_codedeploy_deployment_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCodedeployDeploymentGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCodedeployDeploymentGroupArgs) {
     const meta = {alarm_configuration:{isBlock:true},auto_rollback_configuration:{isBlock:true},blue_green_deployment_config:{isBlock:true,deployment_ready_option:{isBlock:true},green_fleet_provisioning_option:{isBlock:true},terminate_blue_instances_on_deployment_success:{isBlock:true}},deployment_style:{isBlock:true},ec2_tag_filter:{isBlock:true},ec2_tag_set:{isBlock:true,ec2_tag_filter:{isBlock:true}},ecs_service:{isBlock:true},load_balancer_info:{isBlock:true,elb_info:{isBlock:true},target_group_info:{isBlock:true},target_group_pair_info:{isBlock:true,prod_traffic_route:{isBlock:true},target_group:{isBlock:true},test_traffic_route:{isBlock:true}}},on_premises_instance_tag_filter:{isBlock:true},trigger_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_codedeploy_deployment_group", resourceName);
   }

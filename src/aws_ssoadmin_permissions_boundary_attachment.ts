@@ -23,7 +23,7 @@ export interface AwsSsoadminPermissionsBoundaryAttachmentArgs {
 }
 
 export class aws_ssoadmin_permissions_boundary_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSsoadminPermissionsBoundaryAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSsoadminPermissionsBoundaryAttachmentArgs) {
     const meta = {permissions_boundary:{isBlock:true,customer_managed_policy_reference:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ssoadmin_permissions_boundary_attachment", resourceName);
   }

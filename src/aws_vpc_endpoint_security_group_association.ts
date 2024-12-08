@@ -7,7 +7,7 @@ export interface AwsVpcEndpointSecurityGroupAssociationArgs {
 }
 
 export class aws_vpc_endpoint_security_group_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpcEndpointSecurityGroupAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpcEndpointSecurityGroupAssociationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_vpc_endpoint_security_group_association", resourceName);
   }

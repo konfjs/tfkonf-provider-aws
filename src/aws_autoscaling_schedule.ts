@@ -6,7 +6,7 @@ export interface AwsAutoscalingScheduleArgs {
 }
 
 export class aws_autoscaling_schedule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAutoscalingScheduleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAutoscalingScheduleArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_autoscaling_schedule", resourceName);
   }

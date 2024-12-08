@@ -5,7 +5,7 @@ export interface DataAwsEksClusterAuthArgs {
 }
 
 export class data_aws_eks_cluster_auth extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEksClusterAuthArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEksClusterAuthArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_eks_cluster_auth", resourceName);
   }

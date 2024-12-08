@@ -20,7 +20,7 @@ export interface AwsDatasyncLocationFsxOpenzfsFileSystemArgs {
 }
 
 export class aws_datasync_location_fsx_openzfs_file_system extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDatasyncLocationFsxOpenzfsFileSystemArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDatasyncLocationFsxOpenzfsFileSystemArgs) {
     const meta = {protocol:{isBlock:true,nfs:{isBlock:true,mount_options:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "aws_datasync_location_fsx_openzfs_file_system", resourceName);
   }

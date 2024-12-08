@@ -11,7 +11,7 @@ export interface AwsLambdaLayerVersionPermissionArgs {
 }
 
 export class aws_lambda_layer_version_permission extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLambdaLayerVersionPermissionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLambdaLayerVersionPermissionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_lambda_layer_version_permission", resourceName);
   }

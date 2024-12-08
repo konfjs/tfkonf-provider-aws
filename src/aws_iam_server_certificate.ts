@@ -14,7 +14,7 @@ export interface AwsIamServerCertificateArgs {
 }
 
 export class aws_iam_server_certificate extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIamServerCertificateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIamServerCertificateArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_iam_server_certificate", resourceName);
   }

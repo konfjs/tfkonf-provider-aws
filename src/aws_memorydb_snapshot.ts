@@ -13,7 +13,7 @@ export interface AwsMemorydbSnapshotArgs {
 }
 
 export class aws_memorydb_snapshot extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMemorydbSnapshotArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMemorydbSnapshotArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_memorydb_snapshot", resourceName);
   }

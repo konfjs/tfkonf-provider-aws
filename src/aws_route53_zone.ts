@@ -14,7 +14,7 @@ export interface AwsRoute53ZoneArgs {
 }
 
 export class aws_route53_zone extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRoute53ZoneArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRoute53ZoneArgs) {
     const meta = {vpc:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_route53_zone", resourceName);
   }

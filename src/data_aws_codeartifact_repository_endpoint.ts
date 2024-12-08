@@ -7,7 +7,7 @@ export interface DataAwsCodeartifactRepositoryEndpointArgs {
 }
 
 export class data_aws_codeartifact_repository_endpoint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCodeartifactRepositoryEndpointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCodeartifactRepositoryEndpointArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_codeartifact_repository_endpoint", resourceName);
   }

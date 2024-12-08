@@ -8,7 +8,7 @@ export interface AwsApiGatewayRequestValidatorArgs {
 }
 
 export class aws_api_gateway_request_validator extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApiGatewayRequestValidatorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApiGatewayRequestValidatorArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_api_gateway_request_validator", resourceName);
   }

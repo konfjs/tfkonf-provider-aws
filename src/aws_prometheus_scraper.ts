@@ -32,7 +32,7 @@ export interface AwsPrometheusScraperArgs {
 }
 
 export class aws_prometheus_scraper extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsPrometheusScraperArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsPrometheusScraperArgs) {
     const meta = {destination:{isBlock:true,amp:{isBlock:true}},source:{isBlock:true,eks:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_prometheus_scraper", resourceName);
   }

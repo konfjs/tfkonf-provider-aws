@@ -9,7 +9,7 @@ export interface DataAwsNetworkmanagerLinksArgs {
 }
 
 export class data_aws_networkmanager_links extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsNetworkmanagerLinksArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsNetworkmanagerLinksArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_networkmanager_links", resourceName);
   }

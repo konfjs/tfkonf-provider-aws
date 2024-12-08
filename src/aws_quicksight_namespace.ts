@@ -12,7 +12,7 @@ export interface AwsQuicksightNamespaceArgs {
 }
 
 export class aws_quicksight_namespace extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsQuicksightNamespaceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsQuicksightNamespaceArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_quicksight_namespace", resourceName);
   }

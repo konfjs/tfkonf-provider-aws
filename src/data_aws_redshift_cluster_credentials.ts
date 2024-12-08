@@ -10,7 +10,7 @@ export interface DataAwsRedshiftClusterCredentialsArgs {
 }
 
 export class data_aws_redshift_cluster_credentials extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsRedshiftClusterCredentialsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsRedshiftClusterCredentialsArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_redshift_cluster_credentials", resourceName);
   }

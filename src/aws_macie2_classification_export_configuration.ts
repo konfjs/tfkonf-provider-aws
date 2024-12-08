@@ -11,7 +11,7 @@ export interface AwsMacie2ClassificationExportConfigurationArgs {
 }
 
 export class aws_macie2_classification_export_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMacie2ClassificationExportConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMacie2ClassificationExportConfigurationArgs) {
     const meta = {s3_destination:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_macie2_classification_export_configuration", resourceName);
   }

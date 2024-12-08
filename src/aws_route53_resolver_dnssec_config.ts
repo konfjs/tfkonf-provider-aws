@@ -5,7 +5,7 @@ export interface AwsRoute53ResolverDnssecConfigArgs {
 }
 
 export class aws_route53_resolver_dnssec_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRoute53ResolverDnssecConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRoute53ResolverDnssecConfigArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_route53_resolver_dnssec_config", resourceName);
   }

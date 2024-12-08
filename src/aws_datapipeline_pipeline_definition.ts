@@ -35,7 +35,7 @@ export interface AwsDatapipelinePipelineDefinitionArgs {
 }
 
 export class aws_datapipeline_pipeline_definition extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDatapipelinePipelineDefinitionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDatapipelinePipelineDefinitionArgs) {
     const meta = {parameter_object:{isBlock:true,attribute:{isBlock:true}},parameter_value:{isBlock:true},pipeline_object:{isBlock:true,field:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_datapipeline_pipeline_definition", resourceName);
   }

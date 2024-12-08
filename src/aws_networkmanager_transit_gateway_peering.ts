@@ -13,7 +13,7 @@ export interface AwsNetworkmanagerTransitGatewayPeeringArgs {
 }
 
 export class aws_networkmanager_transit_gateway_peering extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsNetworkmanagerTransitGatewayPeeringArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsNetworkmanagerTransitGatewayPeeringArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_networkmanager_transit_gateway_peering", resourceName);
   }

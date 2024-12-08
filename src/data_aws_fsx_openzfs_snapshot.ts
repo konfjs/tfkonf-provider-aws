@@ -13,7 +13,7 @@ export interface DataAwsFsxOpenzfsSnapshotArgs {
 }
 
 export class data_aws_fsx_openzfs_snapshot extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsFsxOpenzfsSnapshotArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsFsxOpenzfsSnapshotArgs) {
     const meta = {filter:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_fsx_openzfs_snapshot", resourceName);
   }

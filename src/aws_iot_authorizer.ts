@@ -12,7 +12,7 @@ export interface AwsIotAuthorizerArgs {
 }
 
 export class aws_iot_authorizer extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIotAuthorizerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIotAuthorizerArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_iot_authorizer", resourceName);
   }

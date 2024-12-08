@@ -89,7 +89,7 @@ export interface AwsQuicksightThemeArgs {
 }
 
 export class aws_quicksight_theme extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsQuicksightThemeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsQuicksightThemeArgs) {
     const meta = {configuration:{isBlock:true,data_color_palette:{isBlock:true},sheet:{isBlock:true,tile:{isBlock:true,border:{isBlock:true}},tile_layout:{isBlock:true,gutter:{isBlock:true},margin:{isBlock:true}}},typography:{isBlock:true,font_families:{isBlock:true}},ui_color_palette:{isBlock:true}},permissions:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_quicksight_theme", resourceName);
   }

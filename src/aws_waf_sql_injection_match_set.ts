@@ -16,7 +16,7 @@ export interface AwsWafSqlInjectionMatchSetArgs {
 }
 
 export class aws_waf_sql_injection_match_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsWafSqlInjectionMatchSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsWafSqlInjectionMatchSetArgs) {
     const meta = {sql_injection_match_tuples:{isBlock:true,field_to_match:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_waf_sql_injection_match_set", resourceName);
   }

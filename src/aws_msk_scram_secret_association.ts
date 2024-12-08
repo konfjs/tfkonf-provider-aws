@@ -6,7 +6,7 @@ export interface AwsMskScramSecretAssociationArgs {
 }
 
 export class aws_msk_scram_secret_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMskScramSecretAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMskScramSecretAssociationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_msk_scram_secret_association", resourceName);
   }

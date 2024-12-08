@@ -37,7 +37,7 @@ export interface AwsEc2ClientVpnEndpointArgs {
 }
 
 export class aws_ec2_client_vpn_endpoint extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEc2ClientVpnEndpointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEc2ClientVpnEndpointArgs) {
     const meta = {authentication_options:{isBlock:true},client_connect_options:{isBlock:true},client_login_banner_options:{isBlock:true},connection_log_options:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ec2_client_vpn_endpoint", resourceName);
   }

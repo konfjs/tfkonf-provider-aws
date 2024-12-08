@@ -5,7 +5,7 @@ export interface DataAwsOrganizationsPoliciesArgs {
 }
 
 export class data_aws_organizations_policies extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsOrganizationsPoliciesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsOrganizationsPoliciesArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_organizations_policies", resourceName);
   }

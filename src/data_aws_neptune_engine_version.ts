@@ -6,7 +6,7 @@ export interface DataAwsNeptuneEngineVersionArgs {
 }
 
 export class data_aws_neptune_engine_version extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsNeptuneEngineVersionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsNeptuneEngineVersionArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_neptune_engine_version", resourceName);
   }

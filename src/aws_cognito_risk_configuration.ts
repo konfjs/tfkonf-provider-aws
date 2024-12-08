@@ -75,7 +75,7 @@ export interface AwsCognitoRiskConfigurationArgs {
 }
 
 export class aws_cognito_risk_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCognitoRiskConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCognitoRiskConfigurationArgs) {
     const meta = {account_takeover_risk_configuration:{isBlock:true,actions:{isBlock:true,high_action:{isBlock:true},low_action:{isBlock:true},medium_action:{isBlock:true}},notify_configuration:{isBlock:true,block_email:{isBlock:true},mfa_email:{isBlock:true},no_action_email:{isBlock:true}}},compromised_credentials_risk_configuration:{isBlock:true,actions:{isBlock:true}},risk_exception_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_cognito_risk_configuration", resourceName);
   }

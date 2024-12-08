@@ -10,7 +10,7 @@ export interface AwsGuarddutyThreatintelsetArgs {
 }
 
 export class aws_guardduty_threatintelset extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGuarddutyThreatintelsetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGuarddutyThreatintelsetArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_guardduty_threatintelset", resourceName);
   }

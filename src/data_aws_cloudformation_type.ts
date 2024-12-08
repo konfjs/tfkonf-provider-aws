@@ -5,7 +5,7 @@ export interface DataAwsCloudformationTypeArgs {
 }
 
 export class data_aws_cloudformation_type extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsCloudformationTypeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsCloudformationTypeArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_cloudformation_type", resourceName);
   }

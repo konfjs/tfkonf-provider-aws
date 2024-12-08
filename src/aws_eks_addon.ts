@@ -25,7 +25,7 @@ export interface AwsEksAddonArgs {
 }
 
 export class aws_eks_addon extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEksAddonArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEksAddonArgs) {
     const meta = {pod_identity_association:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_eks_addon", resourceName);
   }

@@ -19,7 +19,7 @@ export interface AwsFmsResourceSetArgs {
 }
 
 export class aws_fms_resource_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsFmsResourceSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsFmsResourceSetArgs) {
     const meta = {resource_set:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_fms_resource_set", resourceName);
   }

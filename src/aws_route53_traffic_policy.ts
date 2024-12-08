@@ -7,7 +7,7 @@ export interface AwsRoute53TrafficPolicyArgs {
 }
 
 export class aws_route53_traffic_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRoute53TrafficPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRoute53TrafficPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_route53_traffic_policy", resourceName);
   }

@@ -12,7 +12,7 @@ export interface AwsEc2ClientVpnNetworkAssociationArgs {
 }
 
 export class aws_ec2_client_vpn_network_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEc2ClientVpnNetworkAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEc2ClientVpnNetworkAssociationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ec2_client_vpn_network_association", resourceName);
   }

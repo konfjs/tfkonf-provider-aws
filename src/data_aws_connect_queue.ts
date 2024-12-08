@@ -5,7 +5,7 @@ export interface DataAwsConnectQueueArgs {
 }
 
 export class data_aws_connect_queue extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsConnectQueueArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsConnectQueueArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_connect_queue", resourceName);
   }

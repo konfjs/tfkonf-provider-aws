@@ -5,7 +5,7 @@ export interface DataAwsOamSinkArgs {
 }
 
 export class data_aws_oam_sink extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsOamSinkArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsOamSinkArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_oam_sink", resourceName);
   }

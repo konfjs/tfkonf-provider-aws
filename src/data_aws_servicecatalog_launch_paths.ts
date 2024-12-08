@@ -11,7 +11,7 @@ export interface DataAwsServicecatalogLaunchPathsArgs {
 }
 
 export class data_aws_servicecatalog_launch_paths extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsServicecatalogLaunchPathsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsServicecatalogLaunchPathsArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_servicecatalog_launch_paths", resourceName);
   }

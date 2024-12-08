@@ -5,7 +5,7 @@ export interface DataAwsQuicksightDataSetArgs {
 }
 
 export class data_aws_quicksight_data_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsQuicksightDataSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsQuicksightDataSetArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_quicksight_data_set", resourceName);
   }

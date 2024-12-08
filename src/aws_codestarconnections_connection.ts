@@ -7,7 +7,7 @@ export interface AwsCodestarconnectionsConnectionArgs {
 }
 
 export class aws_codestarconnections_connection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCodestarconnectionsConnectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCodestarconnectionsConnectionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_codestarconnections_connection", resourceName);
   }

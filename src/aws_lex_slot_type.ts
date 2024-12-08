@@ -21,7 +21,7 @@ export interface AwsLexSlotTypeArgs {
 }
 
 export class aws_lex_slot_type extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLexSlotTypeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLexSlotTypeArgs) {
     const meta = {enumeration_value:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_lex_slot_type", resourceName);
   }

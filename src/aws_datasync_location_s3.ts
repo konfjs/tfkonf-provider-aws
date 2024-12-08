@@ -13,7 +13,7 @@ export interface AwsDatasyncLocationS3Args {
 }
 
 export class aws_datasync_location_s3 extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDatasyncLocationS3Args) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDatasyncLocationS3Args) {
     const meta = {s3_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_datasync_location_s3", resourceName);
   }

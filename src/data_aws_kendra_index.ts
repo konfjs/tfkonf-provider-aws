@@ -5,7 +5,7 @@ export interface DataAwsKendraIndexArgs {
 }
 
 export class data_aws_kendra_index extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsKendraIndexArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsKendraIndexArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_kendra_index", resourceName);
   }

@@ -7,7 +7,7 @@ export interface DataAwsSsmDocumentArgs {
 }
 
 export class data_aws_ssm_document extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSsmDocumentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSsmDocumentArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_ssm_document", resourceName);
   }

@@ -25,7 +25,7 @@ export interface AwsCodebuildWebhookArgs {
 }
 
 export class aws_codebuild_webhook extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCodebuildWebhookArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCodebuildWebhookArgs) {
     const meta = {filter_group:{isBlock:true,filter:{isBlock:true}},scope_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_codebuild_webhook", resourceName);
   }

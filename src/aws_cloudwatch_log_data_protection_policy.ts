@@ -6,7 +6,7 @@ export interface AwsCloudwatchLogDataProtectionPolicyArgs {
 }
 
 export class aws_cloudwatch_log_data_protection_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudwatchLogDataProtectionPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudwatchLogDataProtectionPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_cloudwatch_log_data_protection_policy", resourceName);
   }

@@ -5,7 +5,7 @@ export interface AwsShieldSubscriptionArgs {
 }
 
 export class aws_shield_subscription extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsShieldSubscriptionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsShieldSubscriptionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_shield_subscription", resourceName);
   }

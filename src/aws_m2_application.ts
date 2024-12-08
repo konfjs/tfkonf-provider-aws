@@ -23,7 +23,7 @@ export interface AwsM2ApplicationArgs {
 }
 
 export class aws_m2_application extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsM2ApplicationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsM2ApplicationArgs) {
     const meta = {definition:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_m2_application", resourceName);
   }

@@ -12,7 +12,7 @@ export interface DataAwsKmsSecretArgs {
 }
 
 export class data_aws_kms_secret extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsKmsSecretArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsKmsSecretArgs) {
     const meta = {secret:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_kms_secret", resourceName);
   }

@@ -8,7 +8,7 @@ export interface AwsApigatewayv2ApiMappingArgs {
 }
 
 export class aws_apigatewayv2_api_mapping extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApigatewayv2ApiMappingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApigatewayv2ApiMappingArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_apigatewayv2_api_mapping", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataAwsLocationMapArgs {
 }
 
 export class data_aws_location_map extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsLocationMapArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsLocationMapArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_location_map", resourceName);
   }

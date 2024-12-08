@@ -169,7 +169,7 @@ export interface AwsS3BucketArgs {
 }
 
 export class aws_s3_bucket extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3BucketArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3BucketArgs) {
     const meta = {cors_rule:{isBlock:true},grant:{isBlock:true},lifecycle_rule:{isBlock:true,expiration:{isBlock:true},noncurrent_version_expiration:{isBlock:true},noncurrent_version_transition:{isBlock:true},transition:{isBlock:true}},logging:{isBlock:true},object_lock_configuration:{isBlock:true,rule:{isBlock:true,default_retention:{isBlock:true}}},replication_configuration:{isBlock:true,rules:{isBlock:true,destination:{isBlock:true,access_control_translation:{isBlock:true},metrics:{isBlock:true},replication_time:{isBlock:true}},filter:{isBlock:true},source_selection_criteria:{isBlock:true,sse_kms_encrypted_objects:{isBlock:true}}}},server_side_encryption_configuration:{isBlock:true,rule:{isBlock:true,apply_server_side_encryption_by_default:{isBlock:true}}},timeouts:{isBlock:true},versioning:{isBlock:true},website:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_s3_bucket", resourceName);
   }

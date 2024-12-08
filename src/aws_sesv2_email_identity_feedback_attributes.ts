@@ -6,7 +6,7 @@ export interface AwsSesv2EmailIdentityFeedbackAttributesArgs {
 }
 
 export class aws_sesv2_email_identity_feedback_attributes extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSesv2EmailIdentityFeedbackAttributesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSesv2EmailIdentityFeedbackAttributesArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_sesv2_email_identity_feedback_attributes", resourceName);
   }

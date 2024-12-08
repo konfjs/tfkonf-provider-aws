@@ -18,7 +18,7 @@ export interface AwsAuditmanagerFrameworkArgs {
 }
 
 export class aws_auditmanager_framework extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAuditmanagerFrameworkArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAuditmanagerFrameworkArgs) {
     const meta = {control_sets:{isBlock:true,controls:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_auditmanager_framework", resourceName);
   }

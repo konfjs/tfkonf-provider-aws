@@ -7,7 +7,7 @@ export interface AwsRedshiftserverlessCustomDomainAssociationArgs {
 }
 
 export class aws_redshiftserverless_custom_domain_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRedshiftserverlessCustomDomainAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRedshiftserverlessCustomDomainAssociationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_redshiftserverless_custom_domain_association", resourceName);
   }

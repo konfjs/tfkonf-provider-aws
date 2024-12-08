@@ -19,7 +19,7 @@ export interface AwsEmrInstanceGroupArgs {
 }
 
 export class aws_emr_instance_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEmrInstanceGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEmrInstanceGroupArgs) {
     const meta = {ebs_config:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_emr_instance_group", resourceName);
   }

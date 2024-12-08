@@ -6,7 +6,7 @@ export interface DataAwsOutpostsOutpostInstanceTypeArgs {
 }
 
 export class data_aws_outposts_outpost_instance_type extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsOutpostsOutpostInstanceTypeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsOutpostsOutpostInstanceTypeArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_outposts_outpost_instance_type", resourceName);
   }

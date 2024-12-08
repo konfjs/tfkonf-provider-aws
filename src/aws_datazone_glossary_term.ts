@@ -21,7 +21,7 @@ export interface AwsDatazoneGlossaryTermArgs {
 }
 
 export class aws_datazone_glossary_term extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDatazoneGlossaryTermArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDatazoneGlossaryTermArgs) {
     const meta = {term_relations:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_datazone_glossary_term", resourceName);
   }

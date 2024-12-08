@@ -17,7 +17,7 @@ export interface AwsEmrStudioArgs {
 }
 
 export class aws_emr_studio extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEmrStudioArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEmrStudioArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_emr_studio", resourceName);
   }

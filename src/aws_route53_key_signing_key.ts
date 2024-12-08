@@ -8,7 +8,7 @@ export interface AwsRoute53KeySigningKeyArgs {
 }
 
 export class aws_route53_key_signing_key extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRoute53KeySigningKeyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRoute53KeySigningKeyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_route53_key_signing_key", resourceName);
   }

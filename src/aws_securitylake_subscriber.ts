@@ -34,7 +34,7 @@ export interface AwsSecuritylakeSubscriberArgs {
 }
 
 export class aws_securitylake_subscriber extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSecuritylakeSubscriberArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSecuritylakeSubscriberArgs) {
     const meta = {source:{isBlock:true,aws_log_source_resource:{isBlock:true},custom_log_source_resource:{isBlock:true}},subscriber_identity:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_securitylake_subscriber", resourceName);
   }

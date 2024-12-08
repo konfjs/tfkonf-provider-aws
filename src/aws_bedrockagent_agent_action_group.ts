@@ -54,7 +54,7 @@ export interface AwsBedrockagentAgentActionGroupArgs {
 }
 
 export class aws_bedrockagent_agent_action_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBedrockagentAgentActionGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBedrockagentAgentActionGroupArgs) {
     const meta = {action_group_executor:{isBlock:true},api_schema:{isBlock:true,s3:{isBlock:true}},function_schema:{isBlock:true,member_functions:{isBlock:true,functions:{isBlock:true,parameters:{isBlock:true}}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_bedrockagent_agent_action_group", resourceName);
   }

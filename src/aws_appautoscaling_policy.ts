@@ -78,7 +78,7 @@ export interface AwsAppautoscalingPolicyArgs {
 }
 
 export class aws_appautoscaling_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppautoscalingPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppautoscalingPolicyArgs) {
     const meta = {step_scaling_policy_configuration:{isBlock:true,step_adjustment:{isBlock:true}},target_tracking_scaling_policy_configuration:{isBlock:true,customized_metric_specification:{isBlock:true,dimensions:{isBlock:true},metrics:{isBlock:true,metric_stat:{isBlock:true,metric:{isBlock:true,dimensions:{isBlock:true}}}}},predefined_metric_specification:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_appautoscaling_policy", resourceName);
   }

@@ -47,7 +47,7 @@ export interface AwsAppfabricIngestionDestinationArgs {
 }
 
 export class aws_appfabric_ingestion_destination extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppfabricIngestionDestinationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppfabricIngestionDestinationArgs) {
     const meta = {destination_configuration:{isBlock:true,audit_log:{isBlock:true,destination:{isBlock:true,firehose_stream:{isBlock:true},s3_bucket:{isBlock:true}}}},processing_configuration:{isBlock:true,audit_log:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_appfabric_ingestion_destination", resourceName);
   }

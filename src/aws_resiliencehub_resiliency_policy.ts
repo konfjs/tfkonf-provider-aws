@@ -43,7 +43,7 @@ export interface AwsResiliencehubResiliencyPolicyArgs {
 }
 
 export class aws_resiliencehub_resiliency_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsResiliencehubResiliencyPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsResiliencehubResiliencyPolicyArgs) {
     const meta = {policy:{isBlock:true,az:{isBlock:true},hardware:{isBlock:true},region:{isBlock:true},software:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_resiliencehub_resiliency_policy", resourceName);
   }

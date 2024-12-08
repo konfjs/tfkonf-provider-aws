@@ -7,7 +7,7 @@ export interface AwsIdentitystoreGroupArgs {
 }
 
 export class aws_identitystore_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIdentitystoreGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIdentitystoreGroupArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_identitystore_group", resourceName);
   }

@@ -21,7 +21,7 @@ export interface AwsDefaultSubnetArgs {
 }
 
 export class aws_default_subnet extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDefaultSubnetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDefaultSubnetArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_default_subnet", resourceName);
   }

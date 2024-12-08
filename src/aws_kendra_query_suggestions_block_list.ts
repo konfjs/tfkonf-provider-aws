@@ -22,7 +22,7 @@ export interface AwsKendraQuerySuggestionsBlockListArgs {
 }
 
 export class aws_kendra_query_suggestions_block_list extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsKendraQuerySuggestionsBlockListArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsKendraQuerySuggestionsBlockListArgs) {
     const meta = {source_s3_path:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_kendra_query_suggestions_block_list", resourceName);
   }

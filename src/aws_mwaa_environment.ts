@@ -51,7 +51,7 @@ export interface AwsMwaaEnvironmentArgs {
 }
 
 export class aws_mwaa_environment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMwaaEnvironmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMwaaEnvironmentArgs) {
     const meta = {logging_configuration:{isBlock:true,dag_processing_logs:{isBlock:true},scheduler_logs:{isBlock:true},task_logs:{isBlock:true},webserver_logs:{isBlock:true},worker_logs:{isBlock:true}},network_configuration:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_mwaa_environment", resourceName);
   }

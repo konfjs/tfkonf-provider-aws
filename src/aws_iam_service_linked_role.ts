@@ -8,7 +8,7 @@ export interface AwsIamServiceLinkedRoleArgs {
 }
 
 export class aws_iam_service_linked_role extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIamServiceLinkedRoleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIamServiceLinkedRoleArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_iam_service_linked_role", resourceName);
   }

@@ -14,7 +14,7 @@ export interface AwsSsmResourceDataSyncArgs {
 }
 
 export class aws_ssm_resource_data_sync extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSsmResourceDataSyncArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSsmResourceDataSyncArgs) {
     const meta = {s3_destination:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ssm_resource_data_sync", resourceName);
   }

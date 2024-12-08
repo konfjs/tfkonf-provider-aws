@@ -15,7 +15,7 @@ export interface AwsApiGatewayRestApiArgs {
 }
 
 export class aws_api_gateway_rest_api extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApiGatewayRestApiArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApiGatewayRestApiArgs) {
     const meta = {endpoint_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_api_gateway_rest_api", resourceName);
   }

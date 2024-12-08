@@ -30,7 +30,7 @@ export interface AwsConnectQuickConnectArgs {
 }
 
 export class aws_connect_quick_connect extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsConnectQuickConnectArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsConnectQuickConnectArgs) {
     const meta = {quick_connect_config:{isBlock:true,phone_config:{isBlock:true},queue_config:{isBlock:true},user_config:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_connect_quick_connect", resourceName);
   }

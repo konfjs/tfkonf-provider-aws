@@ -54,7 +54,7 @@ export interface AwsBudgetsBudgetActionArgs {
 }
 
 export class aws_budgets_budget_action extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBudgetsBudgetActionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBudgetsBudgetActionArgs) {
     const meta = {action_threshold:{isBlock:true},definition:{isBlock:true,iam_action_definition:{isBlock:true},scp_action_definition:{isBlock:true},ssm_action_definition:{isBlock:true}},subscriber:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_budgets_budget_action", resourceName);
   }

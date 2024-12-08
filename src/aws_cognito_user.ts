@@ -15,7 +15,7 @@ export interface AwsCognitoUserArgs {
 }
 
 export class aws_cognito_user extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCognitoUserArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCognitoUserArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_cognito_user", resourceName);
   }

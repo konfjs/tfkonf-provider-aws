@@ -123,7 +123,7 @@ export interface AwsS3controlStorageLensConfigurationArgs {
 }
 
 export class aws_s3control_storage_lens_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3controlStorageLensConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3controlStorageLensConfigurationArgs) {
     const meta = {storage_lens_configuration:{isBlock:true,account_level:{isBlock:true,activity_metrics:{isBlock:true},advanced_cost_optimization_metrics:{isBlock:true},advanced_data_protection_metrics:{isBlock:true},bucket_level:{isBlock:true,activity_metrics:{isBlock:true},advanced_cost_optimization_metrics:{isBlock:true},advanced_data_protection_metrics:{isBlock:true},detailed_status_code_metrics:{isBlock:true},prefix_level:{isBlock:true,storage_metrics:{isBlock:true,selection_criteria:{isBlock:true}}}},detailed_status_code_metrics:{isBlock:true}},aws_org:{isBlock:true},data_export:{isBlock:true,cloud_watch_metrics:{isBlock:true},s3_bucket_destination:{isBlock:true,encryption:{isBlock:true,sse_kms:{isBlock:true},sse_s3:{isBlock:true}}}},exclude:{isBlock:true},include:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_s3control_storage_lens_configuration", resourceName);
   }

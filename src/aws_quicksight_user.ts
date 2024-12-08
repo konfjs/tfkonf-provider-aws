@@ -11,7 +11,7 @@ export interface AwsQuicksightUserArgs {
 }
 
 export class aws_quicksight_user extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsQuicksightUserArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsQuicksightUserArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_quicksight_user", resourceName);
   }

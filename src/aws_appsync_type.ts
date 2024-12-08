@@ -7,7 +7,7 @@ export interface AwsAppsyncTypeArgs {
 }
 
 export class aws_appsync_type extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAppsyncTypeArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAppsyncTypeArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_appsync_type", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataAwsSesv2EmailIdentityMailFromAttributesArgs {
 }
 
 export class data_aws_sesv2_email_identity_mail_from_attributes extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSesv2EmailIdentityMailFromAttributesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSesv2EmailIdentityMailFromAttributesArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_sesv2_email_identity_mail_from_attributes", resourceName);
   }

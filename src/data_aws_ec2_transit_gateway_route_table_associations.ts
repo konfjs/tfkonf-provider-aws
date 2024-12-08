@@ -16,7 +16,7 @@ export interface DataAwsEc2TransitGatewayRouteTableAssociationsArgs {
 }
 
 export class data_aws_ec2_transit_gateway_route_table_associations extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEc2TransitGatewayRouteTableAssociationsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEc2TransitGatewayRouteTableAssociationsArgs) {
     const meta = {filter:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_ec2_transit_gateway_route_table_associations", resourceName);
   }

@@ -10,7 +10,7 @@ export interface AwsDxLagArgs {
 }
 
 export class aws_dx_lag extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDxLagArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDxLagArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_dx_lag", resourceName);
   }

@@ -69,7 +69,7 @@ export interface AwsAutoscalingplansScalingPlanArgs {
 }
 
 export class aws_autoscalingplans_scaling_plan extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAutoscalingplansScalingPlanArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAutoscalingplansScalingPlanArgs) {
     const meta = {application_source:{isBlock:true,tag_filter:{isBlock:true}},scaling_instruction:{isBlock:true,customized_load_metric_specification:{isBlock:true},predefined_load_metric_specification:{isBlock:true},target_tracking_configuration:{isBlock:true,customized_scaling_metric_specification:{isBlock:true},predefined_scaling_metric_specification:{isBlock:true}}}};
     super(terraformConfig, "resource", args, meta, "aws_autoscalingplans_scaling_plan", resourceName);
   }

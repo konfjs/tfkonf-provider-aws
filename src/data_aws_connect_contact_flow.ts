@@ -6,7 +6,7 @@ export interface DataAwsConnectContactFlowArgs {
 }
 
 export class data_aws_connect_contact_flow extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsConnectContactFlowArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsConnectContactFlowArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_connect_contact_flow", resourceName);
   }

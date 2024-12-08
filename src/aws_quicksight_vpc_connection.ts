@@ -18,7 +18,7 @@ export interface AwsQuicksightVpcConnectionArgs {
 }
 
 export class aws_quicksight_vpc_connection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsQuicksightVpcConnectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsQuicksightVpcConnectionArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_quicksight_vpc_connection", resourceName);
   }

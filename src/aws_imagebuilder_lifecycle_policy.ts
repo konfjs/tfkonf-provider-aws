@@ -60,7 +60,7 @@ export interface AwsImagebuilderLifecyclePolicyArgs {
 }
 
 export class aws_imagebuilder_lifecycle_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsImagebuilderLifecyclePolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsImagebuilderLifecyclePolicyArgs) {
     const meta = {policy_detail:{isBlock:true,action:{isBlock:true,include_resources:{isBlock:true}},exclusion_rules:{isBlock:true,amis:{isBlock:true,last_launched:{isBlock:true}}},filter:{isBlock:true}},resource_selection:{isBlock:true,recipe:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_imagebuilder_lifecycle_policy", resourceName);
   }

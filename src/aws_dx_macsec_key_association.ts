@@ -6,7 +6,7 @@ export interface AwsDxMacsecKeyAssociationArgs {
 }
 
 export class aws_dx_macsec_key_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDxMacsecKeyAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDxMacsecKeyAssociationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_dx_macsec_key_association", resourceName);
   }

@@ -12,7 +12,7 @@ export interface AwsCloud9EnvironmentEc2Args {
 }
 
 export class aws_cloud9_environment_ec2 extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloud9EnvironmentEc2Args) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloud9EnvironmentEc2Args) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_cloud9_environment_ec2", resourceName);
   }

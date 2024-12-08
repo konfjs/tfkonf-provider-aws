@@ -11,7 +11,7 @@ export interface AwsRekognitionCollectionArgs {
 }
 
 export class aws_rekognition_collection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRekognitionCollectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRekognitionCollectionArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_rekognition_collection", resourceName);
   }

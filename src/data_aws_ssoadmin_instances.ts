@@ -4,7 +4,7 @@ export interface DataAwsSsoadminInstancesArgs {
 }
 
 export class data_aws_ssoadmin_instances extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSsoadminInstancesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSsoadminInstancesArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_ssoadmin_instances", resourceName);
   }

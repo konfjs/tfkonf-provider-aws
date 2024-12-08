@@ -6,7 +6,7 @@ export interface AwsCloudfrontPublicKeyArgs {
 }
 
 export class aws_cloudfront_public_key extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCloudfrontPublicKeyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCloudfrontPublicKeyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_cloudfront_public_key", resourceName);
   }

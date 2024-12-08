@@ -6,7 +6,7 @@ export interface AwsIotPolicyAttachmentArgs {
 }
 
 export class aws_iot_policy_attachment extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIotPolicyAttachmentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIotPolicyAttachmentArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_iot_policy_attachment", resourceName);
   }

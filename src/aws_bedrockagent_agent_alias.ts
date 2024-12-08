@@ -15,7 +15,7 @@ export interface AwsBedrockagentAgentAliasArgs {
 }
 
 export class aws_bedrockagent_agent_alias extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBedrockagentAgentAliasArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBedrockagentAgentAliasArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_bedrockagent_agent_alias", resourceName);
   }

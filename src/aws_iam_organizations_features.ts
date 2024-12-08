@@ -5,7 +5,7 @@ export interface AwsIamOrganizationsFeaturesArgs {
 }
 
 export class aws_iam_organizations_features extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIamOrganizationsFeaturesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIamOrganizationsFeaturesArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_iam_organizations_features", resourceName);
   }

@@ -37,7 +37,7 @@ export interface AwsComputeoptimizerRecommendationPreferencesArgs {
 }
 
 export class aws_computeoptimizer_recommendation_preferences extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsComputeoptimizerRecommendationPreferencesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsComputeoptimizerRecommendationPreferencesArgs) {
     const meta = {external_metrics_preference:{isBlock:true},preferred_resource:{isBlock:true},scope:{isBlock:true},utilization_preference:{isBlock:true,metric_parameters:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_computeoptimizer_recommendation_preferences", resourceName);
   }

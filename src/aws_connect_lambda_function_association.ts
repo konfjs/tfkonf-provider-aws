@@ -6,7 +6,7 @@ export interface AwsConnectLambdaFunctionAssociationArgs {
 }
 
 export class aws_connect_lambda_function_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsConnectLambdaFunctionAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsConnectLambdaFunctionAssociationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_connect_lambda_function_association", resourceName);
   }

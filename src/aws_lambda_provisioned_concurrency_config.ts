@@ -14,7 +14,7 @@ export interface AwsLambdaProvisionedConcurrencyConfigArgs {
 }
 
 export class aws_lambda_provisioned_concurrency_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLambdaProvisionedConcurrencyConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLambdaProvisionedConcurrencyConfigArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_lambda_provisioned_concurrency_config", resourceName);
   }

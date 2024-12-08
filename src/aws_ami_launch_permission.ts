@@ -9,7 +9,7 @@ export interface AwsAmiLaunchPermissionArgs {
 }
 
 export class aws_ami_launch_permission extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAmiLaunchPermissionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAmiLaunchPermissionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ami_launch_permission", resourceName);
   }

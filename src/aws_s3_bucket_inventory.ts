@@ -44,7 +44,7 @@ export interface AwsS3BucketInventoryArgs {
 }
 
 export class aws_s3_bucket_inventory extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3BucketInventoryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3BucketInventoryArgs) {
     const meta = {destination:{isBlock:true,bucket:{isBlock:true,encryption:{isBlock:true,sse_kms:{isBlock:true},sse_s3:{isBlock:true}}}},filter:{isBlock:true},schedule:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_s3_bucket_inventory", resourceName);
   }

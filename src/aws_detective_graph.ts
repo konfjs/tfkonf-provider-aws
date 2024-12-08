@@ -5,7 +5,7 @@ export interface AwsDetectiveGraphArgs {
 }
 
 export class aws_detective_graph extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDetectiveGraphArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDetectiveGraphArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_detective_graph", resourceName);
   }

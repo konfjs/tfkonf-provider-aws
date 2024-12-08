@@ -7,7 +7,7 @@ export interface AwsIotLoggingOptionsArgs {
 }
 
 export class aws_iot_logging_options extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIotLoggingOptionsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIotLoggingOptionsArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_iot_logging_options", resourceName);
   }

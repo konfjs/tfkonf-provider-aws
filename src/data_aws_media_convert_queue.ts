@@ -5,7 +5,7 @@ export interface DataAwsMediaConvertQueueArgs {
 }
 
 export class data_aws_media_convert_queue extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsMediaConvertQueueArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsMediaConvertQueueArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_media_convert_queue", resourceName);
   }

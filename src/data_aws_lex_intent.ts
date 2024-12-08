@@ -6,7 +6,7 @@ export interface DataAwsLexIntentArgs {
 }
 
 export class data_aws_lex_intent extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsLexIntentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsLexIntentArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_lex_intent", resourceName);
   }

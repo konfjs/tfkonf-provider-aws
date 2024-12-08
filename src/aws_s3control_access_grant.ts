@@ -19,7 +19,7 @@ export interface AwsS3controlAccessGrantArgs {
 }
 
 export class aws_s3control_access_grant extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3controlAccessGrantArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3controlAccessGrantArgs) {
     const meta = {access_grants_location_configuration:{isBlock:true},grantee:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_s3control_access_grant", resourceName);
   }

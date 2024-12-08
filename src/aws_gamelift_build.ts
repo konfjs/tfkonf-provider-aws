@@ -16,7 +16,7 @@ export interface AwsGameliftBuildArgs {
 }
 
 export class aws_gamelift_build extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGameliftBuildArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGameliftBuildArgs) {
     const meta = {storage_location:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_gamelift_build", resourceName);
   }

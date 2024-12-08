@@ -19,7 +19,7 @@ export interface AwsLightsailInstanceArgs {
 }
 
 export class aws_lightsail_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLightsailInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLightsailInstanceArgs) {
     const meta = {add_on:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_lightsail_instance", resourceName);
   }

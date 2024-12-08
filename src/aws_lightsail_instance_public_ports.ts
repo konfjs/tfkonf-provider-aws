@@ -12,7 +12,7 @@ export interface AwsLightsailInstancePublicPortsArgs {
 }
 
 export class aws_lightsail_instance_public_ports extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLightsailInstancePublicPortsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLightsailInstancePublicPortsArgs) {
     const meta = {port_info:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_lightsail_instance_public_ports", resourceName);
   }

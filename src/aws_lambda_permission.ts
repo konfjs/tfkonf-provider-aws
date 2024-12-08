@@ -13,7 +13,7 @@ export interface AwsLambdaPermissionArgs {
 }
 
 export class aws_lambda_permission extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLambdaPermissionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLambdaPermissionArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_lambda_permission", resourceName);
   }

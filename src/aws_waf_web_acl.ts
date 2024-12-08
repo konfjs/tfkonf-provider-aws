@@ -44,7 +44,7 @@ export interface AwsWafWebAclArgs {
 }
 
 export class aws_waf_web_acl extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsWafWebAclArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsWafWebAclArgs) {
     const meta = {default_action:{isBlock:true},logging_configuration:{isBlock:true,redacted_fields:{isBlock:true,field_to_match:{isBlock:true}}},rules:{isBlock:true,action:{isBlock:true},override_action:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_waf_web_acl", resourceName);
   }

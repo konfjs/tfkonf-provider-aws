@@ -36,7 +36,7 @@ export interface AwsLakeformationResourceLfTagsArgs {
 }
 
 export class aws_lakeformation_resource_lf_tags extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLakeformationResourceLfTagsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLakeformationResourceLfTagsArgs) {
     const meta = {database:{isBlock:true},lf_tag:{isBlock:true},table:{isBlock:true},table_with_columns:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_lakeformation_resource_lf_tags", resourceName);
   }

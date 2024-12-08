@@ -7,7 +7,7 @@ export interface AwsAutoscalingNotificationArgs {
 }
 
 export class aws_autoscaling_notification extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAutoscalingNotificationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAutoscalingNotificationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_autoscaling_notification", resourceName);
   }

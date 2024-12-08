@@ -16,7 +16,7 @@ export interface AwsFinspaceKxScalingGroupArgs {
 }
 
 export class aws_finspace_kx_scaling_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsFinspaceKxScalingGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsFinspaceKxScalingGroupArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_finspace_kx_scaling_group", resourceName);
   }

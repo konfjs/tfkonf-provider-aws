@@ -13,7 +13,7 @@ export interface AwsMskconnectWorkerConfigurationArgs {
 }
 
 export class aws_mskconnect_worker_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMskconnectWorkerConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMskconnectWorkerConfigurationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_mskconnect_worker_configuration", resourceName);
   }

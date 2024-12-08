@@ -23,7 +23,7 @@ export interface AwsApigatewayv2AuthorizerArgs {
 }
 
 export class aws_apigatewayv2_authorizer extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsApigatewayv2AuthorizerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsApigatewayv2AuthorizerArgs) {
     const meta = {jwt_configuration:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_apigatewayv2_authorizer", resourceName);
   }

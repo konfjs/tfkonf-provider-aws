@@ -4,7 +4,7 @@ export interface DataAwsSsmincidentsReplicationSetArgs {
 }
 
 export class data_aws_ssmincidents_replication_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSsmincidentsReplicationSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSsmincidentsReplicationSetArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_ssmincidents_replication_set", resourceName);
   }

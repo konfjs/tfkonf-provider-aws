@@ -6,7 +6,7 @@ export interface AwsRoute53ResolverConfigArgs {
 }
 
 export class aws_route53_resolver_config extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRoute53ResolverConfigArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRoute53ResolverConfigArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_route53_resolver_config", resourceName);
   }

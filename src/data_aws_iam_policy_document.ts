@@ -39,7 +39,7 @@ export interface DataAwsIamPolicyDocumentArgs {
 }
 
 export class data_aws_iam_policy_document extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsIamPolicyDocumentArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsIamPolicyDocumentArgs) {
     const meta = {statement:{isBlock:true,condition:{isBlock:true},not_principals:{isBlock:true},principals:{isBlock:true}}};
     super(terraformConfig, "data", args, meta, "aws_iam_policy_document", resourceName);
   }

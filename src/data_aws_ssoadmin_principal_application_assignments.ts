@@ -11,7 +11,7 @@ export interface DataAwsSsoadminPrincipalApplicationAssignmentsArgs {
 }
 
 export class data_aws_ssoadmin_principal_application_assignments extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsSsoadminPrincipalApplicationAssignmentsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsSsoadminPrincipalApplicationAssignmentsArgs) {
     const meta = {application_assignments:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_ssoadmin_principal_application_assignments", resourceName);
   }

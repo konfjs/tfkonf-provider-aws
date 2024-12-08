@@ -12,7 +12,7 @@ export interface AwsShieldDrtAccessRoleArnAssociationArgs {
 }
 
 export class aws_shield_drt_access_role_arn_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsShieldDrtAccessRoleArnAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsShieldDrtAccessRoleArnAssociationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_shield_drt_access_role_arn_association", resourceName);
   }

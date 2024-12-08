@@ -22,7 +22,7 @@ export interface AwsKendraFaqArgs {
 }
 
 export class aws_kendra_faq extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsKendraFaqArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsKendraFaqArgs) {
     const meta = {s3_path:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_kendra_faq", resourceName);
   }

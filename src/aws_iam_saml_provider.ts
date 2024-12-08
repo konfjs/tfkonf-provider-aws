@@ -7,7 +7,7 @@ export interface AwsIamSamlProviderArgs {
 }
 
 export class aws_iam_saml_provider extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIamSamlProviderArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIamSamlProviderArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_iam_saml_provider", resourceName);
   }

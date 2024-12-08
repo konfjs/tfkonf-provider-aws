@@ -7,7 +7,7 @@ export interface AwsEcrPullThroughCacheRuleArgs {
 }
 
 export class aws_ecr_pull_through_cache_rule extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEcrPullThroughCacheRuleArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEcrPullThroughCacheRuleArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ecr_pull_through_cache_rule", resourceName);
   }

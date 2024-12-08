@@ -13,7 +13,7 @@ export interface AwsMemorydbParameterGroupArgs {
 }
 
 export class aws_memorydb_parameter_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMemorydbParameterGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMemorydbParameterGroupArgs) {
     const meta = {parameter:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_memorydb_parameter_group", resourceName);
   }

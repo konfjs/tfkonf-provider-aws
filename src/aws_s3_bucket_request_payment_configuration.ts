@@ -7,7 +7,7 @@ export interface AwsS3BucketRequestPaymentConfigurationArgs {
 }
 
 export class aws_s3_bucket_request_payment_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3BucketRequestPaymentConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3BucketRequestPaymentConfigurationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_s3_bucket_request_payment_configuration", resourceName);
   }

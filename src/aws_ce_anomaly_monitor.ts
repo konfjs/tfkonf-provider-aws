@@ -9,7 +9,7 @@ export interface AwsCeAnomalyMonitorArgs {
 }
 
 export class aws_ce_anomaly_monitor extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCeAnomalyMonitorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCeAnomalyMonitorArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ce_anomaly_monitor", resourceName);
   }

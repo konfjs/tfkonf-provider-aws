@@ -15,7 +15,7 @@ export interface AwsLocationGeofenceCollectionArgs {
 }
 
 export class aws_location_geofence_collection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLocationGeofenceCollectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLocationGeofenceCollectionArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_location_geofence_collection", resourceName);
   }

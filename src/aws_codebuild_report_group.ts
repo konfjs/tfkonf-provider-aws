@@ -22,7 +22,7 @@ export interface AwsCodebuildReportGroupArgs {
 }
 
 export class aws_codebuild_report_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCodebuildReportGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCodebuildReportGroupArgs) {
     const meta = {export_config:{isBlock:true,s3_destination:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_codebuild_report_group", resourceName);
   }

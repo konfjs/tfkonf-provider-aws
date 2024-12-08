@@ -33,7 +33,7 @@ export interface AwsVpclatticeListenerArgs {
 }
 
 export class aws_vpclattice_listener extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVpclatticeListenerArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVpclatticeListenerArgs) {
     const meta = {default_action:{isBlock:true,fixed_response:{isBlock:true},forward:{isBlock:true,target_groups:{isBlock:true}}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_vpclattice_listener", resourceName);
   }

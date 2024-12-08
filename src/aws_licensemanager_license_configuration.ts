@@ -11,7 +11,7 @@ export interface AwsLicensemanagerLicenseConfigurationArgs {
 }
 
 export class aws_licensemanager_license_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLicensemanagerLicenseConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLicensemanagerLicenseConfigurationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_licensemanager_license_configuration", resourceName);
   }

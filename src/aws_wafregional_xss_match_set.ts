@@ -16,7 +16,7 @@ export interface AwsWafregionalXssMatchSetArgs {
 }
 
 export class aws_wafregional_xss_match_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsWafregionalXssMatchSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsWafregionalXssMatchSetArgs) {
     const meta = {xss_match_tuple:{isBlock:true,field_to_match:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_wafregional_xss_match_set", resourceName);
   }

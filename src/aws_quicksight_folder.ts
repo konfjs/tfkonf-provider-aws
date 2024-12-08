@@ -23,7 +23,7 @@ export interface AwsQuicksightFolderArgs {
 }
 
 export class aws_quicksight_folder extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsQuicksightFolderArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsQuicksightFolderArgs) {
     const meta = {permissions:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_quicksight_folder", resourceName);
   }

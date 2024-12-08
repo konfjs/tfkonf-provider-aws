@@ -12,7 +12,7 @@ export interface AwsLocationMapArgs {
 }
 
 export class aws_location_map extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLocationMapArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLocationMapArgs) {
     const meta = {configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_location_map", resourceName);
   }

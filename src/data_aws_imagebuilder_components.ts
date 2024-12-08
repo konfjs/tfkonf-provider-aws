@@ -11,7 +11,7 @@ export interface DataAwsImagebuilderComponentsArgs {
 }
 
 export class data_aws_imagebuilder_components extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsImagebuilderComponentsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsImagebuilderComponentsArgs) {
     const meta = {filter:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_imagebuilder_components", resourceName);
   }

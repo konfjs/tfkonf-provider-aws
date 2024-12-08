@@ -5,7 +5,7 @@ export interface DataAwsMemorydbUserArgs {
 }
 
 export class data_aws_memorydb_user extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsMemorydbUserArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsMemorydbUserArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_memorydb_user", resourceName);
   }

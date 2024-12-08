@@ -7,7 +7,7 @@ export interface AwsDatasyncLocationFsxLustreFileSystemArgs {
 }
 
 export class aws_datasync_location_fsx_lustre_file_system extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDatasyncLocationFsxLustreFileSystemArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDatasyncLocationFsxLustreFileSystemArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_datasync_location_fsx_lustre_file_system", resourceName);
   }

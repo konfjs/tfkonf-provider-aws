@@ -12,7 +12,7 @@ export interface AwsSecurityhubConfigurationPolicyAssociationArgs {
 }
 
 export class aws_securityhub_configuration_policy_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSecurityhubConfigurationPolicyAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSecurityhubConfigurationPolicyAssociationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_securityhub_configuration_policy_association", resourceName);
   }

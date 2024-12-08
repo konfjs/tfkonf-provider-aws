@@ -11,7 +11,7 @@ export interface AwsIotBillingGroupArgs {
 }
 
 export class aws_iot_billing_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIotBillingGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIotBillingGroupArgs) {
     const meta = {properties:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_iot_billing_group", resourceName);
   }

@@ -11,7 +11,7 @@ export interface AwsWafregionalGeoMatchSetArgs {
 }
 
 export class aws_wafregional_geo_match_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsWafregionalGeoMatchSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsWafregionalGeoMatchSetArgs) {
     const meta = {geo_match_constraint:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_wafregional_geo_match_set", resourceName);
   }

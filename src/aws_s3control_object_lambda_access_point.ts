@@ -27,7 +27,7 @@ export interface AwsS3controlObjectLambdaAccessPointArgs {
 }
 
 export class aws_s3control_object_lambda_access_point extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3controlObjectLambdaAccessPointArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3controlObjectLambdaAccessPointArgs) {
     const meta = {configuration:{isBlock:true,transformation_configuration:{isBlock:true,content_transformation:{isBlock:true,aws_lambda:{isBlock:true}}}}};
     super(terraformConfig, "resource", args, meta, "aws_s3control_object_lambda_access_point", resourceName);
   }

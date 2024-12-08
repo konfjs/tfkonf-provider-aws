@@ -29,7 +29,7 @@ export interface AwsFsxDataRepositoryAssociationArgs {
 }
 
 export class aws_fsx_data_repository_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsFsxDataRepositoryAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsFsxDataRepositoryAssociationArgs) {
     const meta = {s3:{isBlock:true,auto_export_policy:{isBlock:true},auto_import_policy:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_fsx_data_repository_association", resourceName);
   }

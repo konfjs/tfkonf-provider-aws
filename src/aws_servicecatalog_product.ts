@@ -27,7 +27,7 @@ export interface AwsServicecatalogProductArgs {
 }
 
 export class aws_servicecatalog_product extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsServicecatalogProductArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsServicecatalogProductArgs) {
     const meta = {provisioning_artifact_parameters:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_servicecatalog_product", resourceName);
   }

@@ -38,7 +38,7 @@ export interface AwsStoragegatewaySmbFileShareArgs {
 }
 
 export class aws_storagegateway_smb_file_share extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsStoragegatewaySmbFileShareArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsStoragegatewaySmbFileShareArgs) {
     const meta = {cache_attributes:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_storagegateway_smb_file_share", resourceName);
   }

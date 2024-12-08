@@ -13,7 +13,7 @@ export interface AwsVerifiedaccessGroupArgs {
 }
 
 export class aws_verifiedaccess_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsVerifiedaccessGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsVerifiedaccessGroupArgs) {
     const meta = {sse_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_verifiedaccess_group", resourceName);
   }

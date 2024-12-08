@@ -50,7 +50,7 @@ export interface AwsRedshiftClusterArgs {
 }
 
 export class aws_redshift_cluster extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsRedshiftClusterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsRedshiftClusterArgs) {
     const meta = {logging:{isBlock:true},snapshot_copy:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_redshift_cluster", resourceName);
   }

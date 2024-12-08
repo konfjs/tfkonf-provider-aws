@@ -5,7 +5,7 @@ export interface DataAwsWorkspacesImageArgs {
 }
 
 export class data_aws_workspaces_image extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsWorkspacesImageArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsWorkspacesImageArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_workspaces_image", resourceName);
   }

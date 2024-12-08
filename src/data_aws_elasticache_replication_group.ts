@@ -5,7 +5,7 @@ export interface DataAwsElasticacheReplicationGroupArgs {
 }
 
 export class data_aws_elasticache_replication_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsElasticacheReplicationGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsElasticacheReplicationGroupArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_elasticache_replication_group", resourceName);
   }

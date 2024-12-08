@@ -6,7 +6,7 @@ export interface AwsMskClusterPolicyArgs {
 }
 
 export class aws_msk_cluster_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsMskClusterPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsMskClusterPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_msk_cluster_policy", resourceName);
   }

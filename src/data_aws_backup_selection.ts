@@ -6,7 +6,7 @@ export interface DataAwsBackupSelectionArgs {
 }
 
 export class data_aws_backup_selection extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsBackupSelectionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsBackupSelectionArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_backup_selection", resourceName);
   }

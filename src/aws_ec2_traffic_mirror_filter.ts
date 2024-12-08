@@ -7,7 +7,7 @@ export interface AwsEc2TrafficMirrorFilterArgs {
 }
 
 export class aws_ec2_traffic_mirror_filter extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEc2TrafficMirrorFilterArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEc2TrafficMirrorFilterArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_ec2_traffic_mirror_filter", resourceName);
   }

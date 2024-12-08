@@ -47,7 +47,7 @@ export interface AwsEmrInstanceFleetArgs {
 }
 
 export class aws_emr_instance_fleet extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEmrInstanceFleetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEmrInstanceFleetArgs) {
     const meta = {instance_type_configs:{isBlock:true,configurations:{isBlock:true},ebs_config:{isBlock:true}},launch_specifications:{isBlock:true,on_demand_specification:{isBlock:true},spot_specification:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_emr_instance_fleet", resourceName);
   }

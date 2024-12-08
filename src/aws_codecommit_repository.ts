@@ -8,7 +8,7 @@ export interface AwsCodecommitRepositoryArgs {
 }
 
 export class aws_codecommit_repository extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsCodecommitRepositoryArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsCodecommitRepositoryArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_codecommit_repository", resourceName);
   }

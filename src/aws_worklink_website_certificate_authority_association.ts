@@ -7,7 +7,7 @@ export interface AwsWorklinkWebsiteCertificateAuthorityAssociationArgs {
 }
 
 export class aws_worklink_website_certificate_authority_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsWorklinkWebsiteCertificateAuthorityAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsWorklinkWebsiteCertificateAuthorityAssociationArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_worklink_website_certificate_authority_association", resourceName);
   }

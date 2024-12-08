@@ -6,7 +6,7 @@ export interface AwsLbListenerCertificateArgs {
 }
 
 export class aws_lb_listener_certificate extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsLbListenerCertificateArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsLbListenerCertificateArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_lb_listener_certificate", resourceName);
   }

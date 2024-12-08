@@ -43,7 +43,7 @@ export interface AwsFsxFileCacheArgs {
 }
 
 export class aws_fsx_file_cache extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsFsxFileCacheArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsFsxFileCacheArgs) {
     const meta = {data_repository_association:{isBlock:true,nfs:{isBlock:true}},lustre_configuration:{isBlock:true,metadata_configuration:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_fsx_file_cache", resourceName);
   }

@@ -5,7 +5,7 @@ export interface DataAwsEcsTaskDefinitionArgs {
 }
 
 export class data_aws_ecs_task_definition extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEcsTaskDefinitionArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEcsTaskDefinitionArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_ecs_task_definition", resourceName);
   }

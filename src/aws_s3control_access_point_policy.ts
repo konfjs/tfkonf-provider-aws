@@ -6,7 +6,7 @@ export interface AwsS3controlAccessPointPolicyArgs {
 }
 
 export class aws_s3control_access_point_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3controlAccessPointPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3controlAccessPointPolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_s3control_access_point_policy", resourceName);
   }

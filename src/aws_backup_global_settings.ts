@@ -5,7 +5,7 @@ export interface AwsBackupGlobalSettingsArgs {
 }
 
 export class aws_backup_global_settings extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBackupGlobalSettingsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBackupGlobalSettingsArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_backup_global_settings", resourceName);
   }

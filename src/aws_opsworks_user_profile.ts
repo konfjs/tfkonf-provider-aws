@@ -8,7 +8,7 @@ export interface AwsOpsworksUserProfileArgs {
 }
 
 export class aws_opsworks_user_profile extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsOpsworksUserProfileArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsOpsworksUserProfileArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_opsworks_user_profile", resourceName);
   }

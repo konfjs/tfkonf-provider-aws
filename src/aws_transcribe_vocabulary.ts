@@ -15,7 +15,7 @@ export interface AwsTranscribeVocabularyArgs {
 }
 
 export class aws_transcribe_vocabulary extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsTranscribeVocabularyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsTranscribeVocabularyArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_transcribe_vocabulary", resourceName);
   }

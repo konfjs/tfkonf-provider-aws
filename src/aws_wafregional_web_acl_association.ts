@@ -11,7 +11,7 @@ export interface AwsWafregionalWebAclAssociationArgs {
 }
 
 export class aws_wafregional_web_acl_association extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsWafregionalWebAclAssociationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsWafregionalWebAclAssociationArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_wafregional_web_acl_association", resourceName);
   }

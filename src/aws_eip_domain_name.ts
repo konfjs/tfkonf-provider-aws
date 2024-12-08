@@ -13,7 +13,7 @@ export interface AwsEipDomainNameArgs {
 }
 
 export class aws_eip_domain_name extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsEipDomainNameArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsEipDomainNameArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_eip_domain_name", resourceName);
   }

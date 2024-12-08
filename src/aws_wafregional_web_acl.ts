@@ -44,7 +44,7 @@ export interface AwsWafregionalWebAclArgs {
 }
 
 export class aws_wafregional_web_acl extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsWafregionalWebAclArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsWafregionalWebAclArgs) {
     const meta = {default_action:{isBlock:true},logging_configuration:{isBlock:true,redacted_fields:{isBlock:true,field_to_match:{isBlock:true}}},rule:{isBlock:true,action:{isBlock:true},override_action:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_wafregional_web_acl", resourceName);
   }

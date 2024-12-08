@@ -12,7 +12,7 @@ export interface AwsResourcegroupsResourceArgs {
 }
 
 export class aws_resourcegroups_resource extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsResourcegroupsResourceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsResourcegroupsResourceArgs) {
     const meta = {timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_resourcegroups_resource", resourceName);
   }

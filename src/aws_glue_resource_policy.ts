@@ -6,7 +6,7 @@ export interface AwsGlueResourcePolicyArgs {
 }
 
 export class aws_glue_resource_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGlueResourcePolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGlueResourcePolicyArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_glue_resource_policy", resourceName);
   }

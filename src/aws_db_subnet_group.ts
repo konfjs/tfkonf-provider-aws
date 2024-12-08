@@ -7,7 +7,7 @@ export interface AwsDbSubnetGroupArgs {
 }
 
 export class aws_db_subnet_group extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsDbSubnetGroupArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsDbSubnetGroupArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_db_subnet_group", resourceName);
   }

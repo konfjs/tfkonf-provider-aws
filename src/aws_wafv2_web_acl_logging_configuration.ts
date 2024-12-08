@@ -52,7 +52,7 @@ export interface AwsWafv2WebAclLoggingConfigurationArgs {
 }
 
 export class aws_wafv2_web_acl_logging_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsWafv2WebAclLoggingConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsWafv2WebAclLoggingConfigurationArgs) {
     const meta = {logging_filter:{isBlock:true,filter:{isBlock:true,condition:{isBlock:true,action_condition:{isBlock:true},label_name_condition:{isBlock:true}}}},redacted_fields:{isBlock:true,method:{isBlock:true},query_string:{isBlock:true},single_header:{isBlock:true},uri_path:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_wafv2_web_acl_logging_configuration", resourceName);
   }

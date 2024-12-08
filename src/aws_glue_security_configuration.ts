@@ -27,7 +27,7 @@ export interface AwsGlueSecurityConfigurationArgs {
 }
 
 export class aws_glue_security_configuration extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGlueSecurityConfigurationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGlueSecurityConfigurationArgs) {
     const meta = {encryption_configuration:{isBlock:true,cloudwatch_encryption:{isBlock:true},job_bookmarks_encryption:{isBlock:true},s3_encryption:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_glue_security_configuration", resourceName);
   }

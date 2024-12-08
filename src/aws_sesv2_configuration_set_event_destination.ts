@@ -44,7 +44,7 @@ export interface AwsSesv2ConfigurationSetEventDestinationArgs {
 }
 
 export class aws_sesv2_configuration_set_event_destination extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSesv2ConfigurationSetEventDestinationArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSesv2ConfigurationSetEventDestinationArgs) {
     const meta = {event_destination:{isBlock:true,cloud_watch_destination:{isBlock:true,dimension_configuration:{isBlock:true}},event_bridge_destination:{isBlock:true},kinesis_firehose_destination:{isBlock:true},pinpoint_destination:{isBlock:true},sns_destination:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_sesv2_configuration_set_event_destination", resourceName);
   }

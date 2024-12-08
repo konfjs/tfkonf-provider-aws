@@ -34,7 +34,7 @@ export interface AwsElasticacheServerlessCacheArgs {
 }
 
 export class aws_elasticache_serverless_cache extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsElasticacheServerlessCacheArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsElasticacheServerlessCacheArgs) {
     const meta = {cache_usage_limits:{isBlock:true,data_storage:{isBlock:true},ecpu_per_second:{isBlock:true}},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_elasticache_serverless_cache", resourceName);
   }

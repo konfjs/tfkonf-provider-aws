@@ -6,7 +6,7 @@ export interface AwsIamGroupPolicyAttachmentsExclusiveArgs {
 }
 
 export class aws_iam_group_policy_attachments_exclusive extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsIamGroupPolicyAttachmentsExclusiveArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsIamGroupPolicyAttachmentsExclusiveArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_iam_group_policy_attachments_exclusive", resourceName);
   }

@@ -14,7 +14,7 @@ export interface AwsSecretsmanagerSecretArgs {
 }
 
 export class aws_secretsmanager_secret extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSecretsmanagerSecretArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSecretsmanagerSecretArgs) {
     const meta = {replica:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_secretsmanager_secret", resourceName);
   }

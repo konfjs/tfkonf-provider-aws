@@ -27,7 +27,7 @@ export interface AwsAmiCopyArgs {
 }
 
 export class aws_ami_copy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsAmiCopyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsAmiCopyArgs) {
     const meta = {ebs_block_device:{isBlock:true},ephemeral_block_device:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_ami_copy", resourceName);
   }

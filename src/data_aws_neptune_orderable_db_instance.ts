@@ -7,7 +7,7 @@ export interface DataAwsNeptuneOrderableDbInstanceArgs {
 }
 
 export class data_aws_neptune_orderable_db_instance extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsNeptuneOrderableDbInstanceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsNeptuneOrderableDbInstanceArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_neptune_orderable_db_instance", resourceName);
   }

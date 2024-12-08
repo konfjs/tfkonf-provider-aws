@@ -5,7 +5,7 @@ export interface AwsBackupRegionSettingsArgs {
 }
 
 export class aws_backup_region_settings extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsBackupRegionSettingsArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsBackupRegionSettingsArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_backup_region_settings", resourceName);
   }

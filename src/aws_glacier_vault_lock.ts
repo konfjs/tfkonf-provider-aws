@@ -8,7 +8,7 @@ export interface AwsGlacierVaultLockArgs {
 }
 
 export class aws_glacier_vault_lock extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGlacierVaultLockArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGlacierVaultLockArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_glacier_vault_lock", resourceName);
   }

@@ -4,7 +4,7 @@ export interface DataAwsWorkspacesWorkspaceArgs {
 }
 
 export class data_aws_workspaces_workspace extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsWorkspacesWorkspaceArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsWorkspacesWorkspaceArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_workspaces_workspace", resourceName);
   }

@@ -12,7 +12,7 @@ export interface AwsS3BucketVersioningArgs {
 }
 
 export class aws_s3_bucket_versioning extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3BucketVersioningArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3BucketVersioningArgs) {
     const meta = {versioning_configuration:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_s3_bucket_versioning", resourceName);
   }

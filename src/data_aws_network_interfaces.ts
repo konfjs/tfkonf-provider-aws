@@ -15,7 +15,7 @@ export interface DataAwsNetworkInterfacesArgs {
 }
 
 export class data_aws_network_interfaces extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsNetworkInterfacesArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsNetworkInterfacesArgs) {
     const meta = {filter:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "data", args, meta, "aws_network_interfaces", resourceName);
   }

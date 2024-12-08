@@ -7,7 +7,7 @@ export interface DataAwsEc2CapacityBlockOfferingArgs {
 }
 
 export class data_aws_ec2_capacity_block_offering extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsEc2CapacityBlockOfferingArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsEc2CapacityBlockOfferingArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_ec2_capacity_block_offering", resourceName);
   }

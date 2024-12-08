@@ -16,7 +16,7 @@ export interface AwsS3controlMultiRegionAccessPointPolicyArgs {
 }
 
 export class aws_s3control_multi_region_access_point_policy extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsS3controlMultiRegionAccessPointPolicyArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsS3controlMultiRegionAccessPointPolicyArgs) {
     const meta = {details:{isBlock:true},timeouts:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_s3control_multi_region_access_point_policy", resourceName);
   }

@@ -44,7 +44,7 @@ export interface AwsSesv2ConfigurationSetArgs {
 }
 
 export class aws_sesv2_configuration_set extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsSesv2ConfigurationSetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsSesv2ConfigurationSetArgs) {
     const meta = {delivery_options:{isBlock:true},reputation_options:{isBlock:true},sending_options:{isBlock:true},suppression_options:{isBlock:true},tracking_options:{isBlock:true},vdm_options:{isBlock:true,dashboard_options:{isBlock:true},guardian_options:{isBlock:true}}};
     super(terraformConfig, "resource", args, meta, "aws_sesv2_configuration_set", resourceName);
   }

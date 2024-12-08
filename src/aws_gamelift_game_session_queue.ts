@@ -16,7 +16,7 @@ export interface AwsGameliftGameSessionQueueArgs {
 }
 
 export class aws_gamelift_game_session_queue extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGameliftGameSessionQueueArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGameliftGameSessionQueueArgs) {
     const meta = {player_latency_policy:{isBlock:true}};
     super(terraformConfig, "resource", args, meta, "aws_gamelift_game_session_queue", resourceName);
   }

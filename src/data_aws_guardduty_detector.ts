@@ -4,7 +4,7 @@ export interface DataAwsGuarddutyDetectorArgs {
 }
 
 export class data_aws_guardduty_detector extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: DataAwsGuarddutyDetectorArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: DataAwsGuarddutyDetectorArgs) {
     const meta = {};
     super(terraformConfig, "data", args, meta, "aws_guardduty_detector", resourceName);
   }

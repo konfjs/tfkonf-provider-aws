@@ -10,7 +10,7 @@ export interface AwsGuarddutyIpsetArgs {
 }
 
 export class aws_guardduty_ipset extends TerraformResource {
-  constructor(terraformConfig: TerraformConfig, resourceName: string, args: AwsGuarddutyIpsetArgs) {
+  constructor(protected readonly terraformConfig: TerraformConfig, protected readonly resourceName: string, readonly args: AwsGuarddutyIpsetArgs) {
     const meta = {};
     super(terraformConfig, "resource", args, meta, "aws_guardduty_ipset", resourceName);
   }
